@@ -10,7 +10,7 @@
 # **Networking**
 
 ## **TCP Server**
-
+test
 Used for when the player logs in or logs out of the game (need safe and reliable connection to server) and when they choose what game they will play in and also what their character / class will be before the game begins.
 
 1. Player information (username, password, email).
