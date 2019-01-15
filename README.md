@@ -19,8 +19,8 @@ Used for when the player logs in or logs out of the game (need safe and reliable
 1. Core UI information 
 1. Character deaths / kills for scoreboard
 
-1. Stretch goals: Sending messages to other players in the game. Needs to be TCP as the information must be accurate.
-1. Stretch goals: Character creator information
+1. *Stretch goals: Sending messages to other players in the game. Needs to be TCP as the information must be accurate.
+1. *Stretch goals: Character creator information
 
 ## **UDP Server**
 
@@ -32,7 +32,7 @@ Information to be sent in data packets:
 1. Buffs and debuffs (let the player know if they get a buff and how long it will last. Client will handle how the buff changes their actions).
 1. Character health (to be displayed on other players UI and to check for validity).
 
-1. Stretch Goals: 
+1. *Stretch Goals: TDB
 
 ## **TCP or UDP**
 1. Broadcasting tower / graveyard captures and captain / general deaths
@@ -47,7 +47,9 @@ MySQL is the most likely candidate - We previously used it.
 1. Character class statistics: health, actions, abilities.
 1. Game version: What patch is the game running on, does the game need to be updated
 
-1. Stretch goals: Able to pull character creator information
+1. *Stretch goals: Able to pull character creator information
+
+
 
 
 # Markup Text Testing
