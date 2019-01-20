@@ -66,10 +66,11 @@ Each class should at the minimum have 4 skills that fit their kit described abov
 
 ## Optimization
 
-Because this game will be a 40 vs 40 player MMO, optimization is vital. The global game data will be handled by a world server providing and updating all data in the game. The client will pull 2 sets of data within each update: Global data and Local data.
+Because this game will be a 40 vs 40 player MMO, optimization is vital. A player doesn't need the game to send them the info of all 79 other players and the other characters in the game since the majority of characters will be too far to have an impact of that player's surroundings. The global game data will be handled by a world server providing and updating all data in the game. The client will pull 2 sets of data within each update: Global data and Local data.
 
-Global data is data that should be known by every player in the game at all time. For example which team owns which graveyard and how much resource does a said team have.
-Local data is data that are important to a specific client but may not be important for another client. For example a player will only receive data that is related to events that happen near them within a radius.
+Global data is data that should be known by every player in the game at all time, such as which team owns which graveyard and how much resources each team have at that moment.
+
+Local data is data that are important to a specific client but may not be important for another client. For example a player will only receive data that is related to events that happen near them within a radius, such as nearby enemy and allied players' health. What determines what is local to a player can be decided by splitting up the world into sectors, and only sending the player data of what's inside their sector.
 
 ## Object Inheritance Hierarchy
 
@@ -119,9 +120,11 @@ Back line supportive class, recovers health and provides defensive buffs.
 
 
 ## Character Inheritance
-All the characters(Player, NPC) in the game will use a class(Or one of its specialized subclass) called Character. The Character base class would have some common behaviour functions such as Moving, Dying, AutoAttack, Respawning, etc. Character will also have some basic members such as a mesh an animation etc. Since every class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
-For example: A Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
-Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file(See example below). Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
+All the characters (Player, NPC) in the game will use a class (or one of its specialized subclass) called Character. The Character base class would have behaviour functions that will be shared between all characters such as Moving, Dying, AutoAttack, Respawning, etc. Character will also have some basic members such as a mesh, an animation, etc. Since every class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
+
+For example: A Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy, and by using the same strategy pattern we essentially avoid the need of repeating unnecessarry code.
+
+Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file (See example below). Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
 
 #### JSON file
 
@@ -167,9 +170,9 @@ new_char->Die();
 new_char->Respawn();
 ```
 
-We also recognized that there will be some cases where defining specific traits of certain archetype may be difficult when using the strategy pattern above alone. Thus all the base function in character class like Move, AutoAttack, Die, and respawn are overridable. Thus we can derive a subclass from Character class for example: Character (Derive)-> SpecialCharacter. And since SpecialCharacter is a child class from the base class Character; it may also use the same strategy classes while also having the ability to override or add functionalities.
+We also recognized that there will be some cases where defining specific traits of certain archetype may be difficult when using the strategy pattern above alone. Thus all the base function in character class like Move, AutoAttack, Die, and respawn are overridable. Furthermore, we can derive a subclass from Character class for example: Character (Derive)-> SpecialCharacter. And since SpecialCharacter is a child class from the base class Character, it may also use the same strategy classes while also having the ability to override or add functionalities.
 
-Lastly, skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
+Lastly, skills are handled differently from strategies. Each Character object will contain a list (std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage, range, whether or not it's AoE or single target, etc. Skill class will also have a mandatory pure virtual function to define how a skill should be invoked (Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
 
 ![UnitUML](/new.png)
 
@@ -177,10 +180,10 @@ Lastly, skills are handled differently from strategies. Each Character object wi
 In WoW most combo are as following:
 Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells cost 99 less mana. Skill 2 - Chain Heal: Spell, 2.5 sec cast, Heals the friendly target for (140% of Spell power), then jumps to heal the 2 most injured nearby allies. Healing is reduced by 30% with each jump.
 
-Thus to achieve this Combo effect we have decided to rely on the Buff system. A buff class can be created as the super class for all buffs and buffs can be apply to any character. We recognized the fact that a buff can be applied to a character from many sources, character itself, another player, npc, world, event, etc therefore, in order to reduce tight coupling we choose to implement an observer pattern system into our buff system. Anytime a sources needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
+To achieve this Combo effect we have decided to rely on the Buff system. A buff class can be created as the super class for all buffs and buffs can be applied to any character. We recognized the fact that a buff can be applied to a character from many sources which include the character itself, another player, an npc, the world, an event, etc. Therefore, in order to reduce tight coupling we choose to implement an observer pattern system into our buff system. Anytime a source needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
 
 #### Controller System
-Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
+Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself (Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
 
 ```
 Player->A_KEY->translate->MoveLeft
