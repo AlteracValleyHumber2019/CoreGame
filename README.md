@@ -95,7 +95,7 @@ When health hits 0, a unit dies.
 After a timer is completed, dead players come back to life at the nearest Graveyard.
 
 ##### Capturing
-While a player is close enough to a valid capturable point, they will assist in the process of gaining poccession.
+While a player is close enough to a valid capturable point, they will assist in the process of gaining posession.
 
 ##### Abilities
 ###### Single Target
@@ -166,7 +166,22 @@ new_char->Respawn();
 
 We also recognized that there will be some cases where defining specific traits of certain archetype may be difficult when using the strategy pattern above alone. Thus all the base function in character class like Move, AutoAttack, Die, and respawn are overridable. Thus we can derive a subclass from Character class for example: Character (Derive)-> SpecialCharacter. And since SpecialCharacter is a child class from the base class Character; it may also use the same strategy classes while also having the ability to override or add functionalities.
 
-Lastly skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
+Lastly, skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
+
+#### Buff and Combo System
+In WoW most combo are as following:
+Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells cost 99 less mana. Skill 2 - Chain Heal: Spell, 2.5 sec cast, Heals the friendly target for (140% of Spell power), then jumps to heal the 2 most injured nearby allies. Healing is reduced by 30% with each jump.
+
+Thus to achieve this Combo effect we have decided to rely on the Buff system. A buff class can be created as the super class for all buffs and buffs can be apply to any character. We recognized the fact that a buff can be applied to a character from many sources, character itself, another player, npc, world, event, etc therefore, in order to reduce tight coupling we choose to implement an observer pattern system into our buff system. Anytime a sources needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
+
+#### Controller System
+Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
+
+```Player->A_KEY->translate->MoveLeft
+AI->MOVE_ACTION_LEFT->translate->MoveLeft
+```
+
+By writing our AI and player with a mediator we essentially allows any AI to be able to take over player characters. An application of this maybe if there is only 6 player playing the game the AI could take over the rest of the 74 players and the 6 human player can proceed the game without trying to find another 74 people. Furthermore because AI is being decoupled from Characters that means we can swap out an easy AI for an hard AI dynamically.
 
 
 ## Skill Structures
@@ -218,7 +233,7 @@ Leap behind your target, stunning them momentarily, if used while stealthed, the
 ##### Transfusion - Single-Target Ranged Spell and Heal
 Cause minor damage to the target, healing self and nearest ally by twice the damage done.
 
-##### My life for Theirs - Area of Effect Heal
+##### My Life for Theirs - Area of Effect Heal
 Sacrifice a percentage of hp to heal nearby allies for a total of a multiple of the amount sacrificed.
 
 ##### Ring of Blood - Area of Effect Blocking Spell
@@ -226,6 +241,16 @@ Generate a circle of blood that costs a percentage of life in order to create an
 
 ##### Hemo Shield - Single-Target Shielding Spell
 Blood spilled to guard the target, generating a protective shell based on hp lost by the blood priest.
+
+
+#### Racial Abilities
+Racial abilities can be used by any one member of a faction but all members of that faction share a cooldown. This ability has a long cooldown and should be saved for an important moment.
+
+##### Orc - Warcry
+All the orcs let out a fierce warcry increasing damage output and temporarily becoming immune to any interruptions.
+
+##### Dwarf - Stone Skin
+The dwarves receive inspiration from their earthen roots and gain a temporary shield equal to their max health and become immune to any movement impairing effects.
 
 # Tools
 
