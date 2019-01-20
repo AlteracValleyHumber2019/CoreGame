@@ -64,6 +64,77 @@ Each class should at the minimum have 4 skills that fit their kit described abov
 
 # Gameplay
 
+## Optimization
+
+Because this game will be a 40 vs 40 player MMO, optimization is vital. The global game data will be handled by a world server providing and updating all data in the game. The client will pull 2 sets of data within each update: Global data and Local data.
+
+Global data is data that should be known by every player in the game at all time. For example which team owns which graveyard and how much resource does a said team have.
+Local data is data that are important to a specific client but may not be important for another client. For example a player will only receive data that is related to events that happen near them within a radius.
+
+## Object Inheritance Hierarchy
+
+#### Capture Points
+
+##### Graveyards
+Capturing a Graveyard increases the global pressence of a team by giving them more respawn options.
+
+##### Towers
+Towers contain archers which fire arrows at enemies in the area.
+
+#### Actions
+##### Mobility
+Moving around based on directional input.
+
+##### Auto Attack
+While a target is within a valid distance, it will take damage from basic attacks.
+
+##### Dying
+When health hits 0, a unit dies.
+
+##### Respawning
+After a timer is completed, dead players come back to life at the nearest Graveyard.
+
+##### Capturing
+While a player is close enough to a valid capturable point, they will assist in the process of gaining poccession.
+
+##### Abilities
+###### Single Target
+Usually deals high damage to a single target.
+
+###### Area of Effect
+Has the capability of hitting more than one target but usually dealing less damage.
+
+##Playable Classes
+#### Knight
+Tank, primarily the front-line of the battles, quickly closes gap to initiate battles.
+
+#### Mage
+High ranged damage dealing class with escape moves.
+
+#### Assassin
+Stealthy high single target damage melee character.
+
+#### Healer
+Back line supportive class, recovers health and provides defensive buffs.
+
+## Skill Structures
+Each class will have their own unique skill sets(4 in total) however there are some similarities. Each character class, aside from healer, would have 1 single target ability and 1 AoE target ability along with 2 special case skills. See details below.
+
+#### Knight
+##### Assault - Single-Target Melee Attack
+The Knight fiercly swings his weapon letting out a grunt and dealing heavy damage and increasing the odds of NPC enemies targeting him.
+
+##### Shockwave - Area of Effect Stun
+The Knight slams his shield into the ground causing the earth to tremor. Enemies caught in the blast are briefly stunned and take some damage.
+
+##### Bum Rush - Single-Target Gap Closer
+The Knight charges forward at his target dealing high damage and become slowed for a few seconds.
+
+##### Will of Iron
+The Knight is granted increased defenses for a small period of time. Nearby allies will also receive a minor version of this buff. Has a long cooldown.
+
+
+
 # Tools
 
 # Graphics
