@@ -125,7 +125,8 @@ Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classe
 
 #### JSON file
 
-```Knight {
+```
+Knight {
 Move: 		“MoveStrategy1”,
 Die:		“DieStrategy2,
 AutoAttack: 	“AutoAttackStrategy2”,
@@ -143,7 +144,8 @@ Respawn:	“RespawnStrategy1”
 #### Character factory
 
 
-```MakeCharacter(file_path, name) {
+```
+MakeCharacter(file_path, name) {
 	// In the actual factory function there will be a switch statement that creates different
 	// strategies classes base on the JSON file input
 	
@@ -157,7 +159,8 @@ Respawn:	“RespawnStrategy1”
 
 #### Character class usage
 
-```Character new_char = CharacterFactory::MakeCharacter(path, “Knight”);
+```
+Character new_char = CharacterFactory::MakeCharacter(path, “Knight”);
 new_char->Move();
 new_char->AutoAttack();
 new_char->Die();
@@ -168,6 +171,8 @@ We also recognized that there will be some cases where defining specific traits 
 
 Lastly, skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
 
+![UnitUML](/new.png)
+
 #### Buff and Combo System
 In WoW most combo are as following:
 Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells cost 99 less mana. Skill 2 - Chain Heal: Spell, 2.5 sec cast, Heals the friendly target for (140% of Spell power), then jumps to heal the 2 most injured nearby allies. Healing is reduced by 30% with each jump.
@@ -177,7 +182,8 @@ Thus to achieve this Combo effect we have decided to rely on the Buff system. A 
 #### Controller System
 Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
 
-```Player->A_KEY->translate->MoveLeft
+```
+Player->A_KEY->translate->MoveLeft
 AI->MOVE_ACTION_LEFT->translate->MoveLeft
 ```
 
