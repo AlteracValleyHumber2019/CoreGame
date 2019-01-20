@@ -5,15 +5,18 @@ _**This chunk of information is taken straight from the assignment document, fur
 A single GDD placed as the readme for the repository for this project on GitHub. K-kruusi
 invited to the repo as a contributor. Your name included in the readme, and a brief
 description of your contribution submitted on blackboard.
-Introduction
+
+##Introduction
 High up in the snowy mountains of Alterac Valley, there exists an eternal conflict between
 the Dwarves of the Alliance and the Frost Wolf Orc Tribe of the Horde. Players must choose
 a faction and a character representing one of the four arch-types: Tank, Healer, Mage, and
 Assassin; and assist their faction leader in capturing dominion of all Alterac Valley.
+
 ## Background
 Modeled after Alterac Valley from World of Warcraft, your game will have a much smaller
 scope. No persistent characters, no inventory or gear. Just Orcs Vs Dwarves locked in epic
 battle for now.
+
 ## Game Mechanics
 1. Team - When joining players must choose a faction; Horde or Alliance
 1. Unit - After picking a faction players must choose a role.
@@ -34,15 +37,19 @@ are guarded by 1 Advisor for each active tower that faction has. Itâ€™s alm
 kill the general with multiple advisors up.
 1. Spawn Location - Players start the match at an uncapturable graveyard just outside of
 their main base. If their team controls no graveyards players will spawn at the entrance.
+
 ## Genre
 40 vs 40 Cooperative competitive multiplayer game.
+
 ## Characters
 1. Knight - High Passive Survivability, Low Damage, Disruption
 1. Mage - High Damage, Cooldown-Based Survivability, Range
 1. Assassin - High Damage, High Mobility, Disruption
 1. Priest - Ability to Heal Self/Others, Range
+
 ## Abilities
 Each class should at the minimum have 4 skills that fit their kit described above.
+
 ## Controls
 1. Standard World of Warcraft like controls.
 1. WASD movement.
@@ -51,6 +58,7 @@ Each class should at the minimum have 4 skills that fit their kit described abov
 1. Menu for game settings
 1. Menu for starting / joining a game
 1. Escape for seeing the score + metagame information like HKs, killing blows etc.
+
 ## UI
 1. Health of self
 1. Resource (aka mana) of self
@@ -66,30 +74,34 @@ Each class should at the minimum have 4 skills that fit their kit described abov
 
 ## Optimization
 
-Because this game will be a 40 vs 40 player MMO, optimization is vital. The global game data will be handled by a world server providing and updating all data in the game. The client will pull 2 sets of data within each update: Global data and Local data.
+Optimization is vital for this game as it will be a 40 vs. 40 player online action game. 
+The global game data will be handled by a world server providing and updating all data in the game. 
+The client will pull 2 sets of data within each update: Global data and Local data.
 
-Global data is data that should be known by every player in the game at all time. For example which team owns which graveyard and how much resource does a said team have.
-Local data is data that are important to a specific client but may not be important for another client. For example a player will only receive data that is related to events that happen near them within a radius.
+Global data should be known by every player in the game at all times. 
+For example which team owns which graveyard or the amount of resources each team has in their banks.
+
+Local data are important to a specific client but may not be important for another client. 
+For example a player will only receive data that is related to events that happen near them within a specific radius.
 
 ## Object Inheritance Hierarchy
 
-#### Capture Points
-
+#### **Capture Points**
 ##### Graveyards
 Capturing a Graveyard increases the global pressence of a team by giving them more respawn options.
 
 ##### Towers
 Towers contain archers which fire arrows at enemies in the area.
 
-#### Actions
+#### **Actions**
 ##### Mobility
 Moving around based on directional input.
 
 ##### Auto Attack
-While a target is within a valid distance, it will take damage from basic attacks.
+While a target is within a valid distance, it will take damage from basic attacks without the user having to add input.
 
 ##### Dying
-When health hits 0, a unit dies.
+When health hits 0, a unit dies and can respawn at a graveyard.
 
 ##### Respawning
 After a timer is completed, dead players come back to life at the nearest Graveyard.
@@ -97,16 +109,16 @@ After a timer is completed, dead players come back to life at the nearest Gravey
 ##### Capturing
 While a player is close enough to a valid capturable point, they will assist in the process of gaining posession.
 
-##### Abilities
-###### Single Target
+##### **Abilities**
+###### Single Target Attack
 Usually deals high damage to a single target.
 
-###### Area of Effect
-Has the capability of hitting more than one target but usually dealing less damage.
+###### Area of Effect Attack
+This attack has the capability of hitting more than one target but usually dealing less damage than single target attacks.
 
 ## Playable Classes
 #### Knight
-Tank, primarily the front-line of the battles, quickly closes gap to initiate battles.
+Tank, primarily the front-line of battles, quickly closes gap to initiate combat.
 
 #### Scholar
 High ranged damage dealing class with escape moves.
@@ -118,10 +130,16 @@ Stealthy high single target damage melee character.
 Back line supportive class, recovers health and provides defensive buffs.
 
 
-## Character Inheritance
-All the characters(Player, NPC) in the game will use a class(Or one of its specialized subclass) called Character. The Character base class would have some common behaviour functions such as Moving, Dying, AutoAttack, Respawning, etc. Character will also have some basic members such as a mesh an animation etc. Since every class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
-For example: A Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
-Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file(See example below). Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
+## **Character Inheritance**
+All the characters (Players and NPCs) in the game will use a class (or one of its specialized subclass) called Character. 
+The Character base class will have common behaviour functions such as Moving, Dying, AutoAttack and Respawning. 
+Character will also have some basic members such as a mesh, animations etc. Since every player class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
+For example, a Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 
+while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. 
+The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
+Furthermore, because most Class/NPC behaviours are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. 
+This flexibility enables us the ability to easily define class archetype in a JSON file (see example below). 
+Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and change a single line of our game code.
 
 #### JSON file
 
@@ -167,98 +185,114 @@ new_char->Die();
 new_char->Respawn();
 ```
 
-We also recognized that there will be some cases where defining specific traits of certain archetype may be difficult when using the strategy pattern above alone. Thus all the base function in character class like Move, AutoAttack, Die, and respawn are overridable. Thus we can derive a subclass from Character class for example: Character (Derive)-> SpecialCharacter. And since SpecialCharacter is a child class from the base class Character; it may also use the same strategy classes while also having the ability to override or add functionalities.
+We also recognized that there will be some cases where defining specific traits of a certain archetype may be difficult when using the strategy pattern above. 
+As such, all the base functions in the character class like Move, AutoAttack, Die, and Respawn can be overwritten. This allows us to derive a subclass from the Character class, for example: Character (Derive)-> SpecialCharacter. 
+And since SpecialCharacter is a child class from the base class Character, it may also use the same strategy classes while also having the ability to override or add functionalities.
 
-Lastly, skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
+Lastly, skills are handled differently from strategies. Each Character object will contain a list (std::vector object) of Skill based object. 
+A Skill object contains some basic information about a skill/ability such as if the damage range is area of effect or single target. 
+Skill class will also have a mandatory pure virtual function to define how a skill should be invoked (does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
 
 ![UnitUML](/new.png)
 
 #### Buff and Combo System
-In WoW most combo are as following:
-Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells cost 99 less mana. Skill 2 - Chain Heal: Spell, 2.5 sec cast, Heals the friendly target for (140% of Spell power), then jumps to heal the 2 most injured nearby allies. Healing is reduced by 30% with each jump.
+In World of Warcraft, most combos are as following:
+Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells cost 99 less mana. 
+Skill 2 - Chain Heal: Spell, 2.5 sec cast, Heals the friendly target for (140% of Spell power), then jumps to heal the 2 most injured nearby allies. 
+Healing is reduced by 30% with each jump.
 
-Thus to achieve this Combo effect we have decided to rely on the Buff system. A buff class can be created as the super class for all buffs and buffs can be apply to any character. We recognized the fact that a buff can be applied to a character from many sources, character itself, another player, npc, world, event, etc therefore, in order to reduce tight coupling we choose to implement an observer pattern system into our buff system. Anytime a sources needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
+Thus to achieve this combo effect, we have decided to rely on the Buff system. 
+A buff class can be created as the super class for all buffs and can be apply to any character. 
+We recognized the fact that a buff can be applied to a character from many sources, such as the character itself, another player, an npc, the world or an event. 
+Therefore, to reduce tight coupling we chose to implement an observer pattern system into our buff system. 
+Anytime a source needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object 
+then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
 
 #### Controller System
-Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
+Both the AI and players control some form of Character class in game, thus it would make sense to say that Characters are simply in game controllable objects. 
+Objects can be controlled, they can be ordered to do things but they should not be able to control themselves (otherwise AI would be tightly coupled with Character which would be undesirable). 
+Hence we decided to make the AI and player classes both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. 
+All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions,
+translate them and calls the correct function in a Character class, for example:
 
 ```
 Player->A_KEY->translate->MoveLeft
 AI->MOVE_ACTION_LEFT->translate->MoveLeft
 ```
 
-By writing our AI and player with a mediator we essentially allows any AI to be able to take over player characters. An application of this maybe if there is only 6 player playing the game the AI could take over the rest of the 74 players and the 6 human player can proceed the game without trying to find another 74 people. Furthermore because AI is being decoupled from Characters that means we can swap out an easy AI for an hard AI dynamically.
-
+By writing our AI and player classes with a mediator, we essentially allow any AI to be able to take over player characters. 
+An application of this may be if there are only 6 players playing the game, the AI could take over the remaining 74 players and the 6 human player can proceed to play the game without trying to find another 74 people. 
+Furthermore, because AI is being decoupled from the Character class, we can swap out an easy AI for an hard AI dynamically.
 
 ## Skill Structures
-Each class will have their own unique skill sets(4 in total) however there are some similarities. Each character class, aside from healer, would have 1 single target ability and 1 AoE target ability along with 2 special case skills. See details below.
+Each class will have their own unique skill sets (4 in total) however there are some similarities. 
+Each character class, aside from healer, will have one single target ability and one area of effect target ability along with 2 special case skills. See details below.
 
-#### Knight
+#### **Knight**
 ##### Crippling Blow - Single-Target Melee Attack
 The Knight fiercly swings his weapon letting out a grunt and dealing heavy damage and increasing the odds of NPC enemies targeting him.
-If the target is a player, it will slow them.
+If the target is a player, it will slow their movement rate.
 
 ##### Sundering Strike - Area of Effect Stun
 The Knight slams his shield into the ground causing the earth to tremor. Enemies caught in the blast are briefly stunned and take some damage.
 
 ##### Bum Rush - Single-Target Gap Closer
-The Knight charges forward at his target dealing high damage and become slowed for a few seconds.
+The Knight charges forward at his target dealing high damage and becomes slowed for a few seconds.
 
 ##### Will of Iron
-The Knight is granted increased defenses for a small period of time. Nearby allies will also receive a minor version of this buff. Has a long cooldown.
+The Knight is granted increased defenses for a short period of time. Nearby allies will also receive a minor version of this buff. Has a long cooldown.
 
-
-#### Scholar/ Elementalist
+#### **Scholar/ Elementalist**
 ##### Incinerate - Single-Target Ranged Spell
-Deals damage to a target from a distance. Applies a small damage over time. For each target that has this debuff the Scholar moves faster.
+Deals damage to a target from a distance. Applies a small damage over time effect. For each target that has this debuff, the Scholar moves faster.
 
 ##### Boulder Toss - Area of Effect Range Spell
 Summon a giagantic boulder and hurl it at a target area dealing damage to and knocking down enemies hit.
 
 ##### Time Skip - Blink Spell
-The Scholar warps foward in time moving his own position forward a set distance and slightly reducing the remaining cooldown of his most recent ability.
+The Scholar warps foward in time, moving his own position forward a set distance and slightly reducing the remaining cooldown of his most recent ability.
 
 ##### Impaling Ice - Area of Effect Range Spell
-Large Icicles rain from the sky dealing damage and slowing enemies hit.
+Large icicles rain from the sky dealing damage and slowing enemies hit.
 
-
-#### Assassin
+#### **Assassin**
 ##### Where it Counts - Single-Target Melee Attack
 Attack an enemy’s vitals, dealing large amounts of damage (bonus damage used while stealthed).
 
 ##### Nerve Strike - Single-Target Melee Attack
-Interrupt spell-casting and cause the target to suffer nerve damage over time. If used while stealth nerve strike does more damage and nerve damage persists longer
+Interrupt spell-casting and cause the target to suffer nerve damage over time. If used while stealth, nerve strike does more damage and nerve damage persists longer
 
 ##### Stalk - Stealth Ability
-Stalk your prey, masking your presence completely to enemies, if targeting an enemy before casting, mark the target increasing all of your damage to them for a duration once you finish stalking. They may not know where you are but they know they are being hunted!
+Stalk your prey, masking your presence completely to enemies. If targeting an enemy before casting, this ability marks the target, increasing all of your damage to them for a duration once you finish stalking. 
+They may not know where you are but they know they are being hunted!
 
 ##### In For the Kill - Speed-up Ability
-Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will be increased/guaranteed crit If you are stalking the target in for the kill consumes the damage bonus of stalking and causes large damage.
+Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will have increased damage/ be a guaranteed critical hit. 
+If you are stalking the target, in for the kill consumes the damage bonus of stalking and causes larger damage.
 
-
-#### Blood Priest
+#### **Blood Priest**
 ##### Transfusion - Single-Target Ranged Spell and Heal
-Cause minor damage to the target, healing nearest ally by twice the damage done. Heals self by an amount.
+Cause minor damage to the target, healing the nearest ally by twice the damage done. Heals self by an amount.
 
 ##### My Life for Theirs - Area of Effect Heal
-Sacrifice a percentage of hp to heal nearby allies for a total of a multiple of the amount sacrificed. Heals self based on amount of
-allies healed.
+Sacrifice a percentage of hit points to heal nearby allies for a total of a multiple of the amount sacrificed. Heals self based on the amount of allies healed.
 
 ##### Ring of Blood - Area of Effect Blocking Spell
-Generate a circle of blood that costs a percentage of life in order to create an impassable ring that also makes the caster untargetable, should an enemy remain within the ring, they will not be able to exit, but will be able to attack the caster.
+Generate a circle of blood that costs a percentage of life in order to create an impassable ring that also makes the caster untargetable.
+Should an enemy remain within the ring, they will not be able to exit, but will be able to attack the caster.
 
 ##### Hemo Shield - Single-Target Shielding Spell
-Blood spilled guards the target, generating a protective shell based on hp lost by the blood priest.
+Blood spilled guards the target, generating a protective shell based on hit points lost by the blood priest.
 
 
-#### Racial Abilities
+#### **Racial Abilities**
 Racial abilities can be used by any one member of a faction but all members of that faction share a cooldown. This ability has a long cooldown and should be saved for an important moment.
 
 ##### Orc - Warcry
-All the orcs let out a fierce warcry increasing damage output and temporarily becoming immune to any interruptions.
+All the orcs let out a fierce warcry, increasing damage output and temporarily becoming immune to any interruptions.
 
 ##### Dwarf - Stone Skin
-The dwarves receive inspiration from their earthen roots and gain a temporary shield equal to their max health and become immune to any movement impairing effects.
+The dwarves receive inspiration from their earthen roots and gain a temporary shield equal to their maximum health and become immune to any movement impairing effects.
 
 # Tools
 
@@ -266,8 +300,13 @@ The dwarves receive inspiration from their earthen roots and gain a temporary sh
 
 # **Networking**
 
+The following section will detail the required components and systems to be build to allow for networked multiplayer between up to 80 unique players. 
+To achieve such a network, we will develop a TCP server to allow users to login and a UDP server to allow communication between players during the game.
+Multi-threading will be mandatory to allow for connections between the player's client and the different servers they will need to connect to at login and during gameplay. 
+Finally, we will create a database using my SQL that will store player account login information and some basic player statistics. 
+Below, each of these three main sections (servers, multi-threading and databases) will be detailed in full.
+
 ## **TCP Server**
-test
 Used for when the player logs in or logs out of the game (need safe and reliable connection to server) and when they choose what game they will play in and also what their character / class will be before the game begins.
 
 1. Player information (username, password, email).
