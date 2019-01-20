@@ -116,6 +116,9 @@ Usually deals high damage to a single target.
 ###### Area of Effect Attack
 This attack has the capability of hitting more than one target but usually dealing less damage than single target attacks.
 
+###### Buff Spells
+These spells will provide enhancements to a target, by either boosting their stats or adding a unique enhancement to them.
+
 ## Playable Classes
 #### Knight
 Tank, primarily the front-line of battles, quickly closes gap to initiate combat.
@@ -134,6 +137,7 @@ Back line supportive class, recovers health and provides defensive buffs.
 All the characters (Players and NPCs) in the game will use a class (or one of its specialized subclass) called Character. 
 The Character base class will have common behaviour functions such as Moving, Dying, AutoAttack and Respawning. 
 Character will also have some basic members such as a mesh, animations etc. Since every player class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
+
 For example, a Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 
 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. 
 The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
@@ -257,7 +261,7 @@ Large icicles rain from the sky dealing damage and slowing enemies hit.
 
 #### **Assassin**
 ##### Where it Counts - Single-Target Melee Attack
-Attack an enemy’s vitals, dealing large amounts of damage (bonus damage used while stealthed).
+Attack an enemy’s vitals, dealing large amounts of damage (bonus damage if used while stealthed).
 
 ##### Nerve Strike - Single-Target Melee Attack
 Interrupt spell-casting and cause the target to suffer nerve damage over time. If used while stealth, nerve strike does more damage and nerve damage persists longer
