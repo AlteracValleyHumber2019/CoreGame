@@ -30,7 +30,7 @@ tower can be killed but will respawn if the tower stands. Towers do not respawn.
 with their own faction buff. Captains can be attacked by opposing side, after dying they
 do not respawn.
 1. Generals - Defeating the general of the opposing faction wins the game.The Generals
-are guarded by 1 Advisor for each active tower that faction has. Itâ€™s almost impossible to
+are guarded by 1 Advisor for each active tower that faction has. ItÃ¢â‚¬â„¢s almost impossible to
 kill the general with multiple advisors up.
 1. Spawn Location - Players start the match at an uncapturable graveyard just outside of
 their main base. If their team controls no graveyards players will spawn at the entrance.
@@ -121,22 +121,22 @@ Back line supportive class, recovers health and provides defensive buffs.
 ## Character Inheritance
 All the characters(Player, NPC) in the game will use a class(Or one of its specialized subclass) called Character. The Character base class would have some common behaviour functions such as Moving, Dying, AutoAttack, Respawning, etc. Character will also have some basic members such as a mesh an animation etc. Since every class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
 For example: A Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
-Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file(See example below). Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
+Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file(See example below). Should there ever be a need to change these classesâ€™ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
 
 #### JSON file
 
 ```Knight {
-Move: 		“MoveStrategy1”,
-Die:		“DieStrategy2,
-AutoAttack: 	“AutoAttackStrategy2”,
-Respawn:	“RespawnStrategy4”
+Move: 		â€œMoveStrategy1â€,
+Die:		â€œDieStrategy2,
+AutoAttack: 	â€œAutoAttackStrategy2â€,
+Respawn:	â€œRespawnStrategy4â€
 }
 
 Mage {
-Move: 		“MoveStrategy1”,
-Die:		“DieStrategy3,
-AutoAttack: 	“AutoAttackStrategy2”,
-Respawn:	“RespawnStrategy1”
+Move: 		â€œMoveStrategy1â€,
+Die:		â€œDieStrategy3,
+AutoAttack: 	â€œAutoAttackStrategy2â€,
+Respawn:	â€œRespawnStrategy1â€
 }
 ```
 
@@ -149,7 +149,7 @@ Respawn:	“RespawnStrategy1”
 	
 	Character c = new Character();
 	c.SetMoveStrategy(new MoveStrategy1());
-	// etc…
+	// etcâ€¦
 
 	return c;
 }
@@ -157,7 +157,7 @@ Respawn:	“RespawnStrategy1”
 
 #### Character class usage
 
-```Character new_char = CharacterFactory::MakeCharacter(path, “Knight”);
+```Character new_char = CharacterFactory::MakeCharacter(path, â€œKnightâ€);
 new_char->Move();
 new_char->AutoAttack();
 new_char->Die();
@@ -175,7 +175,7 @@ Skill 1 - Blessing of Lower City: Spell, duration 15 sec, Your healing spells co
 Thus to achieve this Combo effect we have decided to rely on the Buff system. A buff class can be created as the super class for all buffs and buffs can be apply to any character. We recognized the fact that a buff can be applied to a character from many sources, character itself, another player, npc, world, event, etc therefore, in order to reduce tight coupling we choose to implement an observer pattern system into our buff system. Anytime a sources needs to invoke a buff on one or more characters it will broadcast its message onto the central buff observer object then the observer object will broadcast the message to the appropriate Character classes. This way the Character buff will never need to know who invoked it.
 
 #### Controller System
-Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern “translator” will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
+Both AI and player controls some form of Character class in game thus it would make sense to say that Characters are simply in game controllable objects. Object can be controlled, they can be ordered to do things but they should not be able to control itself(Otherwise AI would be tightly coupled with Character which would be undesirable). Hence we decided to make AI and player both controllers. Controllers in this context do not necessarily have to have the same base class: a player controller may not need to have the same base as an AI controller. All they must do is send instructions. A mediator pattern â€œtranslatorâ€ will then take the input of these instructions either from AI or player or anything else that can send instructions translate them and calls the correct function in a Character class for example:
 
 ```Player->A_KEY->translate->MoveLeft
 AI->MOVE_ACTION_LEFT->translate->MoveLeft
@@ -188,10 +188,11 @@ By writing our AI and player with a mediator we essentially allows any AI to be 
 Each class will have their own unique skill sets(4 in total) however there are some similarities. Each character class, aside from healer, would have 1 single target ability and 1 AoE target ability along with 2 special case skills. See details below.
 
 #### Knight
-##### Assault - Single-Target Melee Attack
+##### Crippling Blow - Single-Target Melee Attack
 The Knight fiercly swings his weapon letting out a grunt and dealing heavy damage and increasing the odds of NPC enemies targeting him.
+If the target is a player, it will slow them.
 
-##### Shockwave - Area of Effect Stun
+##### Sundering Strike - Area of Effect Stun
 The Knight slams his shield into the ground causing the earth to tremor. Enemies caught in the blast are briefly stunned and take some damage.
 
 ##### Bum Rush - Single-Target Gap Closer
@@ -217,7 +218,7 @@ Large Icicles rain from the sky dealing damage and slowing enemies hit.
 
 #### Assassin
 ##### Where it Counts - Single-Target Melee Attack
-Attack an enemy’s vitals, dealing large amounts of damage (bonus damage used while stealthed).
+Attack an enemyâ€™s vitals, dealing large amounts of damage (bonus damage used while stealthed).
 
 ##### Nerve Strike - Single-Target Melee Attack
 Interrupt spell-casting and cause the target to suffer nerve damage over time. If used while stealth nerve strike does more damage and nerve damage persists longer
@@ -226,21 +227,22 @@ Interrupt spell-casting and cause the target to suffer nerve damage over time. I
 Stalk your prey, masking your presence completely to enemies, if targeting an enemy before casting, mark the target increasing all of your damage to them for a duration once you finish stalking. They may not know where you are but they know they are being hunted!
 
 ##### In For the Kill - Speed-up Ability
-Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will be increased/guaranteed crit (if stalk is chosen as the stealth ability, in for the kill consumes the damage bonus of stalking and causes in for the kill to do large damage.
+Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will be increased/guaranteed crit If you are stalking the target in for the kill consumes the damage bonus of stalking and causes large damage.
 
 
 #### Blood Priest
 ##### Transfusion - Single-Target Ranged Spell and Heal
-Cause minor damage to the target, healing self and nearest ally by twice the damage done.
+Cause minor damage to the target, healing nearest ally by twice the damage done. Heals self by an amount.
 
 ##### My Life for Theirs - Area of Effect Heal
-Sacrifice a percentage of hp to heal nearby allies for a total of a multiple of the amount sacrificed.
+Sacrifice a percentage of hp to heal nearby allies for a total of a multiple of the amount sacrificed. Heals self based on amount of
+allies healed.
 
 ##### Ring of Blood - Area of Effect Blocking Spell
 Generate a circle of blood that costs a percentage of life in order to create an impassable ring that also makes the caster untargetable, should an enemy remain within the ring, they will not be able to exit, but will be able to attack the caster.
 
 ##### Hemo Shield - Single-Target Shielding Spell
-Blood spilled to guard the target, generating a protective shell based on hp lost by the blood priest.
+Blood spilled guards the target, generating a protective shell based on hp lost by the blood priest.
 
 
 #### Racial Abilities
