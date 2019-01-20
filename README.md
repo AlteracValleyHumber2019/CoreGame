@@ -108,13 +108,13 @@ Has the capability of hitting more than one target but usually dealing less dama
 #### Knight
 Tank, primarily the front-line of the battles, quickly closes gap to initiate battles.
 
-#### Mage
+#### Scholar
 High ranged damage dealing class with escape moves.
 
 #### Assassin
 Stealthy high single target damage melee character.
 
-#### Healer
+#### Blood Priest
 Back line supportive class, recovers health and provides defensive buffs.
 
 ## Skill Structures
@@ -133,8 +133,8 @@ The Knight charges forward at his target dealing high damage and become slowed f
 ##### Will of Iron
 The Knight is granted increased defenses for a small period of time. Nearby allies will also receive a minor version of this buff. Has a long cooldown.
 
-#### Scholar/ Elementalist
 
+#### Scholar/ Elementalist
 ##### Incinerate - Single-Target Ranged Spell
 Deals damage to a target from a distance. Applies a small damage over time. For each target that has this debuff the Scholar moves faster.
 
@@ -147,8 +147,8 @@ The Scholar warps foward in time moving his own position forward a set distance 
 ##### Impaling Ice - Area of Effect Range Spell
 Large Icicles rain from the sky dealing damage and slowing enemies hit.
 
-#### Assassin
 
+#### Assassin
 ##### Where it Counts - Single-Target Melee Attack
 Attack an enemy’s vitals, dealing large amounts of damage (bonus damage used while stealthed).
 
@@ -161,8 +161,8 @@ Stalk your prey, masking your presence completely to enemies, if targeting an en
 ##### In For the Kill - Speed-up Ability
 Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will be increased/guaranteed crit (if stalk is chosen as the stealth ability, in for the kill consumes the damage bonus of stalking and causes in for the kill to do large damage.
 
-#### Blood Priest
 
+#### Blood Priest
 ##### Transfusion - Single-Target Ranged Spell and Heal
 Cause minor damage to the target, healing self and nearest ally by twice the damage done.
 
