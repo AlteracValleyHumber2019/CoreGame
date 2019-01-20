@@ -173,7 +173,6 @@ Lastly, skills are handled differently from strategies. Each Character object wi
 #### Concept UML
 
 ![UnitUML](/new.png)
-Format: ![Alt Text](url)
 
 #### Buff and Combo System
 In WoW most combo are as following:
