@@ -133,7 +133,47 @@ The Knight charges forward at his target dealing high damage and become slowed f
 ##### Will of Iron
 The Knight is granted increased defenses for a small period of time. Nearby allies will also receive a minor version of this buff. Has a long cooldown.
 
+#### Scholar/ Elementalist
 
+##### Incinerate - Single-Target Ranged Spell
+Deals damage to a target from a distance. Applies a small damage over time. For each target that has this debuff the Scholar moves faster.
+
+##### Boulder Toss - Area of Effect Range Spell
+Summon a giagantic boulder and hurl it at a target area dealing damage to and knocking down enemies hit.
+
+##### Time Skip - Blink Spell
+The Scholar warps foward in time moving his own position forward a set distance and slightly reducing the remaining cooldown of his most recent ability.
+
+##### Impaling Ice - Area of Effect Range Spell
+Large Icicles rain from the sky dealing damage and slowing enemies hit.
+
+#### Assassin
+
+##### Where it Counts - Single-Target Melee Attack
+Attack an enemy’s vitals, dealing large amounts of damage (bonus damage used while stealthed).
+
+##### Nerve Strike - Single-Target Melee Attack
+Interrupt spell-casting and cause the target to suffer nerve damage over time. If used while stealth nerve strike does more damage and nerve damage persists longer
+
+##### Stalk - Stealth Ability
+Stalk your prey, masking your presence completely to enemies, if targeting an enemy before casting, mark the target increasing all of your damage to them for a duration once you finish stalking. They may not know where you are but they know they are being hunted!
+
+##### In For the Kill - Speed-up Ability
+Leap behind your target, stunning them momentarily, if used while stealthed, the next strike you land will be increased/guaranteed crit (if stalk is chosen as the stealth ability, in for the kill consumes the damage bonus of stalking and causes in for the kill to do large damage.
+
+#### Blood Priest
+
+##### Transfusion - Single-Target Ranged Spell and Heal
+Cause minor damage to the target, healing self and nearest ally by twice the damage done.
+
+##### My life for Theirs - Area of Effect Heal
+Sacrifice a percentage of hp to heal nearby allies for a total of a multiple of the amount sacrificed.
+
+##### Ring of Blood - Area of Effect Blocking Spell
+Generate a circle of blood that costs a percentage of life in order to create an impassable ring that also makes the caster untargetable, should an enemy remain within the ring, they will not be able to exit, but will be able to attack the caster.
+
+##### Hemo Shield - Single-Target Shielding Spell
+Blood spilled to guard the target, generating a protective shell based on hp lost by the blood priest.
 
 # Tools
 
