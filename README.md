@@ -104,7 +104,7 @@ Usually deals high damage to a single target.
 ###### Area of Effect
 Has the capability of hitting more than one target but usually dealing less damage.
 
-##Playable Classes
+## Playable Classes
 #### Knight
 Tank, primarily the front-line of the battles, quickly closes gap to initiate battles.
 
@@ -116,6 +116,58 @@ Stealthy high single target damage melee character.
 
 #### Blood Priest
 Back line supportive class, recovers health and provides defensive buffs.
+
+
+## Character Inheritance
+All the characters(Player, NPC) in the game will use a class(Or one of its specialized subclass) called Character. The Character base class would have some common behaviour functions such as Moving, Dying, AutoAttack, Respawning, etc. Character will also have some basic members such as a mesh an animation etc. Since every class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
+For example: A Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
+Furthermore, because most Class/NPC behaviour are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. This flexibility enables us the ability to easily define class archetype in a JSON file(See example below). Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and potentially not have to change a single line of our game code.
+
+#### JSON file
+
+```Knight {
+Move: 		“MoveStrategy1”,
+Die:		“DieStrategy2,
+AutoAttack: 	“AutoAttackStrategy2”,
+Respawn:	“RespawnStrategy4”
+}
+
+Mage {
+Move: 		“MoveStrategy1”,
+Die:		“DieStrategy3,
+AutoAttack: 	“AutoAttackStrategy2”,
+Respawn:	“RespawnStrategy1”
+}
+```
+
+#### Character factory
+
+
+```MakeCharacter(file_path, name) {
+	// In the actual factory function there will be a switch statement that creates different
+	// strategies classes base on the JSON file input
+	
+	Character c = new Character();
+	c.SetMoveStrategy(new MoveStrategy1());
+	// etc…
+
+	return c;
+}
+```
+
+#### Character class usage
+
+```Character new_char = CharacterFactory::MakeCharacter(path, “Knight”);
+new_char->Move();
+new_char->AutoAttack();
+new_char->Die();
+new_char->Respawn();
+```
+
+We also recognized that there will be some cases where defining specific traits of certain archetype may be difficult when using the strategy pattern above alone. Thus all the base function in character class like Move, AutoAttack, Die, and respawn are overridable. Thus we can derive a subclass from Character class for example: Character (Derive)-> SpecialCharacter. And since SpecialCharacter is a child class from the base class Character; it may also use the same strategy classes while also having the ability to override or add functionalities.
+
+Lastly skills are handled differently from strategies. Each Character object will contain a list(std::vector object) of Skill based object. A Skill object contains some basic information about a skill/ability such as damage range is AoE or single target, Skill class will also have a mandatory pure virtual function to define how a skill should be invoked(Does it shoots a projectile or does it spawn a bunch of fireball that rain down from sky etc).
+
 
 ## Skill Structures
 Each class will have their own unique skill sets(4 in total) however there are some similarities. Each character class, aside from healer, would have 1 single target ability and 1 AoE target ability along with 2 special case skills. See details below.
