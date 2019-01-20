@@ -300,39 +300,50 @@ The dwarves receive inspiration from their earthen roots and gain a temporary sh
 
 # **Networking**
 
-The following section will detail the required components and systems to be build to allow for networked multiplayer between up to 80 unique players. 
-To achieve such a network, we will develop a TCP server to allow users to login and a UDP server to allow communication between players during the game.
-Multi-threading will be mandatory to allow for connections between the player's client and the different servers they will need to connect to at login and during gameplay. 
-Finally, we will create a database using my SQL that will store player account login information and some basic player statistics. 
+The following section will detail the required components and systems that will be build to allow for networked multiplayer between up to 80 unique players. 
+We will develop two servers, a TCP server for user login and a UDP server for communication between players during the game.
+Connections between the client and the different servers will be executed using multi-threading. 
+An efficient method of creating different threads will need to be designed.
+Finally, we will create a database using my SQL that will store player account login information and some basic player statistics and connect to the servers. 
 Below, each of these three main sections (servers, multi-threading and databases) will be detailed in full.
 
-## **TCP Server**
-Used for when the player logs in or logs out of the game (need safe and reliable connection to server) and when they choose what game they will play in and also what their character / class will be before the game begins.
+## **Servers**
+Alterac Valley will require two types of servers to function as efficiently and safely as possible.
 
+## **TCP Server**
+The TCP (Transmission Control Protocol) server will be used when the player logs in or out out of the game or selects what race and character class they wish to play. 
+We will use TCP because it is the safest and most reliable protocol for passing sensitive information 
+(ie. player account information such as passwords and emails) between the client and the server.
+TCP has error checking via a two way connection between the server and client, 
+which can ensure that user information is passed accurately or guarantees a player's character selection are read properly by the server. 
+While TCP is slower than other protocols, the error checking and increased reliability outweights the slower communication speed.
+To setup the TCP server, we will use SDL_net version 2.0.1 <https://www.libsdl.org/projects/SDL_net/>.
+
+Information passed with TCP:
 1. Player information (username, password, email).
 1. Player statistics (wins, loses).
 1. Character faction and class.
-1. Core UI information 
-1. Character deaths / kills for scoreboard
+1. Core UI information.
+1. Character deaths / kills for scoreboard.
+1. Tower and graveyard captures.
+1. Captain or general deaths.
 
 1. *Stretch goals: Sending messages to other players in the game. Needs to be TCP as the information must be accurate.*
 1. *Stretch goals: Character creator information*
 
 ## **UDP Server**
-
-For the gameplay (less error checking but it is much faster which is required for a game running online with 40-80 people ideally at 60 frames per second). 
-Information to be sent in data packets:
-
-1. Transform information (location and rotation).
+The UDP (User Datagram Protocol) server will be used during gameplay to pass information between the different clients in the game and the server. 
+We will use UDP for gameplay because it is very fast and can be used to send data at high frequencies (from 21 to 128 times per second). 
+This is important for online games where players need to send information about what their doing to the server at all times.
+UDP connections are not as reliable as TCP (described above) as there is no error checking. 
+This is acceptable for our purposes as the online game will be a non-deterministic simulation
+(what one player sees in their game will be very similar to what another player sees but not 100% accurate).
+  
+Information passed with UDP:
+1. Player transform information (location and rotation).
 1. Player actions (attacks, heals, captures of areas like graveyards).
 1. Buffs and debuffs (let the player know if they get a buff and how long it will last. Client will handle how the buff changes their actions).
 1. Character health (to be displayed on other players UI and to check for validity).
-
-1. *Stretch Goals: TDB*
-
-## **TCP or UDP**
-1. Broadcasting tower / graveyard captures and captain / general deaths
-1. NOTE: Logistics of sending information via TCP and UDP at the same time. Is it possible to connect players to 2 ports at the same time?
 
 ## **Database Information**
 This section will list what we will need to store in the database
@@ -344,6 +355,12 @@ MySQL is the most likely candidate - We previously used it.
 1. Game version: What patch is the game running on, does the game need to be updated
 
 1. *Stretch goals: Able to pull character creator information*
+
+## **Multi-Threading**
+To create fast and relaible threads, we will be SDL. 
+
+
+
 
 
 
