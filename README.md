@@ -345,6 +345,9 @@ Information passed with UDP:
 1. Buffs and debuffs (let the player know if they get a buff and how long it will last. Client will handle how the buff changes their actions).
 1. Character health (to be displayed on other players UI and to check for validity).
 
+## Data Transfer
+This section will describe how data is being stored the packets sent across the network and will specify how clients with receive data coming in and process the data.
+
 ## **Database Information**
 This section will list what we will need to store in the database
 MySQL is the most likely candidate - We previously used it.
