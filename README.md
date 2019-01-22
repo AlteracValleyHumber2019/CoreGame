@@ -18,8 +18,9 @@ _**This chunk of information is taken straight from the assignment document, fur
 * Arifa Tyrell
 * Sarfaraz
 * Tyler Betts-O'Donnell
-* Violet Leong
+* Violet
 * Dong Hyeong Lee
+* Ariel 
 
 ### Graphics
 * Gabriel Kalil
