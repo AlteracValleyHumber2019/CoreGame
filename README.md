@@ -361,25 +361,25 @@ The graphics section will highlight all the graphics technologies available for 
 
 ## **Engines**
 
-1. OpenGL Custom Graphics Engine - Allows for more flexibility in terms of specific requirements to the game, and can be more optmized in regards of the necessary tools. However, it's a very slow and unreliable option as it needs to be programmed from scratch.
-1. Unreal Engine 4 - UE4 already holds a powerful engine with advanced graphics pipelines and tools. It has a powerful Lighting and Rendering system, which is a perfect option for a 3D game. Some of the features included in the engine are: Sub-Surface Shading, PSO Caching (Pipeline State Object), Dynamic Resolution and Post Process Effects. A lot of those can be seen in games like Fortnite, Blade&Soul, Aion, Paragon, Gears of War4, Ark: Survival Evolved, and A Way Out.
-1. Unity Engine - Unity has a solid optmized engine and powerful editor tools to handle the graphics pipeline for the game, although not as powerful as Unreal Engine, it is still a good option. 
+* OpenGL Custom Graphics Engine - Allows for more flexibility in terms of specific requirements to the game, and can be more optmized in regards of the necessary tools. However, it's a very slow and unreliable option as it needs to be programmed from scratch.
+* Unreal Engine 4 - UE4 already holds a powerful engine with advanced graphics pipelines and tools. It has a powerful Lighting and Rendering system, which is a perfect option for a 3D game. Some of the features included in the engine are: Sub-Surface Shading, PSO Caching (Pipeline State Object), Dynamic Resolution and Post Process Effects. A lot of those can be seen in games like Fortnite, Blade&Soul, Aion, Paragon, Gears of War4, Ark: Survival Evolved, and A Way Out.
+* Unity Engine - Unity has a solid optmized engine and powerful editor tools to handle the graphics pipeline for the game, although not as powerful as Unreal Engine, it is still a good option. 
 
 ## **Animations**
 
-1. If using the Custom OpenGL engine, models will need skeletons and animations. We will then, take the spreaded out key frames of those animations and interpolate the vertex positions model (OBJ File). This will allow smoother playback with less memory usage, however it's heavy time consuming and needs specialized work with animations. An OBJ Loader tool for OpenGL will be created to work with all the vertex, texture and other pertinent data.
-1. If using Unreal Engine, we can use the Skeletal Mesh Animation System which already holds several Animation Tools and Editors already built-in.
+* If using the Custom OpenGL engine, models will need skeletons and animations. We will then, take the spreaded out key frames of those animations and interpolate the vertex positions model (OBJ File). This will allow smoother playback with less memory usage, however it's heavy time consuming and needs specialized work with animations. An OBJ Loader tool for OpenGL will be created to work with all the vertex, texture and other pertinent data.
+* If using Unreal Engine, we can use the Skeletal Mesh Animation System which already holds several Animation Tools and Editors already built-in.
 
 ## **Textures**
 
-1. Textures materials for each mesh will be loaded and assigned on Shader Trees.
-1. All textures locations of the given texture type will be iterated, loaded and generated to store the informations on the Vertex.
-1. Unreal Engine already has Texture Editor, Compression and Importing built-in.
+* Textures materials for each mesh will be loaded and assigned on Shader Trees.
+* All textures locations of the given texture type will be iterated, loaded and generated to store the informations on the Vertex.
+* Unreal Engine already has Texture Editor, Compression and Importing built-in.
 
 ## **Design Patterns expected and Bottlenecks**
 
-1. For the Models handling and loading the graphics engine needs the usage of the Flyweight Pattern to load instanced objects in the scene full of models and effects.
-1. For each character animation state, the State Pattern will be utilized, to deal with each animation state of Combat, Out-of-Combat, Idle, Walking, Running, Jumping, Attacking, Casting, etc.
+* For the Models handling and loading the graphics engine needs the usage of the Flyweight Pattern to load instanced objects in the scene full of models and effects.
+* For each character animation state, the State Pattern will be utilized, to deal with each animation state of Combat, Out-of-Combat, Idle, Walking, Running, Jumping, Attacking, Casting, etc.
 
 Performance can see a big hit depending on the amount of players and models moving at the same place on the scene. Spells and other visual elements being used on the 3D Scene will also be a bottleneck expected in terms of graphics and processing.
 
@@ -387,19 +387,19 @@ Performance can see a big hit depending on the amount of players and models movi
 
 ### **Minimum**
 
-1. OS: Windows 7 or 8
-1. Processor: Intel Core i5 2.8Ghz or similar
-1. Memory: 4GB
-1. Graphics Card: GTX 550 or similar
-1. Storage: 5GB minimum
+* OS: Windows 7 or 8
+* Processor: Intel Core i5 2.8Ghz or similar
+* Memory: 4GB
+* Graphics Card: GTX 550 or similar
+* Storage: 5GB minimum
 
 ### **Recommended**
 
-1. OS: Windows 10
-1. Processor: Intel Core i7 3.4Ghz or similar
-1. Memory: 8GB
-1. Graphics Card: GTX 760 or similar
-1. Storage: 8GB minimum
+* OS: Windows 10
+* Processor: Intel Core i7 3.4Ghz or similar
+* Memory: 8GB
+* Graphics Card: GTX 760 or similar
+* Storage: 8GB minimum
 
 # **Networking**
 
