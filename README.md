@@ -15,8 +15,8 @@ _**This chunk of information is taken straight from the assignment document, fur
 * Landon Grant 
 
 ### Tools
-* Arifa
-* Sarfaraz Syed
+* Arifa Tyrell
+* Sarfaraz
 * Tyler Betts-O'Donnell
 * Violet
 * Dong
@@ -337,6 +337,7 @@ Loading models into the game space. Being able to scale,rotate, move and determi
 A menu that has the list of objects that can be placed in the game space. A inspector that shows that parameters for the object. Example, scale, rotate, and location. Once placed in world and selected again the inspector will show all parameters plus a delete option.
 
 1. Character spawn menu (NPC, player char, animal).
+1. Terrain (forest, soil, snow covered land, water). 
 1. Asset (Tree, Rock, building, flags). 
 1. Starting point, end point, out of bounds point (Spawn points will be selected and units will keep spawn by user click).
 
@@ -354,7 +355,7 @@ Json save character stats and account of player or database(MySQL).
 contain four different particle effects which will used by certain characters in the game. The particles will be controlled with things such as their size, brightness, lifespan, speed, rotation, duration and maximum amount of particles.
 
 ## Animation System
-control animations of the player character and NPCs
+Controls animations of the player character and NPCs 
 
 ![cap1](https://user-images.githubusercontent.com/44447609/51506291-a5d70c00-1db9-11e9-8328-531cec2b63be.JPG)
 
