@@ -345,8 +345,13 @@ Information passed with UDP:
 1. Buffs and debuffs (let the player know if they get a buff and how long it will last. Client will handle how the buff changes their actions).
 1. Character health (to be displayed on other players UI and to check for validity).
 
-## Data Transfer
-This section will describe how data is being stored the packets sent across the network and will specify how clients with receive data coming in and process the data.
+### Area vs. World Servers
+To reduce the amount of information being passed around the UDP server during gameplay, we will be breaking up the main gameplay server (called the World server)
+into separate smaller servers (called Area servers). These smaller area servers will be divided up based on in-game locations that a player can explore (likely 4 to 9 areas).
+This is done because a player at the southern end of the game world does not need to know specific information about another player who is at the northern end of the map.
+As such, specific player information (transform and action information) will be passed via the area servers 
+(note: players can move between area servers as they explore the gameplay area) while general team and game information that all players need to know 
+(tower's captured or general's alive) will be passed to the world server. 
 
 ## **Database Information**
 This section will list what we will need to store in the database
@@ -392,14 +397,23 @@ And would leave a result of :
 1. LastName = Administrator
 
 ### The use of salt
-Salt is a randomly generated text that adds another layer of encryption to passwords. While this might not be required, it seems good to know it exists in case stronger encryption is required.
+Salt is a randomly generated text that adds another layer of encryption to passwords. 
+While this might not be required, it seems good to know it exists in case stronger encryption is required.
+
+
+## Data Transfer
+This section will describe how data is being stored the packets sent across the network and will specify how clients with receive data coming in and process the data.
+To keep things as efficient and as fast as possible, most information passed will be in the form of simple variables such as characters, floats and integers. 
+For passwords and more sensitive information that needs some level of basic encryption, we can use salt (described above).
 
 ## **Multi-Threading**
-To create fast and relaible threads, we will be using SDL. Similar to networking, more research will be required to fully grasp the concept of multithreading and how to use it in SDL.
-
-
-
-
+To create fast and relaible threads, we will be using the built-in threads in the standard template library (part of the <thread.h> file).
+The advantage of using multiple threads is to ensure that the core game can run smoothly on the client while accepting packets of data from the server in parallel.
+Without these separate threads, it is possible that a network connection (specifically TCP connections as the client and server must communicate back and forth for error checking) 
+can block the main thread from continuing until the next asset packet is received.
+This will cause significant slowly and result in very choppy gameplay. 
+As such, any time a network connection is made (either TCP or UDP) a new thread will be created.    
+Similar to networking, more research will be required to fully grasp the concept of multithreading and how to use it with STL.
 
 # Markup Text Examples
 
