@@ -304,11 +304,11 @@ The following section will detail the required components and systems that will 
 We will develop two servers, a TCP server for user login and a UDP server for communication between players during the game.
 Connections between the client and the different servers will be executed using multi-threading. 
 An efficient method of creating different threads will need to be designed.
-Finally, we will create a database using my SQL that will store player account login information and some basic player statistics and connect to the servers. 
+Finally, we will create a database using my SQL that will store player account login information and some basic player statistics and connect to the servers. As networking is a topic new to most of the team, we expect to spend a good amount of time researching the subject.
 Below, each of these three main sections (servers, multi-threading and databases) will be detailed in full.
 
 ## **Servers**
-Alterac Valley will require two types of servers to function as efficiently and safely as possible.
+Alterac Valley will require two types of servers to function as efficiently and safely as possible. One for passing critical information and another to send less critical information across several players.
 
 ## **TCP Server**
 The TCP (Transmission Control Protocol) server will be used when the player logs in or out out of the game or selects what race and character class they wish to play. 
@@ -359,16 +359,46 @@ MySQL is the most likely candidate - We previously used it.
 
 1. *Stretch goals: Able to pull character creator information*
 
+## On the subject of passwords
+As we will be storing critical information from our players, passwords, we will have to make use of "Hashing". Starting in SQL Server 2012, SQL offers several algorithms in regards to hashing passwords including...
+
+1. MD2, MD4, MD5
+1. SHA, SHA1
+1. SHA2_256, SHA2_512
+
+Hashing a password will not make it completely invulnerable to attacks but will make it significantly more difficult to decrypt. Using newer algorithms, in this case SHA2_512, will improve the strenght of the hash and increase security.
+
+Storing user information with SQL would look something similar to..
+
+``` 
+DECLARE @responseMessage NVARCHAR(250)
+
+EXEC dbo.uspAddUser
+          @pLogin = N'Admin',
+          @pPassword = N'123',
+          @pFirstName = N'Admin',
+          @pLastName = N'Administrator',
+          @responseMessage=@responseMessage OUTPUT
+
+SELECT *
+FROM [dbo].[User]
+``` 
+
+And would leave a result of :
+1. UserID = 1
+1. LoginName = Admin
+1. PasswordHash = 0xCD8C29B8DEED323...
+1. FirstName = Admin
+1. LastName = Administrator
+
 ## **Multi-Threading**
-To create fast and relaible threads, we will be SDL. 
+To create fast and relaible threads, we will be using SDL. Similar to networking, more research will be required to fully grasp the concept of multithreading and how to use it in SDL.
 
 
 
 
 
-
-
-# Markup Text Testing
+# Markup Text Examples
 
 Here you can find references on how to use the markup language
 
