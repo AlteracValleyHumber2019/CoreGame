@@ -391,6 +391,9 @@ And would leave a result of :
 1. FirstName = Admin
 1. LastName = Administrator
 
+### The use of salt
+Salt is a randomly generated text that adds another layer of encryption to passwords. While this might not be required, it seems good to know it exists in case stronger encryption is required.
+
 ## **Multi-Threading**
 To create fast and relaible threads, we will be using SDL. Similar to networking, more research will be required to fully grasp the concept of multithreading and how to use it in SDL.
 
