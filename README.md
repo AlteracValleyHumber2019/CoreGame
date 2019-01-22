@@ -19,7 +19,7 @@ _**This chunk of information is taken straight from the assignment document, fur
 * Sarfaraz
 * Tyler Betts-O'Donnell
 * Violet
-* Dong
+* Dong Hyeong Lee
 
 ### Graphics
 * Gabriel Kalil
