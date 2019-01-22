@@ -23,7 +23,7 @@ _**This chunk of information is taken straight from the assignment document, fur
 
 ### Graphics
 * Gabriel Kalil
-* Matthew
+* Matthew Ferreira
 * Marco
 * Peter Adams
 * Ruan
