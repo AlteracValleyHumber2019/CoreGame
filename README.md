@@ -13,6 +13,7 @@ _**This chunk of information is taken straight from the assignment document, fur
 * Jaymie
 * Jean-Francois
 * Landon Grant 
+* Brandon MacLean
 
 ### Tools
 * Arifa Tyrell
