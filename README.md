@@ -376,6 +376,9 @@ The graphics section will highlight all the graphics technologies available for 
 * If using the Custom OpenGL engine, models will need skeletons and animations. We will then, take the spreaded out key frames of those animations and interpolate the vertex positions model (OBJ File). This will allow smoother playback with less memory usage, however it's heavy time consuming and needs specialized work with animations. An OBJ Loader tool for OpenGL will be created to work with all the vertex, texture and other pertinent data.
 * If using Unreal Engine, we can use the Skeletal Mesh Animation System which already holds several Animation Tools and Editors already built-in.
 
+## **Animation - Skeleton**
+* For the creation of the animations, it would be recommended to utilize or create a skeleton that can be used to fit both types of characters for efficiency (Orcs and Dwarves) or at the very least the skeletons should fit all class types of their respected species [Dwarves and their class types share their own skeleton, Orcs and their respective classes have their own skeleton] with the base bones being the same both in name and function (head, chest, torso, hips, shoulder.L, shoulder.R, thigh.L, thigh.R, etc.) with species unique bones being extra (Dwarves for their beards, orcs might have some extra bones or not, depending one the agreed style of orc).
+
 ## **Textures**
 
 * Textures materials for each mesh will be loaded and assigned on Shader Trees.
