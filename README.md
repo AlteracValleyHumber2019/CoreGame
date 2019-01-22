@@ -345,7 +345,7 @@ A menu that has the list of objects that can be placed in the game space. A insp
 1. Starting point, end point, out of bounds point (Spawn points will be selected and units will keep spawn by user click).
 
 ## Character Editor
-Controls character stats such as requirement for Level, str, dex, int, MP (Magic/Mana/Mist Points), EXP(Experience Points), Defense Power, Evasion, and setting abilities. Also controls NPC stats ex. Guards as well.
+Controls character stats such as requirement for Level, Strength, Dexterity, Intelligence, MP (Magic/Mana/Mist Points), EXP(Experience Points), Defense Power, Evasion, and Setting abilities. Also controls NPC stats ex. Guard.
 
 ![636141782667101293](https://user-images.githubusercontent.com/44447609/51506213-2d704b00-1db9-11e9-8b00-cf2b953a8bee.jpg)
 
