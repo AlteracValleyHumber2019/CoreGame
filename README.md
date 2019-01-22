@@ -34,6 +34,7 @@ _**This chunk of information is taken straight from the assignment document, fur
 * Samuel Bujold-Bouchard
 * Mike Wells
 * Eric
+* Raphael
 * Spencer
 
 ## Deliverables
