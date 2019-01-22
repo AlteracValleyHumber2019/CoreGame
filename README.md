@@ -1,6 +1,40 @@
 # General Information
 _**This chunk of information is taken straight from the assignment document, further information about each category can be found further below**_
 
+## Development Team
+
+#### Team Lead
+* Kevin Kruusi
+
+### Gameplay
+* Nathan
+* Kesh
+* Ethan
+* Jaymie
+* Jean-Francois
+* Landon Grant 
+
+### Tools
+* Arifa
+* Sarfaraz
+* Tyler Betts-O'Donnell
+* Violet
+* Dong
+
+### Graphics
+* Gabriel Kalil
+* Matthew
+* Marco
+* Peter Adams
+* Ruan
+
+### Networking
+* Aditya Dutta
+* Samuel Bujold-Bouchard
+* Mike Wells
+* Eric
+* Spencer
+
 ## Deliverables
 A single GDD placed as the readme for the repository for this project on GitHub. K-kruusi
 invited to the repo as a contributor. Your name included in the readme, and a brief
