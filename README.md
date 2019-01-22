@@ -328,32 +328,36 @@ The dwarves receive inspiration from their earthen roots and gain a temporary sh
 
 # Tools
 
-## Game Editor: 
-Loading models into the game space. Being able to scale, rotate, move and determine whether they have/are collided with something. 
-Camera movement (wasd and mouse to look around. Click to place?). 
-When a model is selected (Knight ,Mage, Assassin ,Priest, etc...) a list of parameters will appear in the inspector that can be changed the object can then be moved around the game space as well.
+## Game Editor
+Loading models into the game space. Being able to scale,rotate, move and determine whether they have/are Collided with something. Camera movement(wasd and mouse to look around. Click to place the object). When a model is selected (Knight ,Mage, Assassin ,Priest) a list of parameters will appear in the inspector that can be changed the object can then be moved around the game space as well.
 
-## UI for Game Editor: 
-A menu that has the list of objects that can be placed in the game space. 
-An inspector that shows that parameters for the object. 
-Examples: scale, rotate, and location. Once placed in world and selected again the inspector will show all parameters plus a delete option.
+![worldmap-alterac-old](https://user-images.githubusercontent.com/44447609/51505961-af5f7480-1db7-11e9-9774-990f7c47d40f.jpg)
 
-Ex. Character spawn menu (NPC, player char, animal), Terrain (forest,soil,winter ground), water), asset(Tree, Rock, building, flags  ), 
-Starting point ,end point , out of bounds point. These will be clicked to select once selected that object will be spawned 
-when an area on the screen is selected… (this probably isn't actually how this is going to go…)
+## UI for Game Editor
+A menu that has the list of objects that can be placed in the game space. A inspector that shows that parameters for the object. Example, scale, rotate, and location. Once placed in world and selected again the inspector will show all parameters plus a delete option.
 
-## Character Editor:
-Controls character stats such as unsure of requirement->Level, unsure of requirement->Dex, Strength, MP (Magic/Mana/Mist Points),
-unsure of requirement->EXP (Experience Points), Defense Power,Evasion, unsure of requirement->Stamina, and setting abilities.Will control NPC stats ex. Guards as well
+1. Character spawn menu (NPC, player char, animal).
+1. Terrain (forest, soil, snow covered land, water). 
+1. Asset (Tree, Rock, building, flags). 
+1. Starting point, end point, out of bounds point (Spawn points will be selected and units will keep spawn by user click).
 
-## File Format:
+## Character Editor
+Controls character stats such as requirement for Level, str, dex, int, MP (Magic/Mana/Mist Points), EXP(Experience Points), Defense Power, Evasion, and setting abilities. Also controls NPC stats ex. Guards as well.
+
+![636141782667101293](https://user-images.githubusercontent.com/44447609/51506213-2d704b00-1db9-11e9-8b00-cf2b953a8bee.jpg)
+
+## File Format
 Json save character stats and account of player or database(MySQL).
 
-## Particle system (Only if we have time): 
+![wc3_editor_objects](https://user-images.githubusercontent.com/44447609/51506261-6e685f80-1db9-11e9-89db-57f6342d7f0e.png)
+
+## Particle System
 contain four different particle effects which will used by certain characters in the game. The particles will be controlled with things such as their size, brightness, lifespan, speed, rotation, duration and maximum amount of particles.
 
-## Animation system (possibly add anim tools): 
-Control animations of the player character and NPCs
+## Animation System
+control animations of the player character and NPCs
+
+![cap1](https://user-images.githubusercontent.com/44447609/51506291-a5d70c00-1db9-11e9-8328-531cec2b63be.JPG)
 
 # Graphics
 
