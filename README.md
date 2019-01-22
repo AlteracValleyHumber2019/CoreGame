@@ -332,7 +332,7 @@ The dwarves receive inspiration from their earthen roots and gain a temporary sh
 # Tools
 
 ## Game Editor
-Loading models into the game space. Being able to scale,rotate, move and determine whether they have/are Collided with something. Camera movement(wasd and mouse to look around. Click to place the object). When a model is selected (Knight ,Mage, Assassin ,Priest) a list of parameters will appear in the inspector that can be changed the object can then be moved around the game space as well.
+Loading models into the game space. Being able to scale,rotate, move and determine whether they have/are Collided with something. Camera movement(WASD and mouse movement to rotate. Click to place the object). When a model is selected (Knight ,Mage, Assassin ,Priest) a list of parameters will appear in the inspector that can be changed the object can then be moved around the game space as well.
 
 ![worldmap-alterac-old](https://user-images.githubusercontent.com/44447609/51505961-af5f7480-1db7-11e9-9774-990f7c47d40f.jpg)
 
@@ -355,7 +355,7 @@ Json save character stats and account of player or database(MySQL).
 ![wc3_editor_objects](https://user-images.githubusercontent.com/44447609/51506261-6e685f80-1db9-11e9-89db-57f6342d7f0e.png)
 
 ## Particle System
-contain four different particle effects which will used by certain characters in the game. The particles will be controlled with things such as their size, brightness, lifespan, speed, rotation, duration and maximum amount of particles.
+Particle System contain four different particle effects which will used by certain characters in the game(Heal, Dark Magic, etc). The particles will be controlled with things such as their size, brightness, lifespan, speed, rotation, duration and maximum amount of particles.
 
 ## Animation System
 Controls animations of the player character and NPCs 
