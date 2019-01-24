@@ -151,6 +151,9 @@ Usually deals high damage to a single target.
 ###### Area of Effect Attack
 This attack has the capability of hitting more than one target but usually dealing less damage than single target attacks.
 
+###### Buff Abilities
+Buff abilities will provide an enhancement to the target player(s), either being an increase to the target's stats, or a unique condition added to the target.
+
 ## Playable Classes
 #### Knight
 Tank, primarily the front-line of battles, quickly closes gap to initiate combat.
@@ -169,10 +172,12 @@ Back line supportive class, recovers health and provides defensive buffs.
 All the characters (Players and NPCs) in the game will use a class (or one of its specialized subclass) called Character. 
 The Character base class will have common behaviour functions such as Moving, Dying, AutoAttack and Respawning. 
 Character will also have some basic members such as a mesh, animations etc. Since every player class and NPC will have some similarities and some differences we decided to use the strategy pattern to achieve this effect.
+
 For example, a Knight class can be made of a Character class with MoveStrategy1, DieStrategy2, AutoAttackStrategy2, and RespawnStrategy4 
 while a Mage class can be made of a Character class with MoveStrategy1, DieStrategy3, AutoAttackStrategy2, RespawnStrategy1. 
 The Knight and Mage both uses the same MoveStrategy and AutoAttackStrategy by using the strategy pattern we essentially avoid the need of repeating unececarry code.
 Furthermore, because most Class/NPC behaviours are wrapped inside Strategy classes we can use a factory class to build the desired class at runtime. 
+
 This flexibility enables us the ability to easily define class archetype in a JSON file (see example below). 
 Should there ever be a need to change these classes’ behaviours in the future, all we need to do is modify the JSON file and change a single line of our game code.
 
