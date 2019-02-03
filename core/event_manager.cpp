@@ -4,3 +4,11 @@
 void pav::EventManager::Update(const float delta_time)
 {
 }
+
+void pav::EventManager::Initialize()
+{
+}
+
+void pav::EventManager::End()
+{
+}

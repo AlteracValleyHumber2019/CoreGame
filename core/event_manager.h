@@ -27,6 +27,8 @@ namespace pav
 		Signal<KeyCode> on_key_up;
 
 		void Update(const float delta_time) override;
+		void Initialize() override;
+		void End() override;
 	};
 }
 

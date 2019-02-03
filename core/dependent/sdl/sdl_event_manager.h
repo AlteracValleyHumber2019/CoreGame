@@ -10,6 +10,7 @@ namespace pav
 	public:
 		void Initialize() override;
 		void End() override;
+		void Update(const float delta_time) override;
 	};
 }
 #endif // SDL_EVENT_MANAGER_H

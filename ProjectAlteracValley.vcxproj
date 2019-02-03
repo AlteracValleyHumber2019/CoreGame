@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pav_pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)external\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -107,6 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pav_pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)external\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -123,7 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pav_pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)external\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -144,6 +145,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pav_pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)external\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -153,13 +155,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core\dependent\sdl\gl_sdl_render_manager.cpp" />
+    <ClCompile Include="core\dependent\sdl\gl_sdl_window.cpp" />
     <ClCompile Include="core\dependent\sdl\sdl_event_manager.cpp" />
     <ClCompile Include="core\engine.cpp" />
     <ClCompile Include="core\event_manager.cpp" />
     <ClCompile Include="core\event_util.cpp" />
+    <ClCompile Include="core\manager_factory.cpp" />
+    <ClCompile Include="core\render_manager.cpp" />
     <ClCompile Include="core\scene.cpp" />
     <ClCompile Include="core\scene_manager.cpp" />
     <ClCompile Include="core\util\signal.cpp" />
+    <ClCompile Include="core\window_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -169,14 +176,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\dependent\sdl\gl_sdl_render_manager.h" />
+    <ClInclude Include="core\dependent\sdl\gl_sdl_window.h" />
     <ClInclude Include="core\dependent\sdl\sdl_event_manager.h" />
     <ClInclude Include="core\engine.h" />
     <ClInclude Include="core\event_manager.h" />
     <ClInclude Include="core\event_util.h" />
     <ClInclude Include="core\i_manager.h" />
+    <ClInclude Include="core\i_window.h" />
+    <ClInclude Include="core\manager_factory.h" />
+    <ClInclude Include="pav_pcs.h" />
+    <ClInclude Include="core\render_manager.h" />
     <ClInclude Include="core\scene.h" />
     <ClInclude Include="core\scene_manager.h" />
     <ClInclude Include="core\util\signal.h" />
+    <ClInclude Include="core\window_manager.h" />
+    <ClInclude Include="core\i_renderer.h" />
     <ClInclude Include="pav_pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

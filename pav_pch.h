@@ -24,6 +24,8 @@
 #include <string>
 
 // PAV
+#include "pav_pcs.h"
+
 #include "core/util/signal.h"
 
 #endif // PAV_PCH_H

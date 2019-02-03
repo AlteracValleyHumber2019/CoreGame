@@ -5,14 +5,17 @@
 
 void pav::SDLEventManager::Initialize()
 {
-	if (!SDL_Init(SDL_INIT_EVERYTHING))
-	{
-		// TODO: Invoke assert
-		return;
-	}
+	
 }
 
 void pav::SDLEventManager::End()
 {
-	SDL_Quit();
+}
+
+void pav::SDLEventManager::Update(const float delta_time)
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event) != 0)
+	{
+	}
 }
