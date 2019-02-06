@@ -176,7 +176,7 @@ namespace pav
 	 * \tparam	...Args	list of all function parameters used in the delegated function.
 	 */
 	template <typename R, typename ...Args>
-	class Signal
+	class Signal final
 	{
 	private:
 		std::unordered_map<unsigned int, std::unique_ptr<DelegateBase<R, Args...>>> slots_;

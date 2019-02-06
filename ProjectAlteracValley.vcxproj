@@ -168,6 +168,8 @@
     <ClCompile Include="core\util\signal.cpp" />
     <ClCompile Include="core\window_manager.cpp" />
     <ClCompile Include="example_scene.cpp" />
+    <ClCompile Include="core\entity_component\i_game_object.cpp" />
+    <ClCompile Include="core\entity_component\i_component.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -187,7 +189,10 @@
     <ClInclude Include="core\i_manager.h" />
     <ClInclude Include="core\i_window.h" />
     <ClInclude Include="core\manager_factory.h" />
+    <ClInclude Include="core\util\guid.h" />
     <ClInclude Include="example_scene.h" />
+    <ClInclude Include="core\entity_component\i_game_object.h" />
+    <ClInclude Include="core\entity_component\i_component.h" />
     <ClInclude Include="pav_pcs.h" />
     <ClInclude Include="core\render_manager.h" />
     <ClInclude Include="core\i_scene.h" />
@@ -196,6 +201,9 @@
     <ClInclude Include="core\window_manager.h" />
     <ClInclude Include="core\i_renderer.h" />
     <ClInclude Include="pav_pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

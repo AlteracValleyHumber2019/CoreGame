@@ -15,6 +15,8 @@ void pav_game::ExampleScene::Update(const float delta_time)
 
 void pav_game::ExampleScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 {
+	pav::IScene::SetupEngineEvents(event_attorney);
+
 	event_attorney->on_key_down->Connect(this, &ExampleScene::OnKeydown);
 }
 
