@@ -12,18 +12,33 @@ pav::Engine::Engine() :
 {
 }
 
-void pav::Engine::StartEngine()
+void pav::Engine::InitEngine()
 {
 	render_manager->Initialize();
 	window_manager->Initialize();
 	scene_manager->Initialize();
 	event_manager->Initialize();
 
+	// Inject events
+	event_attorney_ = std::make_unique<EventAttorney>();
+	event_attorney_->on_input = &event_manager->on_input;
+	event_attorney_->on_key_down = &event_manager->on_key_down;
+	event_attorney_->on_key_hold = &event_manager->on_key_hold;
+	event_attorney_->on_key_up = &event_manager->on_key_up;
+	event_attorney_->on_mouse_button_down = &event_manager->on_mouse_button_down;
+	event_attorney_->on_mouse_button_up = &event_manager->on_mouse_button_up;
+
+	scene_manager->SetupEngineEvents(event_attorney_.get());
+
 	window_manager->CreateWindow
 	(
 		window_info_.Prototype()
 	);
+}
 
+void pav::Engine::StartEngine()
+{
+	// Game loop
 	while (running_)
 	{
 		Update(1.f); // TODO: replace with actual delta time

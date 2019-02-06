@@ -24,9 +24,6 @@
     <ClCompile Include="core\engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="core\scene_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,6 +54,12 @@
     <ClCompile Include="core\manager_factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="core\i_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="example_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pav_pch.h">
@@ -66,9 +69,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core\i_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="core\scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core\scene_manager.h">
@@ -111,6 +111,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core\event_attorney.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\i_scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="example_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

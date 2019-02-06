@@ -23,6 +23,8 @@ namespace pav
 
 		WindowInfo window_info_;
 
+		std::unique_ptr<EventAttorney> event_attorney_;
+
 		/**
 		 * \fn	void Engine::EndEngine();
 		 *
@@ -42,9 +44,19 @@ namespace pav
 		Engine();
 
 		/**
+		 * \fn	void final::InitEngine();
+		 *
+		 * \brief	Initializes the engine
+		 *
+		 * \author	Jaymie
+		 * \date	2/6/2019
+		 */
+		void InitEngine();
+
+		/**
 		 * \fn	void Engine::StartEngine();
 		 *
-		 * \brief	Initialize and starts the game engine. This function will invoke the main game loop.
+		 * \brief	This function will invoke the main game loop.
 		 *
 		 * \author	Jaymie
 		 * \date	2/2/2019

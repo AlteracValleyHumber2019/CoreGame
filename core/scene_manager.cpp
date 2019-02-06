@@ -11,19 +11,56 @@ void pav::SceneManager::End()
 
 void pav::SceneManager::Update(const float delta_time)
 {
+	if (current_scene_ != nullptr)
+	{
+		current_scene_->Update(delta_time);
+	}
 }
 
-pav::Scene* pav::SceneManager::AddScene(std::string&& Name)
+pav::IScene* pav::SceneManager::AddScene(std::string&& Name, std::unique_ptr<IScene>&& scene)
 {
+	// Check if manager do not have this scene
+	if (scenes_.find(Name) == scenes_.end())
+	{
+		scenes_.insert(std::make_pair(std::move(Name), std::move(scene)));
+	}
+
 	return nullptr;
 }
 
-pav::Scene* pav::SceneManager::GetScene(std::string&& Name)
+pav::IScene* pav::SceneManager::GetScene(std::string&& Name)
 {
+	// Check if manager have scene
+	if (scenes_.find(Name) != scenes_.end())
+	{
+		return scenes_.at(Name).get();
+	}
+
 	return nullptr;
 }
 
-pav::Scene* pav::SceneManager::RemoveScene(std::string&& Name)
+void pav::SceneManager::RemoveScene(std::string&& Name)
 {
-	return nullptr;
+	// Check if manager have scene
+	if (scenes_.find(Name) != scenes_.end())
+	{
+		scenes_.erase(Name);
+	}
+}
+
+void pav::SceneManager::SwitchScene(std::string && Name)
+{
+	if (current_scene_ != nullptr)
+	{
+		current_scene_->EndScene();
+	}
+
+	current_scene_ = scenes_.at(Name).get();
+	current_scene_->BeginScene();
+	current_scene_->SetupEngineEvents(event_attorney_);
+}
+
+void pav::SceneManager::SetupEngineEvents(EventAttorney* event_attorney)
+{
+	event_attorney_ = event_attorney;
 }

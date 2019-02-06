@@ -163,10 +163,11 @@
     <ClCompile Include="core\event_util.cpp" />
     <ClCompile Include="core\manager_factory.cpp" />
     <ClCompile Include="core\render_manager.cpp" />
-    <ClCompile Include="core\scene.cpp" />
+    <ClCompile Include="core\i_scene.cpp" />
     <ClCompile Include="core\scene_manager.cpp" />
     <ClCompile Include="core\util\signal.cpp" />
     <ClCompile Include="core\window_manager.cpp" />
+    <ClCompile Include="example_scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -186,9 +187,10 @@
     <ClInclude Include="core\i_manager.h" />
     <ClInclude Include="core\i_window.h" />
     <ClInclude Include="core\manager_factory.h" />
+    <ClInclude Include="example_scene.h" />
     <ClInclude Include="pav_pcs.h" />
     <ClInclude Include="core\render_manager.h" />
-    <ClInclude Include="core\scene.h" />
+    <ClInclude Include="core\i_scene.h" />
     <ClInclude Include="core\scene_manager.h" />
     <ClInclude Include="core\util\signal.h" />
     <ClInclude Include="core\window_manager.h" />

@@ -1,6 +1,8 @@
 #ifndef EVENT_ATTORNEY_H
 #define EVENT_ATTORNEY_H
 
+#include "event_util.h"
+
 namespace pav
 {
 	/**
