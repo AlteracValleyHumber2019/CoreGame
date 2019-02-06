@@ -25,6 +25,10 @@ namespace pav
 		Signal<void, KeyCode> on_key_hold;
 		/** \brief	Signal for a keyboard up event */
 		Signal<void, KeyCode> on_key_up;
+		/** \brief	Signal for a mouse button down event */
+		Signal<void, MouseButtonCode, unsigned short> on_mouse_button_down;
+		/** \brief	Signal for a mouse button up event */
+		Signal<void, MouseButtonCode, unsigned short> on_mouse_button_up;
 
 		void Update(const float delta_time) override;
 		void Initialize() override;

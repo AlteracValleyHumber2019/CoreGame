@@ -110,5 +110,8 @@
     <ClInclude Include="pav_pcs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="core\event_attorney.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

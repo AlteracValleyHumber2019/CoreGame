@@ -3,6 +3,11 @@
 
 namespace pav
 {
+	/**
+	 * \enum	InputEventType
+	 *
+	 * \brief	Values that represent input event types
+	 */
 	enum InputEventType
 	{
 		DOWN,
@@ -10,6 +15,23 @@ namespace pav
 		HOLD
 	};
 
+	/**
+	 * \enum	MouseButtonCode
+	 *
+	 * \brief	Values that represent mouse buttons
+	 */
+	enum MouseButtonCode
+	{
+		LEFT,
+		RIGHT,
+		MIDDLE
+	};
+
+	/**
+	 * \enum	KeyCode
+	 *
+	 * \brief	Values that represent keys on a standard keyboard
+	 */
 	enum KeyCode
 	{
 		KEY_A,

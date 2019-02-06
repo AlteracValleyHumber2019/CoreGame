@@ -30,6 +30,7 @@ void pav::SDLEventManager::Initialize()
 	sdl_key_map_[SDLK_x] = KEY_X;
 	sdl_key_map_[SDLK_y] = KEY_Y;
 	sdl_key_map_[SDLK_z] = KEY_Z;
+	// TODO: Someone fill in the rest of the keys thanks
 }
 
 void pav::SDLEventManager::End()
@@ -44,17 +45,75 @@ void pav::SDLEventManager::Update(const float delta_time)
 		switch (event.type)
 		{
 		case SDL_KEYDOWN:
+		{
+			// Convert keycode
 			KeyCode keycode = sdl_key_map_.at(event.key.keysym.sym);
 
 			if (event.key.repeat == 0) // Key down event
 			{
 				on_key_down.EmitAll(std::move(keycode));
+
+				// Input event
+				on_input.EmitAll(InputEventType::DOWN);
 			}
 			else // Key hold event
 			{
 				on_key_hold.EmitAll(std::move(keycode));
+
+				// Input event
+				on_input.EmitAll(InputEventType::HOLD);
 			}
 			break;
+		}
+		case SDL_KEYUP:
+		{
+			// Convert keycode
+			KeyCode keycode = sdl_key_map_.at(event.key.keysym.sym);
+
+			on_key_up.EmitAll(std::move(keycode));
+
+			// Input event
+			on_input.EmitAll(InputEventType::UP);
+			break;
+		}
+		case SDL_MOUSEBUTTONDOWN:
+		{
+			if (event.button.button == SDL_BUTTON_LEFT) // Left button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::LEFT, static_cast<unsigned short>(event.button.clicks));
+			}
+			else if (event.button.button == SDL_BUTTON_MIDDLE) // Middle button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::MIDDLE, static_cast<unsigned short>(event.button.clicks));
+			}
+			else if (event.button.button == SDL_BUTTON_LEFT) // Right button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::RIGHT, static_cast<unsigned short>(event.button.clicks));
+			}
+			
+			// Input event
+			on_input.EmitAll(InputEventType::DOWN);
+			break;
+		}
+		case SDL_MOUSEBUTTONUP:
+		{
+			if (event.button.button == SDL_BUTTON_LEFT) // Left button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::LEFT, static_cast<unsigned short>(event.button.clicks));
+			}
+			else if (event.button.button == SDL_BUTTON_MIDDLE) // Middle button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::MIDDLE, static_cast<unsigned short>(event.button.clicks));
+			}
+			else if (event.button.button == SDL_BUTTON_LEFT) // Right button
+			{
+				on_mouse_button_down.EmitAll(MouseButtonCode::RIGHT, static_cast<unsigned short>(event.button.clicks));
+			}
+
+			// Input event
+			on_input.EmitAll(InputEventType::UP);
+			break;
+		}
 		}
 	}
 }
