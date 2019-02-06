@@ -18,13 +18,13 @@ namespace pav
 	{
 	public:
 		/** \brief	Signal for all input events, this include keyboard input and mouse input */
-		Signal<InputEventType> on_input;
+		Signal<void, InputEventType> on_input;
 		/** \brief	Signal for a keyboard down event */
-		Signal<KeyCode> on_key_down;
+		Signal<void, KeyCode> on_key_down;
 		/** \brief	Signal for a keyboard hold event */
-		Signal<KeyCode> on_key_hold;
+		Signal<void, KeyCode> on_key_hold;
 		/** \brief	Signal for a keyboard up event */
-		Signal<KeyCode> on_key_up;
+		Signal<void, KeyCode> on_key_up;
 
 		void Update(const float delta_time) override;
 		void Initialize() override;

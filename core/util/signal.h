@@ -139,7 +139,7 @@ namespace pav
 		 * \author	Jaymie
 		 * \date	2/2/2019
 		 *
-		 * \param [in,out]	...args	The required arguments of the function
+		 * \param [in]	...args	The required arguments of the function
 		 *
 		 * \returns	The return type of the callback function
 		 */
@@ -182,19 +182,32 @@ namespace pav
 		std::unordered_map<unsigned int, std::unique_ptr<DelegateBase<R, Args...>>> slots_;
 
 	public:
-		inline unsigned Connect(std::unique_ptr<DelegateBase<R, Args...>>&& slot)
+		template <typename O>
+		inline unsigned Connect(O* member_object, MEMBER_FUNC_TYPE slot)
 		{
-			return 0;
+			// Make delegate base
+			auto ptr = std::make_unique<Delegate<O, R, Args...>>();
+			ptr->Register(member_object, slot);
+
+			slots_.insert(std::make_pair(0, std::move(ptr))); // Debug test
+
+			return 0; // TODO: implement a GUID system for slots
 		}
 
 		inline void Disconnect(const unsigned int id)
 		{
-			
+			if (slots_.find(id) != slots_.end()) // Check if signal has slot
+			{
+				slots_.erase(id);
+			}
 		}
 
 		inline void EmitAll(Args&& ...args)
 		{
-			
+			for (const auto& ptr : slots_)
+			{
+				ptr.second->Invoke(std::forward<Args>(args)...);
+			}
 		}
 	};
 
