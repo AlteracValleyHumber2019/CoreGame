@@ -1,7 +1,7 @@
 #ifndef EXAMPLE_SCENE_H
 #define EXAMPLE_SCENE_H
 
-#include "core/i_scene.h"
+#include "../../engine/core/i_scene.h"
 
 namespace pav_game
 {

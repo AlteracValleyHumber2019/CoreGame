@@ -1,6 +1,6 @@
 #include "pav_pch.h"
-#include "core/engine.h"
-#include "example_scene.h"
+#include "engine/core/engine.h"
+#include "game/scene/example_scene.h"
 
 int main(int argc, char* argv[])
 {

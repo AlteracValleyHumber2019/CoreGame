@@ -1,6 +1,8 @@
 #ifndef I_GAME_OBJECT_H
 #define I_GAME_OBJECT_H
 
+#include "../event_attorney.h"
+
 namespace pav
 {
 	class IComponentBase;
@@ -23,11 +25,13 @@ namespace pav
 		// Data
 		std::string name_;
 		unsigned int guid_;
-		unsigned int order_;
 
 		// Components and children
 		std::unordered_map<unsigned int, std::vector<pav::IComponentBase*>> components_;
 		std::unordered_map<std::string, pav::IGameObjectBase*> children_;
+
+	protected:
+		unsigned int order_;
 
 	public:
 
@@ -44,6 +48,10 @@ namespace pav
 		 * \param 	  	order	The order.
 		 */
 		IGameObjectBase(std::string&& name, const unsigned int guid, unsigned int order);
+		
+		/** \name Getters
+		 */
+		///@{
 
 		/**
 		 * \fn	inline unsigned int IGameObjectBase::GetGUID() const
@@ -59,6 +67,23 @@ namespace pav
 		{
 			return guid_;
 		}
+
+		/**
+		 * \fn	inline unsigned int IGameObjectBase::GetOrder() const
+		 *
+		 * \brief	Getter for the GameObject order
+		 *
+		 * \author	Jaymie
+		 * \date	2/12/2019
+		 *
+		 * \returns	The order.
+		 */
+		inline unsigned int GetOrder() const
+		{
+			return order_;
+		}
+
+		///@}
 
 		/**
 		 * \fn	template <typename C, typename ...Args> inline pav::IComponentBase* IGameObjectBase::AddComponent(Args&& ...args);
@@ -129,6 +154,18 @@ namespace pav
 		 * \param	delta_time	The delta time.
 		 */
 		virtual void Update(const float delta_time) = 0;
+
+		/**
+		 * \fn	virtual void IGameObjectBase::SetupEngineEvents(EventAttorney* event_attorney)
+		 *
+		 * \brief	Sets up the engine events
+		 *
+		 * \author	Jaymie
+		 * \date	2/12/2019
+		 *
+		 * \param [in]	event_attorney	If non-null, the event attorney.
+		 */
+		virtual void SetupEngineEvents(EventAttorney* event_attorney) {};
 	};
 
 	/**

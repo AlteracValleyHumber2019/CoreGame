@@ -18,120 +18,120 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pav_pch.cpp">
+    <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\engine.cpp">
+    <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\scene_manager.cpp">
+    <ClCompile Include="engine\core\dependent\sdl\sdl_event_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\event_manager.cpp">
+    <ClCompile Include="engine\core\entity_component\i_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\util\signal.cpp">
+    <ClCompile Include="engine\core\entity_component\i_game_object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\event_util.cpp">
+    <ClCompile Include="engine\core\util\signal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\dependent\sdl\sdl_event_manager.cpp">
+    <ClCompile Include="engine\core\engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\window_manager.cpp">
+    <ClCompile Include="engine\core\event_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\dependent\sdl\gl_sdl_window.cpp">
+    <ClCompile Include="engine\core\event_util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\render_manager.cpp">
+    <ClCompile Include="engine\core\i_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\dependent\sdl\gl_sdl_render_manager.cpp">
+    <ClCompile Include="engine\core\manager_factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\manager_factory.cpp">
+    <ClCompile Include="engine\core\render_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\i_scene.cpp">
+    <ClCompile Include="engine\core\scene_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="example_scene.cpp">
+    <ClCompile Include="engine\core\window_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\entity_component\i_game_object.cpp">
+    <ClCompile Include="game\scene\example_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\entity_component\i_component.cpp">
+    <ClCompile Include="engine\pav_pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pav_pch.h">
+    <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\engine.h">
+    <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\i_manager.h">
+    <ClInclude Include="engine\core\dependent\sdl\sdl_event_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\scene_manager.h">
+    <ClInclude Include="engine\core\entity_component\i_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\event_manager.h">
+    <ClInclude Include="engine\core\entity_component\i_game_object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\util\signal.h">
+    <ClInclude Include="engine\core\util\guid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\event_util.h">
+    <ClInclude Include="engine\core\util\signal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\dependent\sdl\sdl_event_manager.h">
+    <ClInclude Include="engine\core\engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\window_manager.h">
+    <ClInclude Include="engine\core\event_attorney.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\i_window.h">
+    <ClInclude Include="engine\core\event_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\dependent\sdl\gl_sdl_window.h">
+    <ClInclude Include="engine\core\event_util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\render_manager.h">
+    <ClInclude Include="engine\core\i_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\i_renderer.h">
+    <ClInclude Include="engine\core\i_renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\dependent\sdl\gl_sdl_render_manager.h">
+    <ClInclude Include="engine\core\i_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\manager_factory.h">
+    <ClInclude Include="engine\core\i_window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pav_pcs.h">
+    <ClInclude Include="engine\core\manager_factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\event_attorney.h">
+    <ClInclude Include="engine\core\render_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\i_scene.h">
+    <ClInclude Include="engine\core\scene_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="example_scene.h">
+    <ClInclude Include="engine\core\window_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\entity_component\i_game_object.h">
+    <ClInclude Include="game\scene\example_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\util\guid.h">
+    <ClInclude Include="engine\pav_pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\entity_component\i_component.h">
+    <ClInclude Include="engine\pav_pcs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
