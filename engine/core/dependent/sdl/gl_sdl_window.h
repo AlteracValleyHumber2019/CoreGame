@@ -5,19 +5,30 @@
 
 #include <SDL/SDL.h>
 
-class GLSDLWindow : public pav::IWindow
+namespace pav
 {
-private:
-	std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
-	SDL_GLContext main_context_;
+	/**
+	 * \class	GLSDLWindow
+	 *
+	 * \brief	An OpenGL-SDL window
+	 *
+	 * \author	Jaymie
+	 * \date	2/12/2019
+	 */
+	class GLSDLWindow : public pav::IWindow
+	{
+	private:
+		std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
+		SDL_GLContext main_context_;
 
-public:
-	explicit GLSDLWindow();
+	public:
+		explicit GLSDLWindow();
 
-	void CreateWindow(pav::WindowInfo&& win_info) override;
-	void DestroyWindow() override;
-	void SetAsContext() override;
-	void Update(const float delta_time) override;
-};
+		void CreateWindow(pav::WindowInfo&& win_info) override;
+		void DestroyWindow() override;
+		void SetAsContext() override;
+		void Update(const float delta_time) override;
+	};
+}
 
 #endif // GL_SDL_WINDOW_H

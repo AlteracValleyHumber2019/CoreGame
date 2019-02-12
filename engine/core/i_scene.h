@@ -5,12 +5,11 @@
 
 namespace pav
 {
-
 	/**
-	 * \class	Scene
+	 * \class	IScene
 	 *
-	 * \brief	Scene interface used to hold all GameObject objects and special partition them with scene
-	 * 			graph
+	 * \brief	Scene interface used to hold all GameObject objects and special partition them with
+	 * 			scene graph
 	 *
 	 * \author	Jaymie
 	 * \date	2/2/2019

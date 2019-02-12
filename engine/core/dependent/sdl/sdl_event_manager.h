@@ -7,6 +7,14 @@
 
 namespace pav
 {
+	/**
+	 * \class	SDLEventManager
+	 *
+	 * \brief	An EventManager that uses SDL to detect and handle events
+	 *
+	 * \author	Jaymie
+	 * \date	2/12/2019
+	 */
 	class SDLEventManager : public EventManager
 	{
 	private:
