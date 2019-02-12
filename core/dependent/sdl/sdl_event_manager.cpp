@@ -86,7 +86,7 @@ void pav::SDLEventManager::Update(const float delta_time)
 			{
 				on_mouse_button_down.EmitAll(MouseButtonCode::MIDDLE, static_cast<unsigned short>(event.button.clicks));
 			}
-			else if (event.button.button == SDL_BUTTON_LEFT) // Right button
+			else if (event.button.button == SDL_BUTTON_RIGHT) // Right button
 			{
 				on_mouse_button_down.EmitAll(MouseButtonCode::RIGHT, static_cast<unsigned short>(event.button.clicks));
 			}
@@ -105,7 +105,7 @@ void pav::SDLEventManager::Update(const float delta_time)
 			{
 				on_mouse_button_down.EmitAll(MouseButtonCode::MIDDLE, static_cast<unsigned short>(event.button.clicks));
 			}
-			else if (event.button.button == SDL_BUTTON_LEFT) // Right button
+			else if (event.button.button == SDL_BUTTON_RIGHT) // Right button
 			{
 				on_mouse_button_down.EmitAll(MouseButtonCode::RIGHT, static_cast<unsigned short>(event.button.clicks));
 			}
