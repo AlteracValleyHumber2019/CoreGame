@@ -1,12 +1,12 @@
 ﻿#include "pav_pch.h"
 #include "gl_sdl_window.h"
 
-GLSDLWindow::GLSDLWindow() :
+pav::GLSDLWindow::GLSDLWindow() :
 window_(nullptr, SDL_DestroyWindow)
 {
 }
 
-void GLSDLWindow::CreateWindow(pav::WindowInfo&& win_info)
+void pav::GLSDLWindow::CreateWindow(pav::WindowInfo&& win_info)
 {
 	window_.reset
 	(
@@ -22,17 +22,17 @@ void GLSDLWindow::CreateWindow(pav::WindowInfo&& win_info)
 	);
 }
 
-void GLSDLWindow::DestroyWindow()
+void pav::GLSDLWindow::DestroyWindow()
 {
 	window_.release();
 	window_.reset(nullptr);
 }
 
-void GLSDLWindow::SetAsContext()
+void pav::GLSDLWindow::SetAsContext()
 {
 	main_context_ = SDL_GL_CreateContext(window_.get());
 }
 
-void GLSDLWindow::Update(const float delta_time)
+void pav::GLSDLWindow::Update(const float delta_time)
 {
 }

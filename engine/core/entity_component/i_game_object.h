@@ -22,9 +22,14 @@ namespace pav
 	class IGameObjectBase
 	{
 	private:
+		// Friend
+		friend class GameObjectManager;
+
 		// Data
 		std::string name_;
 		unsigned int guid_;
+
+		IGameObjectBase* parent_;
 
 		// Components and children
 		std::unordered_map<unsigned int, std::vector<pav::IComponentBase*>> components_;
@@ -47,7 +52,7 @@ namespace pav
 		 * \param 	  	guid 	Unique identifier.
 		 * \param 	  	order	The order.
 		 */
-		IGameObjectBase(std::string&& name, const unsigned int guid, unsigned int order);
+		IGameObjectBase(std::string&& name, const unsigned int guid, const unsigned int order = 0);
 		
 		/** \name Getters
 		 */
@@ -144,7 +149,7 @@ namespace pav
 		virtual void End() {};
 
 		/**
-		 * \fn	virtual void IGameObjectBase::Update(const float delta_time) = 0;
+		 * \fn	virtual void IGameObjectBase::Update(const float delta_time);
 		 *
 		 * \brief	Updates the given delta_time
 		 *
@@ -153,7 +158,7 @@ namespace pav
 		 *
 		 * \param	delta_time	The delta time.
 		 */
-		virtual void Update(const float delta_time) = 0;
+		virtual void Update(const float delta_time);
 
 		/**
 		 * \fn	virtual void IGameObjectBase::SetupEngineEvents(EventAttorney* event_attorney)
@@ -194,7 +199,7 @@ namespace pav
 		 * \param [in]	name 	The name.
 		 * \param 		  	order	The order.
 		 */
-		explicit IGameObject(std::string&& name, const unsigned int order);
+		explicit IGameObject(std::string&& name, const unsigned int order = 0);
 	};
 
 	// Include here

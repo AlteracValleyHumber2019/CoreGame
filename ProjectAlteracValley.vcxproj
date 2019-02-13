@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\sdl_event_manager.cpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="game\scene\example_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\i_game_object.cpp" />
     <ClCompile Include="engine\core\entity_component\i_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\game_object_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="engine\pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -181,8 +183,10 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pav_pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pav_pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="engine\core\entity_component\sec_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\entity_component\component_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h" />
     <ClInclude Include="engine\core\dependent\sdl\sdl_event_manager.h" />
@@ -205,6 +209,8 @@
     <ClInclude Include="engine\core\window_manager.h" />
     <ClInclude Include="engine\core\i_renderer.h" />
     <ClInclude Include="engine\pav_pch.h" />
+    <ClInclude Include="engine\core\entity_component\game_object_manager.h" />
+    <ClInclude Include="engine\core\entity_component\sec_manager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
