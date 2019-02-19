@@ -28,6 +28,6 @@ void pav::IComponentBase::SetIgnoreAutoUpdate(const bool ignore)
 
 template <typename CRTP, unsigned int Order>
 pav::IComponent<CRTP, Order>::IComponent(IGameObjectBase* owner) :
-	IComponentBase(pav::GUID<IComponentBase>::GetID<CRTP>(), Order, owner)
+	IComponentBase(pav::GUID<IComponentBase>::GetID<CRTP>(), Order, owner) // CRTP type GUID generation code
 {
 }

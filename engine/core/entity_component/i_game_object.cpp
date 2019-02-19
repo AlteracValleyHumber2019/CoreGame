@@ -15,8 +15,10 @@ pav::IGameObjectBase::IGameObjectBase(std::string&& name, const unsigned int gui
 
 void pav::IGameObjectBase::Update(const float delta_time)
 {
+	// For each type of components
 	for (auto comp_vec : components_)
 	{
+		// For each component of a type
 		for (auto comp : comp_vec.second)
 		{
 			comp->Update(delta_time);
@@ -26,6 +28,6 @@ void pav::IGameObjectBase::Update(const float delta_time)
 
 template <typename CRTP>
 pav::IGameObject<CRTP>::IGameObject(std::string&& name, const unsigned int order) :
-	IGameObjectBase(std::move(name), pav::GUID<IGameObjectBase>::GetID<CRTP>(), order)
+	IGameObjectBase(std::move(name), pav::GUID<IGameObjectBase>::GetID<CRTP>(), order) // CRTP type GUID code
 {
 }

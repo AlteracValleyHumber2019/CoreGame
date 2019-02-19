@@ -41,7 +41,7 @@ void pav::Engine::StartEngine()
 	// Game loop
 	while (running_)
 	{
-		Update(1.f); // TODO: replace with actual delta time
+		Update(1.f); // #TODO: replace with actual delta time
 	}
 
 	EndEngine();

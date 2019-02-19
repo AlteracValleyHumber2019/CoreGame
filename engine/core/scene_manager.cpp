@@ -52,12 +52,12 @@ void pav::SceneManager::SwitchScene(std::string && Name)
 {
 	if (current_scene_ != nullptr)
 	{
-		current_scene_->EndScene();
+		current_scene_->EndScene(); // Scene end logic
 	}
 
 	current_scene_ = scenes_.at(Name).get();
-	current_scene_->BeginScene();
-	current_scene_->SetupEngineEvents(event_attorney_);
+	current_scene_->BeginScene(); // Scene begin logic
+	current_scene_->SetupEngineEvents(event_attorney_); // Forward event
 }
 
 void pav::SceneManager::SetupEngineEvents(EventAttorney* event_attorney)

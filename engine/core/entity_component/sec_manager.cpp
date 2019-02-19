@@ -24,6 +24,7 @@ void pav::SECManager::SetupEngineEvents(EventAttorney* event_attorney)
 {
 	event_attorny_ = event_attorney;
 
+	// Forwarding event to GameObjects and Components
 	game_object_manager_->SetupEngineEvents(event_attorny_);
 	component_manager_->SetupEngineEvents(event_attorny_);
 }

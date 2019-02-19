@@ -48,8 +48,10 @@ namespace pav
 
 			// Adding component
 			IComponentBase* comp = components_.at(id).emplace_back(std::make_unique<C>(std::forward<Args>(args)...));
-			comp->Begin();
+			comp->Begin(); // Calling component begin logic
 			comp->SetupEngineEvents(event_attorney_);
+
+			return comp;
 		}
 
 		/**
@@ -74,7 +76,7 @@ namespace pav
 				// If index is not dumb
 				if (index < std_vec.size())
 				{
-					std_vec.at(index)->End();
+					std_vec.at(index)->End(); // Calling component end logic
 					std_vec.erase(std_vec.begin() + index);
 				}
 			}
