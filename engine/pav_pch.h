@@ -23,6 +23,9 @@
 
 #include <string>
 
+#include <mutex>
+#include <thread>
+
 // PAV
 #include "pav_pcs.h"
 

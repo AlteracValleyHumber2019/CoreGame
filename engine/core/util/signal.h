@@ -92,6 +92,8 @@ namespace pav
 	class Delegate : public DelegateBase<R, Args...>
 	{
 	private:
+		std::mutex delegate_lock_; // Mutex lock for thread
+
 		std::unique_ptr<MemberFunctionCallback<O, R, Args...>> callback_;
 
 	public:
@@ -123,6 +125,8 @@ namespace pav
 		 */
 		inline void Register(MemberObjectType object, MEMBER_FUNC_TYPE func)
 		{
+			std::lock_guard<std::mutex> guard(delegate_lock_);
+
 			callback_ = std::make_unique<MemberFunctionCallback<O, R, Args...>>(object, func);
 		}
 
@@ -145,6 +149,8 @@ namespace pav
 		 */
 		inline R Invoke(Args&& ...args) override
 		{
+			std::lock_guard<std::mutex> guard(delegate_lock_);
+
 			return callback_->Invoke(std::forward<Args>(args)...);
 		}
 
@@ -160,6 +166,8 @@ namespace pav
 		 */
 		inline bool HasCallback() const
 		{
+			std::lock_guard<std::mutex> guard(delegate_lock_);
+
 			return callback_ != nullptr;
 		}
 	};

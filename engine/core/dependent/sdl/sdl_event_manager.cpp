@@ -40,14 +40,14 @@ void pav::SDLEventManager::End()
 void pav::SDLEventManager::Update(const float delta_time)
 {
 	SDL_Event event;
-	while (SDL_PollEvent(&event) != 0)
+	while (SDL_WaitEvent(&event) != 0)
 	{
 		switch (event.type)
 		{
 		case SDL_KEYDOWN:
 		{
 			// Convert keycode
-			KeyCode keycode = sdl_key_map_.at(event.key.keysym.sym);
+ 			KeyCode keycode = sdl_key_map_.at(event.key.keysym.sym);
 
 			if (event.key.repeat == 0) // Key down event
 			{
