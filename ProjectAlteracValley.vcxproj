@@ -184,6 +184,8 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pav_pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="engine\core\entity_component\sec_manager.cpp" />
+    <ClCompile Include="engine\core\resource_system\resource_pool.cpp" />
+    <ClCompile Include="engine\core\resource_system\resource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -211,6 +213,8 @@
     <ClInclude Include="engine\pav_pch.h" />
     <ClInclude Include="engine\core\entity_component\game_object_manager.h" />
     <ClInclude Include="engine\core\entity_component\sec_manager.h" />
+    <ClInclude Include="engine\core\resource_system\resource_pool.h" />
+    <ClInclude Include="engine\core\resource_system\resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
