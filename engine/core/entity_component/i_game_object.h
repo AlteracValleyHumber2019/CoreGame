@@ -66,7 +66,7 @@ namespace pav
 		 * \author	Jaymie
 		 * \date	2/6/2019
 		 *
-		 * \returns	The unique identifier.
+		 * \returns	The unique identifier for this game object.
 		 */
 		inline unsigned int GetGUID() const
 		{

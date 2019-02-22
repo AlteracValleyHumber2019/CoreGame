@@ -19,7 +19,7 @@
 </simplesect>
 <simplesect kind="date"><para>2/6/2019</para>
 </simplesect>
-<simplesect kind="return"><para>The unique identifier. </para>
+<simplesect kind="return"><para>The unique identifier for this game object. </para>
 </simplesect>
 </para>
         </detaileddescription>
