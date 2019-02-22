@@ -168,11 +168,11 @@
     <ClCompile Include="engine\core\scene_manager.cpp" />
     <ClCompile Include="engine\core\util\signal.cpp" />
     <ClCompile Include="engine\core\window_manager.cpp" />
-    <ClCompile Include="game\scene\example_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\i_game_object.cpp" />
     <ClCompile Include="engine\core\entity_component\i_component.cpp" />
     <ClCompile Include="engine\core\entity_component\game_object_manager.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="example\scene\example_scene.cpp" />
+    <ClCompile Include="example\main.cpp" />
     <ClCompile Include="engine\pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -200,7 +200,6 @@
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
     <ClInclude Include="engine\core\util\guid.h" />
-    <ClInclude Include="game\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\i_game_object.h" />
     <ClInclude Include="engine\core\entity_component\i_component.h" />
     <ClInclude Include="engine\pav_pcs.h" />
@@ -215,6 +214,7 @@
     <ClInclude Include="engine\core\entity_component\sec_manager.h" />
     <ClInclude Include="engine\core\resource_system\resource_pool.h" />
     <ClInclude Include="engine\core\resource_system\resource.h" />
+    <ClInclude Include="example\scene\example_scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

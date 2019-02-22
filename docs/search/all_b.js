@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['scenemanager',['SceneManager',['../classpav_1_1_scene_manager.html',1,'pav']]],
-  ['sdleventmanager',['SDLEventManager',['../classpav_1_1_s_d_l_event_manager.html',1,'pav']]],
-  ['setactive',['SetActive',['../classpav_1_1_i_component_base.html#ac9ba32e508da5e84c5d97a284e22d52e',1,'pav::IComponentBase']]],
-  ['setascontext',['SetAsContext',['../classpav_1_1_g_l_s_d_l_window.html#a28ee1409fec0ed0d24a82d02de82943f',1,'pav::GLSDLWindow::SetAsContext()'],['../classpav_1_1_i_window.html#a33f8cbc788780cf9e9a9abfcd03ddf17',1,'pav::IWindow::SetAsContext()']]],
-  ['setignoreautoupdate',['SetIgnoreAutoUpdate',['../classpav_1_1_i_component_base.html#a4810a7d8767d2a012331e0c6396ef3d1',1,'pav::IComponentBase']]],
-  ['setupengineevents',['SetupEngineEvents',['../classpav_1_1_i_component_base.html#ad27e51469103c396be8e742ce0bfb353',1,'pav::IComponentBase::SetupEngineEvents()'],['../classpav_1_1_i_game_object_base.html#a92c08552cee5b40fe0d3819c318f75c0',1,'pav::IGameObjectBase::SetupEngineEvents()']]],
-  ['signal',['Signal',['../classpav_1_1_signal.html',1,'pav']]],
-  ['signal_3c_20void_2c_20inputeventtype_20_3e',['Signal&lt; void, InputEventType &gt;',['../classpav_1_1_signal.html',1,'pav']]],
-  ['signal_3c_20void_2c_20keycode_20_3e',['Signal&lt; void, KeyCode &gt;',['../classpav_1_1_signal.html',1,'pav']]],
-  ['signal_3c_20void_2c_20mousebuttoncode_2c_20unsigned_20short_20_3e',['Signal&lt; void, MouseButtonCode, unsigned short &gt;',['../classpav_1_1_signal.html',1,'pav']]],
-  ['startengine',['StartEngine',['../classpav_1_1_engine.html#ad3e1c331f9892bd8dc1625b5d2fee3ad',1,'pav::Engine']]],
-  ['switchscene',['SwitchScene',['../classpav_1_1_scene_manager.html#a29a016d57b8f0ade9baf59e2c16dd846',1,'pav::SceneManager']]]
+  ['on_5finput',['on_input',['../structpav_1_1_event_attorney.html#ae1a3154ed040a6297f25f6d4013ffac9',1,'pav::EventAttorney::on_input()'],['../classpav_1_1_event_manager.html#a9434c18024abe360412da0ec1d6fe7ea',1,'pav::EventManager::on_input()']]],
+  ['on_5fkey_5fdown',['on_key_down',['../structpav_1_1_event_attorney.html#abbf7250c9301e274d5adfc272b45267a',1,'pav::EventAttorney::on_key_down()'],['../classpav_1_1_event_manager.html#a68e8cd3680a4c41213e6f553c8d386ed',1,'pav::EventManager::on_key_down()']]],
+  ['on_5fkey_5fhold',['on_key_hold',['../structpav_1_1_event_attorney.html#a351a530649dd73957160e0ee614b4610',1,'pav::EventAttorney::on_key_hold()'],['../classpav_1_1_event_manager.html#ae46fc06a8a9cf38d5dbe09626d8ef2e8',1,'pav::EventManager::on_key_hold()']]],
+  ['on_5fkey_5fup',['on_key_up',['../structpav_1_1_event_attorney.html#a2ab85b8ac00f2fdd81917c712c3f0734',1,'pav::EventAttorney::on_key_up()'],['../classpav_1_1_event_manager.html#a5da8831739ad62503c36cc307db25d06',1,'pav::EventManager::on_key_up()']]],
+  ['on_5fmouse_5fbutton_5fdown',['on_mouse_button_down',['../structpav_1_1_event_attorney.html#a8fb404115984868fb0da411a47437e69',1,'pav::EventAttorney::on_mouse_button_down()'],['../classpav_1_1_event_manager.html#a412bb05b899e9a6a20f646cbd3bad8f7',1,'pav::EventManager::on_mouse_button_down()']]],
+  ['on_5fmouse_5fbutton_5fup',['on_mouse_button_up',['../structpav_1_1_event_attorney.html#ab2f0e481de671d7f9264b1889f038e2c',1,'pav::EventAttorney::on_mouse_button_up()'],['../classpav_1_1_event_manager.html#a265d9ba5a3c687569cead43f79e71071',1,'pav::EventManager::on_mouse_button_up()']]],
+  ['owner_5f',['owner_',['../classpav_1_1_i_component_base.html#a87a4eee9101e4e99463b03a328e723d8',1,'pav::IComponentBase']]]
 ];

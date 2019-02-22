@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_985d25907f5f880f1f5684c00ffbbf38" kind="dir">
+    <compoundname>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame</compoundname>
+    <innerdir refid="dir_332d976e31ac3af1c24ccbaee7cd69ee">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/"/>
+  </compounddef>
+</doxygen>

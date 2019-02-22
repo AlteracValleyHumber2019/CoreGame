@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="signal_8cpp" kind="file" language="C++">
+    <compoundname>signal.cpp</compoundname>
+    <includes refid="pav__pch_8h" local="yes">pav_pch.h</includes>
+    <includes refid="signal_8h" local="yes">signal.h</includes>
+    <incdepgraph>
+      <node id="582">
+        <label>list</label>
+      </node>
+      <node id="591">
+        <label>functional</label>
+      </node>
+      <node id="585">
+        <label>queue</label>
+      </node>
+      <node id="596">
+        <label>pav_pcs.h</label>
+        <link refid="pav__pcs_8h_source"/>
+      </node>
+      <node id="593">
+        <label>string</label>
+      </node>
+      <node id="586">
+        <label>map</label>
+      </node>
+      <node id="589">
+        <label>unordered_set</label>
+      </node>
+      <node id="579">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.cpp</label>
+        <link refid="signal_8cpp"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+      </node>
+      <node id="592">
+        <label>cstdio</label>
+      </node>
+      <node id="584">
+        <label>stack</label>
+      </node>
+      <node id="583">
+        <label>vector</label>
+      </node>
+      <node id="581">
+        <label>array</label>
+      </node>
+      <node id="587">
+        <label>unordered_map</label>
+      </node>
+      <node id="594">
+        <label>mutex</label>
+      </node>
+      <node id="597">
+        <label>core/util/signal.h</label>
+        <link refid="signal_8h_source"/>
+      </node>
+      <node id="595">
+        <label>thread</label>
+      </node>
+      <node id="588">
+        <label>set</label>
+      </node>
+      <node id="580">
+        <label>pav_pch.h</label>
+        <link refid="pav__pch_8h_source"/>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="596" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+      </node>
+      <node id="590">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.cpp"/>
+  </compounddef>
+</doxygen>

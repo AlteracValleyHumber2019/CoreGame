@@ -12,9 +12,9 @@ namespace pav
 	 *
 	 * \brief	Base class for all game objects.
 	 * 			
-	 * 			This class is meant for game object usage. You should not derive your custom game
-	 * 			object from this class. For custom game object deriving, refer to the class
-	 * 			IGameObject<CRTP>
+	 * This class is meant for game object usage. You should not derive your custom game
+	 * object from this class. For custom game object deriving, refer to the class
+	 * \ref IGameObject
 	 *
 	 * \author	Jaymie
 	 * \date	2/6/2019

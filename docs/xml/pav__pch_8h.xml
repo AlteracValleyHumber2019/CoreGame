@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="pav__pch_8h" kind="file" language="C++">
+    <compoundname>pav_pch.h</compoundname>
+    <includes local="no">array</includes>
+    <includes local="no">list</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">stack</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">map</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">set</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">string</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">thread</includes>
+    <includes refid="pav__pcs_8h" local="yes">pav_pcs.h</includes>
+    <includes refid="signal_8h" local="yes">core/util/signal.h</includes>
+    <includedby refid="gl__sdl__render__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_render_manager.cpp</includedby>
+    <includedby refid="gl__sdl__window_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.cpp</includedby>
+    <includedby refid="sdl__event__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/sdl_event_manager.cpp</includedby>
+    <includedby refid="engine_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.cpp</includedby>
+    <includedby refid="component__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.cpp</includedby>
+    <includedby refid="game__object__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.cpp</includedby>
+    <includedby refid="i__component_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_component.cpp</includedby>
+    <includedby refid="i__game__object_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.cpp</includedby>
+    <includedby refid="sec__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp</includedby>
+    <includedby refid="event__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.cpp</includedby>
+    <includedby refid="event__util_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_util.cpp</includedby>
+    <includedby refid="i__scene_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_scene.cpp</includedby>
+    <includedby refid="manager__factory_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp</includedby>
+    <includedby refid="render__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.cpp</includedby>
+    <includedby refid="resource_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.cpp</includedby>
+    <includedby refid="resource__pool_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource_pool.cpp</includedby>
+    <includedby refid="scene__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/scene_manager.cpp</includedby>
+    <includedby refid="signal_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.cpp</includedby>
+    <includedby refid="window__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/window_manager.cpp</includedby>
+    <includedby refid="pav__pch_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.cpp</includedby>
+    <incdepgraph>
+      <node id="653">
+        <label>list</label>
+      </node>
+      <node id="662">
+        <label>functional</label>
+      </node>
+      <node id="656">
+        <label>queue</label>
+      </node>
+      <node id="667">
+        <label>pav_pcs.h</label>
+        <link refid="pav__pcs_8h_source"/>
+      </node>
+      <node id="664">
+        <label>string</label>
+      </node>
+      <node id="657">
+        <label>map</label>
+      </node>
+      <node id="660">
+        <label>unordered_set</label>
+      </node>
+      <node id="663">
+        <label>cstdio</label>
+      </node>
+      <node id="655">
+        <label>stack</label>
+      </node>
+      <node id="654">
+        <label>vector</label>
+      </node>
+      <node id="652">
+        <label>array</label>
+      </node>
+      <node id="658">
+        <label>unordered_map</label>
+      </node>
+      <node id="665">
+        <label>mutex</label>
+      </node>
+      <node id="668">
+        <label>core/util/signal.h</label>
+        <link refid="signal_8h_source"/>
+      </node>
+      <node id="666">
+        <label>thread</label>
+      </node>
+      <node id="659">
+        <label>set</label>
+      </node>
+      <node id="651">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.h</label>
+        <link refid="pav__pch_8h"/>
+        <childnode refid="652" relation="include">
+        </childnode>
+        <childnode refid="653" relation="include">
+        </childnode>
+        <childnode refid="654" relation="include">
+        </childnode>
+        <childnode refid="655" relation="include">
+        </childnode>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="660" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="662" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
+        </childnode>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+        <childnode refid="666" relation="include">
+        </childnode>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="668" relation="include">
+        </childnode>
+      </node>
+      <node id="661">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.h"/>
+  </compounddef>
+</doxygen>

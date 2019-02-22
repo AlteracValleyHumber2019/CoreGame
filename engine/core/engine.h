@@ -6,6 +6,9 @@
 #include "event_manager.h"
 #include "render_manager.h"
 
+/** \namespace pav
+ *  \brief Project Alterac Valley namespace
+ */
 namespace pav
 {
 	/**
@@ -15,6 +18,14 @@ namespace pav
 	 *
 	 * \author	Jaymie
 	 * \date	2/2/2019
+	 * 			
+	 * \section ex1 Creating an engine entry point with a standard c++ main
+	 * 			To write your game with Project Alterac Valley, you must create a Engine on the
+	 * 			heap inside your main function. Once the engine object is created you now need to
+	 * 			create a engine window using the function \ref SetWindowInfo(WindowInfo&&)
+	 * 			Lastly you need to call \ref InitEngine() to initialize engine sub systems.
+	 * 			from here on you may add your custom scenes into your game(refer to \ref IScene)
+	 * \snippet example_main.cpp ExampleMain entry point
 	 */
 	class Engine final
 	{
@@ -44,7 +55,7 @@ namespace pav
 		Engine();
 
 		/**
-		 * \fn	void final::InitEngine();
+		 * \fn	void Engine::InitEngine();
 		 *
 		 * \brief	Initializes the engine
 		 *
@@ -75,6 +86,16 @@ namespace pav
 		 */
 		void Update(const float delta_time);
 
+		/**
+		 * \fn	void Engine::SetWindowInfo(WindowInfo&& window_info);
+		 *
+		 * \brief	Sets window information for the engine
+		 *
+		 * \author	Jaymie
+		 * \date	2/21/2019
+		 *
+		 * \param [in]	window_info	WindowInfo struct describing the window.
+		 */
 		void SetWindowInfo(WindowInfo&& window_info);
 	};
 }

@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classpav_1_1_s_e_c_manager" kind="class" language="C++" prot="public">
+    <compoundname>pav::SECManager</compoundname>
+    <includes refid="sec__manager_8h" local="no">sec_manager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpav_1_1_s_e_c_manager_1aa3f76355f14a70dc299cf1b4e77f582d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_game_object_manager" kindref="compound">GameObjectManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GameObjectManager&gt; pav::SECManager::game_object_manager_</definition>
+        <argsstring></argsstring>
+        <name>game_object_manager_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="26" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_s_e_c_manager_1a679234377be98df9a3df9b022ac85378" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_component_manager" kindref="compound">ComponentManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ComponentManager&gt; pav::SECManager::component_manager_</definition>
+        <argsstring></argsstring>
+        <name>component_manager_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="27" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_s_e_c_manager_1a7f8066119ce177c0e0f0088a1da7734c" prot="private" static="no" mutable="no">
+        <type><ref refid="structpav_1_1_event_attorney" kindref="compound">EventAttorney</ref> *</type>
+        <definition>EventAttorney* pav::SECManager::event_attorny_</definition>
+        <argsstring></argsstring>
+        <name>event_attorny_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="29" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1ae234f6ff5b33591c6b12a723f72cdd71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pav::SECManager::SECManager</definition>
+        <argsstring>()</argsstring>
+        <name>SECManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="32" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1aeee4eab7e51958b74dc9f4643cfb4e6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref> *</type>
+        <definition>IGameObjectBase * pav::SECManager::AddGameObject</definition>
+        <argsstring>(std::string &amp;&amp;name)</argsstring>
+        <name>AddGameObject</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Adds a <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> subtype. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else a pointer to an <ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="45" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1a5d3c088aee6148384a19a3e84d1977ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref> *</type>
+        <definition>IGameObjectBase * pav::SECManager::AddGameObject</definition>
+        <argsstring>(std::string &amp;&amp;name, IGameObjectBase *parent)</argsstring>
+        <name>AddGameObject</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Adds a <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> to a parent <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> subtype. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the parent.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else a pointer to an <ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="59" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1ac533c8f38a218ee2d0285f724980ede5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pav::SECManager::RemoveGameObject</definition>
+        <argsstring>(std::string &amp;&amp;name)</argsstring>
+        <name>RemoveGameObject</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Removes a <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref> based object by its name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="71" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1a6827a130755e5d456bee089ff16eec78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_component_base" kindref="compound">IComponentBase</ref> *</type>
+        <definition>IComponentBase * pav::SECManager::AddComponent</definition>
+        <argsstring>(Args &amp;&amp;...args)</argsstring>
+        <name>AddComponent</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Adds a component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the constructor arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">...args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The component constructor arguments.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else a pointer to a <ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="85" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1abeb464d28639bd249d32ffe3deef988c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void pav::SECManager::RemoveComponent</definition>
+        <argsstring>(const size_t index=0)</argsstring>
+        <name>RemoveComponent</name>
+        <param>
+          <type>const size_t</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Removes the component with the type C. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the c. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) Zero-based index of the. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="96" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="141" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1a89a726a0ffb012288d305f46b05e54f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pav::SECManager::Update</definition>
+        <argsstring>(float delta_time)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>float</type>
+          <declname>delta_time</declname>
+        </param>
+        <briefdescription>
+<para>Updates all objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delta time. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="108" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_s_e_c_manager_1a75aaddaaf08d624e500e2554cb65a89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pav::SECManager::SetupEngineEvents</definition>
+        <argsstring>(EventAttorney *event_attorney)</argsstring>
+        <name>SetupEngineEvents</name>
+        <param>
+          <type><ref refid="structpav_1_1_event_attorney" kindref="compound">EventAttorney</ref> *</type>
+          <declname>event_attorney</declname>
+        </param>
+        <briefdescription>
+<para>Sets up the engine events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event_attorney</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the event attorney. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="120" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp" bodystart="23" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Manager for the entity component system. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" line="24" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.h" bodystart="23" bodyend="121"/>
+    <listofallmembers>
+      <member refid="classpav_1_1_s_e_c_manager_1a6827a130755e5d456bee089ff16eec78" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>AddComponent</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1aeee4eab7e51958b74dc9f4643cfb4e6c" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>AddGameObject</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1a5d3c088aee6148384a19a3e84d1977ae" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>AddGameObject</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1a679234377be98df9a3df9b022ac85378" prot="private" virt="non-virtual"><scope>pav::SECManager</scope><name>component_manager_</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1a7f8066119ce177c0e0f0088a1da7734c" prot="private" virt="non-virtual"><scope>pav::SECManager</scope><name>event_attorny_</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1aa3f76355f14a70dc299cf1b4e77f582d" prot="private" virt="non-virtual"><scope>pav::SECManager</scope><name>game_object_manager_</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1abeb464d28639bd249d32ffe3deef988c" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>RemoveComponent</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1ac533c8f38a218ee2d0285f724980ede5" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>RemoveGameObject</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1ae234f6ff5b33591c6b12a723f72cdd71" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>SECManager</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1a75aaddaaf08d624e500e2554cb65a89b" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>SetupEngineEvents</name></member>
+      <member refid="classpav_1_1_s_e_c_manager_1a89a726a0ffb012288d305f46b05e54f7" prot="public" virt="non-virtual"><scope>pav::SECManager</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

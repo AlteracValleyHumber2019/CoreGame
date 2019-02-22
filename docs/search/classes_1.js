@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['engine',['Engine',['../classpav_1_1_engine.html',1,'pav']]],
-  ['eventattorney',['EventAttorney',['../structpav_1_1_event_attorney.html',1,'pav']]],
-  ['eventmanager',['EventManager',['../classpav_1_1_event_manager.html',1,'pav']]]
+  ['delegate',['Delegate',['../classpav_1_1_delegate.html',1,'pav']]],
+  ['delegatebase',['DelegateBase',['../structpav_1_1_delegate_base.html',1,'pav']]],
+  ['delegatebase_3c_20r_2c_20args_2e_2e_2e_20_3e',['DelegateBase&lt; R, Args... &gt;',['../structpav_1_1_delegate_base.html',1,'pav']]]
 ];

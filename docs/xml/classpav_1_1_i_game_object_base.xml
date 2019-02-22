@@ -1,0 +1,499 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classpav_1_1_i_game_object_base" kind="class" language="C++" prot="public">
+    <compoundname>pav::IGameObjectBase</compoundname>
+    <derivedcompoundref refid="classpav_1_1_i_game_object" prot="public" virt="non-virtual">pav::IGameObject&lt; CRTP &gt;</derivedcompoundref>
+    <includes refid="i__game__object_8h" local="no">i_game_object.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Getters</header>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a801cc072587bce166f7b4cb4870c7b79" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IGameObjectBase::GetGUID</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGUID</name>
+        <briefdescription>
+<para>Getter for the unique identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019</para>
+</simplesect>
+<simplesect kind="return"><para>The unique identifier. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="71" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a176c1a819dc91d91086e1835da447074" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IGameObjectBase::GetOrder</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOrder</name>
+        <briefdescription>
+<para>Getter for the GameObject order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019</para>
+</simplesect>
+<simplesect kind="return"><para>The order. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="86" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="86" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classpav_1_1_i_game_object_base_1a1792bd89cabd9de04209188147625921" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class GameObjectManager</definition>
+        <argsstring></argsstring>
+        <name>GameObjectManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="26" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1a770a61778aa123e3eedfb07fa3ec8bc8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string pav::IGameObjectBase::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="29" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1ad4b6fd85fa0736da27393617efbab195" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IGameObjectBase::guid_</definition>
+        <argsstring></argsstring>
+        <name>guid_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="30" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1a74bfdb87bf98e05f88873d0ddca4d3f8" prot="private" static="no" mutable="no">
+        <type><ref refid="classpav_1_1_i_game_object_base" kindref="compound">IGameObjectBase</ref> *</type>
+        <definition>IGameObjectBase* pav::IGameObjectBase::parent_</definition>
+        <argsstring></argsstring>
+        <name>parent_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="32" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1a6d6498495eda0af439b7a14e625d2c6b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; unsigned int, std::vector&lt; <ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref> * &gt; &gt;</type>
+        <definition>std::unordered_map&lt;unsigned int, std::vector&lt;pav::IComponentBase*&gt; &gt; pav::IGameObjectBase::components_</definition>
+        <argsstring></argsstring>
+        <name>components_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="35" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1a63445ef3f51efb0f69aece68e0bf2e4b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classpav_1_1_i_game_object_base" kindref="compound">pav::IGameObjectBase</ref> * &gt;</type>
+        <definition>std::unordered_map&lt;std::string, pav::IGameObjectBase*&gt; pav::IGameObjectBase::children_</definition>
+        <argsstring></argsstring>
+        <name>children_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="36" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classpav_1_1_i_game_object_base_1a9bf610b20d4bcf4e8df3097def02751d" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IGameObjectBase::order_</definition>
+        <argsstring></argsstring>
+        <name>order_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="39" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a46f4e7c12d0848bdbbb8229da8ee2ae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pav::IGameObjectBase::IGameObjectBase</definition>
+        <argsstring>(std::string &amp;&amp;name, const unsigned int guid, const unsigned int order=0)</argsstring>
+        <name>IGameObjectBase</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>order</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="55" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.cpp" bodystart="8" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1aede7298142983e90362d26b73e9ac0d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref> *</type>
+        <definition>pav::IComponentBase * pav::IGameObjectBase::AddComponent</definition>
+        <argsstring>(Args &amp;&amp;...args)</argsstring>
+        <name>AddComponent</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Adds a component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the constructor arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">...args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The component constructor arguments.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else a pointer to a <ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="105" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a54c2e705376b8ddda18cba3777ca96b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref> *</type>
+        <definition>pav::IComponentBase * pav::IGameObjectBase::GetComponent</definition>
+        <argsstring>(const size_t index=0)</argsstring>
+        <name>GetComponent</name>
+        <param>
+          <type>const size_t</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Gets a component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) Component index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else the component. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="118" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a5544022f59c410160eab3f03d856af64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void pav::IGameObjectBase::RemoveComponent</definition>
+        <argsstring>(const size_t index=0)</argsstring>
+        <name>RemoveComponent</name>
+        <param>
+          <type>const size_t</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Removes the component with the type C. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the c. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) Zero-based index of the. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="129" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="220" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a32667c3bb68f3272bfe01fcd8e689a5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void pav::IGameObjectBase::Begin</definition>
+        <argsstring>()</argsstring>
+        <name>Begin</name>
+        <briefdescription>
+<para>Game object begin logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="139" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1afb0377beeb9e16fa41e84e9ed79f4d1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void pav::IGameObjectBase::End</definition>
+        <argsstring>()</argsstring>
+        <name>End</name>
+        <briefdescription>
+<para>Game object ending logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="149" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a2b232af79881df7dbb14e4ad606aebba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void pav::IGameObjectBase::Update</definition>
+        <argsstring>(const float delta_time)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>const float</type>
+          <declname>delta_time</declname>
+        </param>
+        <briefdescription>
+<para>Updates the given delta_time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delta time. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="161" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.cpp" bodystart="16" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_i_game_object_base_1a92c08552cee5b40fe0d3819c318f75c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void pav::IGameObjectBase::SetupEngineEvents</definition>
+        <argsstring>(EventAttorney *event_attorney)</argsstring>
+        <name>SetupEngineEvents</name>
+        <param>
+          <type><ref refid="structpav_1_1_event_attorney" kindref="compound">EventAttorney</ref> *</type>
+          <declname>event_attorney</declname>
+        </param>
+        <briefdescription>
+<para>Sets up the engine events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event_attorney</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the event attorney. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="173" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="173" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for all game objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is meant for game object usage. You should not derive your custom game object from this class. For custom game object deriving, refer to the class <ref refid="classpav_1_1_i_game_object" kindref="compound">IGameObject</ref></para>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/6/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>pav::IGameObjectBase</label>
+        <link refid="classpav_1_1_i_game_object_base"/>
+      </node>
+      <node id="51">
+        <label>pav::IGameObject&lt; CRTP &gt;</label>
+        <link refid="classpav_1_1_i_game_object"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" line="23" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h" bodystart="22" bodyend="174"/>
+    <listofallmembers>
+      <member refid="classpav_1_1_i_game_object_base_1aede7298142983e90362d26b73e9ac0d6" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>AddComponent</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a32667c3bb68f3272bfe01fcd8e689a5a" prot="public" virt="virtual"><scope>pav::IGameObjectBase</scope><name>Begin</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a63445ef3f51efb0f69aece68e0bf2e4b" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>children_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a6d6498495eda0af439b7a14e625d2c6b" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>components_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1afb0377beeb9e16fa41e84e9ed79f4d1e" prot="public" virt="virtual"><scope>pav::IGameObjectBase</scope><name>End</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a1792bd89cabd9de04209188147625921" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>GameObjectManager</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a54c2e705376b8ddda18cba3777ca96b2" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>GetComponent</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a801cc072587bce166f7b4cb4870c7b79" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>GetGUID</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a176c1a819dc91d91086e1835da447074" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>GetOrder</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1ad4b6fd85fa0736da27393617efbab195" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>guid_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a46f4e7c12d0848bdbbb8229da8ee2ae5" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>IGameObjectBase</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a770a61778aa123e3eedfb07fa3ec8bc8" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>name_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a9bf610b20d4bcf4e8df3097def02751d" prot="protected" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>order_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a74bfdb87bf98e05f88873d0ddca4d3f8" prot="private" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>parent_</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a5544022f59c410160eab3f03d856af64" prot="public" virt="non-virtual"><scope>pav::IGameObjectBase</scope><name>RemoveComponent</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a92c08552cee5b40fe0d3819c318f75c0" prot="public" virt="virtual"><scope>pav::IGameObjectBase</scope><name>SetupEngineEvents</name></member>
+      <member refid="classpav_1_1_i_game_object_base_1a2b232af79881df7dbb14e4ad606aebba" prot="public" virt="virtual"><scope>pav::IGameObjectBase</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

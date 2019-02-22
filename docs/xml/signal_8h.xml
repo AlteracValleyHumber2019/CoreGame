@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="signal_8h" kind="file" language="C++">
+    <compoundname>signal.h</compoundname>
+    <includedby refid="signal_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.cpp</includedby>
+    <includedby refid="pav__pch_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.h</includedby>
+    <invincdepgraph>
+      <node id="600">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h</label>
+        <link refid="signal_8h"/>
+        <childnode refid="601" relation="include">
+        </childnode>
+      </node>
+      <node id="601">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.h</label>
+        <link refid="pav__pch_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structpav_1_1_member_function_callback" prot="public">pav::MemberFunctionCallback</innerclass>
+    <innerclass refid="structpav_1_1_delegate_base" prot="public">pav::DelegateBase</innerclass>
+    <innerclass refid="classpav_1_1_delegate" prot="public">pav::Delegate</innerclass>
+    <innerclass refid="classpav_1_1_signal" prot="public">pav::Signal</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="group__g__signal__slot_1ga4ff7b1cfdef0b85e2829bf3f64212b70" prot="public" static="no">
+        <name>MEMBER_FUNC_TYPE</name>
+        <initializer>MemberFunction&lt;O, R, Args...&gt;</initializer>
+        <briefdescription>
+<para>Signature of a template version of pointer to member function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="34" column="9" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h"/>
+  </compounddef>
+</doxygen>

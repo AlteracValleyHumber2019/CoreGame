@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="i__game__object_8h" kind="file" language="C++">
+    <compoundname>i_game_object.h</compoundname>
+    <includes refid="event__attorney_8h" local="yes">../event_attorney.h</includes>
+    <includedby refid="game__object__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.h</includedby>
+    <includedby refid="i__component_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_component.cpp</includedby>
+    <includedby refid="i__game__object_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.cpp</includedby>
+    <incdepgraph>
+      <node id="248">
+        <label>../event_attorney.h</label>
+        <link refid="event__attorney_8h_source"/>
+        <childnode refid="249" relation="include">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h</label>
+        <link refid="i__game__object_8h"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>event_util.h</label>
+        <link refid="event__util_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="251">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.h</label>
+        <link refid="game__object__manager_8h_source"/>
+      </node>
+      <node id="250">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h</label>
+        <link refid="i__game__object_8h"/>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpav_1_1_i_game_object_base" prot="public">pav::IGameObjectBase</innerclass>
+    <innerclass refid="classpav_1_1_i_game_object" prot="public">pav::IGameObject</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.h"/>
+  </compounddef>
+</doxygen>

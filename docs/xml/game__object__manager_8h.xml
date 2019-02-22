@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="game__object__manager_8h" kind="file" language="C++">
+    <compoundname>game_object_manager.h</compoundname>
+    <includes refid="i__game__object_8h" local="yes">i_game_object.h</includes>
+    <includedby refid="game__object__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.cpp</includedby>
+    <includedby refid="sec__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="187">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.h</label>
+        <link refid="game__object__manager_8h"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+      <node id="189">
+        <label>../event_attorney.h</label>
+        <link refid="event__attorney_8h_source"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>i_game_object.h</label>
+        <link refid="i__game__object_8h_source"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+      </node>
+      <node id="190">
+        <label>event_util.h</label>
+        <link refid="event__util_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classpav_1_1_game_object_manager" prot="public">pav::GameObjectManager</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/game_object_manager.h"/>
+  </compounddef>
+</doxygen>

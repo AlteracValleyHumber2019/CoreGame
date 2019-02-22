@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="component__manager_8h" kind="file" language="C++">
+    <compoundname>component_manager.h</compoundname>
+    <includes refid="i__component_8h" local="yes">i_component.h</includes>
+    <includes refid="guid_8h" local="yes">../util/guid.h</includes>
+    <includedby refid="component__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.cpp</includedby>
+    <includedby refid="sec__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/sec_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="161">
+        <label>../util/guid.h</label>
+        <link refid="guid_8h_source"/>
+      </node>
+      <node id="159">
+        <label>../event_attorney.h</label>
+        <link refid="event__attorney_8h_source"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h</label>
+        <link refid="component__manager_8h"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>i_component.h</label>
+        <link refid="i__component_8h_source"/>
+        <childnode refid="159" relation="include">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>event_util.h</label>
+        <link refid="event__util_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classpav_1_1_component_manager" prot="public">pav::ComponentManager</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h"/>
+  </compounddef>
+</doxygen>

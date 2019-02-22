@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="event__manager_8h" kind="file" language="C++">
+    <compoundname>event_manager.h</compoundname>
+    <includes refid="i__manager_8h" local="yes">i_manager.h</includes>
+    <includes refid="event__util_8h" local="yes">event_util.h</includes>
+    <includedby refid="sdl__event__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/sdl_event_manager.h</includedby>
+    <includedby refid="engine_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</includedby>
+    <includedby refid="manager__factory_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</includedby>
+    <includedby refid="event__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="320">
+        <label>i_manager.h</label>
+        <link refid="i__manager_8h_source"/>
+      </node>
+      <node id="319">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.h</label>
+        <link refid="event__manager_8h"/>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+      </node>
+      <node id="321">
+        <label>event_util.h</label>
+        <link refid="event__util_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="324">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</label>
+        <link refid="engine_8h_source"/>
+      </node>
+      <node id="325">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</label>
+        <link refid="manager__factory_8h_source"/>
+      </node>
+      <node id="322">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.h</label>
+        <link refid="event__manager_8h"/>
+        <childnode refid="323" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+      </node>
+      <node id="323">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/sdl_event_manager.h</label>
+        <link refid="sdl__event__manager_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpav_1_1_event_manager" prot="public">pav::EventManager</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classpav_1_1_manager_factory" kind="class" language="C++" prot="public">
+    <compoundname>pav::ManagerFactory</compoundname>
+    <includes refid="manager__factory_8h" local="no">manager_factory.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpav_1_1_manager_factory_1a4c4d4e781e6486568aa7241a600a5e26" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_scene_manager" kindref="compound">SceneManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; pav::SceneManager &gt; pav::ManagerFactory::CreateSceneManager</definition>
+        <argsstring>()</argsstring>
+        <name>CreateSceneManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" line="22" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_manager_factory_1a8a6dc0e29e91ecfaa2a5c51685c0d348" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_window_manager" kindref="compound">WindowManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; pav::WindowManager &gt; pav::ManagerFactory::CreateWindowManagerManager</definition>
+        <argsstring>()</argsstring>
+        <name>CreateWindowManagerManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" line="23" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_manager_factory_1aa1186bd8f34c520728e1c0adc77d7dc8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_event_manager" kindref="compound">EventManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; pav::EventManager &gt; pav::ManagerFactory::CreateEventManager</definition>
+        <argsstring>()</argsstring>
+        <name>CreateEventManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" line="24" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_manager_factory_1a1e86bc51a1a367ece9edd049a491bdc4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classpav_1_1_render_manager" kindref="compound">RenderManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; pav::RenderManager &gt; pav::ManagerFactory::CreateRenderManager</definition>
+        <argsstring>()</argsstring>
+        <name>CreateRenderManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" line="25" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp" bodystart="31" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A factory used to create api dependent managers based on pre compiled settings. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" line="20" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h" bodystart="19" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classpav_1_1_manager_factory_1aa1186bd8f34c520728e1c0adc77d7dc8" prot="public" virt="non-virtual"><scope>pav::ManagerFactory</scope><name>CreateEventManager</name></member>
+      <member refid="classpav_1_1_manager_factory_1a1e86bc51a1a367ece9edd049a491bdc4" prot="public" virt="non-virtual"><scope>pav::ManagerFactory</scope><name>CreateRenderManager</name></member>
+      <member refid="classpav_1_1_manager_factory_1a4c4d4e781e6486568aa7241a600a5e26" prot="public" virt="non-virtual"><scope>pav::ManagerFactory</scope><name>CreateSceneManager</name></member>
+      <member refid="classpav_1_1_manager_factory_1a8a6dc0e29e91ecfaa2a5c51685c0d348" prot="public" virt="non-virtual"><scope>pav::ManagerFactory</scope><name>CreateWindowManagerManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

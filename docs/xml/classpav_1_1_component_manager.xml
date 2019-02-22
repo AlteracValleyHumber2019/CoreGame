@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classpav_1_1_component_manager" kind="class" language="C++" prot="public">
+    <compoundname>pav::ComponentManager</compoundname>
+    <includes refid="component__manager_8h" local="no">component_manager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpav_1_1_component_manager_1a83c8bb86ebd747af55a2aaac58b6c8fe" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; unsigned int, std::vector&lt; std::unique_ptr&lt; <ref refid="classpav_1_1_i_component_base" kindref="compound">IComponentBase</ref> &gt; &gt; &gt;</type>
+        <definition>std::unordered_map&lt;unsigned int, std::vector&lt;std::unique_ptr&lt;IComponentBase&gt; &gt; &gt; pav::ComponentManager::components_</definition>
+        <argsstring></argsstring>
+        <name>components_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="20" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpav_1_1_component_manager_1aab01815784b166b361718972c8d06fca" prot="private" static="no" mutable="no">
+        <type><ref refid="structpav_1_1_event_attorney" kindref="compound">EventAttorney</ref> *</type>
+        <definition>EventAttorney* pav::ComponentManager::event_attorney_</definition>
+        <argsstring></argsstring>
+        <name>event_attorney_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="22" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpav_1_1_component_manager_1a941caaa883d438fa79f07d7aa5ba77b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classpav_1_1_i_component_base" kindref="compound">IComponentBase</ref> *</type>
+        <definition>template&lt; typename C, typename ...Args &gt; inline pav::IComponentBase * pav::ComponentManager::AddComponent</definition>
+        <argsstring>(Args &amp;&amp;...args)</argsstring>
+        <name>AddComponent</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Adds a component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the constructor arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">...args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The component constructor arguments.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Null if it fails, else a pointer to a <ref refid="classpav_1_1_i_component_base" kindref="compound">pav::IComponentBase</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="38" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" bodystart="38" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_component_manager_1aba2326c20cd764c18e6fac05dcb7d6a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>template&lt; typename C &gt; inline void pav::ComponentManager::RemoveComponent</definition>
+        <argsstring>(const size_t index=0)</argsstring>
+        <name>RemoveComponent</name>
+        <param>
+          <type>const size_t</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Removes the component with the type C. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the c. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) Zero-based index of the. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="66" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" bodystart="66" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classpav_1_1_component_manager_1a40d8905c4e240666a96231f35e50c258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pav::ComponentManager::SetupEngineEvents</definition>
+        <argsstring>(EventAttorney *event_attorney)</argsstring>
+        <name>SetupEngineEvents</name>
+        <param>
+          <type><ref refid="structpav_1_1_event_attorney" kindref="compound">EventAttorney</ref> *</type>
+          <declname>event_attorney</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="95" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.cpp" bodystart="4" bodyend="7"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Manager for components. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/12/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" line="18" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h" bodystart="17" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classpav_1_1_component_manager_1a941caaa883d438fa79f07d7aa5ba77b1" prot="public" virt="non-virtual"><scope>pav::ComponentManager</scope><name>AddComponent</name></member>
+      <member refid="classpav_1_1_component_manager_1a83c8bb86ebd747af55a2aaac58b6c8fe" prot="private" virt="non-virtual"><scope>pav::ComponentManager</scope><name>components_</name></member>
+      <member refid="classpav_1_1_component_manager_1aab01815784b166b361718972c8d06fca" prot="private" virt="non-virtual"><scope>pav::ComponentManager</scope><name>event_attorney_</name></member>
+      <member refid="classpav_1_1_component_manager_1aba2326c20cd764c18e6fac05dcb7d6a5" prot="public" virt="non-virtual"><scope>pav::ComponentManager</scope><name>RemoveComponent</name></member>
+      <member refid="classpav_1_1_component_manager_1a40d8905c4e240666a96231f35e50c258" prot="public" virt="non-virtual"><scope>pav::ComponentManager</scope><name>SetupEngineEvents</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

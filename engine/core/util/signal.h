@@ -3,6 +3,19 @@
 
 namespace pav
 {
+    /**
+     *  This is the first group
+     *  @{
+     */
+
+	/**
+	 *	\defgroup g_signal_slot Signals and Slot system
+	 * 			 
+	 *	\brief A collection of classes used to implement the Signals and Slot system
+	 *		   
+	 *	@{
+	 */
+
 	/** \brief	Signature of a generic pointer to member function */
 	template <typename O, typename R, typename ...Args>
 	using MemberFunction = R(O::*)(Args...);
@@ -180,7 +193,7 @@ namespace pav
 	 * \author	Jaymie
 	 * \date	2/2/2019
 	 *
-	 * \tparam	R	   	The return type of the callback slot function
+	 * \tparam	R	   	The return type of the callback slot function.
 	 * \tparam	...Args	list of all function parameters used in the delegated function.
 	 */
 	template <typename R, typename ...Args>
@@ -190,6 +203,18 @@ namespace pav
 		std::unordered_map<unsigned int, std::unique_ptr<DelegateBase<R, Args...>>> slots_;
 
 	public:
+
+		/**
+		 * \fn	template <typename O> inline unsigned Signal::Connect(O* member_object, MEMBER_FUNC_TYPE slot)
+		 *
+		 * \brief	Connects a slot to this signal.
+		 *
+		 * \tparam	O	Type of the member object.
+		 * \param [in]	member_object	If non-null, the member object.
+		 * \param 		  	slot		 	The callback function slot.
+		 *
+		 * \returns	The generated id for the signal.
+		 */
 		template <typename O>
 		inline unsigned Connect(O* member_object, MEMBER_FUNC_TYPE slot)
 		{
@@ -199,9 +224,19 @@ namespace pav
 
 			slots_.insert(std::make_pair(0, std::move(ptr))); // Debug test
 
-			return 0; // TODO: implement a GUID system for slots
+			return 0; // #TODO: implement a GUID system for slots
 		}
 
+		/**
+		 * \fn	inline void Signal::Disconnect(const unsigned int id)
+		 *
+		 * \brief	Disconnects the given slot by id
+		 *
+		 * \author	Jaymie
+		 * \date	2/21/2019
+		 *
+		 * \param	id	The Identifier to disconnect a slot from a signal.
+		 */
 		inline void Disconnect(const unsigned int id)
 		{
 			if (slots_.find(id) != slots_.end()) // Check if signal has slot
@@ -210,6 +245,16 @@ namespace pav
 			}
 		}
 
+		/**
+		 * \fn	inline void Signal::EmitAll(Args&& ...args)
+		 *
+		 * \brief	Invoke all functions that is registered to this signal
+		 *
+		 * \author	Jaymie
+		 * \date	2/21/2019
+		 *
+		 * \param [in]	...args	The arguments of the slot callback functions
+		 */
 		inline void EmitAll(Args&& ...args)
 		{
 			for (const auto& ptr : slots_)
@@ -218,6 +263,8 @@ namespace pav
 			}
 		}
 	};
+
+	/** @} */ // end of g_signal_slot
 
 }
 

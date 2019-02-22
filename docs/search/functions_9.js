@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['setactive',['SetActive',['../classpav_1_1_i_component_base.html#ac9ba32e508da5e84c5d97a284e22d52e',1,'pav::IComponentBase']]],
-  ['setascontext',['SetAsContext',['../classpav_1_1_g_l_s_d_l_window.html#a28ee1409fec0ed0d24a82d02de82943f',1,'pav::GLSDLWindow::SetAsContext()'],['../classpav_1_1_i_window.html#a33f8cbc788780cf9e9a9abfcd03ddf17',1,'pav::IWindow::SetAsContext()']]],
-  ['setignoreautoupdate',['SetIgnoreAutoUpdate',['../classpav_1_1_i_component_base.html#a4810a7d8767d2a012331e0c6396ef3d1',1,'pav::IComponentBase']]],
-  ['setupengineevents',['SetupEngineEvents',['../classpav_1_1_i_component_base.html#ad27e51469103c396be8e742ce0bfb353',1,'pav::IComponentBase::SetupEngineEvents()'],['../classpav_1_1_i_game_object_base.html#a92c08552cee5b40fe0d3819c318f75c0',1,'pav::IGameObjectBase::SetupEngineEvents()']]],
-  ['startengine',['StartEngine',['../classpav_1_1_engine.html#ad3e1c331f9892bd8dc1625b5d2fee3ad',1,'pav::Engine']]],
-  ['switchscene',['SwitchScene',['../classpav_1_1_scene_manager.html#a29a016d57b8f0ade9baf59e2c16dd846',1,'pav::SceneManager']]]
+  ['register',['Register',['../group__g__signal__slot.html#ga802ef548f8b00b3a7da108e8fdb77141',1,'pav::Delegate']]],
+  ['removecomponent',['RemoveComponent',['../classpav_1_1_component_manager.html#aba2326c20cd764c18e6fac05dcb7d6a5',1,'pav::ComponentManager::RemoveComponent()'],['../classpav_1_1_i_game_object_base.html#a5544022f59c410160eab3f03d856af64',1,'pav::IGameObjectBase::RemoveComponent()'],['../classpav_1_1_s_e_c_manager.html#abeb464d28639bd249d32ffe3deef988c',1,'pav::SECManager::RemoveComponent()']]],
+  ['removegameobject',['RemoveGameObject',['../classpav_1_1_game_object_manager.html#a3e8a675d71a17a9a6b734e3d4eab2460',1,'pav::GameObjectManager::RemoveGameObject()'],['../classpav_1_1_s_e_c_manager.html#ac533c8f38a218ee2d0285f724980ede5',1,'pav::SECManager::RemoveGameObject()']]],
+  ['removescene',['RemoveScene',['../classpav_1_1_scene_manager.html#ae8fbbbd3303555947a70beccf2e094c3',1,'pav::SceneManager']]]
 ];
