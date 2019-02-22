@@ -240,10 +240,7 @@
 <para>Register a member function as a callback function. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        Register takes a class/struct&apos;s member function and assigns it as a callback
-        function. The registration involves a pointer to a object and a pointer to a member
-        function.
-</verbatim></para>
+<para>Register takes a class/struct&apos;s member function and assigns it as a callback function. The registration involves a pointer to a object and a pointer to a member function.</para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/2/2019</para>

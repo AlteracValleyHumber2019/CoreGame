@@ -107,11 +107,7 @@
                 </tr>
               </tbody>
             </table>
-<pre>        This function will move the parameter resource and therefore should only be used with
-        rvalues or values client do not wish to continue using in the near future lines of
-        code. If you wish to use resource after adding it to the resource manager pool please
-        refer to the function \ref void AddToPool(std::string&amp;&amp; name, const std::shared_ptr&lt;IResourceBase&gt;&amp; resource)
-</pre><aside class="m-note m-default"><h4>Author</h4><p>Jaymie</p></aside><aside class="m-note m-default"><h4>Date</h4><p>2/21/2019</p></aside>
+<p>This function will move the parameter resource and therefore should only be used with rvalues or values client do not wish to continue using in the near future lines of code. If you wish to use resource after adding it to the resource manager pool please refer to the function void <a href="classpav_1_1_resource_pool.html#a6a55ac2a4f8cfdf23999241a4bd791f6" class="m-dox">AddToPool(std::<wbr />string&amp;&amp; name, const std::<wbr />shared_ptr&lt;IResourceBase&gt;&amp; resource)</a></p><aside class="m-note m-default"><h4>Author</h4><p>Jaymie</p></aside><aside class="m-note m-default"><h4>Date</h4><p>2/21/2019</p></aside>
           </div></section>
           <section class="m-dox-details" id="a6a55ac2a4f8cfdf23999241a4bd791f6"><div>
             <h3>
@@ -134,10 +130,7 @@
                 </tr>
               </tbody>
             </table>
-<pre>        This function copies the resource parameter and increments its reference count by
-        one. Therefore it should only be used on lvalues. For adding a temporary resource to
-        the manager pool please refer to \ref void void AddToPool(std::string&amp;&amp; name, std::shared_ptr&lt;IResourceBase&gt;&amp;&amp; resource)
-</pre><aside class="m-note m-default"><h4>Author</h4><p>Jaymie</p></aside><aside class="m-note m-default"><h4>Date</h4><p>2/21/2019</p></aside>
+<p>This function copies the resource parameter and increments its reference count by one. Therefore it should only be used on lvalues. For adding a temporary resource to the manager pool please refer to void void <a href="classpav_1_1_resource_pool.html#a1629d6c5732398ae30c4589cd0d6fbe8" class="m-dox">AddToPool(std::<wbr />string&amp;&amp; name, std::<wbr />shared_ptr&lt;IResourceBase&gt;&amp;&amp; resource)</a></p><aside class="m-note m-default"><h4>Author</h4><p>Jaymie</p></aside><aside class="m-note m-default"><h4>Date</h4><p>2/21/2019</p></aside>
           </div></section>
           <section class="m-dox-details" id="a718da8a7067d17e9e85d015375004acd"><div>
             <h3>
@@ -173,9 +166,7 @@
                 </tr>
               </tfoot>
             </table>
-<pre>        Shared resource returns a shared pointer to the resource and therefore will
-        increments the resource count.
-</pre>
+<p>Shared resource returns a shared pointer to the resource and therefore will increments the resource count.</p>
           </div></section>
           <section class="m-dox-details" id="a373470bded6813b62274a1715161d86e"><div>
             <h3>
@@ -211,9 +202,7 @@
                 </tr>
               </tfoot>
             </table>
-<pre>        Weak resource returns a weak pointer to the resource and therefore will not increase the resource count.
-        However, you should always check the validity of the resource before using one.
-</pre>
+<p>Weak resource returns a weak pointer to the resource and therefore will not increase the resource count. However, you should always check the validity of the resource before using one.</p>
           </div></section>
         </section>
       </div>

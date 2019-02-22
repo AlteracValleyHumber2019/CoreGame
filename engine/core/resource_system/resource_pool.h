@@ -27,10 +27,10 @@ namespace pav
 		 *
 		 * \brief	Add a temporary resource to the manager pool.
 		 * 			
-		 * 			This function will move the parameter resource and therefore should only be used with
-		 * 			rvalues or values client do not wish to continue using in the near future lines of
-		 * 			code. If you wish to use resource after adding it to the resource manager pool please
-		 * 			refer to the function \ref void AddToPool(std::string&& name, const std::shared_ptr<IResourceBase>& resource)
+		 * This function will move the parameter resource and therefore should only be used with
+		 * rvalues or values client do not wish to continue using in the near future lines of
+		 * code. If you wish to use resource after adding it to the resource manager pool please
+		 * refer to the function \ref void AddToPool(std::string&& name, const std::shared_ptr<IResourceBase>& resource)
 		 *
 		 * \author	Jaymie
 		 * \date	2/21/2019
@@ -45,9 +45,9 @@ namespace pav
 		 *
 		 * \brief	Add a resource to the manager pool.
 		 * 			
-		 * 			This function copies the resource parameter and increments its reference count by
-		 * 			one. Therefore it should only be used on lvalues. For adding a temporary resource to
-		 * 			the manager pool please refer to \ref void void AddToPool(std::string&& name, std::shared_ptr<IResourceBase>&& resource)
+		 * This function copies the resource parameter and increments its reference count by
+		 * one. Therefore it should only be used on lvalues. For adding a temporary resource to
+		 * the manager pool please refer to \ref void void AddToPool(std::string&& name, std::shared_ptr<IResourceBase>&& resource)
 		 *
 		 * \author	Jaymie
 		 * \date	2/21/2019
@@ -62,8 +62,8 @@ namespace pav
 		 *
 		 * \brief	Gets the shared resource of type ResourceType
 		 * 			
-		 * 			Shared resource returns a shared pointer to the resource and therefore will
-		 * 			increments the resource count.
+		 * Shared resource returns a shared pointer to the resource and therefore will
+		 * increments the resource count.
 		 *
 		 * \tparam	ResourceType	Type of the resource wrapper.
 		 * \param [in]	name	The name.
@@ -91,8 +91,8 @@ namespace pav
 		 *
 		 * \brief	Gets the weak resource of type ResourceType
 		 * 			
-		 * 			Weak resource returns a weak pointer to the resource and therefore will not increase the resource count.
-		 * 			However, you should always check the validity of the resource before using one.
+		 * Weak resource returns a weak pointer to the resource and therefore will not increase the resource count.
+		 * However, you should always check the validity of the resource before using one.
 		 *
 		 * \tparam	ResourceType	Type of the resource wrapper.
 		 * \param [in]	name	The name.

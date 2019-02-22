@@ -8,11 +8,11 @@ namespace pav
 	 *
 	 * \brief	A static class used to generate a global unique identifier number for a group of types
 	 * 			
-	 * 			GUID is used when ever a type requires a global unique identifier number. This number
-	 * 			will be generated upon the type's first used with the GUID class. You should group
-	 * 			types together using the BaseType template parameter, this should normally be a base
-	 * 			class type for a set of types. Base class type should never need to have a GUID
-	 * 			number.
+	 * GUID is used when ever a type requires a global unique identifier number. This number
+	 * will be generated upon the type's first used with the GUID class. You should group
+	 * types together using the BaseType template parameter, this should normally be a base
+	 * class type for a set of types. Base class type should never need to have a GUID
+	 * number.
 	 *
 	 * \author	Jaymie
 	 * \date	2/6/2019

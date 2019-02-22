@@ -88,9 +88,7 @@
 <para>Wrapper struct for storing a pointer to a member function. </para>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>        MemberFunctionCallback stores pointer to a member function. it is instantiated with a
-        member function&apos;s object type, return type and all of its argument types.
-</verbatim></para>
+<para><ref refid="structpav_1_1_member_function_callback" kindref="compound">MemberFunctionCallback</ref> stores pointer to a member function. it is instantiated with a member function&apos;s object type, return type and all of its argument types.</para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/2/2019</para>

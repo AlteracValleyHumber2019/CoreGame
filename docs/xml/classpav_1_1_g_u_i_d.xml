@@ -68,12 +68,7 @@
 <para>A static class used to generate a global unique identifier number for a group of types. </para>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>        GUID is used when ever a type requires a global unique identifier number. This number
-        will be generated upon the type&apos;s first used with the GUID class. You should group
-        types together using the BaseType template parameter, this should normally be a base
-        class type for a set of types. Base class type should never need to have a GUID
-        number.
-</verbatim></para>
+<para><ref refid="classpav_1_1_g_u_i_d" kindref="compound">GUID</ref> is used when ever a type requires a global unique identifier number. This number will be generated upon the type&apos;s first used with the <ref refid="classpav_1_1_g_u_i_d" kindref="compound">GUID</ref> class. You should group types together using the BaseType template parameter, this should normally be a base class type for a set of types. Base class type should never need to have a <ref refid="classpav_1_1_g_u_i_d" kindref="compound">GUID</ref> number.</para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/6/2019</para>

@@ -36,11 +36,7 @@
 <para>Add a temporary resource to the manager pool. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        This function will move the parameter resource and therefore should only be used with
-        rvalues or values client do not wish to continue using in the near future lines of
-        code. If you wish to use resource after adding it to the resource manager pool please
-        refer to the function \ref void AddToPool(std::string&amp;&amp; name, const std::shared_ptr&lt;IResourceBase&gt;&amp; resource)
-</verbatim></para>
+<para>This function will move the parameter resource and therefore should only be used with rvalues or values client do not wish to continue using in the near future lines of code. If you wish to use resource after adding it to the resource manager pool please refer to the function void <ref refid="classpav_1_1_resource_pool_1a6a55ac2a4f8cfdf23999241a4bd791f6" kindref="member">AddToPool(std::string&amp;&amp; name, const std::shared_ptr&lt;IResourceBase&gt;&amp; resource)</ref></para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/21/2019</para>
@@ -85,10 +81,7 @@
 <para>Add a resource to the manager pool. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        This function copies the resource parameter and increments its reference count by
-        one. Therefore it should only be used on lvalues. For adding a temporary resource to
-        the manager pool please refer to \ref void void AddToPool(std::string&amp;&amp; name, std::shared_ptr&lt;IResourceBase&gt;&amp;&amp; resource)
-</verbatim></para>
+<para>This function copies the resource parameter and increments its reference count by one. Therefore it should only be used on lvalues. For adding a temporary resource to the manager pool please refer to void void <ref refid="classpav_1_1_resource_pool_1a1629d6c5732398ae30c4589cd0d6fbe8" kindref="member">AddToPool(std::string&amp;&amp; name, std::shared_ptr&lt;IResourceBase&gt;&amp;&amp; resource)</ref></para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/21/2019</para>
@@ -134,9 +127,7 @@
 <para>Gets the shared resource of type ResourceType. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        Shared resource returns a shared pointer to the resource and therefore will
-        increments the resource count.
-</verbatim></para>
+<para>Shared resource returns a shared pointer to the resource and therefore will increments the resource count.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>ResourceType</parametername>
@@ -181,9 +172,7 @@
 <para>Gets the weak resource of type ResourceType. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        Weak resource returns a weak pointer to the resource and therefore will not increase the resource count.
-        However, you should always check the validity of the resource before using one.
-</verbatim></para>
+<para>Weak resource returns a weak pointer to the resource and therefore will not increase the resource count. However, you should always check the validity of the resource before using one.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>ResourceType</parametername>

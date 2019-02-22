@@ -82,10 +82,7 @@
 <para>Register a member function as a callback function. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>        Register takes a class/struct&apos;s member function and assigns it as a callback
-        function. The registration involves a pointer to a object and a pointer to a member
-        function.
-</verbatim></para>
+<para>Register takes a class/struct&apos;s member function and assigns it as a callback function. The registration involves a pointer to a object and a pointer to a member function.</para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/2/2019</para>
@@ -175,9 +172,7 @@
 <para>A container for storing an callback function. </para>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>        Delegate can registers a member function. The function pointer is stored here and can
-        be invoked at any time by a caller.
-</verbatim></para>
+<para><ref refid="classpav_1_1_delegate" kindref="compound">Delegate</ref> can registers a member function. The function pointer is stored here and can be invoked at any time by a caller.</para>
 <para><simplesect kind="author"><para>Jaymie </para>
 </simplesect>
 <simplesect kind="date"><para>2/2/2019</para>

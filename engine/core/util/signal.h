@@ -38,8 +38,8 @@ namespace pav
 	 *
 	 * \brief	Wrapper struct for storing a pointer to a member function
 	 * 			
-	 * 			MemberFunctionCallback stores pointer to a member function. it is instantiated with a
-	 * 			member function's object type, return type and all of its argument types.
+	 * MemberFunctionCallback stores pointer to a member function. it is instantiated with a
+	 * member function's object type, return type and all of its argument types.
 	 *
 	 * \author	Jaymie
 	 * \date	2/2/2019
@@ -91,8 +91,8 @@ namespace pav
 	 *
 	 * \brief	A container for storing an callback function
 	 * 			
-	 * 			Delegate can registers a member function. The function pointer is stored here and can
-	 * 			be invoked at any time by a caller.
+	 * Delegate can registers a member function. The function pointer is stored here and can
+	 * be invoked at any time by a caller.
 	 *
 	 * \author	Jaymie
 	 * \date	2/2/2019
@@ -126,9 +126,9 @@ namespace pav
 		 *
 		 * \brief	Register a member function as a callback function
 		 * 			
-		 * 			Register takes a class/struct's member function and assigns it as a callback
-		 * 			function. The registration involves a pointer to a object and a pointer to a member
-		 * 			function.
+		 * Register takes a class/struct's member function and assigns it as a callback
+		 * function. The registration involves a pointer to a object and a pointer to a member
+		 * function.
 		 *
 		 * \author	Jaymie
 		 * \date	2/2/2019
@@ -149,9 +149,9 @@ namespace pav
 		 * \brief	Calls the call back function registered by Register(MemberObjectType,
 		 * 			MEMBER_FUNC_TYPE)
 		 * 			
-		 * 			Invokes the previously registered function. Client should also provide all required
-		 * 			arguments of the function. The function HasCallback() should be called to check if
-		 * 			this Delegate has any callback function before using this function.
+		 * Invokes the previously registered function. Client should also provide all required
+		 * arguments of the function. The function HasCallback() should be called to check if
+		 * this Delegate has any callback function before using this function.
 		 *
 		 * \author	Jaymie
 		 * \date	2/2/2019
