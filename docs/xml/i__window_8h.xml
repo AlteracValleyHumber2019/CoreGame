@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="i__window_8h" kind="file" language="C++">
+    <compoundname>i_window.h</compoundname>
+    <includedby refid="gl__sdl__window_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.h</includedby>
+    <includedby refid="window__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/window_manager.h</includedby>
+    <invincdepgraph>
+      <node id="408">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h</label>
+        <link refid="i__window_8h"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="410" relation="include">
+        </childnode>
+      </node>
+      <node id="411">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</label>
+        <link refid="engine_8h_source"/>
+      </node>
+      <node id="410">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/window_manager.h</label>
+        <link refid="window__manager_8h_source"/>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="412" relation="include">
+        </childnode>
+      </node>
+      <node id="412">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</label>
+        <link refid="manager__factory_8h_source"/>
+      </node>
+      <node id="409">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.h</label>
+        <link refid="gl__sdl__window_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structpav_1_1_window_info" prot="public">pav::WindowInfo</innerclass>
+    <innerclass refid="classpav_1_1_i_window" prot="public">pav::IWindow</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h"/>
+  </compounddef>
+</doxygen>

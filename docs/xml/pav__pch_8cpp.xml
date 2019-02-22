@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="pav__pch_8cpp" kind="file" language="C++">
+    <compoundname>pav_pch.cpp</compoundname>
+    <includes refid="pav__pch_8h" local="yes">pav_pch.h</includes>
+    <incdepgraph>
+      <node id="634">
+        <label>list</label>
+      </node>
+      <node id="643">
+        <label>functional</label>
+      </node>
+      <node id="637">
+        <label>queue</label>
+      </node>
+      <node id="648">
+        <label>pav_pcs.h</label>
+        <link refid="pav__pcs_8h_source"/>
+      </node>
+      <node id="631">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.cpp</label>
+        <link refid="pav__pch_8cpp"/>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="645">
+        <label>string</label>
+      </node>
+      <node id="638">
+        <label>map</label>
+      </node>
+      <node id="641">
+        <label>unordered_set</label>
+      </node>
+      <node id="644">
+        <label>cstdio</label>
+      </node>
+      <node id="636">
+        <label>stack</label>
+      </node>
+      <node id="635">
+        <label>vector</label>
+      </node>
+      <node id="633">
+        <label>array</label>
+      </node>
+      <node id="639">
+        <label>unordered_map</label>
+      </node>
+      <node id="646">
+        <label>mutex</label>
+      </node>
+      <node id="649">
+        <label>core/util/signal.h</label>
+        <link refid="signal_8h_source"/>
+      </node>
+      <node id="647">
+        <label>thread</label>
+      </node>
+      <node id="640">
+        <label>set</label>
+      </node>
+      <node id="632">
+        <label>pav_pch.h</label>
+        <link refid="pav__pch_8h_source"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="644" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="647" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+      </node>
+      <node id="642">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/pav_pch.cpp"/>
+  </compounddef>
+</doxygen>

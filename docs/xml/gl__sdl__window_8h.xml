@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="gl__sdl__window_8h" kind="file" language="C++">
+    <compoundname>gl_sdl_window.h</compoundname>
+    <includes refid="i__window_8h" local="yes">../../i_window.h</includes>
+    <includes local="no">SDL/SDL.h</includes>
+    <includedby refid="gl__sdl__window_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.cpp</includedby>
+    <includedby refid="manager__factory_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.cpp</includedby>
+    <incdepgraph>
+      <node id="54">
+        <label>../../i_window.h</label>
+        <link refid="i__window_8h_source"/>
+      </node>
+      <node id="55">
+        <label>SDL/SDL.h</label>
+      </node>
+      <node id="53">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.h</label>
+        <link refid="gl__sdl__window_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classpav_1_1_g_l_s_d_l_window" prot="public">pav::GLSDLWindow</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_window.h"/>
+  </compounddef>
+</doxygen>

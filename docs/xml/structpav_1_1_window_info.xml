@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="structpav_1_1_window_info" kind="struct" language="C++" prot="public">
+    <compoundname>pav::WindowInfo</compoundname>
+    <includes refid="i__window_8h" local="no">i_window.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpav_1_1_window_info_1a2080a299687657045db2cd1a910eddee" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t pav::WindowInfo::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="16" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpav_1_1_window_info_1af8dca2d140964970933fd16b0b1b74f5" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t pav::WindowInfo::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="16" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpav_1_1_window_info_1a33d87f8f561b3ccdb98e3e582dff12b6" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t pav::WindowInfo::pos_x</definition>
+        <argsstring></argsstring>
+        <name>pos_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="17" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpav_1_1_window_info_1ac11671f753817f6e2eba15960819cc99" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t pav::WindowInfo::pos_y</definition>
+        <argsstring></argsstring>
+        <name>pos_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="17" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpav_1_1_window_info_1a4bab19a192bbc802d4a3b8713f24ac52" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string pav::WindowInfo::title</definition>
+        <argsstring></argsstring>
+        <name>title</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="18" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structpav_1_1_window_info_1aa7d902c7c1096b05851e33a5fd605cd0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pav::WindowInfo::WindowInfo</definition>
+        <argsstring>(const size_t width, const size_t height, const size_t pos_x, const size_t pos_y, std::string &amp;&amp;title)</argsstring>
+        <name>WindowInfo</name>
+        <param>
+          <type>const size_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>pos_x</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>pos_y</declname>
+        </param>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position x coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position y coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="34" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="34" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="structpav_1_1_window_info_1a60e1cfe4fdaad495aacaf27a54a228e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pav::WindowInfo::WindowInfo</definition>
+        <argsstring>(const size_t width, const size_t height, const size_t pos_x, const size_t pos_y, const std::string &amp;title)</argsstring>
+        <name>WindowInfo</name>
+        <param>
+          <type>const size_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>pos_x</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>pos_y</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="44" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="44" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="structpav_1_1_window_info_1a98fe2ff76c185652b1fcb12f76a884c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structpav_1_1_window_info" kindref="compound">WindowInfo</ref></type>
+        <definition>WindowInfo pav::WindowInfo::Prototype</definition>
+        <argsstring>()</argsstring>
+        <name>Prototype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="54" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="54" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Information about a window. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" line="15" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_window.h" bodystart="14" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structpav_1_1_window_info_1af8dca2d140964970933fd16b0b1b74f5" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>height</name></member>
+      <member refid="structpav_1_1_window_info_1a33d87f8f561b3ccdb98e3e582dff12b6" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>pos_x</name></member>
+      <member refid="structpav_1_1_window_info_1ac11671f753817f6e2eba15960819cc99" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>pos_y</name></member>
+      <member refid="structpav_1_1_window_info_1a98fe2ff76c185652b1fcb12f76a884c1" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>Prototype</name></member>
+      <member refid="structpav_1_1_window_info_1a4bab19a192bbc802d4a3b8713f24ac52" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>title</name></member>
+      <member refid="structpav_1_1_window_info_1a2080a299687657045db2cd1a910eddee" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>width</name></member>
+      <member refid="structpav_1_1_window_info_1aa7d902c7c1096b05851e33a5fd605cd0" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>WindowInfo</name></member>
+      <member refid="structpav_1_1_window_info_1a60e1cfe4fdaad495aacaf27a54a228e5" prot="public" virt="non-virtual"><scope>pav::WindowInfo</scope><name>WindowInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

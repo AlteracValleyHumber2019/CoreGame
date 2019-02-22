@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="classpav_1_1_delegate" kind="class" language="C++" prot="public">
+    <compoundname>pav::Delegate</compoundname>
+    <basecompoundref refid="structpav_1_1_delegate_base" prot="public" virt="non-virtual">pav::DelegateBase&lt; R, Args... &gt;</basecompoundref>
+    <includes refid="signal_8h" local="no">signal.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename O</type>
+      </param>
+      <param>
+        <type>typename R</type>
+      </param>
+      <param>
+        <type>typename ...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="group__g__signal__slot_1ga2b78dcef4b283eb5583a3b3a9056077d" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex pav::Delegate&lt; O, R, Args &gt;::delegate_lock_</definition>
+        <argsstring></argsstring>
+        <name>delegate_lock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="108" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__g__signal__slot_1ga6e71464cce9631f0be338c64d9feb067" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structpav_1_1_member_function_callback" kindref="compound">MemberFunctionCallback</ref>&lt; O, R, Args... &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;MemberFunctionCallback&lt;O, R, Args...&gt; &gt; pav::Delegate&lt; O, R, Args &gt;::callback_</definition>
+        <argsstring></argsstring>
+        <name>callback_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="110" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="group__g__signal__slot_1gaaed6d0606e85e073793a82e6a01e199c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pav::Delegate&lt; O, R, Args &gt;::Delegate</definition>
+        <argsstring>()=default</argsstring>
+        <name>Delegate</name>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__g__signal__slot_1ga802ef548f8b00b3a7da108e8fdb77141" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pav::Delegate&lt; O, R, Args &gt;::Register</definition>
+        <argsstring>(MemberObjectType object, MEMBER_FUNC_TYPE func)</argsstring>
+        <name>Register</name>
+        <param>
+          <type><ref refid="group__g__signal__slot_1ga16ff1844a3f6b54f4e843e8fcb400687" kindref="member">MemberObjectType</ref></type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="group__g__signal__slot_1ga4ff7b1cfdef0b85e2829bf3f64212b70" kindref="member">MEMBER_FUNC_TYPE</ref></type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Register a member function as a callback function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>        Register takes a class/struct&apos;s member function and assigns it as a callback
+        function. The registration involves a pointer to a object and a pointer to a member
+        function.
+</verbatim></para>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The member function&apos;s object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The member function to be assigned as a callback function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="139" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="group__g__signal__slot_1ga1cef9ccad8ee848a24c7dcb75fec9323" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>R</type>
+        <definition>R pav::Delegate&lt; O, R, Args &gt;::Invoke</definition>
+        <argsstring>(Args &amp;&amp;...args) override</argsstring>
+        <name>Invoke</name>
+        <reimplements refid="group__g__signal__slot_1gaa8e24400cae86a975a56ebeb19290e58">Invoke</reimplements>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Calls the call back function registered by Register(MemberObjectType, MEMBER_FUNC_TYPE) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Invokes the previously registered function. Client should also provide all required arguments of the function. The function <ref refid="group__g__signal__slot_1gad75384e11235125bb73eb76609881ae5" kindref="member">HasCallback()</ref> should be called to check if this <ref refid="classpav_1_1_delegate" kindref="compound">Delegate</ref> has any callback function before using this function.</para>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">...args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required arguments of the function</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The return type of the callback function </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="163" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="163" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="group__g__signal__slot_1gad75384e11235125bb73eb76609881ae5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool pav::Delegate&lt; O, R, Args &gt;::HasCallback</definition>
+        <argsstring>() const</argsstring>
+        <name>HasCallback</name>
+        <briefdescription>
+<para>Check if this <ref refid="classpav_1_1_delegate" kindref="compound">Delegate</ref> has a callback function assigned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019</para>
+</simplesect>
+<simplesect kind="return"><para>True if callback, false if not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="180" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="180" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A container for storing an callback function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>        Delegate can registers a member function. The function pointer is stored here and can
+        be invoked at any time by a caller.
+</verbatim></para>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/2/2019</para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>O</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The member function&apos;s class/struct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The return type of the callback member function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameters types of the callback member function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>pav::Delegate&lt; O, R, Args &gt;</label>
+        <link refid="classpav_1_1_delegate"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pav::DelegateBase&lt; R, Args... &gt;</label>
+        <link refid="structpav_1_1_delegate_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>pav::Delegate&lt; O, R, Args &gt;</label>
+        <link refid="classpav_1_1_delegate"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>pav::DelegateBase&lt; R, Args... &gt;</label>
+        <link refid="structpav_1_1_delegate_base"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" line="106" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/signal.h" bodystart="105" bodyend="186"/>
+    <listofallmembers>
+      <member refid="group__g__signal__slot_1ga6e71464cce9631f0be338c64d9feb067" prot="private" virt="non-virtual"><scope>pav::Delegate</scope><name>callback_</name></member>
+      <member refid="group__g__signal__slot_1gaaed6d0606e85e073793a82e6a01e199c" prot="public" virt="non-virtual"><scope>pav::Delegate</scope><name>Delegate</name></member>
+      <member refid="group__g__signal__slot_1ga2b78dcef4b283eb5583a3b3a9056077d" prot="private" virt="non-virtual"><scope>pav::Delegate</scope><name>delegate_lock_</name></member>
+      <member refid="group__g__signal__slot_1gad75384e11235125bb73eb76609881ae5" prot="public" virt="non-virtual"><scope>pav::Delegate</scope><name>HasCallback</name></member>
+      <member refid="group__g__signal__slot_1ga1cef9ccad8ee848a24c7dcb75fec9323" prot="public" virt="virtual"><scope>pav::Delegate</scope><name>Invoke</name></member>
+      <member refid="group__g__signal__slot_1ga802ef548f8b00b3a7da108e8fdb77141" prot="public" virt="non-virtual"><scope>pav::Delegate</scope><name>Register</name></member>
+      <member refid="group__g__signal__slot_1gad01810aa1e7cba60f1aceabb17c2d224" prot="public" virt="virtual"><scope>pav::Delegate</scope><name>~DelegateBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

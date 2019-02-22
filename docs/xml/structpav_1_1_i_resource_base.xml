@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="structpav_1_1_i_resource_base" kind="struct" language="C++" prot="public">
+    <compoundname>pav::IResourceBase</compoundname>
+    <derivedcompoundref refid="structpav_1_1_resource" prot="public" virt="non-virtual">pav::Resource&lt; CRTP, Data, LoadArgs &gt;</derivedcompoundref>
+    <includes refid="resource_8h" local="no">resource.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structpav_1_1_i_resource_base_1af3af048e45dbf0bc198c01c7ebab34fb" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IResourceBase::guid_</definition>
+        <argsstring></argsstring>
+        <name>guid_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" line="17" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structpav_1_1_i_resource_base_1abc6dde60cb67af1c1fb1d3968c818410" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pav::IResourceBase::IResourceBase</definition>
+        <argsstring>(const unsigned int guid)</argsstring>
+        <name>IResourceBase</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>guid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" line="20" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structpav_1_1_i_resource_base_1aee3f649f6e0b9c5946c119b33b2b7aab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int pav::IResourceBase::GetGUID</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGUID</name>
+        <briefdescription>
+<para>Gets the unique identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/19/2019</para>
+</simplesect>
+<simplesect kind="return"><para>The unique identifier. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" line="32" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A resource base. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jaymie </para>
+</simplesect>
+<simplesect kind="date"><para>2/19/2019 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>pav::Resource&lt; CRTP, Data, LoadArgs &gt;</label>
+        <link refid="structpav_1_1_resource"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>pav::IResourceBase</label>
+        <link refid="structpav_1_1_i_resource_base"/>
+      </node>
+    </inheritancegraph>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" line="15" column="1" bodyfile="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.h" bodystart="14" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structpav_1_1_i_resource_base_1aee3f649f6e0b9c5946c119b33b2b7aab" prot="public" virt="non-virtual"><scope>pav::IResourceBase</scope><name>GetGUID</name></member>
+      <member refid="structpav_1_1_i_resource_base_1af3af048e45dbf0bc198c01c7ebab34fb" prot="private" virt="non-virtual"><scope>pav::IResourceBase</scope><name>guid_</name></member>
+      <member refid="structpav_1_1_i_resource_base_1abc6dde60cb67af1c1fb1d3968c818410" prot="public" virt="non-virtual"><scope>pav::IResourceBase</scope><name>IResourceBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

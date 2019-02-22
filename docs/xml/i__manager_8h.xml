@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="i__manager_8h" kind="file" language="C++">
+    <compoundname>i_manager.h</compoundname>
+    <includedby refid="render__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.h</includedby>
+    <includedby refid="event__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.h</includedby>
+    <includedby refid="scene__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/scene_manager.h</includedby>
+    <includedby refid="window__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/window_manager.h</includedby>
+    <invincdepgraph>
+      <node id="369">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/scene_manager.h</label>
+        <link refid="scene__manager_8h_source"/>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+      </node>
+      <node id="365">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</label>
+        <link refid="engine_8h_source"/>
+      </node>
+      <node id="370">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/window_manager.h</label>
+        <link refid="window__manager_8h_source"/>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+      </node>
+      <node id="362">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_manager.h</label>
+        <link refid="i__manager_8h"/>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="367" relation="include">
+        </childnode>
+        <childnode refid="369" relation="include">
+        </childnode>
+        <childnode refid="370" relation="include">
+        </childnode>
+      </node>
+      <node id="366">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</label>
+        <link refid="manager__factory_8h_source"/>
+      </node>
+      <node id="363">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.h</label>
+        <link refid="render__manager_8h_source"/>
+        <childnode refid="364" relation="include">
+        </childnode>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+      </node>
+      <node id="367">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/event_manager.h</label>
+        <link refid="event__manager_8h_source"/>
+        <childnode refid="368" relation="include">
+        </childnode>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+      </node>
+      <node id="368">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/sdl_event_manager.h</label>
+        <link refid="sdl__event__manager_8h_source"/>
+      </node>
+      <node id="364">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_render_manager.h</label>
+        <link refid="gl__sdl__render__manager_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpav_1_1_i_manager" prot="public">pav::IManager</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/i_manager.h"/>
+  </compounddef>
+</doxygen>

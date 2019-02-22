@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_964f5fd283931b865d2b47d6ac610d02" kind="dir">
+    <compoundname>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component</compoundname>
+    <innerfile refid="component__manager_8cpp">component_manager.cpp</innerfile>
+    <innerfile refid="component__manager_8h">component_manager.h</innerfile>
+    <innerfile refid="game__object__manager_8cpp">game_object_manager.cpp</innerfile>
+    <innerfile refid="game__object__manager_8h">game_object_manager.h</innerfile>
+    <innerfile refid="i__component_8cpp">i_component.cpp</innerfile>
+    <innerfile refid="i__component_8h">i_component.h</innerfile>
+    <innerfile refid="i__game__object_8cpp">i_game_object.cpp</innerfile>
+    <innerfile refid="i__game__object_8h">i_game_object.h</innerfile>
+    <innerfile refid="sec__manager_8cpp">sec_manager.cpp</innerfile>
+    <innerfile refid="sec__manager_8h">sec_manager.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="scene__manager_8cpp" kind="file" language="C++">
+    <compoundname>scene_manager.cpp</compoundname>
+    <includes refid="pav__pch_8h" local="yes">pav_pch.h</includes>
+    <includes refid="scene__manager_8h" local="yes">scene_manager.h</includes>
+    <incdepgraph>
+      <node id="545">
+        <label>list</label>
+      </node>
+      <node id="554">
+        <label>functional</label>
+      </node>
+      <node id="548">
+        <label>queue</label>
+      </node>
+      <node id="559">
+        <label>pav_pcs.h</label>
+        <link refid="pav__pcs_8h_source"/>
+      </node>
+      <node id="561">
+        <label>scene_manager.h</label>
+        <link refid="scene__manager_8h_source"/>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+        <childnode refid="564" relation="include">
+        </childnode>
+      </node>
+      <node id="556">
+        <label>string</label>
+      </node>
+      <node id="549">
+        <label>map</label>
+      </node>
+      <node id="542">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/scene_manager.cpp</label>
+        <link refid="scene__manager_8cpp"/>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+      </node>
+      <node id="552">
+        <label>unordered_set</label>
+      </node>
+      <node id="564">
+        <label>event_attorney.h</label>
+        <link refid="event__attorney_8h_source"/>
+        <childnode refid="565" relation="include">
+        </childnode>
+      </node>
+      <node id="562">
+        <label>i_manager.h</label>
+        <link refid="i__manager_8h_source"/>
+      </node>
+      <node id="555">
+        <label>cstdio</label>
+      </node>
+      <node id="547">
+        <label>stack</label>
+      </node>
+      <node id="546">
+        <label>vector</label>
+      </node>
+      <node id="544">
+        <label>array</label>
+      </node>
+      <node id="550">
+        <label>unordered_map</label>
+      </node>
+      <node id="563">
+        <label>i_scene.h</label>
+        <link refid="i__scene_8h_source"/>
+        <childnode refid="564" relation="include">
+        </childnode>
+      </node>
+      <node id="557">
+        <label>mutex</label>
+      </node>
+      <node id="560">
+        <label>core/util/signal.h</label>
+        <link refid="signal_8h_source"/>
+      </node>
+      <node id="558">
+        <label>thread</label>
+      </node>
+      <node id="551">
+        <label>set</label>
+      </node>
+      <node id="543">
+        <label>pav_pch.h</label>
+        <link refid="pav__pch_8h_source"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+      </node>
+      <node id="553">
+        <label>memory</label>
+      </node>
+      <node id="565">
+        <label>event_util.h</label>
+        <link refid="event__util_8h_source"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/scene_manager.cpp"/>
+  </compounddef>
+</doxygen>

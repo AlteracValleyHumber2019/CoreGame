@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="resource__pool_8cpp" kind="file" language="C++">
+    <compoundname>resource_pool.cpp</compoundname>
+    <includes refid="pav__pch_8h" local="yes">pav_pch.h</includes>
+    <includes refid="resource__pool_8h" local="yes">resource_pool.h</includes>
+    <incdepgraph>
+      <node id="518">
+        <label>list</label>
+      </node>
+      <node id="536">
+        <label>../util/guid.h</label>
+        <link refid="guid_8h_source"/>
+      </node>
+      <node id="527">
+        <label>functional</label>
+      </node>
+      <node id="521">
+        <label>queue</label>
+      </node>
+      <node id="532">
+        <label>pav_pcs.h</label>
+        <link refid="pav__pcs_8h_source"/>
+      </node>
+      <node id="535">
+        <label>resource.h</label>
+        <link refid="resource_8h_source"/>
+      </node>
+      <node id="529">
+        <label>string</label>
+      </node>
+      <node id="522">
+        <label>map</label>
+      </node>
+      <node id="525">
+        <label>unordered_set</label>
+      </node>
+      <node id="534">
+        <label>resource_pool.h</label>
+        <link refid="resource__pool_8h_source"/>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="528">
+        <label>cstdio</label>
+      </node>
+      <node id="520">
+        <label>stack</label>
+      </node>
+      <node id="519">
+        <label>vector</label>
+      </node>
+      <node id="515">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource_pool.cpp</label>
+        <link refid="resource__pool_8cpp"/>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>array</label>
+      </node>
+      <node id="523">
+        <label>unordered_map</label>
+      </node>
+      <node id="530">
+        <label>mutex</label>
+      </node>
+      <node id="533">
+        <label>core/util/signal.h</label>
+        <link refid="signal_8h_source"/>
+      </node>
+      <node id="531">
+        <label>thread</label>
+      </node>
+      <node id="524">
+        <label>set</label>
+      </node>
+      <node id="516">
+        <label>pav_pch.h</label>
+        <link refid="pav__pch_8h_source"/>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="526">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource_pool.cpp"/>
+  </compounddef>
+</doxygen>

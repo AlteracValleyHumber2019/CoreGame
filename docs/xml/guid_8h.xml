@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="guid_8h" kind="file" language="C++">
+    <compoundname>guid.h</compoundname>
+    <includedby refid="component__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h</includedby>
+    <includedby refid="i__component_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_component.cpp</includedby>
+    <includedby refid="i__game__object_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/i_game_object.cpp</includedby>
+    <includedby refid="resource_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource.cpp</includedby>
+    <includedby refid="resource__pool_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource_pool.h</includedby>
+    <invincdepgraph>
+      <node id="576">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/guid.h</label>
+        <link refid="guid_8h"/>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+      </node>
+      <node id="578">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/resource_system/resource_pool.h</label>
+        <link refid="resource__pool_8h_source"/>
+      </node>
+      <node id="577">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/entity_component/component_manager.h</label>
+        <link refid="component__manager_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpav_1_1_g_u_i_d" prot="public">pav::GUID</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/util/guid.h"/>
+  </compounddef>
+</doxygen>

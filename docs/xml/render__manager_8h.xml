@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="render__manager_8h" kind="file" language="C++">
+    <compoundname>render_manager.h</compoundname>
+    <includes refid="i__manager_8h" local="yes">i_manager.h</includes>
+    <includes refid="i__renderer_8h" local="yes">i_renderer.h</includes>
+    <includedby refid="gl__sdl__render__manager_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_render_manager.h</includedby>
+    <includedby refid="engine_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</includedby>
+    <includedby refid="manager__factory_8h" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</includedby>
+    <includedby refid="render__manager_8cpp" local="yes">E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="485">
+        <label>i_renderer.h</label>
+        <link refid="i__renderer_8h_source"/>
+      </node>
+      <node id="484">
+        <label>i_manager.h</label>
+        <link refid="i__manager_8h_source"/>
+      </node>
+      <node id="483">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.h</label>
+        <link refid="render__manager_8h"/>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="488">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/engine.h</label>
+        <link refid="engine_8h_source"/>
+      </node>
+      <node id="489">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/manager_factory.h</label>
+        <link refid="manager__factory_8h_source"/>
+      </node>
+      <node id="486">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.h</label>
+        <link refid="render__manager_8h"/>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+      </node>
+      <node id="487">
+        <label>E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/dependent/sdl/gl_sdl_render_manager.h</label>
+        <link refid="gl__sdl__render__manager_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpav_1_1_render_manager" prot="public">pav::RenderManager</innerclass>
+    <innernamespace refid="namespacepav">pav</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/MyProgram/School/Humber/Semester4/C++/ProjectAlteracValley/CoreGame/engine/core/render_manager.h"/>
+  </compounddef>
+</doxygen>
