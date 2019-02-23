@@ -1,7 +1,6 @@
 ﻿#include "pav_pch.h"
 #include "engine.h"
 #include "manager_factory.h"
-#include <glad/glad.h>
 
 pav::Engine::Engine() :
 	running_(true),

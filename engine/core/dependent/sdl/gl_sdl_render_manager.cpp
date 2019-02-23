@@ -2,6 +2,7 @@
 #include "gl_sdl_render_manager.h"
 
 #include <SDL/SDL.h>
+#include <glad/glad.h>
 
 pav::IRenderer* pav::GLSDLRenderManager::CreateRenderer()
 {
