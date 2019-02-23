@@ -81,9 +81,6 @@
     <ClCompile Include="example\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="example\example_main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">
