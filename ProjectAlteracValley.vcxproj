@@ -171,6 +171,9 @@
     <ClCompile Include="engine\core\entity_component\i_game_object.cpp" />
     <ClCompile Include="engine\core\entity_component\i_component.cpp" />
     <ClCompile Include="engine\core\entity_component\game_object_manager.cpp" />
+    <ClCompile Include="engine\external\src\glad.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="example\example_main.cpp" />
     <ClCompile Include="example\scene\example_scene.cpp" />
     <ClCompile Include="engine\pav_pch.cpp">
