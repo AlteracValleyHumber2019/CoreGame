@@ -189,7 +189,7 @@
     <ClCompile Include="engine\core\entity_component\sec_manager.cpp" />
     <ClCompile Include="engine\core\resource_system\resource_pool.cpp" />
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
-    <ClCompile Include="transform_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -219,7 +219,7 @@
     <ClInclude Include="engine\core\resource_system\resource_pool.h" />
     <ClInclude Include="engine\core\resource_system\resource.h" />
     <ClInclude Include="example\scene\example_scene.h" />
-    <ClInclude Include="transform_component.h" />
+    <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 #ifndef TRANSFORM_COMPONENT_H
 #define TRANSFORM_COMPONENT_H
 
-#include "core/entity_component/i_component.h"
-#include "core/entity_component/i_game_object.h"
+#include "../i_component.h"
+#include "../i_game_object.h"
 
 namespace pav
 {
