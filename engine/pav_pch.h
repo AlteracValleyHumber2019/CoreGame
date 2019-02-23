@@ -26,6 +26,10 @@
 #include <mutex>
 #include <thread>
 
+// 3rd Party
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+
 // PAV
 #include "pav_pcs.h"
 

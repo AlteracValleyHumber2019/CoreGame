@@ -2,6 +2,7 @@
 #define I_COMPONENT_H
 
 #include "../event_attorney.h"
+#include "../util/guid.h"
 
 namespace pav
 {
@@ -191,7 +192,10 @@ namespace pav
 	class IComponent : public IComponentBase
 	{
 	public:
-		IComponent(IGameObjectBase* owner);
+		IComponent(IGameObjectBase* owner) :
+			IComponentBase(pav::GUID<IComponentBase>::GetID<CRTP>(), Order, owner) // CRTP type GUID generation code
+		{
+		}
 	};
 }
 
