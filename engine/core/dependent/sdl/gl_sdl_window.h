@@ -15,7 +15,7 @@ namespace pav
 	 * \author	Jaymie
 	 * \date	2/12/2019
 	 */
-	class GLSDLWindow : public pav::IWindow
+	class GLSDLWindow : public IWindow
 	{
 	private:
 		std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;

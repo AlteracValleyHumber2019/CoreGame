@@ -11,6 +11,7 @@ void ExampleScene::EndScene()
 
 void ExampleScene::Update(const float delta_time)
 {
+	IScene::Update(delta_time);
 }
 
 //! [ExampleScene setup event]

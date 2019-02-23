@@ -2,6 +2,8 @@
 #define SEC_MANAGER_H
 
 #include "../event_attorney.h"
+#include "game_object_manager.h"
+#include "component_manager.h"
 
 namespace pav
 {

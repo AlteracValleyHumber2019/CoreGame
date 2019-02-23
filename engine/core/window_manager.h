@@ -14,7 +14,7 @@ namespace pav
 	 * \author	Jaymie
 	 * \date	2/2/2019
 	 */
-	class WindowManager : public pav::IManager
+	class WindowManager : public IManager
 	{
 	private:
 		std::unique_ptr<IWindow> window_;

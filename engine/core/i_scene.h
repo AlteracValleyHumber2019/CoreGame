@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include "event_attorney.h"
+#include "entity_component/sec_manager.h"
 
 namespace pav
 {
@@ -21,7 +22,25 @@ namespace pav
 	 */
 	class IScene
 	{
+	private:
+		std::unique_ptr<SECManager> sec_manager_;
+
+	protected:
+
+		/**
+		 * \fn	const SECManager* IScene::GetSECManager();
+		 *
+		 * \brief	Gets the current system of entity component manager
+		 *
+		 * \author	Jaymie
+		 * \date	2/23/2019
+		 *
+		 * \returns	The entity component manager.
+		 */
+		const SECManager* GetSECManager();
+
 	public:
+		IScene();
 
 		/**
 		 * \fn	virtual void IScene::BeginScene();
