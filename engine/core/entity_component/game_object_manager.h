@@ -38,12 +38,13 @@ namespace pav
 			// Check if we already have a GameObject with same name
 			if (game_objects_.find(name) == game_objects_.end())
 			{
-				game_objects_.insert(std::make_pair(name, std::make_unique<Type>()));
+				std::string temp_name(name);
+				game_objects_.insert(std::make_pair(temp_name, std::make_unique<Type>(std::move(temp_name), 0, 0))); // #TODO: Add GameObject GUID and order
 
 				// GameObject begin logic
-				auto go = game_objects_.at(std::move(name));
-				go->Begin();
+				auto go = game_objects_.at(std::move(name)).get();
 				go->SetupEngineEvents(event_attorney_);
+				go->Begin();
 
 				return go;
 			}

@@ -6,6 +6,10 @@
 
 namespace pav
 {
+	class IGameObjectBase;
+
+	using ComponentElementType = std::vector<std::unique_ptr<IComponentBase>>;
+
 	/**
 	 * \class	ComponentManager
 	 *
@@ -17,42 +21,26 @@ namespace pav
 	class ComponentManager
 	{
 	private:
-		std::unordered_map<unsigned int, std::vector<std::unique_ptr<IComponentBase>>> components_;
+		std::unordered_map<unsigned int, ComponentElementType> components_;
 
 		EventAttorney* event_attorney_;
 
 	public:
 
 		/**
-		 * \fn	template <typename C, typename ...Args> inline pav::IComponentBase* ComponentManager::AddComponent(Args&& ...args);
+		 * \fn	template <typename C, typename ...Args> inline IComponentBase* ComponentManager::AddComponent(IGameObjectBase* owner, Args&& ...args);
 		 *
 		 * \brief	Adds a component
 		 *
 		 * \tparam	C	   	Type of the component.
 		 * \tparam	...Args	Type of the constructor arguments.
-		 * \param [in]	...args	The component constructor arguments.
+		 * \param [in,out]	owner  	If non-null, the owner.
+		 * \param [in]	  	...args	The component constructor arguments.
 		 *
 		 * \returns	Null if it fails, else a pointer to a pav::IComponentBase.
 		 */
 		template <typename C, typename ...Args>
-		inline IComponentBase* AddComponent(Args&& ...args)
-		{
-			// Get id
-			unsigned int id = GUID<IComponentBase>::GetID<C>();
-
-			// Check if we already have a Component with same type
-			if (components_.find(id) == components_.end())
-			{
-				components_.insert(id, std::vector< std::unique_ptr<C>>);
-			}
-
-			// Adding component
-			IComponentBase* comp = components_.at(id).emplace_back(std::make_unique<C>(std::forward<Args>(args)...));
-			comp->Begin(); // Calling component begin logic
-			comp->SetupEngineEvents(event_attorney_);
-
-			return comp;
-		}
+		inline IComponentBase* AddComponent(IGameObjectBase* owner, Args&& ...args);
 
 		/**
 		 * \fn	template <typename C> inline void ComponentManager::RemoveComponent(const size_t index = 0)
@@ -94,6 +82,31 @@ namespace pav
 		 */
 		void SetupEngineEvents(EventAttorney* event_attorney);
 	};
+}
+
+#include "i_game_object.h"
+
+template <typename C, typename... Args>
+pav::IComponentBase* pav::ComponentManager::AddComponent(IGameObjectBase* owner, Args&& ...args)
+{
+	// Get id
+	unsigned int id = pav::GUID<IComponentBase>::GetID<C>();
+
+	// Check if we already have a Component with same type
+	if (components_.find(id) == components_.end())
+	{
+		components_.insert(std::make_pair(id, std::vector<std::unique_ptr<IComponentBase>>()));
+	}
+
+	// Adding component
+	auto temp_vec = &components_.at(id);
+
+	temp_vec->emplace_back(std::make_unique<C>(owner, std::forward<Args>(args)...));
+	IComponentBase* comp = temp_vec->at(temp_vec->size() - 1).get();
+	comp->SetupEngineEvents(event_attorney_);
+	comp->Begin(); // Calling component begin logic
+
+	return comp;
 }
 
 #endif // COMPONENT_MANAGER_H

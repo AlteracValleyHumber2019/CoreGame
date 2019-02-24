@@ -37,7 +37,7 @@ namespace pav
 		 *
 		 * \returns	The entity component manager.
 		 */
-		const SECManager* GetSECManager();
+		SECManager* GetSECManager();
 
 	public:
 		IScene();

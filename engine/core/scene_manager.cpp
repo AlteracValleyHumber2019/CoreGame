@@ -56,8 +56,8 @@ void pav::SceneManager::SwitchScene(std::string && Name)
 	}
 
 	current_scene_ = scenes_.at(Name).get();
-	current_scene_->BeginScene(); // Scene begin logic
 	current_scene_->SetupEngineEvents(event_attorney_); // Forward event
+	current_scene_->BeginScene(); // Scene begin logic
 }
 
 void pav::SceneManager::SetupEngineEvents(EventAttorney* event_attorney)

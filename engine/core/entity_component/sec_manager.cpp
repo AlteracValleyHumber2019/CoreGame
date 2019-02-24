@@ -1,6 +1,9 @@
 #include "pav_pch.h"
 #include "sec_manager.h"
 
+#include "game_object_manager.h"
+#include "component_manager.h"
+
 pav::SECManager::SECManager() :
 	game_object_manager_(std::make_unique<GameObjectManager>()),
 	component_manager_(std::make_unique<ComponentManager>())

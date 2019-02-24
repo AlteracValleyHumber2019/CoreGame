@@ -2,8 +2,6 @@
 #define SEC_MANAGER_H
 
 #include "../event_attorney.h"
-#include "game_object_manager.h"
-#include "component_manager.h"
 
 namespace pav
 {
@@ -73,18 +71,19 @@ namespace pav
 		void RemoveGameObject(std::string&& name);
 
 		/**
-		 * \fn	template <typename C, typename ...Args> inline IComponentBase* SECManager::AddComponent(Args&& ...args);
+		 * \fn	template <typename C, typename ...Args> inline IComponentBase* SECManager::AddComponent(const IGameObjectBase* owner, Args&& ...args);
 		 *
 		 * \brief	Adds a component
 		 *
 		 * \tparam	C	   	Type of the component.
 		 * \tparam	...Args	Type of the constructor arguments.
+		 * \param 	  	owner  	The owner.
 		 * \param [in]	...args	The component constructor arguments.
 		 *
 		 * \returns	Null if it fails, else a pointer to a pav::IComponentBase.
 		 */
 		template <typename C, typename ...Args>
-		inline IComponentBase* AddComponent(Args&& ...args);
+		inline IComponentBase* AddComponent(IGameObjectBase* owner, Args&& ...args);
 
 		/**
 		 * \fn	template <typename C> inline void SECManager::RemoveComponent(const size_t index = 0);
@@ -121,29 +120,35 @@ namespace pav
 		 */
 		void SetupEngineEvents(EventAttorney* event_attorney);
 	};
+}
 
-	template <typename Type>
-	IGameObjectBase* SECManager::AddGameObject(std::string&& name)
-	{
-		return game_object_manager_->AddGameObject(std::move(name));
-	}
+#include "game_object_manager.h"
+#include "component_manager.h"
 
-	template <typename Type>
-	IGameObjectBase* SECManager::AddGameObject(std::string&& name, IGameObjectBase* parent)
-	{
-		return game_object_manager_->AddGameObject(std::move(name), parent);
-	}
+template <typename Type>
+pav::IGameObjectBase* pav::SECManager::AddGameObject(std::string&& name)
+{
+	auto go = game_object_manager_->AddGameObject<Type>(std::move(name));
+	go->manager_ = this;
 
-	template <typename C, typename ...Args>
-	IComponentBase* SECManager::AddComponent(Args&& ...args)
-	{
-	}
+	return go;
+}
 
-	template <typename C>
-	void SECManager::RemoveComponent(const size_t index)
-	{
-	}
+template <typename Type>
+pav::IGameObjectBase* pav::SECManager::AddGameObject(std::string&& name, IGameObjectBase* parent)
+{
+	return game_object_manager_->AddGameObject(std::move(name), parent);
+}
 
+template <typename C, typename ...Args>
+pav::IComponentBase* pav::SECManager::AddComponent(IGameObjectBase* owner, Args&& ...args)
+{
+	return component_manager_->AddComponent<C>(owner, std::forward<Args>(args)...);
+}
+
+template <typename C>
+void pav::SECManager::RemoveComponent(const size_t index)
+{
 }
 
 #endif // SEC_MANAGER_H

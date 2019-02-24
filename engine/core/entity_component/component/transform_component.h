@@ -24,18 +24,20 @@ namespace pav
 
 		// Transform matrices and quaternion
 		glm::mat4 position_mat4_;
-		glm::quat rotation_quat_;
+		glm::mat4 rotation_mat4_;
 		glm::mat4 scale_mat4_;
 
 	public:
 
 		/**
-		 * \fn	TransformComponent::TransformComponent();
+		 * \fn	TransformComponent::TransformComponent(IGameObjectBase* owner);
 		 *
 		 * \brief	Default constructor
 		 *
 		 * \author	Jaymie
 		 * \date	2/23/2019
+		 *
+		 * \param [in]	owner	If non-null, the owner.
 		 */
 		TransformComponent(IGameObjectBase* owner);
 
@@ -88,16 +90,29 @@ namespace pav
 		void SetPosition(const glm::vec3& pos);
 
 		/**
-		 * \fn	void TransformComponent::SetRotation(const glm::vec3& rot);
+		 * \fn	void TransformComponent::SetRotation(const glm::vec3& euler);
 		 *
-		 * \brief	Set transform rotation
+		 * \brief	Set transform rotation with euler angle
 		 *
 		 * \author	Jaymie
 		 * \date	2/23/2019
 		 *
-		 * \param	rot	The rot.
+		 * \param	euler	The euler angle.
 		 */
-		void SetRotation(const glm::vec3& rot);
+		void SetRotation(const glm::vec3& euler);
+
+		/**
+		 * \fn	void TransformComponent::SetRotation(const glm::vec3& axis, const float angle);
+		 *
+		 * \brief	Sets a rotation
+		 *
+		 * \author	Jaymie
+		 * \date	2/23/2019
+		 *
+		 * \param	axis 	The axis, this vector should be between 0 to 1.
+		 * \param	angle	The angle in radiants.
+		 */
+		void SetRotation(const glm::vec3& axis, const float angle);
 
 		/**
 		 * \fn	void TransformComponent::SetScale(const glm::vec3& scale);
@@ -110,6 +125,15 @@ namespace pav
 		 * \param	scale	The scale.
 		 */
 		void SetScale(const glm::vec3& scale);
+
+		virtual void Begin() override;
+
+		virtual void End() override;
+
+		virtual void Update(const float delta_time) override;
+
+		virtual void SetupEngineEvents(EventAttorney* event_attorney) override;
+
 	};
 }
 

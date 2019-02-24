@@ -2,6 +2,7 @@
 #define I_GAME_OBJECT_H
 
 #include "../event_attorney.h"
+#include "../util/guid.h"
 
 namespace pav
 {
@@ -24,6 +25,10 @@ namespace pav
 	private:
 		// Friend
 		friend class GameObjectManager;
+		friend class SECManager;
+
+		// Manager
+		class SECManager* manager_;
 
 		// Data
 		std::string name_;
@@ -189,7 +194,7 @@ namespace pav
 	public:
 
 		/**
-		 * \fn	explicit IGameObject::IGameObject(std::string&& name, const unsigned int order);
+		 * \fn	explicit IGameObject::IGameObject(std::string&& name, const unsigned int order = 0) : IGameObjectBase(std::move(name), pav::GUID<IGameObjectBase>::GetID<CRTP>(), order)
 		 *
 		 * \brief	Constructor
 		 *
@@ -197,30 +202,21 @@ namespace pav
 		 * \date	2/6/2019
 		 *
 		 * \param [in]	name 	The name.
-		 * \param 		  	order	The order.
+		 * \param 	  	order	(Optional) The order.
 		 */
-		explicit IGameObject(std::string&& name, const unsigned int order = 0);
+		explicit IGameObject(std::string&& name, const unsigned int order = 0) :
+			IGameObjectBase(std::move(name), pav::GUID<IGameObjectBase>::GetID<CRTP>(), order) // CRTP type GUID code
+		{
+		}
 	};
+}
 
-	// Include here
+#include "sec_manager.h"
 
-	template <typename C, typename ...Args>
-	pav::IComponentBase* pav::IGameObjectBase::AddComponent(Args&& ...args)
-	{
-		return nullptr;
-	}
-
-	template<typename C>
-	inline pav::IComponentBase * IGameObjectBase::GetComponent(const size_t index)
-	{
-		return nullptr;
-	}
-
-	template<typename C>
-	inline void IGameObjectBase::RemoveComponent(const size_t index)
-	{
-	}
-
+template <typename C, typename... Args>
+pav::IComponentBase* pav::IGameObjectBase::AddComponent(Args&& ...args)
+{
+	return manager_->AddComponent<C>(this, std::forward<Args>(args)...);
 }
 
 #endif // I_GAME_OBJECT_H

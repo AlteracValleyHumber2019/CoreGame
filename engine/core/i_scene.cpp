@@ -1,7 +1,7 @@
 ﻿#include "pav_pch.h"
 #include "i_scene.h"
 
-const pav::SECManager* pav::IScene::GetSECManager()
+pav::SECManager* pav::IScene::GetSECManager()
 {
 	return sec_manager_.get();
 }
@@ -26,4 +26,5 @@ void pav::IScene::Update(const float delta_time)
 
 void pav::IScene::SetupEngineEvents(EventAttorney* event_attorney)
 {
+	sec_manager_->SetupEngineEvents(event_attorney);
 }
