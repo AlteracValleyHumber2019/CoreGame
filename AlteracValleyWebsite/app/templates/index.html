@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>User dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="static\css\user.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            Alterac Valley
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+          <button class="btn btn-light my-2 my-sm-0" type="logout"><a href="{{url_for('logout')}}" }>logout</a></button>
+        </form>
+    </div>
+  </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h4 class="h2">{{user.username}} Dashboard</h4>
+          <div class="btn-toolbar mb-2 mb-md-0">
+          </div>
+        </div>
+
+        <p>
+          <div class="container">
+            <img src="..\static\css\Images\alterac.png" alt="Cover" style="width:100%;">
+            <div class="text-block">
+              <h3 style="color: white"> <strong>“Welcome to the valley {{user.username}}!"
+                </strong> </h3>
+            </div>
+        </p>
+
+
+</html>

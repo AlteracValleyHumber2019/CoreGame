@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>User dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="static\css\editUser.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <img src="../static/css/Images/logo_transparent_hori.png" width="240" height="80" alt="">
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <button class="btn btn-light my-2 my-sm-0" type="logout"><a href="{{url_for('logout')}}" }>logout</a></button>
+      </form>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Edit Profile</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+          </div>
+        </div>
+        <form class="" action="editUser.html" method="post">
+          <table>
+            <tr class="table-row">
+              <td>
+                <label>Email address</label>
+              </td>
+              <td>
+                <input type="email" placeholder="Email address" required autofocus>
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td>
+                <label>Password</label>
+              </td>
+              <td>
+                <input type="password" placeholder="Password">
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td>
+                <label>Confirm Password</label>
+              </td>
+              <td>
+                <input type="password" placeholder="Confirm Password">
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td>
+                <label>Change Photo</label>
+              </td>
+              <td>
+                <form action="/action_page.php">
+                  <input type="file" name="pic" accept="image/*">
+                  <input type="submit">
+                </form>
+              </td>
+            </tr>
+          </table>
+          <button class="btn btn-dark" type="submit" name="submit">Submit Form</button>
+          <button class="btn btn-dark" type="back" name="back"><a href="{{url_for('index')}}">Back</a></button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <p style="text-align: center; color: white">&copy 2019-2020</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+</html>

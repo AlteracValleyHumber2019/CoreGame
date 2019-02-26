@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{% if html.description -%} {{ html.description }} {%- endif %}">
+  <meta name="author" content="Qhacks2019">
+
+  <title>{% if html.title -%} {{ html.title }} {%- endif %}</title>
+
+</head>
+
+<body>
+
+  {% block body %}
+  {% endblock %}
+
+</body>
+</html>

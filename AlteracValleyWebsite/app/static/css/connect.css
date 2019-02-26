@@ -1,0 +1,11 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.btn{
+  margin-top:20px;
+}

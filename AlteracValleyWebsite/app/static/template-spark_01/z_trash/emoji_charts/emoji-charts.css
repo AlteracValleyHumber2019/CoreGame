@@ -1,0 +1,178 @@
+.chart-table {
+    width: 300px;
+    margin-bottom: 30px;
+}
+.basic_chart_bg {
+    background: #C8C8C8;
+    width: 100%;
+    height: 100%;
+}
+.basic_chart_fg {
+    background: #999;
+    float: left;
+    height: 100%;
+}
+.basic_chart_spacer {
+    height: 100%;
+    float: left;
+
+}
+.basic_chart_min, .basic_chart_max {
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 3px;
+    height: 27px;
+    overflow: visible;
+}
+.basic_chart_min {
+    float: right;
+    border-right: 1px solid #000;
+}
+.basic_chart_max {
+    float: left;
+    border-left: 1px solid #000;
+}
+.basic_chart_min>span, .basic_chart_max>span {
+    position: relative;
+    top: 25px;
+    width: 0px;
+    overflow: visible;
+    color: #777;
+}
+.basic_chart_min>span {
+    left: 7px;
+}
+.basic_chart_max>span {
+    right: 10px;
+}
+.basic_chart_avg {
+    border-right: 3px solid #000;
+    padding-bottom: 1px;
+    position: relative;
+    /*right: 18px;*/
+}
+.basic_chart_avg>span {
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+.basic_chart_avg>span>span {
+    font-size: 14px;
+    line-height: 0;
+    overflow: visible;
+    color: #777;
+}
+/* .basic_chart_text {
+    display: none;
+} */
+
+.table>tbody>tr>td.row-chart {
+    padding-top: 20px;
+}
+.table>tbody>tr>td {
+    vertical-align: text-bottom;
+}
+.highlight {
+    font-weight: bold;
+}
+
+
+.report_table_likert {
+            table-layout: fixed;
+            white-space: nowrap;
+            width: 100%;
+            padding: 15px !important;
+            height: 150px !important;
+}
+
+.report_table_likert td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* border: 1px solid green;
+            border-bottom: 1px solid green; */
+}
+
+.report_table_likert tr:hover {
+            background-color: #ccc;
+}
+
+/* Column widths are based on these cells */
+.row-name {
+            width: 120px;
+            text-align: right !important;
+            font-size: 11px !important;
+}.row-low {
+            width: 120px;
+            text-align: right !important;
+            font-size: 11px !important;
+            padding-right: 3px;
+}
+
+.row-chart {
+            width: 120px;
+            text-align: right;
+}
+/*  THIS CAUSES A DISTORTION WHERE THE AVG BAR PULLS RIGHT, WHICH ONLY WORKS WHEN UNDER 50%, BUT IS TOTALLY WRONG WHEN OVER 50% WTF!!! */
+
+
+.row-high {
+            width: 120px;
+            text-align: left !important;
+            font-size: 11px !important;
+            padding-left: 3px;
+}
+.row-metrics {
+            width: 100px;
+            text-align: center !important;
+            font-size: 11px !important;
+}
+.row-confidence {
+            width: 100px;
+            text-align: center !important;
+            font-size: 11px !important;
+}
+.row-person2 {
+            width: 120px;
+            text-align: center !important;
+            font-size: 11px !important;
+}
+.row-person3 {
+            width: 120px;
+            text-align: center !important;
+            font-size: 11px !important;
+}
+
+.parent_tbl {
+    border: 1px solid #ccc;
+}
+.union_tbl {
+    border: 1px solid #ccc;
+}
+
+.chart_tbl td , .union_tbl td {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 60px;
+    text-align: center;
+}
+
+
+
+/*************************************
+        Feedback Status Badges
+ *************************************/
+
+.badge.feedback_badge_high {
+    background-color: #26C281;
+}
+.badge.feedback_badge_med {
+    background-color: #E87E04;
+}
+.badge.feedback_badge_low{
+    background-color: #D91E18;
+}
