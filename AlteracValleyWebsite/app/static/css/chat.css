@@ -1,0 +1,111 @@
+.container {
+    max-width: 960px;
+  }
+  
+  .lh-condensed { line-height: 1.25; }
+  
+  @import url(http://weloveiconfonts.com/api/?family=entypo);
+  
+  [data-icon]:after {
+    font-family: "entypo";
+    content: attr(data-icon);
+    speak: none;
+  }
+  input[type="search"] {
+    width: 196px;
+    height: 36px;
+    padding: 0;
+    line-height: 32px;
+    background: #56e2c9;
+    color: #fff;
+    border: 0;
+    font: bold 14px/20px "Arial", sans-serif;
+    text-indent: 12px;
+    outline: none;
+    -webkit-appearance: textfield;
+  }
+  input[type="search"]::-webkit-input-placeholder {
+    color: transparent;
+  }
+  input[type="search"]::-moz-input-placeholder {
+    color: transparent;
+  }
+  input[type="search"]:-ms-input-placeholder {
+    color: transparent;
+  }
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+  }
+  input[type="search"]::-webkit-search-cancel-button:before, input[type="search"]::-webkit-search-results-button:before, input[type="search"]::-webkit-search-results-decoration:before {
+    position: absolute;
+    content: 'x';
+    font-style: normal;
+  }
+  input[type="search"]:invalid {
+    border: 0 !important;
+  }
+  input[type="search"]:invalid::-webkit-search-cancel-button:before, input[type="search"]:invalid::-webkit-search-results-button:before, input[type="search"]:invalid::-webkit-search-results-decoration:before {
+    font-family: "entypo";
+    content: attr(data-icon);
+  }
+  input[type="search"] + label {
+    position: absolute;
+    margin: 8px 0 0 -30px;
+    cursor: pointer;
+  }
+  input[type="search"] + label:before {
+    position: absolute;
+    content: 'Choisir';
+    left: -152px;
+    width: 180px;
+    color: #fff;
+    font: bold 14px/20px "Arial", sans-serif;
+    text-align: left;
+  }
+  input[type="search"] + label:after {
+    margin-left: 7px;
+    color: #fff;
+    content: '\25BE';
+  }
+  
+  input[type="search"]:focus::-webkit-input-placeholder {
+    font-weight: normal;
+    color: #fff;
+  }
+  input[type="search"]:focus::-moz-input-placeholder {
+    font-weight: normal;
+    color: #fff;
+  }
+  input[type="search"]:focus:-ms-input-placeholder {
+    font-weight: normal;
+    color: #fff;
+  }
+  input[type="search"]:focus:invalid + label:before {
+    display: none;
+  }
+  input[type="search"]:focus:invalid + label:after {
+    margin-left: 4px;
+    content: attr(data-icon);
+  }
+  input[type="search"]:valid + label {
+    display: none;
+  }
+  
+  
+  table {
+      border-collapse: collapse;
+  }
+  
+  td {
+      padding-top: .5em;
+      padding-bottom: .5em;
+  }
+  .btn{
+    margin-top:20px;
+  }

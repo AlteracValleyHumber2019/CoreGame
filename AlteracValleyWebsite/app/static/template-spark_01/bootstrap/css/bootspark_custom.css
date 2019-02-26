@@ -1,0 +1,258 @@
+/* TO PUT LATER IN SCSS CUSTOM FILE */
+body {
+  font-size: .9rem;
+}
+a {
+    color: #00507f;
+    text-decoration: underline;
+}
+h2 {
+  color: #666;
+}
+h2 i {
+  color: #777;
+  font-size: 75%;
+  margin-right: 7px;
+}
+h5 {
+  color: #666666;
+  font-weight: bold;
+}
+h5.text-white {
+  color: #ccc;
+  font-weight: normal;
+}
+.bg-dark {
+background-color: #2e2e2e !important;
+}
+.border {
+border: 1px solid #e3e6ea !important;
+}
+.border-right {
+border-right: 1px solid #e3e6ea !important;
+}
+.border-bottom-dashed {
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+}
+
+.btn-outline-light {
+color: #f8f9fa;
+border-color: #aaa;
+}
+.btn-outline-light:hover {
+    color: #212529;
+    background-color: #ccc;
+    border-color: #eee;
+}
+.badge-success, btn-success {
+    color: fff;
+}
+.btn-light {
+    color: #555;
+}
+.btn-success, .badge-success {
+    color: #fff;
+}
+
+
+/* END LATER IN SCSS CUSTOM FILE */
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+.full-height-container {
+height: 100%;
+}
+
+.smaller-txt {
+font-size: 80%;
+}
+.divider-line {
+border-bottom: 1px solid #666;
+padding-bottom: 15px;
+margin-bottom: 15px;
+padding: 0 10px 15px;
+}
+.divider-space {
+padding: 0 10px 15px;
+}
+.dashboard-header i.far, .dashboard-header i.fas {
+color: #aaa;
+font-size: 80%;
+}
+.fa.fas:hover {
+color: #666;
+}
+h1.page-main-title {
+padding-bottom: 5px;
+border-bottom: 10px solid #d8dae2;
+}
+
+.list-group-flush li.list-group-item {
+padding: 10px 0 0;
+}
+
+.list-group-item {
+    border: 1px dashed #ddd;
+}
+button i {
+    padding-right: 3px;
+}
+
+/* Cards - Friends */
+.card-deck.spark-friends .card {
+    border: 0px;
+}
+.card-deck.spark-friends .card .spark-friends-text {
+    padding: 8px 0 9px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: .95rem;
+    color: #666;
+}
+.card-deck.spark-friends .card .card-footer {
+    border: 0px;
+}
+.card-deck.spark-friends .card .spark-friends-meta {
+    border-top: 1px solid #eee;
+    background: #fff;
+    padding: 3px 0 0;
+}
+.card-deck.spark-friends .card .card-footer i {
+  color: #777;
+  font-size: 14px;
+}
+.card-deck.spark-friends .card .card-footer i.fas.fa-circle.offline {
+color: #ccc;
+}
+.card-deck.spark-friends .card .card-footer i.fas.fa-circle.online {
+color: #89bc23;
+}
+/* end Cards - Friends */
+
+/* Team list */
+
+.list-group-flush.spark-team li.list-group-item {
+    padding: 5px 0 5px;
+}
+
+ul.spark-team img.team-brand-pic  {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #eee;
+}
+ul.spark-team .team-brand-name {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Segments page */
+
+.segments .segments-number-title {
+  margin: -20px -10px;
+}
+.segments .segments-number-title .badge {
+  font-size: 14px;
+  padding: 7px 15px 8px;
+}
+ul.spark-segments-personas img.persona-pic  {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #eee;
+}
+ul.spark-segments-personas .persona-name h6  {
+padding: 0;
+margin: 0;
+}
+.segments-image {
+  bottom: 20px;
+}
+
+  /* segments list */
+
+.list-group-flush.spark-segments li.list-group-item {
+    padding: 5px 0 5px;
+}
+ul.spark-segments {
+  min-height: 380px;
+}
+ul.spark-segments .segments-name i {
+  color: #bbb;
+  font-size: 12px;
+  margin-top: -10px;
+}
+ul.spark-segments .segments-name {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #666;
+}
+
+/* Persona Page */
+
+.persona-info {
+  font-size: .8rem;
+}
+.persona h6.persona-name {
+  font-size: 24px;
+}
+.persona .list-group p {
+  margin-bottom: 4px;
+}
+.persona-info blockquote {
+  line-height: 1.2;
+  font-weight: normal;
+}
+.persona-info ul.persona-meta li.list-group-item {
+  background-color: transparent;
+  border-color: #666;
+  font-size: 10px;
+}
+.persona-info ul.persona-meta li.list-group-item i {
+  color: #bbb;
+  font-size: 12px;
+}
+.persona-info ul li.list-group-item {
+  padding-bottom: 10px;
+}
+.persona-pic .badge {
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid #fff;
+}
+.persona-col2-3 ul li.list-group-item {
+  padding: 20px 0;
+}
+.persona-col2-3 .list-group-flush:first-child .list-group-item:first-child {
+  padding: 10px 0 20px;
+}
+.persona-motivators-goals i {
+  color: #888;
+  font-size: 12px;
+}
+.persona-motivators-goals ul {
+  padding-left: 20px;
+}
+.persona-motivators-goals ul li {
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+  .segments .segments-number-title {
+    margin: -20px 15px;
+}
+
+ }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { ... }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { ... }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { ... }

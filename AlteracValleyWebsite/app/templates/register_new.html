@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Profile</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="static\css\Profile.css" rel="stylesheet">
+</head>
+
+<body background="static\css\Images\picture.jpg" class="bg-light">
+  <div class="container">
+    <div class="py-5 text-center">
+      <!-- <img class="d-block mx-auto mb-4" src="/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h2>Profile</h2>
+      <p class="lead">Please build your profile below</p>
+    </div>
+
+    <div class="col-md-8 order-md-1">
+      <form class="needs-validation" method="post" novalidate>
+        <div class="col-md-6 mb-3">
+          <label for="username">Username</label>
+          <div>
+            {{ form.username(size=32, class_="form-control") }}
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email">Email <span class="text-muted"></span></label>
+          <div>
+            {{ form.email(size=32, class_="form-control") }}
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="password1">{{ form.password1.label }} <span class="text-muted"></span></label>
+          <div>
+            {{ form.password1(size=32, class_="form-control") }}<br>
+            {% for error in form.password1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="password2">{{ form.password2.label }} <span class="text-muted"></span></label>
+          <div>
+            {{ form.password2(size=32, class_="form-control") }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div>
+          {{ form.hidden_tag() }}
+          {{ form.submit() }}
+        </div>
+      </form>
+      <br>
+      <div class="m-login__account">
+        <!--(change the text in the span tag to what ever is appropiate for your use-case) -->
+        <span class="m-login__account-msg">Already have a login?
+        </span>&nbsp;&nbsp; <a href="{{url_for('login')}}" id="m_login_signin"
+          class="m-link m-link--focus m-login__account-link">Sign In</a>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2019-2020 Humber College</p>
+      </footer>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</html>

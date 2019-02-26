@@ -1,0 +1,50 @@
+# static/metronic_v5.5.5/
+
+
+# FLASK AND PYTHON
+/venv/*
+/flask/venv
+/flask/venv/*
+
+*/__pycache__/*
+/flask/__pycache__
+/flask/__pycache__/*
+.pyc
+*.pyc
+*.pyo
+*.egg
+*.egg-info/
+.cache/
+.pytest_cache/
+.env
+.flaskenv
+
+
+# Windows image file caches and thumbnails
+Thumbs.db
+ehthumbs.db
+._*
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+*.pyc
+flask/config.py

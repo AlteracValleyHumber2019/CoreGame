@@ -1,0 +1,59 @@
+{% extends '_template-spark_01/template_full_width.html' %}
+
+
+{% block body %}
+    <table>
+        <tr valign="top">
+            <td>
+                {% if user %}
+                    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                    <p>{{ user.email }}</p>
+                    <p>{{ user.about_me }}</p>
+                    <p>{{ user.school_name }}</p>
+                    <p>{{ user.program_name }}</p>
+
+                {% endif %}
+            </td>
+
+            <td>
+                <img src="{{ user.avatar(128) }}">
+            </td>
+
+        </tr>
+
+        <tr>
+
+        </tr>
+
+    </table>
+    <hr>
+
+
+    {% if user == current_user %}
+
+                <p>
+                    {{ form.first_name.label }}<br>
+                    {{ form.first_name }}<br>
+                    {% for error in form.first_name.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}
+                </p>
+
+                <p>
+                    {{ form.last_name.label }}<br>
+                    {{ form.last_name }}<br>
+                    {% for error in form.last_name.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}
+                </p>
+
+                <p>
+                    {{ form.new_email.label }}<br>
+                    {{ form.new_email(size=44) }}<br>
+                    {% for error in form.new_email.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}
+                </p>
+
+    {% endif %}
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Signin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="static/css/index.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <form class="form-signin" action="{{ url_for('login') }}" method="POST" novalidate>
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <div id="inputEmail" class="form-control">
+            {{ form.email(size=32, class_="form-control") }}
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div type="password" id="inputPassword" class="form-control">
+            {{ form.password(size=32, class_="form-control") }}
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <p>New User? <a href="{{ url_for('register') }}">Register</a></p>
+        {{ form.hidden_tag() }}
+        <p>{{ form.submit(class_="btn btn-lg btn-primary btn-block") }}</p>
+        <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
