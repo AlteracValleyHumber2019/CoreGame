@@ -33,6 +33,8 @@
 // PAV
 #include "pav_pcs.h"
 
+#include "core/eea/pav_assert.h"
+
 #include "core/util/signal.h"
 
 #endif // PAV_PCH_H
