@@ -9,11 +9,19 @@
 
 #ifdef _DEBUG
 
-#define PAV_ASSERT(condition, msg, file, line) \
-{														\
-	pav::PAVAssert::PrintFileLine(file, line);			\
-	assert((msg, condition));							\
-}														\
+#define PAV_ASSERT(condition, msg)							\
+{															\
+	assert((msg, condition));								\
+}															\
+
+#define PAV_WARNING(condition, msg)							\
+{															\
+	if (condition)											\
+	{														\
+		pav::PAVAssert::PrintFileLine(__FILE__, __LINE__);	\
+		printf("WARNING: %s\n", msg);						\
+	}														\
+}															\
 
 #else
 #define PAV_ASSERT(condition, msg)

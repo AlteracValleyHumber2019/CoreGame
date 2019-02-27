@@ -11,7 +11,7 @@ pav::Engine::Engine() :
 	render_manager(ManagerFactory::CreateRenderManager())
 {
 #ifndef ENGINE_TYPE_GL_SDL
-	PAV_ASSERT(false, PRECOMPILED_ENGINE_SETTING_UNDEFINED, __FILE__, __LINE__);
+	PAV_ASSERT(false, PRECOMPILED_ENGINE_SETTING_UNDEFINED);
 #endif // !ENGINE_TYPE_GL_SDL
 }
 
