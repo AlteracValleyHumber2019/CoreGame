@@ -4,8 +4,21 @@
 namespace pav {
 
 	template <class T>
-	class QuadTreePartitionStrategy : pav::ISpatialPartitionStrategy<T> {
+	class QuadTreePartitionStrategy : ISpatialPartitionStrategy<T> {
+
+		int limit = 10;
+		int width;
+		int height;
+		int max_width = 1000;
+		int max_height = 1000;
+
+		TreeNode<T>* northwest;
+		TreeNode<T>* northeast;
+		TreeNode<T>* southwest;
+		TreeNode<T>* southeast;
+
 	public:
+		void SetWidth(int newVal);
 		TreeNode<T>* Partition(TreeNode<T>* node, SpatialTree<T>* tree);
 	};
 	
