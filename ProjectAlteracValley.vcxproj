@@ -164,6 +164,10 @@
     <ClCompile Include="engine\core\engine.cpp" />
     <ClCompile Include="engine\core\event_manager.cpp" />
     <ClCompile Include="engine\core\event_util.cpp" />
+    <ClCompile Include="engine\core\graphics\i_texture.cpp" />
+    <ClCompile Include="engine\core\graphics\mesh.cpp" />
+    <ClCompile Include="engine\core\graphics\model.cpp" />
+    <ClCompile Include="engine\core\graphics\vertex.cpp" />
     <ClCompile Include="engine\core\manager_factory.cpp" />
     <ClCompile Include="engine\core\render_manager.cpp" />
     <ClCompile Include="engine\core\i_scene.cpp" />
@@ -206,7 +210,9 @@
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
     <ClInclude Include="engine\core\graphics\i_texture.h" />
-    <ClInclude Include="engine\core\graphics\texture.h" />
+    <ClInclude Include="engine\core\graphics\mesh.h" />
+    <ClInclude Include="engine\core\graphics\model.h" />
+    <ClInclude Include="engine\core\graphics\vertex.h" />
     <ClInclude Include="engine\core\i_manager.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />

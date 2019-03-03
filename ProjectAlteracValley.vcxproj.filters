@@ -96,6 +96,18 @@
     <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\graphics\vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\graphics\i_texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\graphics\mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\graphics\model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">
@@ -191,10 +203,16 @@
     <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\graphics\texture.h">
+    <ClInclude Include="engine\core\graphics\i_texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\graphics\i_texture.h">
+    <ClInclude Include="engine\core\graphics\vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
