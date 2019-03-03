@@ -205,6 +205,8 @@
     <ClInclude Include="engine\core\event_attorney.h" />
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
+    <ClInclude Include="engine\core\graphics\i_texture.h" />
+    <ClInclude Include="engine\core\graphics\texture.h" />
     <ClInclude Include="engine\core\i_manager.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
