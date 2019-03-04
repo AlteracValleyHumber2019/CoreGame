@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\camera.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
@@ -163,6 +164,8 @@
     <ClCompile Include="engine\core\event_manager.cpp" />
     <ClCompile Include="engine\core\event_util.cpp" />
     <ClCompile Include="engine\core\manager_factory.cpp" />
+    <ClCompile Include="engine\core\math\MMath.cpp" />
+    <ClCompile Include="engine\core\math\VMath.cpp" />
     <ClCompile Include="engine\core\render_manager.cpp" />
     <ClCompile Include="engine\core\i_scene.cpp" />
     <ClCompile Include="engine\core\scene_manager.cpp" />
@@ -193,6 +196,7 @@
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\camera.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h" />
@@ -204,6 +208,10 @@
     <ClInclude Include="engine\core\i_manager.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
+    <ClInclude Include="engine\core\math\Matrix.h" />
+    <ClInclude Include="engine\core\math\MMath.h" />
+    <ClInclude Include="engine\core\math\Vector.h" />
+    <ClInclude Include="engine\core\math\VMath.h" />
     <ClInclude Include="engine\core\util\guid.h" />
     <ClInclude Include="engine\core\entity_component\i_game_object.h" />
     <ClInclude Include="engine\core\entity_component\i_component.h" />
