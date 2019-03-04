@@ -19,6 +19,7 @@ namespace pav {
 
 	public:
 		void SetWidth(int newVal);
+		void SetHeight(int newVal);
 		TreeNode<T>* Partition(TreeNode<T>* node, SpatialTree<T>* tree);
 	};
 	

@@ -10,6 +10,11 @@ void pav::QuadTreePartitionStrategy<T>::SetWidth(int newVal) {
 }
 
 template<class T>
+void pav::QuadTreePartitionStrategy<T>::SetHeight(int newVal) {
+	height = newVal;
+}
+
+template<class T>
 pav::TreeNode<T>* pav::QuadTreePartitionStrategy<T>::Partition(TreeNode<T>* node, SpatialTree<T>* tree) {
 	
 	if (node->children.size > limit) {
@@ -38,6 +43,9 @@ pav::TreeNode<T>* pav::QuadTreePartitionStrategy<T>::Partition(TreeNode<T>* node
 				northwest->AddChild(element.first, element.second);
 			}
 		}
+
+		SetHeight(height / 2);
+		SetWidth(width / 2);
 
 		if (northwest->children.size > limit) {
 			northwest = Partition(northwest, tree);
