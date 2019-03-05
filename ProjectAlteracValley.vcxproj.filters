@@ -96,9 +96,6 @@
     <ClCompile Include="engine\core\math\MMath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">

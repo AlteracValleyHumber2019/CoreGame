@@ -155,7 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="engine\core\camera.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
