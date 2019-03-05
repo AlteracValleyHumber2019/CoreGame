@@ -1,10 +1,8 @@
 #ifndef CAMERA_H
 #define	CAMERA_H
 
-#include "glm\glm.hpp"
-#include "glm\gtc\matrix_transform.hpp"
+#include "pav_pch.h"
 #include <gl\GL.h>
-#include <vector>
 
 /**
  * \class	camera
@@ -26,7 +24,6 @@ enum Camera_Movement
 	LEFT,
 	RIGHT
 };
-
 
 const GLfloat YAW = -90.0f;
 const GLfloat PITCH = 0.0f;
