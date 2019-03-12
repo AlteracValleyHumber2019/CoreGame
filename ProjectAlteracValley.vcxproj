@@ -193,6 +193,8 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\unit\unit_behaviour_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\unit\i_unit_mod.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
@@ -226,6 +228,8 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="engine\core\entity_component\component\unit\unit_behaviour_component.h" />
+    <ClInclude Include="i_unit_mod.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
