@@ -1,5 +1,6 @@
 ﻿#include "pav_pch.h"
 #include "gl_sdl_window.h"
+#include "glad/glad.h"
 
 pav::GLSDLWindow::GLSDLWindow() :
 window_(nullptr, SDL_DestroyWindow)
@@ -31,6 +32,13 @@ void pav::GLSDLWindow::DestroyWindow()
 void pav::GLSDLWindow::SetAsContext()
 {
 	main_context_ = SDL_GL_CreateContext(window_.get());
+
+	// INIT GLAD
+	if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress))
+	{
+		printf("%s \n", "Failed to initialize GLAD");
+		return;
+	}
 }
 
 void pav::GLSDLWindow::Update(const float delta_time)
