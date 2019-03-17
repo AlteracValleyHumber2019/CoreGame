@@ -7,7 +7,7 @@ window_(nullptr, SDL_DestroyWindow)
 {
 }
 
-void pav::GLSDLWindow::CreateWindow(pav::WindowInfo&& win_info)
+void pav::GLSDLWindow::MakeWindow(pav::WindowInfo&& win_info)
 {
 	window_.reset
 	(
