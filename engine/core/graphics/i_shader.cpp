@@ -8,5 +8,5 @@ size_t pav::IShader::GetChildrenSize() const
 
 pav::IShader* pav::IShader::GetShaderAt(const size_t index)
 {
-
+	return nullptr;
 }
