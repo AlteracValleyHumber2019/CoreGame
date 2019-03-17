@@ -192,6 +192,8 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="engine\core\graphic\i_shader.cpp" />
+    <ClCompile Include="engine\core\graphic\shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -224,6 +226,9 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="engine\core\graphic\i_shader.h" />
+    <ClInclude Include="engine\core\graphic\shader_program.h" />
+    <ClInclude Include="engine\core\graphic\shader_common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
