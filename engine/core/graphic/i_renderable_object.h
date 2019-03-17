@@ -1,6 +1,0 @@
-#ifndef I_RENDERABLE_OBJECT
-#define I_RENDERABLE_OBJECT
-
-
-#endif // !I_RENDERABLE_OBJECT
-

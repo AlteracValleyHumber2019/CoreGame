@@ -28,9 +28,6 @@ void pav::GLSDLRenderManager::Initialize()
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1); // Enable double buffer
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 32);  // Enable 32bit z buffer
-
-	
-
 }
 
 void pav::GLSDLRenderManager::End()
