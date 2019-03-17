@@ -163,6 +163,7 @@
     <ClCompile Include="engine\core\event_manager.cpp" />
     <ClCompile Include="engine\core\event_util.cpp" />
     <ClCompile Include="engine\core\graphics\i_renderable_object.cpp" />
+    <ClCompile Include="engine\core\graphics\i_shader_program.cpp" />
     <ClCompile Include="engine\core\graphics\i_texture.cpp" />
     <ClCompile Include="engine\core\graphics\mesh.cpp" />
     <ClCompile Include="engine\core\graphics\model.cpp" />
@@ -172,6 +173,7 @@
     <ClCompile Include="engine\core\i_scene.cpp" />
     <ClCompile Include="engine\core\scene_manager.cpp" />
     <ClCompile Include="engine\core\util\signal.cpp" />
+    <ClCompile Include="engine\core\util\wrappers\type_wrappers.cpp" />
     <ClCompile Include="engine\core\window_manager.cpp" />
     <ClCompile Include="engine\core\entity_component\i_game_object.cpp" />
     <ClCompile Include="engine\core\entity_component\i_component.cpp" />
@@ -210,6 +212,7 @@
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
     <ClInclude Include="engine\core\graphics\i_renderable_object.h" />
+    <ClInclude Include="engine\core\graphics\i_shader_program.h" />
     <ClInclude Include="engine\core\graphics\i_texture.h" />
     <ClInclude Include="engine\core\graphics\mesh.h" />
     <ClInclude Include="engine\core\graphics\model.h" />
@@ -220,6 +223,7 @@
     <ClInclude Include="engine\core\util\guid.h" />
     <ClInclude Include="engine\core\entity_component\i_game_object.h" />
     <ClInclude Include="engine\core\entity_component\i_component.h" />
+    <ClInclude Include="engine\core\util\wrappers\type_wrappers.h" />
     <ClInclude Include="engine\pav_pcs.h" />
     <ClInclude Include="engine\core\render_manager.h" />
     <ClInclude Include="engine\core\i_scene.h" />
