@@ -3,17 +3,20 @@
 
 namespace pav
 {
+
+#define SHADER_TYPE_COUNT 4
+
 	/**
 	 * \enum	ShaderType
 	 *
 	 * \brief	Values that represent common shader types
 	 */
-	enum ShaderType
+	enum class ShaderType
 	{
-		VERTEX_SHADER,
-		TESSELLATION_SHADER,
-		GEOMETRY_SHADER,
-		FRAGMENT_SHADER
+		VERTEX_SHADER = 0,
+		TESSELLATION_SHADER = 1,
+		GEOMETRY_SHADER = 2,
+		FRAGMENT_SHADER = 3
 	};
 
 }
