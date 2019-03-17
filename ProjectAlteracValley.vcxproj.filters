@@ -90,10 +90,13 @@
     <ClCompile Include="engine\core\eea\pav_assert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\graphic\i_shader.cpp">
+    <ClCompile Include="engine\core\graphics\i_shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\graphic\shader_program.cpp">
+    <ClCompile Include="engine\core\graphics\i_shader_program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\util\wrappers\type_wrappers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -185,13 +188,19 @@
     <ClInclude Include="engine\core\eea\pav_assert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\graphic\i_shader.h">
+    <ClInclude Include="engine\core\graphics\i_renderable_object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\graphic\shader_program.h">
+    <ClInclude Include="engine\core\graphics\i_shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\graphic\shader_common.h">
+    <ClInclude Include="engine\core\graphics\shader_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\i_shader_program.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\util\wrappers\type_wrappers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
