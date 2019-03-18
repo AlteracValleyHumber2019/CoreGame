@@ -58,14 +58,47 @@ void pav::OpenGLShader::CompileShaders()
 
 	// Compile
 	glCompileShader(shader_);
+
+	// Assert
+#ifdef _DEBUG
+	int success;
+	char info_log[512];
+	glGetShaderiv(shader_, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		std::string shader_type_str_;
+		switch (shader_type_)
+		{
+		case pav::ShaderType::VERTEX_SHADER:
+			shader_type_str_ = "VERTEX_SHADER";
+			break;
+		case pav::ShaderType::TESSELLATION_SHADER:
+			shader_type_str_ = "TESSELLATION_SHADER";
+			break;
+		case pav::ShaderType::GEOMETRY_SHADER:
+			shader_type_str_ = "GEOMETRY_SHADER";
+			break;
+		case pav::ShaderType::FRAGMENT_SHADER:
+			shader_type_str_ = "FRAGMENT_SHADER";
+			break;
+		}
+
+		glGetShaderInfoLog(shader_, 512, nullptr, info_log);
+		PAV_ASSERT(false, SHADER_COMPILE_FAILED(shader_type_str_.c_str(), info_log))
+	}
+#endif
 }
 
 GAPIUInt pav::OpenGLShader::RetrieveShader()
 {
+	// Assert
+	PAV_ASSERT(shader_ == NULL, INVALID_SHADER)
+
 	return shader_;
 }
 
 void pav::OpenGLShader::DisposeShader()
 {
 	glDeleteShader(shader_);
+	shader_ = NULL;
 }
