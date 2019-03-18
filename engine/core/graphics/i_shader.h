@@ -63,7 +63,19 @@ namespace pav
 		 *
 		 * \param [in]	child	The child.
 		 */
-		virtual void AddChildShader(std::unique_ptr<IShader>&& child) = 0;
+		virtual void AddChildShader(std::unique_ptr<IShader>&& child);
+
+		/**
+		 * \fn	std::string IShader::GetShaderCode() const;
+		 *
+		 * \brief	Gets shader code
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \returns	The shader code.
+		 */
+		std::string GetShaderCode() const;
 
 		/**
 		 * \fn	size_t IShader::GetChildrenSize() const;
@@ -111,7 +123,7 @@ namespace pav
 		 * \author	Jaymie
 		 * \date	3/17/2019
 		 */
-		virtual void CombineChildShaders() = 0;
+		virtual void CompileShaders() = 0;
 
 		/**
 		 * \fn	virtual GAPIUInt IShader::RetriveShader() = 0;
@@ -125,44 +137,7 @@ namespace pav
 		 */
 		virtual GAPIUInt RetrieveShader() = 0;
 
-		/**
-		 * \fn	virtual void IShader::SetShaderInt(std::string&& name, const int value) = 0;
-		 *
-		 * \brief	Sets shader int
-		 *
-		 * \author	Jaymie
-		 * \date	3/17/2019
-		 *
-		 * \param [in]	name 	The name.
-		 * \param 	  	value	The value.
-		 */
-		virtual void SetShaderInt(std::string&& name, const int value) = 0;
-
-		/**
-		 * \fn	virtual void IShader::SetShaderFloat(std::string&& name, const float value) = 0;
-		 *
-		 * \brief	Sets shader float
-		 *
-		 * \author	Jaymie
-		 * \date	3/17/2019
-		 *
-		 * \param [in]	name 	The name.
-		 * \param 	  	value	The value.
-		 */
-		virtual void SetShaderFloat(std::string&& name, const float value) = 0;
-
-		/**
-		 * \fn	virtual void IShader::SetShaderTransform(std::string&& name, const glm::mat4 value) = 0;
-		 *
-		 * \brief	Sets shader transform
-		 *
-		 * \author	Jaymie
-		 * \date	3/17/2019
-		 *
-		 * \param [in]	name 	The name.
-		 * \param 	  	value	The value.
-		 */
-		virtual void SetShaderTransform(std::string&& name, const glm::mat4 value) = 0;
+		virtual void DisposeShader() = 0;
 
 	};
 }

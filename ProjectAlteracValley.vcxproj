@@ -194,6 +194,8 @@
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader_program.cpp" />
     <ClCompile Include="engine\core\util\wrappers\type_wrappers.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -230,6 +232,8 @@
     <ClInclude Include="engine\core\graphics\i_shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
     <ClInclude Include="engine\core\util\wrappers\type_wrappers.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
