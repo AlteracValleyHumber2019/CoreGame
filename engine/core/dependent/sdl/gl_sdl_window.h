@@ -21,6 +21,8 @@ namespace pav
 		std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
 		SDL_GLContext main_context_;
 
+		ImGuiIO* io;
+
 	public:
 		explicit GLSDLWindow();
 

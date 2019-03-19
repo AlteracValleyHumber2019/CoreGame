@@ -6,12 +6,7 @@
 
 void DebugScene::BeginScene(WindowType* win)
 {
-	// Start the Dear ImGui frame
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL2_NewFrame(win);
-	ImGui::NewFrame();
-
-	ImGui::ShowDemoWindow();
+	this->win = win;
 }
 
 void DebugScene::EndScene()
@@ -20,6 +15,19 @@ void DebugScene::EndScene()
 
 void DebugScene::Update(const float delta_time)
 {
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame(win);
+	ImGui::NewFrame();
+
+	ImGui::SetNextWindowPos(ImVec2(10, 10));
+	ImGui::Begin("Welp Shader Debug Tool");
+
+	ImGui::Text("Not being passive aggressive here");
+
+	ImGui::End();
+
+	ImGui::EndFrame();
 }
 
 void DebugScene::SetupEngineEvents(pav::EventAttorney* event_attorney)

@@ -5,6 +5,9 @@
 
 class DebugScene : public pav::IScene
 {
+private:
+	WindowType* win;
+
 public:
 
 	virtual void BeginScene(WindowType* win) override;

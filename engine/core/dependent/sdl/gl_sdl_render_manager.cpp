@@ -24,6 +24,8 @@ void pav::GLSDLRenderManager::Initialize()
 	PAV_ASSERT(res == 0, "Could not set OpenGL Libary");
 
 	// OpenGL 4.3
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, 0);
+
 	res = SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 	PAV_ASSERT(res == 0, "Error");
 
@@ -39,6 +41,7 @@ void pav::GLSDLRenderManager::Initialize()
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1); // Enable double buffer
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);  // Enable 24bit z buffer
+	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 }
 
 void pav::GLSDLRenderManager::End()

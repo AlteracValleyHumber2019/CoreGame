@@ -5,7 +5,8 @@
 #include "imgui_impl_opengl3.h"
 
 pav::GLSDLWindow::GLSDLWindow() :
-window_(nullptr, SDL_DestroyWindow)
+window_(nullptr, SDL_DestroyWindow),
+io()
 {
 }
 
@@ -49,13 +50,11 @@ void pav::GLSDLWindow::SetAsContext()
 		return;
 	}
 
-	glViewport(0, 0, 800, 600);
-
 	// IMGUI
 	// Setup Dear ImGui context
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	io = &ImGui::GetIO(); (void)io;
 	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
 
 	// Setup Dear ImGui style
@@ -69,10 +68,13 @@ void pav::GLSDLWindow::SetAsContext()
 
 void pav::GLSDLWindow::Update(const float delta_time)
 {
+	ImGui::Render();
 	SDL_GL_MakeCurrent(window_.get(), main_context_);
 
+	glViewport(0, 0, (int)io->DisplaySize.x, (int)io->DisplaySize.y);
 	glClearColor(0.5, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	SDL_GL_SwapWindow(window_.get());
 }
