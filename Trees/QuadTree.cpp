@@ -12,7 +12,7 @@ pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_)
 
 }
 
-template<class T>
+/*template<class T>
 void pav::QuadTree<T>::InsertNode(pav::QuadNode<T>* qnode_) {
 	
 	//check if a valid node is being passed
@@ -28,7 +28,7 @@ void pav::QuadTree<T>::InsertNode(pav::QuadNode<T>* qnode_) {
 	//check if we cannot subdivide this quadrant any further
 	if (abs(topLBound[0] - botRBound[0]) <= 1 && abs(topLBound[1] - botRbound[1]) <= 1) {
 		if (node == NULL) {
-			n = qnode_;
+			node = qnode_;
 		}
 		return;
 	}
@@ -93,7 +93,7 @@ void pav::QuadTree<T>::InsertNode(pav::QuadNode<T>* qnode_) {
 	}
 
 
-}
+}*/
 
 template<class T>
 QuadNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {

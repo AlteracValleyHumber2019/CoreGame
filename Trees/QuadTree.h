@@ -7,8 +7,12 @@ namespace pav {
 
 	template <class T>
 	class QuadTree {
+		const int size = 5;
+
 		std::vector<float> topLBound;
 		std::vector<float> botRBound;
+
+		std::vector<QuadNode<T>*> nodes;
 
 		QuadNode<T>* node;
 
