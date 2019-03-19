@@ -10,8 +10,18 @@ pav::QuadTree<T>::QuadTree() {
 template <class T>
 pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_) {
 
+	topLBound = topLB_;
+	botRBound = botRB_;
+	node = NULL;
+
+	topLQuad = NULL;
+	topRQuad = NULL;
+	botLQuad = NULL;
+	botRQuad = NULL;
 }
 
+//keeping all this code under comments so that the project can be compiled and worked on
+//TODO: Find out why the declaration for the function is incompatible
 /*template<class T>
 void pav::QuadTree<T>::InsertNode(pav::QuadNode<T>* qnode_) {
 	
