@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\entity_component\component\Box_Component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
@@ -162,6 +164,10 @@
     <ClCompile Include="engine\core\engine.cpp" />
     <ClCompile Include="engine\core\event_manager.cpp" />
     <ClCompile Include="engine\core\event_util.cpp" />
+    <ClCompile Include="engine\core\graphics\i_texture.cpp" />
+    <ClCompile Include="engine\core\graphics\mesh.cpp" />
+    <ClCompile Include="engine\core\graphics\model.cpp" />
+    <ClCompile Include="engine\core\graphics\vertex.cpp" />
     <ClCompile Include="engine\core\manager_factory.cpp" />
     <ClCompile Include="engine\core\render_manager.cpp" />
     <ClCompile Include="engine\core\i_scene.cpp" />
@@ -191,8 +197,13 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="Trees\QuadTreePartitionStrategy.cpp" />
+    <ClCompile Include="Trees\SpatialTree.cpp" />
+    <ClCompile Include="Trees\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
+    <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h" />
@@ -201,6 +212,10 @@
     <ClInclude Include="engine\core\event_attorney.h" />
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
+    <ClInclude Include="engine\core\graphics\i_texture.h" />
+    <ClInclude Include="engine\core\graphics\mesh.h" />
+    <ClInclude Include="engine\core\graphics\model.h" />
+    <ClInclude Include="engine\core\graphics\vertex.h" />
     <ClInclude Include="engine\core\i_manager.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
@@ -222,6 +237,11 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="Trees\ISpatialPartitionStrategy.h" />
+    <ClInclude Include="Trees\KDTreePartitionStrategy.h" />
+    <ClInclude Include="Trees\QuadTreePartitionStrategy.h" />
+    <ClInclude Include="Trees\SpatialTree.h" />
+    <ClInclude Include="Trees\TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
