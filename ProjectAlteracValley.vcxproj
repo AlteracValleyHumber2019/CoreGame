@@ -197,6 +197,7 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="Trees\KDTree.cpp" />
     <ClCompile Include="Trees\QuadNode.cpp" />
     <ClCompile Include="Trees\QuadTree.cpp" />
     <ClCompile Include="Trees\QuadTreePartitionStrategy.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="Trees\KDTree.h" />
     <ClInclude Include="Trees\ISpatialPartitionStrategy.h" />
     <ClInclude Include="Trees\KDTreePartitionStrategy.h" />
     <ClInclude Include="Trees\QuadNode.h" />

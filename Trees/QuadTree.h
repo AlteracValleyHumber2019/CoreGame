@@ -10,12 +10,12 @@ namespace pav {
 		std::vector<float> topLBound;
 		std::vector<float> botRBound;
 
-		QuadNode<T> *node;
+		QuadNode<T>* node;
 
-		QuadTree<T> *topLQuad;
-		QuadTree<T> *topRQuad;
-		QuadTree<T> *botLQuad;
-		QuadTree<T> *botRQuad;
+		QuadTree<T>* topLQuad;
+		QuadTree<T>* topRQuad;
+		QuadTree<T>* botLQuad;
+		QuadTree<T>* botRQuad;
 
 	public:
 		QuadTree();

@@ -103,7 +103,7 @@ QuadNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {
 	}
 
 	if (node != NULL) {
-		return n;
+		return node;
 	}
 
 	if ((topLBound[0] + botRBound[0]) / 2 >= coord_[0]) {
