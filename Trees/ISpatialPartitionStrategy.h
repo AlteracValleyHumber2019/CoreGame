@@ -11,6 +11,6 @@ namespace pav {
 	class ISpatialPartitionStrategy {
 		
 	public:
-		virtual TreeNode<T>* Partition(TreeNode<T>* node, SpatialTree* tree)=0;
+		virtual TreeNode<T>* Partition(TreeNode<T>* node, SpatialTree<T>* tree)=0;
 	};
 }
