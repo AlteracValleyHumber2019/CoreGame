@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\entity_component\character.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
@@ -191,8 +192,10 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\stat_component.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\entity_component\character.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h" />
@@ -222,6 +225,7 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="engine\core\entity_component\component\stat_component.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
