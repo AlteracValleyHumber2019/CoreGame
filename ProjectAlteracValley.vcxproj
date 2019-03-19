@@ -162,6 +162,7 @@
     <ClCompile Include="engine\core\engine.cpp" />
     <ClCompile Include="engine\core\event_manager.cpp" />
     <ClCompile Include="engine\core\event_util.cpp" />
+    <ClCompile Include="engine\core\i_ui.cpp" />
     <ClCompile Include="engine\core\manager_factory.cpp" />
     <ClCompile Include="engine\core\render_manager.cpp" />
     <ClCompile Include="engine\core\i_scene.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
     <ClInclude Include="engine\core\i_manager.h" />
+    <ClInclude Include="engine\core\i_ui.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
     <ClInclude Include="engine\core\util\guid.h" />
