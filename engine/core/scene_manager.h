@@ -4,6 +4,7 @@
 #include "i_manager.h"
 #include "i_scene.h"
 #include "event_attorney.h"
+#include "util/wrappers/type_wrappers.h"
 
 namespace pav
 {
@@ -18,6 +19,8 @@ namespace pav
 	class SceneManager : public IManager
 	{
 	private:
+		WindowType* current_window_ptr_;
+
 		std::unordered_map<std::string, std::unique_ptr<IScene>> scenes_;
 		IScene* current_scene_;
 
@@ -82,6 +85,8 @@ namespace pav
 		void SwitchScene(std::string&& Name);
 
 		void SetupEngineEvents(EventAttorney* event_attorney);
+
+		void SetWindowPtr(WindowType* win);
 	};
 }
 

@@ -30,6 +30,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 
+#include <imgui.h>
+
 // PAV
 #include "pav_pcs.h"
 

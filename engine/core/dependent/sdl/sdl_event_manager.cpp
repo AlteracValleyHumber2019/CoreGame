@@ -1,6 +1,9 @@
 ﻿#include "pav_pch.h"
 #include "sdl_event_manager.h"
 
+#include "imgui_impl_sdl.h"
+#include "imgui_impl_opengl3.h"
+
 void pav::SDLEventManager::Initialize()
 {
 	// Convert SDL keycode to our engine's keycode
@@ -40,8 +43,11 @@ void pav::SDLEventManager::End()
 void pav::SDLEventManager::Update(const float delta_time)
 {
 	SDL_Event event;
-	while (SDL_WaitEvent(&event) != 0)
+	while (SDL_PollEvent(&event) != 0)
 	{
+		// IMGUI
+		ImGui_ImplSDL2_ProcessEvent(&event);
+
 		switch (event.type)
 		{
 		case SDL_KEYDOWN:

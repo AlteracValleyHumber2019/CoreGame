@@ -1,6 +1,8 @@
 ﻿#ifndef I_WINDOW_H
 #define I_WINDOW_H
 
+#include "util/wrappers/type_wrappers.h"
+
 namespace pav
 {
 	/**
@@ -67,6 +69,9 @@ namespace pav
 	 */
 	class IWindow
 	{
+	protected:
+		WindowType* window_ptr_;
+
 	public:
 
 		/**
@@ -110,6 +115,8 @@ namespace pav
 		 * \param	delta_time	The delta time.
 		 */
 		virtual void Update(const float delta_time) = 0;
+
+		virtual WindowType* GetWindow() = 0;
 	};
 }
 

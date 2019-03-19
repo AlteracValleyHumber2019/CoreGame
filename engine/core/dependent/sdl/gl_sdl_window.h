@@ -28,6 +28,9 @@ namespace pav
 		void DestroyWindow() override;
 		void SetAsContext() override;
 		void Update(const float delta_time) override;
+
+		virtual WindowType* GetWindow() override;
+
 	};
 }
 

@@ -11,7 +11,7 @@ pav::IScene::IScene() :
 {
 }
 
-void pav::IScene::BeginScene()
+void pav::IScene::BeginScene(WindowType* win)
 {
 }
 

@@ -7,7 +7,7 @@ class ExampleScene : public pav::IScene
 {
 public:
 	// Inherited functions
-	virtual void BeginScene() override;
+	virtual void BeginScene(WindowType* win) override;
 
 
 	virtual void EndScene() override;

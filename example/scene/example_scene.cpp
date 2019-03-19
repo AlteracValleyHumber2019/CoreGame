@@ -2,7 +2,7 @@
 #include "example_scene.h"
 #include "core/entity_component/component/transform_component.h"
 
-void ExampleScene::BeginScene()
+void ExampleScene::BeginScene(WindowType* win)
 {
 	auto game_object = GetSECManager()->AddGameObject<pav::IGameObjectBase>("Example_GameObject");
 	game_object->AddComponent<pav::TransformComponent>();
