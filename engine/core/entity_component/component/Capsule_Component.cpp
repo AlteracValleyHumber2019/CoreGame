@@ -18,15 +18,16 @@ bool pav::CapsuleComponent::isPointInsideCapsule(glm::vec3 point_, CAPSULE &caps
 	bool hasCollided = false;
 	
 	/*glm::legnth() - OPENGL CALCULATE MAGNITUDE*/
-	float distance = glm::length(point_.x - capsuleCollider_.position.x);
-
-	if ((glm::length(point_.x - capsuleCollider_.position.x) <= capsuleCollider_.radius) && (capsuleCollider_.position.y <= capsuleCollider_.height)) {
+	//distance in the X
+	if ((glm::length(point_.x - capsuleCollider_.position.x) <= capsuleCollider_.radius) && (capsuleCollider_.position.x <= capsuleCollider_.height)) {
 		hasCollided = true;
 	}
+	//distance in the Y
 	else if((glm::length(point_.y - capsuleCollider_.position.y) <= capsuleCollider_.radius) && (capsuleCollider_.position.y <= capsuleCollider_.height)) {
 		hasCollided = true;
 	}
-	else if ((glm::length(point_.z - capsuleCollider_.position.z) <= capsuleCollider_.radius) && (capsuleCollider_.position.y <= capsuleCollider_.height)) {
+	//distance in the Z
+	else if ((glm::length(point_.z - capsuleCollider_.position.z) <= capsuleCollider_.radius) && (capsuleCollider_.position.z <= capsuleCollider_.height)) {
 		hasCollided = true;
 	}
 	else {
