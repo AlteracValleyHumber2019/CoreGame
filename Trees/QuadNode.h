@@ -1,6 +1,4 @@
 #pragma once
-
-
 namespace pav {
 
 	template <class T>
