@@ -191,6 +191,11 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="engine\core\graphics\i_shader.cpp" />
+    <ClCompile Include="engine\core\graphics\i_shader_program.cpp" />
+    <ClCompile Include="engine\core\util\wrappers\type_wrappers.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -201,6 +206,7 @@
     <ClInclude Include="engine\core\event_attorney.h" />
     <ClInclude Include="engine\core\event_manager.h" />
     <ClInclude Include="engine\core\event_util.h" />
+    <ClInclude Include="engine\core\graphics\i_renderable_object.h" />
     <ClInclude Include="engine\core\i_manager.h" />
     <ClInclude Include="engine\core\i_window.h" />
     <ClInclude Include="engine\core\manager_factory.h" />
@@ -222,6 +228,12 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="engine\core\graphics\i_shader.h" />
+    <ClInclude Include="engine\core\graphics\i_shader_program.h" />
+    <ClInclude Include="engine\core\graphics\shader_common.h" />
+    <ClInclude Include="engine\core\util\wrappers\type_wrappers.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
