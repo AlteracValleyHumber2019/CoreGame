@@ -5,6 +5,7 @@
 #include "window_manager.h"
 #include "event_manager.h"
 #include "render_manager.h"
+#include "SDLCamera.h"
 
 /** \namespace pav
  *  \brief Project Alterac Valley namespace
@@ -51,6 +52,8 @@ namespace pav
 		std::unique_ptr<WindowManager> window_manager;
 		std::unique_ptr<EventManager> event_manager;
 		std::unique_ptr<RenderManager> render_manager;
+		//create a unique camera instance[BP]
+		std::unique_ptr<SDLCamera> camera;
 
 		Engine();
 

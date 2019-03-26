@@ -9,6 +9,10 @@ int main(int argc, char* argv[])
 	std::unique_ptr<pav::Engine> engine = std::make_unique<pav::Engine>();
 
 	engine->SetWindowInfo({ 800, 600, 100, 100, "Project Alterac Valley" });
+
+	//Implementation of the camera for the scene[BP]
+	engine->camera = std::unique_ptr<SDLCamera>(new SDLCamera(glm::vec3(0.0f, 1.5f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 1.0f));//CameraSpeed
+
 	engine->InitEngine();
 
 	engine->scene_manager->AddScene("debug_scene", std::make_unique<DebugScene>());

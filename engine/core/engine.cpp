@@ -66,6 +66,9 @@ void pav::Engine::Update(const float delta_time)
 	scene_manager->Update(delta_time);
 	window_manager->Update(delta_time);
 	render_manager->Update(delta_time);
+	//Update camera's matrix [BP]
+	camera->Update(delta_time);
+	camera->getViewMatrix();
 }
 
 void pav::Engine::SetWindowInfo(WindowInfo&& window_info)

@@ -2,7 +2,7 @@
 #define	CAMERA_H
 
 #include <pav_pch.h>
-#include <gl\GL.h>
+#include <gl/GL.h>
 /**
  * \class	camera
  *
@@ -49,7 +49,7 @@ private:
 	glm::vec3 mouseSensitivity;
 	glm::vec3 fov;
 
-	void updateCamera()
+	void updateCamera(float deltaTime)
 	{
 		glm::vec3 front;
 
@@ -86,6 +86,8 @@ public:
 	{
 		return glm::lookAt(this->position, this->position + this->front, this->up);
 	}
+
+	glm::mat4 lookAt()
 
 	void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime)
 	{
