@@ -3,7 +3,6 @@
 
 #include <pav_pch.h>
 #include <gl\GL.h>
-
 /**
  * \class	camera
  *
@@ -65,9 +64,7 @@ private:
 
 public:
 
-	camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f),
-		GLfloat yaw = YAW, GLfloat pitch = PITCH, ) : front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(FOV))
-		{
+	camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), GLfloat yaw = YAW, GLfloat pitch = PITCH): front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(FOV){
 
 		this->position = position;
 		this->worldUP = up;
@@ -76,9 +73,8 @@ public:
 		this->updateCamera();
 		}
 
-	camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch) :
-		front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(FOV))
-	{
+	camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch): front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(FOV){
+
 	this->position = glm::vec3(posX, posY, posZ);
 	this->worldUP = glm::vec3(upX, upY, upZ);;
 	this->yaw = yaw;
