@@ -138,6 +138,9 @@
     <ClCompile Include="example\scene\debug_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\dependent\opengl\resource_system\gl_vao_resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">
@@ -282,6 +285,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\external\include\KHR\khrplatform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\dependent\opengl\resource_system\gl_vao_resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,10 +3,14 @@
 
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
+#include "core/resource_system/resource.h"
+#include "core/dependent/opengl/resource_system/gl_vao_resource.h"
 
 void DebugScene::BeginScene(WindowType* win)
 {
 	this->win = win;
+
+	pav::GLVAOResource r;
 }
 
 void DebugScene::EndScene()

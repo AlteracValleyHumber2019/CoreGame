@@ -226,6 +226,7 @@
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\resource_system\gl_vao_resource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\external\include\glad\glad.h" />
@@ -276,6 +277,7 @@
     <ClInclude Include="engine\core\graphics\i_shader.h" />
     <ClInclude Include="engine\core\graphics\shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
+    <ClInclude Include="engine\core\dependent\opengl\resource_system\gl_vao_resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
