@@ -43,8 +43,8 @@ void pav::GLSDLWindow::SetAsContext()
 {
 	main_context_ = SDL_GL_CreateContext(window_.get());
 
-	// INIT GLAD
-	if (!gladLoadGLLoader(SDL_GL_GetProcAddress))
+	// This initializes GLAD with SDL - Gabriel Kalil
+	if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress))
 	{
 		printf("%s \n", "Failed to initialize GLAD");
 		return;

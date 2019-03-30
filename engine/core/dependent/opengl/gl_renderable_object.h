@@ -16,6 +16,7 @@ namespace pav {
 
 	struct GLRenderData
 	{
+		//Data variables to be used to create the elements used based on the type GLUINT
 		GAPIUInt vao;
 		GAPIUInt texture_vbo;
 		GAPIUInt instance_vbo = 0;
@@ -30,7 +31,7 @@ namespace pav {
 	protected:
 		GLRenderData gl_renderable_data_;
 
-		//TODO : Finish implementation of the class but waiting for the shader system.
+		//TODO : Finish implementation of the class with all the other components like shader, material, texture, etc.
 	};
 }
 #endif // !GL_RENDERABLE_OBJECT
