@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-SDLCamera::SDLCamera(glm::vec3 pos_, glm::vec3 target_, glm::vec3 up_, GLfloat cameraSpeed_)
+SDLCamera::SDLCamera(glm::vec3 pos_, glm::vec3 target_, glm::vec3 up_, glm::float32 cameraSpeed_)
 {
 	cameraPos = pos_;
 	cameraTarget = target_;
@@ -31,15 +31,19 @@ void SDLCamera::handleCameraEvents(const SDL_Event& SDLEvent)
 		switch (SDLEvent.key.keysym.sym) {
 		case SDLK_w:
 			cameraPos += cameraSpeed * cameraFront;
+			ShowPos();
 			break;
 		case SDLK_s:
 			cameraPos -= cameraSpeed * cameraFront;
+			ShowPos();
 			break;
 		case SDLK_a:
 			cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+			ShowPos();
 			break;
 		case SDLK_d:
 			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+			ShowPos();
 			break;
 
 			//Y-Axis Movement (Up and Down)
@@ -71,6 +75,8 @@ void SDLCamera::handleCameraEvents(const SDL_Event& SDLEvent)
 			if (cameraSpeed <= minspeed) { cameraSpeed = minspeed; }
 			break;
 			//------------------------------------------------------------------------
+
+		
 		}
 
 		break;
@@ -87,6 +93,11 @@ void SDLCamera::Update(float deltaTime) {
 		cameraPos + cameraFront,
 		cameraUp);
 
+}
+
+void SDLCamera::ShowPos()
+{
+	std::cout << "Camera position: " << cameraPos.x << ", " << cameraPos.y << ", " << cameraPos.z << std::endl;
 }
 
 glm::mat4 SDLCamera::getViewMatrix() {

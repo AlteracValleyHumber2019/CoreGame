@@ -10,8 +10,8 @@ int main(int argc, char* argv[])
 
 	engine->SetWindowInfo({ 800, 600, 100, 100, "Project Alterac Valley" });
 
-	//Implementation of the camera for the scene[BP]
-	engine->camera = std::unique_ptr<SDLCamera>(new SDLCamera(glm::vec3(0.0f, 1.5f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 1.0f));//CameraSpeed
+	//Implementation of the camera for the scene[BP]        //Camera's Starting Position   //Camera's Target Position   //Camera's "Up" Vector    //Camera's Default Speed
+	engine->camera = std::unique_ptr<SDLCamera>(new SDLCamera(glm::vec3(0.0f, 0.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 1.0f));
 
 	engine->InitEngine();
 
