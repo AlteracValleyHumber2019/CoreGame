@@ -31,23 +31,23 @@ namespace pav {
 	public:
 		IUI();
 		/**
-		 * \fn	virtual void IUI::OnCreate();
+		 * \fn	virtual void IUI::BeginScene();
 		 *
 		 * \brief	Creates UI when called
 		 *
 		 * \author	Matthew
 		 * \date	3/9/2019
 		 */
-		virtual void OnCreate();
+		virtual void BeginScene();
 		/**
-		 * \fn	virtual void IUI::OnDestroy();
+		 * \fn	virtual void IUI::EndScene();
 		 *
 		 * \brief	Destroys UI when called
 		 *
 		 * \author	Matthew
 		 * \date	3/9/2019
 		 */
-		virtual void OnDestroy();
+		virtual void EndScene();
 		/**
 		 * \fn	virtual void IUI::Update();
 		 *
@@ -57,6 +57,19 @@ namespace pav {
 		 * \date	3/9/2019
 		 */
 		virtual void Update(const float delta_time);
+		/**
+		 * \fn	virtual void IUI::SetupEngineEvents(EventAttorney* event_attorney);
+		 *
+		 * \brief	Sets up the engine events
+		 *
+		 * \snippet scene/example_scene.cpp ExampleScene setup event
+		 *
+		 * \author	Matthew
+		 * \date	2/21/2019
+		 *
+		 * \param [in]	event_attorney	If non-null, the event attorney.
+		 */
+		virtual void SetupEngineEvents(EventAttorney* event_attorney);
 	};
 }
 
