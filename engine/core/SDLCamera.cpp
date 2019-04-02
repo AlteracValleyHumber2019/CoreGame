@@ -18,72 +18,9 @@ SDLCamera::SDLCamera(glm::vec3 pos_, glm::vec3 target_, glm::vec3 up_, glm::floa
 	cameraRight = glm::normalize(glm::cross(up, cameraDirection));
 	cameraUp = glm::cross(cameraDirection, cameraRight);
 
-	view = glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f));
-}
-
-void SDLCamera::handleCameraEvents(const SDL_Event& SDLEvent)
-{
-	switch (SDLEvent.type) {
-		//Implementation of all current camera controls
-	case SDL_KEYDOWN:
-		switch (SDLEvent.key.keysym.sym) {
-		case SDLK_w:
-			cameraPos += cameraSpeed * cameraFront;
-			ShowPos();
-			break;
-		case SDLK_s:
-			cameraPos -= cameraSpeed * cameraFront;
-			ShowPos();
-			break;
-		case SDLK_a:
-			cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-			ShowPos();
-			break;
-		case SDLK_d:
-			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-			ShowPos();
-			break;
-
-			//Y-Axis Movement (Up and Down)
-
-		case SDLK_SPACE:
-			if (cameraPos.y >= 20.0f) {
-				cameraPos.y = 20.0f;
-			}
-			else { cameraPos.y += cameraUp.y * cameraSpeed; }
-
-			break;
-		case SDLK_LSHIFT:
-			if (cameraPos.y <= 0.0f) {
-				cameraPos.y = 0.0f;
-			}
-			else { cameraPos.y -= cameraUp.y * cameraSpeed; }
-			break;
-
-			//Camera Speed Change----------------------------------------------------
-		case SDLK_PAGEUP:
-			cameraSpeed += speedup;
-			std::cout << "speeding up to: " << cameraSpeed << std::endl;
-			if (cameraSpeed >= maxspeed) { cameraSpeed = maxspeed; }
-			break;
-
-		case SDLK_PAGEDOWN:
-			cameraSpeed -= speedup;
-			std::cout << "slowing down to: " << cameraSpeed << std::endl;
-			if (cameraSpeed <= minspeed) { cameraSpeed = minspeed; }
-			break;
-			//------------------------------------------------------------------------
-
-		
-		}
-
-		break;
-	default:
-		break;
-	}
-
+	view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+	CheckCameraCreation();
+	ShowPos();
 }
 
 
@@ -95,15 +32,32 @@ void SDLCamera::Update(float deltaTime) {
 
 }
 
+//Debug Methods------------------------------------------------------------------------------------------------------------
 void SDLCamera::ShowPos()
 {
 	std::cout << "Camera position: " << cameraPos.x << ", " << cameraPos.y << ", " << cameraPos.z << std::endl;
+	std::cout << "Camera target: " << cameraFront.x << ", " << cameraFront.y << ", " << cameraFront.z << std::endl;
 }
+
+void SDLCamera::CheckCameraCreation()
+{
+	std::cout << "Camera created in scene Scussfully." << std::endl;
+}
+//------------------------------------------------------------------------------------------------------------------------
 
 glm::mat4 SDLCamera::getViewMatrix() {
 
 	return view;
 }
+
+/*Movement Camera Rotate
+
+float radius = 10.0f;
+float camX = sin(glfwGetTime()) * radius;
+float camZ = cos(glfwGetTime()) * radius;
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+*/
 
 
 SDLCamera::~SDLCamera()
