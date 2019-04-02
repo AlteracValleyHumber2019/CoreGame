@@ -6,6 +6,6 @@ namespace pav {
 		std::vector<float> coordinate;
 		T value;
 		
-		QuadNode(float xcoord_, float ycoord_, T data_);
+		QuadNode(std::vector<float> coordinates_, T data_);
 	};
 }

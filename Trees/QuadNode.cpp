@@ -2,8 +2,7 @@
 #include "QuadNode.h"
 
 template <class T>
-pav::QuadNode<T>::QuadNode(float xcoord_, float ycoord_, T data_) {
-	coordinate.push_back(xcoord_);
-	coordinate.push_back(ycoord_);
+pav::QuadNode<T>::QuadNode(std::vector<float> coordinates_, T data_) {
+	coordinate = coordinates_;
 	value = data_;
 }
