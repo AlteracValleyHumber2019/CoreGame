@@ -1,7 +1,7 @@
 #ifndef HEALTH_MOD_COMMAND_H
 #define HEALTH_MOD_COMMAND_H
 
-#include "ISkill.h"
+#include "Skills/ISkill.h"
 
 namespace pav{
 

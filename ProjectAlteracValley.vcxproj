@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="engine\ServerCommands\data_manager.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Box_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
@@ -197,8 +199,12 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
+    <ClCompile Include="engine\ServerCommands\i_Server_Command.cpp" />
+    <ClCompile Include="engine\ServerCommands\i_server_command_visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="engine\ServerCommands\data_manager.h" />
     <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
     <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -234,6 +240,8 @@
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
+    <ClInclude Include="engine\ServerCommands\i_Server_Command.h" />
+    <ClInclude Include="engine\ServerCommands\i_server_command_visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
