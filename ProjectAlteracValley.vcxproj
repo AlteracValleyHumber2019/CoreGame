@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
     <ClCompile Include="example\scene\debug_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
@@ -228,6 +230,8 @@
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
     <ClInclude Include="engine\external\include\glad\glad.h" />
     <ClInclude Include="engine\external\include\KHR\khrplatform.h" />
     <ClInclude Include="example\scene\debug_scene.h" />

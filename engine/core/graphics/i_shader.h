@@ -2,6 +2,7 @@
 #define I_SHADER_H
 
 #include "shader_common.h"
+#include "../util/wrappers/type_wrappers.h"
 
 namespace pav
 {
@@ -49,7 +50,19 @@ namespace pav
 		 *
 		 * \param [in]	child	The child.
 		 */
-		virtual void AddChildShader(std::unique_ptr<IShader>&& child) = 0;
+		virtual void AddChildShader(std::unique_ptr<IShader>&& child);
+
+		/**
+		 * \fn	std::string IShader::GetShaderCode() const;
+		 *
+		 * \brief	Gets shader code
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \returns	The shader code.
+		 */
+		std::string GetShaderCode() const;
 
 		/**
 		 * \fn	size_t IShader::GetChildrenSize() const;
@@ -65,6 +78,52 @@ namespace pav
 
 		IShader* GetShaderAt(const size_t index);
 
+		/**
+		 * \fn	ShaderType IShader::GetShaderType() const;
+		 *
+		 * \brief	Gets shader type
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \returns	The shader type.
+		 */
+		ShaderType GetShaderType() const;
+
+		/**
+		 * \fn	virtual void IShader::CombineChildShaders() = 0;
+		 *
+		 * \brief	Combine child shaders
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 */
+		virtual void CompileShaders() = 0;
+
+		/**
+		 * \fn	virtual GAPIUInt IShader::RetriveShader() = 0;
+		 *
+		 * \brief	Retrieve shader
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \returns	A GAPIUInt.
+		 */
+		virtual GAPIUInt RetrieveShader() = 0;
+
+		/**
+		 * \fn	virtual void IShader::DisposeShader() = 0;
+		 *
+		 * \brief	Dispose shader
+		 *
+		 * \author	Jaymie
+		 * \date	4/7/2019
+		 */
+		virtual void DisposeShader() = 0;
+
+	public:
+		IShader(ShaderType shader_type);
 	};
 }
 
