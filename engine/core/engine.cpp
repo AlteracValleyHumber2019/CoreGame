@@ -33,7 +33,7 @@ void pav::Engine::InitEngine()
 
 	scene_manager->SetupEngineEvents(event_attorney_.get());
 
-	window_manager->CreateWindow
+	window_manager->MakeWindow
 	(
 		window_info_.Prototype()
 	);
