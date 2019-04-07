@@ -108,9 +108,6 @@
     <ClCompile Include="engine\core\graphics\model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\ServerCommands\i_Server_Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -225,9 +222,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\graphics\model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\ServerCommands\i_Server_Command.h">

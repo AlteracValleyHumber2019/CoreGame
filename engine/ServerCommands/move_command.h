@@ -13,7 +13,7 @@ public:
 
 	void Execute(/*DataManager manager_*/);
 
-
+	void Accept(IServerCommandVisitor &visitor_);
 
 };
 #endif;

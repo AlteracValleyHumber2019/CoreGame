@@ -6,3 +6,8 @@ void pav::HealthModCommand::Execute(/*DataManager manager_*/)
 {
 
 }
+
+void pav::HealthModCommand::Accept(IServerCommandVisitor &visitor_)
+{
+	visitor_.visit(*this);
+}

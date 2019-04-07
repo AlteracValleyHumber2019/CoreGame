@@ -1,16 +1,17 @@
 #ifndef HEALTH_MOD_COMMAND_H
 #define HEALTH_MOD_COMMAND_H
 
-#include "Skills/ISkill.h"
+#include "i_Server_Command.h"
 
 namespace pav{
 
-class HealthModCommand 
+class HealthModCommand : public IServerCommand
 {
 private:
 	float amount;
 public:
 	void Execute(/*DataManager manager_ */);
+	void Accept(IServerCommandVisitor &visitor_);
 };
 
 #endif;

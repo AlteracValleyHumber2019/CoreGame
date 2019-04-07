@@ -5,13 +5,21 @@
 #include "Health_Mod_Command.h"
 
 namespace pav{
+
+class HealthModCommand;
+
+
 class IServerCommandVisitor
 {
 public:
 	virtual void Visit(InvokeSkillCommand *command_) = 0;
 	virtual void Visit(HealthModCommand *command_) = 0;
+	
+	
 
 };
+
+
 
 #endif;
 }

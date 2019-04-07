@@ -1,5 +1,6 @@
 #ifndef I_SERVER_COMMAND_H
 #define I_SERVER_COMMAND_H
+
 namespace pav{
 
 
@@ -13,15 +14,13 @@ public:
 
 	virtual void Execute(/*ServerManager manager_*/) = 0;
 
-	void Accept(/*DataManager *Manager_*/);
+	virtual void Accept(class IServerCommandVisitor &visitor_) = 0;
 
-	unsigned int GetPlayerID()
-	{
-		return playerID;
-	}
+	unsigned int GetPlayerID();
 	
 
 };
 #endif;
+
 
 }

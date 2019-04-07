@@ -155,7 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="engine\ServerCommands\data_manager.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Box_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp" />
@@ -203,7 +202,6 @@
     <ClCompile Include="engine\ServerCommands\i_server_command_visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataManager.h" />
     <ClInclude Include="engine\ServerCommands\data_manager.h" />
     <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
     <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h" />

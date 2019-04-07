@@ -1,14 +1,18 @@
 #pragma once
 
-#include "ISkill.h"
+#include "i_Server_Command.h"
+
+
 namespace pav{
-class InvokeSkillCommand : public ISkill<float>
+
+class InvokeSkillCommand : public IServerCommand
 {
 public:
 
-	ISkill *skill;
+	class ISkill *skill;
 
 	void Execute(/*DataManager manager_*/);
+	void Accept(IServerCommandVisitor &visitor_);
 
 };
 }

@@ -34,5 +34,5 @@ bool pav::BoxComponent::isAABBintersecting(const AABB &box1, const AABB &box2) {
 
 
 bool pav::BoxComponent::isCapsuleIntersecting(const AABB &box_, const CapsuleComponent::CAPSULE &c_) {
-	
+	return true;
 }
