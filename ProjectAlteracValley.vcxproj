@@ -96,7 +96,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(ProjectDir)engine\external\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;assimp-vc140-mt.lib;IrrXML.lib;zlibstatic.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;assimp-vc140-mt.lib;IrrXML.lib;zlibstatic.lib;zlibstaticd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -228,7 +228,7 @@
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
-    <ClCompile Include="model_resource.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\model_resource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
@@ -281,7 +281,7 @@
     <ClInclude Include="engine\core\graphics\i_shader.h" />
     <ClInclude Include="engine\core\graphics\shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
-    <ClInclude Include="model_resource.h" />
+    <ClInclude Include="engine\core\dependent\resource\model_resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
