@@ -3,6 +3,7 @@
 
 #include "event_attorney.h"
 #include "entity_component/sec_manager.h"
+#include "util/wrappers/type_wrappers.h"
 
 namespace pav
 {
@@ -50,7 +51,7 @@ namespace pav
 		 * \author	Jaymie
 		 * \date	2/21/2019
 		 */
-		virtual void BeginScene();
+		virtual void BeginScene(WindowType* window);
 
 		/**
 		 * \fn	virtual void IScene::EndScene();

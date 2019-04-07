@@ -27,6 +27,8 @@ namespace pav
 		void Update(const float delta_time) override;
 
 		void MakeWindow(WindowInfo&& window_info);
+
+		IWindow* GetCurrentWindow();
 	};
 }
 

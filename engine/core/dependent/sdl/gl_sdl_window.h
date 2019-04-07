@@ -21,6 +21,8 @@ namespace pav
 		std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
 		SDL_GLContext main_context_;
 
+		ImGuiIO* io;
+
 	public:
 		explicit GLSDLWindow();
 
@@ -28,6 +30,9 @@ namespace pav
 		void DestroyWindow() override;
 		void SetAsContext() override;
 		void Update(const float delta_time) override;
+
+		virtual WindowType* GetWindow() override;
+
 	};
 }
 
