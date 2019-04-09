@@ -3,10 +3,11 @@
 
 #include "core/resource_system/resource.h"
 #include "../opengl/opengl_shader_program.h"
+#include "i_shader_resource.h"
 
 namespace pav
 {
-	class GLShaderResource : public Resource<GLShaderResource, OpenGLShaderProgram*, std::string>
+	class GLShaderResource : public IShaderResource
 	{
 	private:
 		OpenGLShaderProgram* resource;
@@ -14,9 +15,9 @@ namespace pav
 		std::string ReadShaderCodeFromFile(std::string&& path);
 
 	public:
-		virtual OpenGLShaderProgram* GetData() override;
+		virtual IShaderProgram* GetData() override;
 
-		virtual OpenGLShaderProgram* GetData() const override;
+		virtual IShaderProgram* GetData() const override;
 
 		virtual bool Load(std::string&& args) override;
 

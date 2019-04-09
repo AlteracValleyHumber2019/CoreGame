@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\dependent\opengl\gl_renderable_object.cpp" />
     <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
     <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
     <ClCompile Include="engine\core\dependent\resource\gl_shader_resource.cpp" />
@@ -230,6 +231,7 @@
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
     <ClCompile Include="engine\core\dependent\resource\model_resource.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\i_shader_resource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
@@ -285,6 +287,7 @@
     <ClInclude Include="engine\core\graphics\shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
     <ClInclude Include="engine\core\dependent\resource\model_resource.h" />
+    <ClInclude Include="engine\core\dependent\resource\i_shader_resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

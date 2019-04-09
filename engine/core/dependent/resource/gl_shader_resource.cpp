@@ -39,7 +39,7 @@ std::string pav::GLShaderResource::ReadShaderCodeFromFile(std::string&& path)
 	return result;
 }
 
-pav::OpenGLShaderProgram* pav::GLShaderResource::GetData()
+pav::IShaderProgram* pav::GLShaderResource::GetData()
 {
 	return resource;
 }
@@ -69,7 +69,7 @@ bool pav::GLShaderResource::Load(std::string&& args)
 	return true;
 }
 
-pav::OpenGLShaderProgram* pav::GLShaderResource::GetData() const
+pav::IShaderProgram* pav::GLShaderResource::GetData() const
 {
 	return resource;
 }

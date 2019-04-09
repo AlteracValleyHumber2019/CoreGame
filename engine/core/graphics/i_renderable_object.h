@@ -3,6 +3,9 @@
 
 #include "i_shader_program.h"
 #include "material.h"
+#include "i_texture.h"
+#include "../dependent/resource/model_resource.h"
+#include "../dependent/resource/i_shader_resource.h"
 
 namespace pav
 {
@@ -15,25 +18,27 @@ namespace pav
 	 * \date	3/17/2019
 	 */
 
-	class IRenderableObject {
+	class IRenderableObject
+	{
 	protected:
 		glm::mat4 model_;
 		glm::mat4 view_;
 		glm::mat4 projection_;
 		glm::mat4 transform_;
 
-		//Insert Shader and Material here
-		IShaderProgram* shader_;
-		Material mat_;
+		ModelResource* model_res_;
+		IShaderResource* shader_res_;
 
 	public:
 
-		IRenderableObject(const Material& mat) {
-			model_ = glm::mat4(1.0f);
-			view_ = glm::mat4(1.0f);
-			projection_ = glm::mat4(1.0f);
-			transform_ = glm::mat4(1.0f);
-			mat_ = mat;
+		IRenderableObject(ModelResource* model, IShaderResource* shader) :
+			model_(glm::mat4(1.0f)),
+			view_(glm::mat4(1.0f)),
+			projection_(glm::mat4(1.0f)),
+			transform_(glm::mat4(1.0f)),
+			model_res_(model),
+			shader_res_(shader)
+		{
 		}
 
 		virtual ~IRenderableObject() = default;
