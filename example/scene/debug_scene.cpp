@@ -4,10 +4,21 @@
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
 #include "core/resource_system/resource.h"
+#include "core/dependent/resource/gl_shader_resource.h"
 
 void DebugScene::BeginScene(WindowType* win)
 {
 	this->win = win;
+
+	model_res_ = std::make_unique<pav::ModelResource>();
+	pav::ModelLoadInfo info;
+	info.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
+
+	model_res_->Load("fml.obj", std::move(info));
+
+	shader_res_ = std::make_unique<pav::GLShaderResource>();
+
+	shader_res_->Load("test_shader");
 }
 
 void DebugScene::EndScene()

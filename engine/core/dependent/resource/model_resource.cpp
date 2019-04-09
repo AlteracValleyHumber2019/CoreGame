@@ -25,6 +25,8 @@ bool pav::ModelResource::Load(std::string&& args, ModelLoadInfo&& info)
 		return false;
 	}
 
+	ProcessScene(assimp_scene, assimp_scene->mRootNode);
+
 	return true;
 }
 

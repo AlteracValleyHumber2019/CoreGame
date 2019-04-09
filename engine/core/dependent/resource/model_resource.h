@@ -5,6 +5,9 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#ifndef MODEL_RESOURCE_H
+#define MODEL_RESOURCE_H
+
 namespace pav
 {
 	struct ModelLoadInfo
@@ -38,3 +41,4 @@ namespace pav
 		Mesh CalcMesh(const aiScene* scene, aiMesh* mesh);
 	};
 }
+#endif // MODEL_RESOURCE_H

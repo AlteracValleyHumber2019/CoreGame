@@ -11,12 +11,9 @@ std::string pav::GLShaderResource::ReadShaderCodeFromFile(std::string&& path)
 	// The final result
 	std::string result = "";
 
-	// Construct path
-	std::string file_path = path + ".json";
-
 	// File load info
 	std::string line;
-	std::ifstream shader_info_file(file_path);
+	std::ifstream shader_info_file(path);
 
 	// Able to open file
 	if (shader_info_file.is_open())
@@ -24,7 +21,7 @@ std::string pav::GLShaderResource::ReadShaderCodeFromFile(std::string&& path)
 		// Read each line
 		while (getline(shader_info_file, line))
 		{
-			result += line;
+			result.append(line);
 		}
 
 		// Close file
@@ -51,16 +48,21 @@ bool pav::GLShaderResource::Load(std::string&& args)
 	nlohmann::json shader_json = nlohmann::json::parse(shader_info_file);
 
 	// Iterate through shaders
-	for (auto it = shader_json["shaders"].begin(); it != shader_json["shaders"].end(); ++it)
+	for (auto shaders : shader_json["shaders"])
 	{
-		// Read GLSL shader code
-		std::string shader_code = ReadShaderCodeFromFile(it.value());
+		for (auto path : shaders)
+		{
+			std::string shader_path = path.get<std::string>();
 
-		// Insert GLSL shader code
-		std::unique_ptr<OpenGLShader> shader = std::make_unique<OpenGLShader>();
-		shader->SetShaderCode(std::move(shader_code));
+			// Read GLSL shader code
+			std::string shader_code = ReadShaderCodeFromFile(std::move(shader_path));
 
-		resource->AddShader(std::move(shader));
+			// Insert GLSL shader code
+			std::unique_ptr<OpenGLShader> shader = std::make_unique<OpenGLShader>();
+			shader->SetShaderCode(std::move(shader_code));
+
+			resource->AddShader(std::move(shader));
+		}
 	}
 
 	// Linking

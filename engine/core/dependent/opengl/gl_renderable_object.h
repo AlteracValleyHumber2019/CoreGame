@@ -32,11 +32,13 @@ namespace pav
 	class GLRenderableObject : public IRenderableObject
 	{
 		private:
-		GLRenderData gl_renderable_data_;
-
+		// The actual model to render
 		Model model_mesh_;
+
+		// Shader program
 		OpenGLShaderProgram* shader_program_;
 
+		// Render data vao, vbo, ebo
 		std::vector<GLRenderData> render_meshes_;
 
 	public:

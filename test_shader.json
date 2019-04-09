@@ -1,0 +1,10 @@
+{
+  "shaders": [
+    {
+      "path": "vertex_shader.glsl"
+    },
+    {
+      "path": "fragment_shader.glsl"
+    }
+  ]
+}
