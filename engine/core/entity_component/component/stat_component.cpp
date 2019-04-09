@@ -8,9 +8,24 @@ pav::StatComponent::StatComponent(IGameObjectBase* owner) :
 
 }
 
+void pav::StatComponent::SetCurrentHealth(int newHealth)
+{
+	currentHealth = newHealth;
+}
+
+void pav::StatComponent::SetCurrentMana(int newMana)
+{
+	currentMana = newMana;
+}
+
 constexpr int pav::StatComponent::GetCurrentHealth()
 {
 	return currentHealth;
+}
+
+constexpr int pav::StatComponent::GetCurrentMana()
+{
+	return currentMana;
 }
 
 constexpr int pav::StatComponent::GetMaxHealth()

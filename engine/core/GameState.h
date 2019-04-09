@@ -2,7 +2,7 @@
 #define GAMESTATE_H
 
 #include "entity_component/character.h"
-
+#include <iostream>
 namespace pav
 {
 	/**
@@ -22,7 +22,7 @@ namespace pav
 	class GameState
 	{
 	private:
-		std::vector<character> characters;		// Stores all characters in game (or maybe in section)
+		std::vector<character*> characters;		// Stores all characters in game (or maybe in section)
 
 		// The below lines are commented out to avoid errors. These classes will be added in the next sprint
 
@@ -33,7 +33,7 @@ namespace pav
 		GameState();
 		~GameState();
 
-		void UpdateGameState(); // This method will take in the JSON or String and will break the string into substrings based on delimiter and store into an array.
+		void UpdateGameState(int characterID, std::string s); // This method will take in the JSON or String and will break the string into substrings based on delimiter and store into an array.
 		// With the newly created array we can iterate through each index and parse the value to the appropiate primative type.
 
 		// TODO: Discuss with the gameplay team, how do we want to handle getting information from the GameState

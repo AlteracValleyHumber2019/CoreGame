@@ -35,7 +35,9 @@ namespace pav
 
 		// Total Character Stats after added to Base
 		int currentHealth;
+		int currentMana;
 		int maxHealth;
+		int maxMana;
 		int damage;
 		int armor;
 		int magicResist;
@@ -48,8 +50,11 @@ namespace pav
 
 	public:
 		StatComponent(IGameObjectBase* owner);
+		void SetCurrentHealth(int newHealth);
+		void SetCurrentMana(int newMana);
 
 		constexpr int GetCurrentHealth();
+		constexpr int GetCurrentMana();
 		constexpr int GetMaxHealth();
 		constexpr int GetDamage();
 		constexpr int GetArmor();
