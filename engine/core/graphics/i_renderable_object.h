@@ -1,5 +1,8 @@
 #ifndef I_RENDERABLE_OBJECT
 #define I_RENDERABLE_OBJECT
+#include "i_shader_program.h"
+#include "material.h"
+#include "mesh.h"
 
 namespace pav
 {
@@ -20,17 +23,19 @@ namespace pav
 		glm::mat4 transform_;
 
 		//Insert Shader and Material here
-		IShaderProgram* shader_;
+		std::unique_ptr<IShaderProgram> shader_;
 		Material mat_;
+		Mesh mesh_;
 
 	public:
 
-		IRenderableObject(const Material& mat) {
+		IRenderableObject(const Material& mat, const Mesh& mesh) {
 			model_ = glm::mat4(1.0f);
 			view_ = glm::mat4(1.0f);
 			projection_ = glm::mat4(1.0f);
 			transform_ = glm::mat4(1.0f);
 			mat_ = mat;
+			mesh_ = mesh;
 		}
 
 		virtual ~IRenderableObject() = default;

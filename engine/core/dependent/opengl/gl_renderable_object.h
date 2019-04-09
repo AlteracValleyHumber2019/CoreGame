@@ -32,7 +32,20 @@ namespace pav {
 		GLRenderData gl_renderable_data_;
 
 		//TODO : Finish implementation of the class with all the other components like shader, material, texture, etc.
-
+	public:
+		explicit GLRenderableObject(
+			const Mesh& mesh,
+			const Material& mat,
+			const GAPIUInt    shader,
+			const GAPIUInt    texture,
+			const GLenum    vertex_type = GL_STATIC_DRAW,
+			const GLenum    texture_vertex_type = GL_STATIC_DRAW
+		)
+			:
+			IRenderableObject(mat, mesh)
+		{
+			shader_ = std::make_unique<OpenGLShaderProgram>();
+		}
 
 	};
 }
