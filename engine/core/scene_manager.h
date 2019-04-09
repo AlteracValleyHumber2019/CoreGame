@@ -1,8 +1,8 @@
 ﻿#ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-#include "i_manager.h"
 #include "i_scene.h"
+#include "i_manager.h"
 #include "event_attorney.h"
 
 namespace pav

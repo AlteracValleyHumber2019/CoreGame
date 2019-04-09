@@ -1,6 +1,7 @@
 #include "pav_pch.h"
 #include "example_scene.h"
 #include "core/entity_component/component/transform_component.h"
+#include "example/ui/example_ui.h"
 
 void ExampleScene::BeginScene()
 {

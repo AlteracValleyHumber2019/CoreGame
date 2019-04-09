@@ -2,6 +2,7 @@
 #define MANAGER_FACTORY_H
 
 #include "scene_manager.h"
+#include "ui_manager.h"
 #include "window_manager.h"
 #include "event_manager.h"
 #include "render_manager.h"
@@ -20,6 +21,7 @@ namespace pav
 	{
 	public:
 		static std::unique_ptr<SceneManager> CreateSceneManager();
+		static std::unique_ptr<UIManager> CreateUIManager();
 		static std::unique_ptr<WindowManager> CreateWindowManagerManager();
 		static std::unique_ptr<EventManager> CreateEventManager();
 		static std::unique_ptr<RenderManager> CreateRenderManager();

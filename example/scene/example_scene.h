@@ -2,6 +2,10 @@
 #define EXAMPLE_SCENE_H
 
 #include "core/i_scene.h"
+#include "core/i_ui.h"
+#include "core/ui_manager.h"
+#include "example/ui/example_ui.h"
+
 //! [ExampleScene custom scene]
 class ExampleScene : public pav::IScene
 {

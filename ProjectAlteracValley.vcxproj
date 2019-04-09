@@ -193,6 +193,7 @@
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="example\ui\example_ui.cpp" />
+    <ClCompile Include="engine\core\ui_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -226,6 +227,7 @@
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
     <ClInclude Include="example\ui\example_ui.h" />
+    <ClInclude Include="engine\core\ui_manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

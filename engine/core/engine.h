@@ -2,6 +2,7 @@
 #define ENGINE_H
 
 #include "scene_manager.h"
+#include "ui_manager.h"
 #include "window_manager.h"
 #include "event_manager.h"
 #include "render_manager.h"
@@ -48,6 +49,7 @@ namespace pav
 
 	public:
 		std::unique_ptr<SceneManager> scene_manager;
+		std::unique_ptr<UIManager> ui_manager;
 		std::unique_ptr<WindowManager> window_manager;
 		std::unique_ptr<EventManager> event_manager;
 		std::unique_ptr<RenderManager> render_manager;

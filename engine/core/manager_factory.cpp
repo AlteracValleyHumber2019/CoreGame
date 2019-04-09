@@ -10,6 +10,11 @@ std::unique_ptr<pav::SceneManager> pav::ManagerFactory::CreateSceneManager()
 	return std::make_unique<SceneManager>();
 }
 
+std::unique_ptr<pav::UIManager> pav::ManagerFactory::CreateUIManager()
+{
+	return std::make_unique<UIManager>();
+}
+
 std::unique_ptr<pav::WindowManager> pav::ManagerFactory::CreateWindowManagerManager()
 {
 #ifdef ENGINE_TYPE_GL_SDL
