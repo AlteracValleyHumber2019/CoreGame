@@ -34,6 +34,8 @@ namespace pav
 		~GameState();
 
 		void UpdateGameState(int characterID, std::string s); // This method will take in the JSON or String and will break the string into substrings based on delimiter and store into an array.
+		
+		void UpdateGameInformation(std::string s);
 		// With the newly created array we can iterate through each index and parse the value to the appropiate primative type.
 
 		// TODO: Discuss with the gameplay team, how do we want to handle getting information from the GameState
