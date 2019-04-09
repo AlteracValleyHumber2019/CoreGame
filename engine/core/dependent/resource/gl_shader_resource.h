@@ -2,19 +2,21 @@
 #define GL_SHADER_RESOURCE
 
 #include "core/resource_system/resource.h"
-#include "../opengl/opengl_shader.h"
+#include "../opengl/opengl_shader_program.h"
 
 namespace pav
 {
-	class GLShaderResource : public Resource<GLShaderResource, OpenGLShader*, std::string>
+	class GLShaderResource : public Resource<GLShaderResource, OpenGLShaderProgram*, std::string>
 	{
 	private:
-		OpenGLShader* resource;
+		OpenGLShaderProgram* resource;
+
+		std::string ReadShaderCodeFromFile(std::string&& path);
 
 	public:
-		virtual OpenGLShader* GetData() override;
+		virtual OpenGLShaderProgram* GetData() override;
 
-		virtual OpenGLShader* GetData() const override;
+		virtual OpenGLShaderProgram* GetData() const override;
 
 		virtual bool Load(std::string&& args) override;
 
