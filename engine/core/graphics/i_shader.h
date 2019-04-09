@@ -40,6 +40,8 @@ namespace pav
 		 */
 		virtual void SetShaderCode(std::string&& code) = 0;
 
+		virtual void SetShaderType(const ShaderType type);
+
 		/**
 		 * \fn	virtual void IShader::AddChildShader(std::unique_ptr<IShader>&& child) = 0;
 		 *
@@ -123,7 +125,7 @@ namespace pav
 		virtual void DisposeShader() = 0;
 
 	public:
-		IShader(ShaderType shader_type);
+		IShader() = default;
 	};
 }
 

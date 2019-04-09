@@ -4,7 +4,8 @@
 #include "core/graphics/i_renderable_object.h"
 #include "core/util/wrappers/type_wrappers.h"
 
-namespace pav {
+namespace pav
+{
 	/**
 	 * \class	GLRenderableObject
 	 *
@@ -33,6 +34,9 @@ namespace pav {
 
 		//TODO : Finish implementation of the class with all the other components like shader, material, texture, etc.
 
+
+	public:
+		virtual void Draw() override;
 
 	};
 }

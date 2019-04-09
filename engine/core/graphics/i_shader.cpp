@@ -1,9 +1,9 @@
 #include "pav_pch.h"
 #include "i_shader.h"
 
-pav::IShader::IShader(ShaderType shader_type) :
-	shader_type_(shader_type)
+void pav::IShader::SetShaderType(const ShaderType type)
 {
+	shader_type_ = type;
 }
 
 void pav::IShader::AddChildShader(std::unique_ptr<IShader>&& child)
