@@ -155,7 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="engine\ServerCommands\data_manager.cpp" />
+    <ClCompile Include="engine\ServerCommands\Data_Manager.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Box_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
@@ -181,6 +181,10 @@
     <ClCompile Include="engine\external\src\glad.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="engine\ServerCommands\Health_Mod_Command.cpp" />
+    <ClCompile Include="engine\ServerCommands\invoke_skill_command.cpp" />
+    <ClCompile Include="engine\ServerCommands\move_command.cpp" />
+    <ClCompile Include="engine\Skills\ISkill.cpp" />
     <ClCompile Include="example\example_main.cpp" />
     <ClCompile Include="example\scene\example_scene.cpp" />
     <ClCompile Include="engine\pav_pch.cpp">
@@ -199,10 +203,9 @@
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="engine\ServerCommands\i_Server_Command.cpp" />
-    <ClCompile Include="engine\ServerCommands\i_server_command_visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine\ServerCommands\data_manager.h" />
+    <ClInclude Include="engine\ServerCommands\Data_Manager.h" />
     <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
     <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
@@ -235,11 +238,14 @@
     <ClInclude Include="engine\core\entity_component\sec_manager.h" />
     <ClInclude Include="engine\core\resource_system\resource_pool.h" />
     <ClInclude Include="engine\core\resource_system\resource.h" />
+    <ClInclude Include="engine\ServerCommands\Health_Mod_Command.h" />
+    <ClInclude Include="engine\ServerCommands\invoke_skill_command.h" />
+    <ClInclude Include="engine\ServerCommands\move_command.h" />
+    <ClInclude Include="engine\Skills\ISkill.h" />
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
     <ClInclude Include="engine\ServerCommands\i_Server_Command.h" />
-    <ClInclude Include="engine\ServerCommands\i_server_command_visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

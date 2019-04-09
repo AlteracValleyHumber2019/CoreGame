@@ -1,20 +1,26 @@
 #ifndef MOVE_COMMAND_H
 #define MOVE_COMMAND_H
 
+#include "i_Server_Command.h"
+#include "Data_Manager.h"
+
 namespace pav{
 
 
-class MoveCommand
+
+class MoveCommand : public IServerCommand
 {
+	
 private:
 	glm::vec3 direction;
 
 public:
 
-	void Execute(/*DataManager manager_*/);
+	 void Execute(class DataManager *manager_);
 
-	void Accept(IServerCommandVisitor &visitor_);
+	 void Accept(class IServerCommandVisitor &visitor_);
 
 };
-#endif;
+
 }
+#endif

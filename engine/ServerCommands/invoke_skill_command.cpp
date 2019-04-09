@@ -2,12 +2,12 @@
 #include "invoke_skill_command.h"
 
 
-void pav::InvokeSkillCommand::Execute()
+void pav::InvokeSkillCommand::Execute(DataManager *manager_)
 {
 
 }
 
 void pav::InvokeSkillCommand::Accept(IServerCommandVisitor &visitor_)
 {
-	visitor_.visit(*this);
+	visitor_.Visit(this);
 }
