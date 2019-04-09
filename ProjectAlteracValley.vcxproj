@@ -166,7 +166,6 @@
     <ClCompile Include="engine\core\event_util.cpp" />
     <ClCompile Include="engine\core\graphics\i_renderable_object.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader_program.cpp" />
-    <ClCompile Include="engine\core\graphics\i_texture.cpp" />
     <ClCompile Include="engine\core\graphics\mesh.cpp" />
     <ClCompile Include="engine\core\graphics\model.cpp" />
     <ClCompile Include="engine\core\graphics\vertex.cpp" />
@@ -229,6 +228,8 @@
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\graphics\createMesh.h" />
+    <ClInclude Include="engine\core\graphics\createModel.h" />
     <ClInclude Include="engine\core\SDLCamera.h" />
     <ClInclude Include="engine\external\include\glad\glad.h" />
     <ClInclude Include="engine\external\include\KHR\khrplatform.h" />

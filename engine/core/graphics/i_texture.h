@@ -1,6 +1,7 @@
 #ifndef I_TEXTURE_H
 #define I_TEXTURE_H
 #include <string>
+#include <vector>
 
 namespace pav{
 	class ITexture {
@@ -20,8 +21,10 @@ namespace pav{
 	public:
 		ITexture(unsigned int texture_id);
 
+		//[BP] added Variables for textures
 		unsigned int id;
 		std::string type;
+		std::string path;
 		virtual void UseTexture() = 0;
 	};
 }

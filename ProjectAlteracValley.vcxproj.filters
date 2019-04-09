@@ -93,9 +93,6 @@
     <ClCompile Include="engine\core\graphics\i_renderable_object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\graphics\i_texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\core\graphics\mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -288,6 +285,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\SDLCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\createMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\createModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
