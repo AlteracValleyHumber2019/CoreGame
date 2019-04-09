@@ -18,7 +18,7 @@ void DebugScene::BeginScene(WindowType* win)
 
 	shader_res_ = std::make_unique<pav::GLShaderResource>();
 
-	shader_res_->Load("test_shader");
+	shader_res_->Load("test_shader.json");
 }
 
 void DebugScene::EndScene()

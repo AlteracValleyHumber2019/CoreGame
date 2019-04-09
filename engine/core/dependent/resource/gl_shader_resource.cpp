@@ -38,11 +38,13 @@ std::string pav::GLShaderResource::ReadShaderCodeFromFile(std::string&& path)
 
 pav::IShaderProgram* pav::GLShaderResource::GetData()
 {
-	return resource;
+	return resource.get();
 }
 
 bool pav::GLShaderResource::Load(std::string&& args)
 {
+	resource = std::make_unique<OpenGLShaderProgram>();
+
 	// Read shader info file
 	std::string shader_info_file = ReadShaderCodeFromFile(std::move(args));
 	nlohmann::json shader_json = nlohmann::json::parse(shader_info_file);
@@ -73,5 +75,5 @@ bool pav::GLShaderResource::Load(std::string&& args)
 
 pav::IShaderProgram* pav::GLShaderResource::GetData() const
 {
-	return resource;
+	return resource.get();
 }

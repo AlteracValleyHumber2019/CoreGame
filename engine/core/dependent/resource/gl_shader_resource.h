@@ -10,7 +10,7 @@ namespace pav
 	class GLShaderResource : public IShaderResource
 	{
 	private:
-		OpenGLShaderProgram* resource;
+		std::unique_ptr<OpenGLShaderProgram> resource;
 
 		std::string ReadShaderCodeFromFile(std::string&& path);
 
