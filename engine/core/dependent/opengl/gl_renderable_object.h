@@ -32,6 +32,8 @@ namespace pav {
 		GLRenderData gl_renderable_data_;
 
 		//TODO : Finish implementation of the class with all the other components like shader, material, texture, etc.
+
+
 	};
 }
 #endif // !GL_RENDERABLE_OBJECT

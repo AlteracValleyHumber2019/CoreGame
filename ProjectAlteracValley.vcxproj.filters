@@ -144,7 +144,7 @@
     <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model_resource.cpp">
+    <ClCompile Include="engine\core\dependent\resource\model_resource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -299,7 +299,13 @@
     <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="model_resource.h">
+    <ClInclude Include="engine\core\dependent\resource\model_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\dependent\resource\gl_shader_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

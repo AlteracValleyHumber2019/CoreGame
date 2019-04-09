@@ -20,15 +20,20 @@ namespace pav
 		glm::mat4 transform_;
 
 		//Insert Shader and Material here
+		IShaderProgram* shader_;
+		Material mat_;
 
 	public:
 
-		IRenderableObject() {
+		IRenderableObject(const Material& mat) {
 			model_ = glm::mat4(1.0f);
 			view_ = glm::mat4(1.0f);
 			projection_ = glm::mat4(1.0f);
 			transform_ = glm::mat4(1.0f);
+			mat_ = mat;
 		}
+
+		virtual ~IRenderableObject() = default;
 
 		virtual void Draw() = 0;
 
