@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
     <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\gl_shader_resource.cpp" />
     <ClCompile Include="example\scene\debug_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />

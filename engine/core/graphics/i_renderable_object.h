@@ -1,6 +1,9 @@
 #ifndef I_RENDERABLE_OBJECT
 #define I_RENDERABLE_OBJECT
 
+#include "i_shader_program.h"
+#include "material.h"
+
 namespace pav
 {
 	/**

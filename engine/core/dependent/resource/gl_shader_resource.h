@@ -2,19 +2,21 @@
 #define GL_SHADER_RESOURCE
 
 #include "core/resource_system/resource.h"
-#include "core/graphics/model.h"
-#include "core/dependent/resource/model_resource.h"
+#include "../opengl/opengl_shader.h"
 
 namespace pav
 {
-	class GLShaderResource : public ModelResource {
-
-	protected:
-
-		ModelLoadInfo modelInfo;
+	class GLShaderResource : public Resource<GLShaderResource, OpenGLShader*, std::string>
+	{
+	private:
+		OpenGLShader* resource;
 
 	public:
+		virtual OpenGLShader* GetData() override;
 
+		virtual OpenGLShader* GetData() const override;
+
+		virtual bool Load(std::string&& args) override;
 
 	};
 }
