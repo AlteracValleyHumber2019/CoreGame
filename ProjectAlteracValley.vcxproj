@@ -233,6 +233,8 @@
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
     <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
+    <ClInclude Include="engine\core\dependent\resource\gl_shader_resource.h" />
+    <ClInclude Include="engine\core\graphics\material.h" />
     <ClInclude Include="engine\external\include\glad\glad.h" />
     <ClInclude Include="engine\external\include\KHR\khrplatform.h" />
     <ClInclude Include="example\scene\debug_scene.h" />
