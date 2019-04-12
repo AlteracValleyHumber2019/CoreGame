@@ -5,10 +5,10 @@ c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(303): w
   c:\users\raksha\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(111): note: see previous definition of 'INADDR_BROADCAST'
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(304): warning C4005: 'INADDR_NONE': macro redefinition
   c:\users\raksha\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(105): note: see previous definition of 'INADDR_NONE'
-c:\users\raksha\documents\github\coregame\networklibrary\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\raksha\documents\github\coregame\networklibrary\networklibimplementationex\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Generating code
-  7 of 172 functions ( 4.1%) were compiled, the rest were copied from previous compilation.
-    6 functions were new in current compilation
-    9 functions had inline decision re-evaluated but remain unchanged
+  0 of 172 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   NetworkLibImplementationEx.vcxproj -> C:\Users\Raksha\Documents\GitHub\CoreGame\NetworkLibrary\NetworkLibImplementationEx\x64\Release\NetworkLibImplementationEx.exe

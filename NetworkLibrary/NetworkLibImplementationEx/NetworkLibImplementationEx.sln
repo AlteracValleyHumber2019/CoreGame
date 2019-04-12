@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetworkLibImplementationEx", "NetworkLibImplementationEx\NetworkLibImplementationEx.vcxproj", "{7AE97804-9CEE-401F-9E8A-AF73590A3D92}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetworkLib", "..\NetworkLib\NetworkLib\NetworkLib.vcxproj", "{9B0D9AAA-DC93-4E69-A3C6-01E001BEA3E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetworkLib", "NetworkLib\NetworkLib\NetworkLib.vcxproj", "{9B0D9AAA-DC93-4E69-A3C6-01E001BEA3E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

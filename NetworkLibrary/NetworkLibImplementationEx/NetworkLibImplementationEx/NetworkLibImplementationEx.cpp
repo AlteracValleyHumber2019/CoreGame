@@ -8,6 +8,8 @@
 #include <NetworkLib/UDP_Server.h>
 #include <NetworkLib/sha256.h>
 #include <NetworkLib/DatabaseConnection.h>
+
+//Undefines SDL_Main if using the console
 #undef main
 
 using namespace std;
