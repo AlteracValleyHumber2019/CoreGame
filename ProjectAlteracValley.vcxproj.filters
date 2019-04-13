@@ -117,13 +117,13 @@
     <ClCompile Include="Trees\TreeNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trees\QuadNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Trees\QuadTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Trees\KDTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees\CoordNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -248,13 +248,13 @@
     <ClInclude Include="Trees\TreeNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Trees\QuadNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Trees\QuadTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Trees\KDTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trees\CoordNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

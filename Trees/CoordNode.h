@@ -2,10 +2,10 @@
 namespace pav {
 
 	template <class T>
-	struct QuadNode {
+	struct CoordNode {
 		std::vector<float> coordinate;
 		T value;
 		
-		QuadNode(std::vector<float> coordinates_, T data_);
+		CoordNode(std::vector<float> coordinates_, T data_);
 	};
 }
