@@ -18,8 +18,8 @@ void pav::WindowManager::Update(const float delta_time)
 {
 }
 
-void pav::WindowManager::MakeWindow(WindowInfo&& window_info)
+void pav::WindowManager::CreateWindow(WindowInfo&& window_info)
 {
-	window_->MakeWindow(std::move(window_info));
+	window_->CreateWindow(std::move(window_info));
 	window_->SetAsContext();
 }

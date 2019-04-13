@@ -26,7 +26,7 @@ namespace pav
 		void End() override;
 		void Update(const float delta_time) override;
 
-		void MakeWindow(WindowInfo&& window_info);
+		void CreateWindow(WindowInfo&& window_info);
 	};
 }
 

@@ -70,14 +70,14 @@ namespace pav
 	public:
 
 		/**
-		 * \fn	virtual void IWindow::MakeWindow() = 0;
+		 * \fn	virtual void IWindow::CreateWindow() = 0;
 		 *
 		 * \brief	Creates a window
 		 *
 		 * \author	Jaymie
 		 * \date	2/2/2019
 		 */
-		virtual void MakeWindow(WindowInfo&& win_info) = 0;
+		virtual void CreateWindow(WindowInfo&& win_info) = 0;
 
 		/**
 		 * \fn	virtual void IWindow::DestroyWindow() = 0;
