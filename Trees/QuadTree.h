@@ -1,10 +1,8 @@
 #pragma once
 #include <vector>
-#include <iostream>
-
 
 template <class FT>
-class CoordNode;
+class QuadNode;
 using namespace std;
 namespace pav {
 
@@ -12,18 +10,17 @@ namespace pav {
 	class QuadTree {
 		//TODO: rewrite the quad tree to handle a size if we decide to do so, as it is the quad tree will go
 		//to a unit quad
-		const int size = 10;
-		bool divided = false;
+		const int size = 5;
 
 		//the boundaries for the quad tree
 		vector<float> topLBound;
 		vector<float> botRBound;
 
 		//TODO rewrite the quad tree to store a list of nodes in order to have less recursion and more populated quads
-		vector<CoordNode<T>*> nodes;
+		vector<QuadNode<T>*> nodes;
 
 		//the main node of this tree
-		CoordNode<T>* node;
+		QuadNode<T>* node;
 
 		//the four quadrants of the tree
 		QuadTree<T>* topLQuad;
@@ -35,20 +32,16 @@ namespace pav {
 		QuadTree();
 		QuadTree(vector<float> topLB_, vector<float> botRB_);		
 		//Method to find and return a node in the tree at the given position
-		CoordNode<T>* Find(std::vector<float> coord_);
+		QuadNode<T>* Find(std::vector<float> coord_);
 		//TODO implement the find In radius function in order to return a vector of all nodes within a certain search radius
-		std::vector<CoordNode<T>*> FindInRadius(std::vector<float> coord_, float radius);
+		std::vector<QuadNode<T>*> FindInRadius(std::vector<float> coord_, float radius);
 
 		//helper function to determine if a coordinate is inboundaries of this tree, may have separate applications
 		//outside of being a helper function, leaving it public for now
 		bool inBound(std::vector<float> coord_);
 
-		//helper function to divide a tree when it is necessary to do so, leaving it public for now
-		void Divide();
-
-		//insert method for adding a node to the tree there was an issue where i could not get the cpp to properly identify the declaration for this method
-		//therefore i moved the logic into the header file as that did not cause any errors.
-		void InsertNode(CoordNode<T>* qnode_) {
+		//insert method for adding a node to the tree TODO: find out why the declaration is incompatible and not funcitoning
+		void InsertNode(QuadNode<T>* qnode_) {
 
 			//check if a valid node is being passed
 			if (qnode_ == NULL) {
@@ -60,30 +53,73 @@ namespace pav {
 				return;
 			}
 
-			if (divided) {
-				topLQuad->InsertNode(qnode_);
-				topRQuad->InsertNode(qnode_);
-				botLQuad->InsertNode(qnode_);
-				botRQuad->InsertNode(qnode_);
+			//check if we cannot subdivide this quadrant any further
+			if (abs(topLBound[0] - botRBound[0]) <= 1 && abs(topLBound[1] - botRBound[1]) <= 1) {
+				if (node == NULL) {
+					node = qnode_;
+				}
 				return;
 			}
 
-			if (nodes == NULL) {
-				nodes = std::vector<CoordNode<T>*>();
-				nodes.push_back(qnode_);
-				std::cout << "Node was Added";
-				return;
-			}
+			if ((topLBound[0] + botRBound[0]) / 2 >= qnode_->coordinate[0]) {
+				//checking for topleft quadrant
+				if ((topLBound[1] + botRBound[1]) / 2 >= qnode_->coordinate[1]) {
+					if (topLQuad == NULL) {
+						vector<float> newbound;
+						newbound.push_back((topLBound[0] + botRBound[0]) / 2);
+						newbound.push_back((topLBound[1] + botRBound[1]) / 2);
 
-			if (nodes.size() < size) {
-				nodes.push_back(qnode_);
-				std::cout << "Node was Added";
-				return;
+						topLQuad = new QuadTree(topLBound, newbound);
+						topLQuad->InsertNode(qnode_);
+					}
+				}
+				//checking for botleft quadrant
+				else {
+					if (botLQuad == NULL) {
+						vector<float> newLbound;
+						newLbound.push_back(topLBound[0]);
+						newLbound.push_back((topLBound[1] + botRBound[1]) / 2);
+
+						vector<float> newRbound;
+						newRbound.push_back((topLBound[0] + botRBound[0]) / 2);
+						newRbound.push_back(botRBound[1]);
+
+						botLQuad = new QuadTree(newLbound, newRbound);
+						botLQuad->InsertNode(qnode_);
+					}
+				}
 			}
 			else {
-				Divide();
-				return;
+				//checking for topright quad
+				if ((topLBound[1] + botRBound[1]) / 2 >= qnode_->coordinate[1]) {
+					if (topRQuad == NULL) {
+						vector<float> newLbound;
+						newLbound.push_back((topLBound[0] + botRBound[0]) / 2);
+						newLbound.push_back(topLBound[1]);
+
+						vector<float> newRbound;
+						newRbound.push_back(botRBound[0]);
+						newRbound.push_back((topLBound[1] + botRBound[1]) / 2);
+
+						topRQuad = new QuadTree(newLbound, newRbound);
+						topRQuad->InsertNode(qnode_);
+
+					}
+				}
+				//checking for botright quad
+				else {
+					if (botRQuad == NULL) {
+						vector<float> newLbound;
+						newLbound.push_back((topLBound[0] + botRBound[0]) / 2);
+						newLbound.push_back((topLBound[1] + botRBound[1]) / 2);
+
+						botRQuad = new QuadTree(newLbound, botRBound);
+						botRQuad->InsertNode(qnode_);
+
+					}
+				}
 			}
+
 
 		}
 	};
