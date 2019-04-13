@@ -3,7 +3,7 @@
 
 
 template<class T>
-bool pav::KDTree<T>::ComparePosition(QuadNode<T>* node_) {
+bool pav::KDTree<T>::ComparePosition(CoordNode<T>* node_) {
 
 	for (int i = 0; i < k; i++) {
 		if (node->coordinate[i] != node_->coordinate[i]) {
@@ -15,7 +15,7 @@ bool pav::KDTree<T>::ComparePosition(QuadNode<T>* node_) {
 }
 
 template <class T>
-pav::KDTree<T>::KDTree(QuadNode<T>* node_, int depth_) {
+pav::KDTree<T>::KDTree(CoordNode<T>* node_, int depth_) {
 	node = node_;
 	depth = depth_;
 	leftBranch = NULL;
@@ -23,7 +23,7 @@ pav::KDTree<T>::KDTree(QuadNode<T>* node_, int depth_) {
 }
 
 template<class T>
-void pav::KDTree<T>::InsertN(QuadNode<T>* node_) {
+void pav::KDTree<T>::InsertN(CoordNode<T>* node_) {
 
 	//check if a valid node is being passed
 	if (node_ == NULL) {
@@ -61,7 +61,7 @@ void pav::KDTree<T>::InsertN(QuadNode<T>* node_) {
 }
 
 template<class T>
-pav::QuadNode<T>* pav::KDTree<T>::FindN(QuadNode<T>* node_) {
+pav::CoordNode<T>* pav::KDTree<T>::FindN(CoordNode<T>* node_) {
 
 	//check if there is a node at this tree yet
 	if (node == NULL) {
