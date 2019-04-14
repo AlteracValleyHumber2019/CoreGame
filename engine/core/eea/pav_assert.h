@@ -15,7 +15,7 @@
 
 #define SHADER_COMPILE_FAILED_IMPL1 "Shader compile failed! \n Shader type:"
 #define SHADER_COMPILE_FAILED_IMPL2 "\nReason: "
-#define SHADER_COMPILE_FAILED(type, reason) SHADER_COMPILE_FAILED_IMPL1 #type SHADER_COMPILE_FAILED_IMPL2 #reason
+#define SHADER_COMPILE_FAILED(type, reason) reason
 
 #define SHADER_LINKING_FAILED(reason) "Shader linking failed! Reason: " #reason
 
@@ -28,6 +28,10 @@
 
 #define PAV_ASSERT(condition, msg)							\
 {															\
+	if (!condition)											\
+	{														\
+		printf("FATAL ERROR: %s\n", msg);					\
+	}														\
 	assert((msg, condition));								\
 }															\
 
@@ -36,7 +40,7 @@
 	if (condition)											\
 	{														\
 		pav::PAVAssert::PrintFileLine(__FILE__, __LINE__);	\
-		printf("WARNING: %s\n", msg);						\
+		printf("WARNING: %s\n\n", msg);						\
 	}														\
 }															\
 

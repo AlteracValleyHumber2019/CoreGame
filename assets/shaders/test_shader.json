@@ -1,0 +1,14 @@
+{
+  "shaders": {
+    "shader": [
+      {
+        "path": "assets/shaders/vertex_shader.glsl",
+        "type": "VERTEX_SHADER"
+      },
+      {
+        "path": "assets/shaders/fragment_shader.glsl",
+        "type": "FRAGMENT_SHADER"
+      }
+    ]
+  }
+}

@@ -9,14 +9,14 @@ void pav::OpenGLShader::SetShaderCode(std::string&& code)
 void pav::OpenGLShader::CompileShaders()
 {
 	// The source code of each child shader in order
-	std::vector<const GLchar*> sources;
+	std::vector<std::string> sources;
 
 	// Shader search DFS lambda
 	std::function<void(IShader*)> ss_dfs =
 		[&sources, &ss_dfs](IShader* root)->void
 	{
 		// Add root code
-		sources.emplace_back(root->GetShaderCode().c_str());
+		sources.emplace_back(root->GetShaderCode());
 
 		// For each root's child
 		for (size_t i = 0; i < root->GetChildrenSize(); i++)
@@ -54,7 +54,12 @@ void pav::OpenGLShader::CompileShaders()
 	shader_ = glCreateShader(opengl_shader_type);
 
 	// Attach all shader code
-	glShaderSource(shader_, sources.size(), &sources[0], nullptr);
+	std::vector<const GLchar*> cstr_sources;
+	for (size_t i = 0; i < sources.size(); i++)
+	{
+		cstr_sources.emplace_back(sources[i].c_str());
+	}
+	glShaderSource(shader_, cstr_sources.size(), &cstr_sources[0], nullptr);
 
 	// Compile
 	glCompileShader(shader_);
@@ -84,7 +89,7 @@ void pav::OpenGLShader::CompileShaders()
 		}
 
 		glGetShaderInfoLog(shader_, 512, nullptr, info_log);
-		PAV_ASSERT(false, SHADER_COMPILE_FAILED(shader_type_str_.c_str(), info_log))
+		PAV_ASSERT(false, info_log)
 	}
 #endif
 }
@@ -92,7 +97,7 @@ void pav::OpenGLShader::CompileShaders()
 GAPIUInt pav::OpenGLShader::RetrieveShader()
 {
 	// Assert
-	PAV_ASSERT(shader_ == NULL, INVALID_SHADER)
+	PAV_ASSERT(shader_ != NULL, INVALID_SHADER)
 
 	return shader_;
 }

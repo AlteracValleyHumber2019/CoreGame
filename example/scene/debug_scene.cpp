@@ -14,11 +14,11 @@ void DebugScene::BeginScene(WindowType* win)
 	pav::ModelLoadInfo info;
 	info.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
 
-	model_res_->Load("fml.obj", std::move(info));
+	model_res_->Load("assets/models/fml.obj", std::move(info));
 
 	shader_res_ = std::make_unique<pav::GLShaderResource>();
 
-	shader_res_->Load("test_shader.json");
+	shader_res_->Load("assets/shaders/test_shader.json");
 }
 
 void DebugScene::EndScene()

@@ -5,11 +5,14 @@ void pav::OpenGLShaderProgram::LinkShaders()
 {
 	for (auto& shader : member_shaders_)
 	{
-		// Attach and compile all of this shader
-		shader->CompileShaders();
+		if (shader != nullptr)
+		{
+			// Attach and compile all of this shader
+			shader->CompileShaders();
 
-		// Attach to this program
-		glAttachShader(shader_program_id_, shader->RetrieveShader());
+			// Attach to this program
+			glAttachShader(shader_program_id_, shader->RetrieveShader());
+		}
 	}
 
 	// Linking
@@ -18,7 +21,10 @@ void pav::OpenGLShaderProgram::LinkShaders()
 	// Garbage collection
 	for (auto& shader : member_shaders_)
 	{
-		shader->DisposeShader();
+		if (shader != nullptr)
+		{
+			shader->DisposeShader();
+		}
 	}
 
 	// Assert

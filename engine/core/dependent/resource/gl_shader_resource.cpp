@@ -22,6 +22,7 @@ std::string pav::GLShaderResource::ReadShaderCodeFromFile(std::string&& path)
 		while (getline(shader_info_file, line))
 		{
 			result.append(line);
+			result.append("\n");
 		}
 
 		// Close file
@@ -50,21 +51,37 @@ bool pav::GLShaderResource::Load(std::string&& args)
 	nlohmann::json shader_json = nlohmann::json::parse(shader_info_file);
 
 	// Iterate through shaders
-	for (auto shaders : shader_json["shaders"])
+	for (auto shaders : shader_json["shaders"]["shader"])
 	{
-		for (auto path : shaders)
+		std::string shader_path = shaders["path"];
+		std::string shader_type = shaders["type"];
+
+		// Read GLSL shader code
+		std::string shader_code = ReadShaderCodeFromFile(std::move(shader_path));
+
+		// Insert GLSL shader code
+		std::unique_ptr<OpenGLShader> shader = std::make_unique<OpenGLShader>();
+		shader->SetShaderCode(std::move(shader_code));
+
+		// Set shader type
+		if (shader_type == "VERTEX_SHADER")
 		{
-			std::string shader_path = path.get<std::string>();
-
-			// Read GLSL shader code
-			std::string shader_code = ReadShaderCodeFromFile(std::move(shader_path));
-
-			// Insert GLSL shader code
-			std::unique_ptr<OpenGLShader> shader = std::make_unique<OpenGLShader>();
-			shader->SetShaderCode(std::move(shader_code));
-
-			resource->AddShader(std::move(shader));
+			shader->SetShaderType(ShaderType::VERTEX_SHADER);
 		}
+		else if (shader_type == "GEOMETRY_SHADER")
+		{
+			shader->SetShaderType(ShaderType::GEOMETRY_SHADER);
+		}
+		else if (shader_type == "TESSELLATION_SHADER")
+		{
+			shader->SetShaderType(ShaderType::TESSELLATION_SHADER);
+		}
+		else if (shader_type == "FRAGMENT_SHADER")
+		{
+			shader->SetShaderType(ShaderType::FRAGMENT_SHADER);
+		}
+
+		resource->AddShader(std::move(shader));
 	}
 
 	// Linking
