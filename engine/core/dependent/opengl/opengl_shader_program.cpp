@@ -3,6 +3,8 @@
 
 void pav::OpenGLShaderProgram::LinkShaders()
 {
+	shader_program_id_ = glCreateProgram();
+
 	for (auto& shader : member_shaders_)
 	{
 		if (shader != nullptr)
@@ -42,7 +44,7 @@ void pav::OpenGLShaderProgram::LinkShaders()
 
 void pav::OpenGLShaderProgram::UseShader()
 {
-	PAV_ASSERT(shader_program_id_ == NULL, INVALID_SHADER_PROGRAM)
+	PAV_ASSERT(shader_program_id_ != NULL, INVALID_SHADER_PROGRAM)
 
 	glUseProgram(shader_program_id_);
 }

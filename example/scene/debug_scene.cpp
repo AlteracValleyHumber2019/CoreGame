@@ -5,6 +5,7 @@
 #include "imgui_impl_opengl3.h"
 #include "core/resource_system/resource.h"
 #include "core/dependent/resource/gl_shader_resource.h"
+#include "core/dependent/opengl/gl_renderable_object.h"
 
 void DebugScene::BeginScene(WindowType* win)
 {
@@ -19,6 +20,9 @@ void DebugScene::BeginScene(WindowType* win)
 	shader_res_ = std::make_unique<pav::GLShaderResource>();
 
 	shader_res_->Load("assets/shaders/test_shader.json");
+
+	pav::GLRenderableObject object(model_res_.get(), shader_res_.get());
+	object.Draw();
 }
 
 void DebugScene::EndScene()

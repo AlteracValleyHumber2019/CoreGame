@@ -15,16 +15,16 @@ pav::GLRenderableObject::GLRenderableObject(ModelResource* model, IShaderResourc
 
 		Mesh current_mesh = model_mesh_.meshes.at(i);
 
-		// Make Buffers
 		glGenVertexArrays(1, &render_data.vao);
-		glGenBuffers(1, &render_data.vbo);
-		glGenBuffers(1, &render_data.ebo);
+		glBindVertexArray(render_data.vao);
 
 		// Bind VBO
+		glGenBuffers(1, &render_data.vbo);
 		glBindBuffer(GL_ARRAY_BUFFER, render_data.vbo);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * current_mesh.vertices.size(), &current_mesh.vertices[0], GL_STATIC_DRAW);
 
 		// Bind EBO
+		glGenBuffers(1, &render_data.ebo);
 		render_data.indices_size = current_mesh.indices.size();
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, render_data.ebo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * current_mesh.indices.size(), &current_mesh.indices[0], GL_STATIC_DRAW);
