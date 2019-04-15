@@ -69,7 +69,8 @@ void pav::OpenGLShaderProgram::SetShaderFloat(std::string&& name, const float va
 
 void pav::OpenGLShaderProgram::SetShaderTransform(std::string&& name, const glm::mat4 value)
 {
-	auto location = glGetUniformLocation(shader_program_id_, (GLchar*)name.c_str());
+	std::string local_name = std::move(name);
+	auto location = glGetUniformLocation(shader_program_id_, (GLchar*)local_name.c_str());
 	glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
 
 	// Assert check

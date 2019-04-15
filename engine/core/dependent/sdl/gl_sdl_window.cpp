@@ -1,12 +1,8 @@
 ﻿#include "pav_pch.h"
 #include "gl_sdl_window.h"
 
-#include "imgui_impl_sdl.h"
-#include "imgui_impl_opengl3.h"
-
 pav::GLSDLWindow::GLSDLWindow() :
-window_(nullptr, SDL_DestroyWindow),
-io()
+window_(nullptr, SDL_DestroyWindow)
 {
 }
 
@@ -49,32 +45,16 @@ void pav::GLSDLWindow::SetAsContext()
 		printf("%s \n", "Failed to initialize GLAD");
 		return;
 	}
-
-	// IMGUI
-	// Setup Dear ImGui context
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	io = &ImGui::GetIO(); (void)io;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
-
-	// Setup Dear ImGui style
-	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsClassic();
-
-	// Setup Platform/Renderer bindings
-	ImGui_ImplSDL2_InitForOpenGL(window_.get(), main_context_);
-	ImGui_ImplOpenGL3_Init("#version 430 core");
 }
 
-void pav::GLSDLWindow::Update(const float delta_time)
+void pav::GLSDLWindow::Update(const float delta_time, SceneManager* manager)
 {
-	ImGui::Render();
 	SDL_GL_MakeCurrent(window_.get(), main_context_);
 
-	glViewport(0, 0, (int)io->DisplaySize.x, (int)io->DisplaySize.y);
-	glClearColor(0.5, 0, 0, 1);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(0, 0, 0, 1);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	manager->GetCurrentScene()->Update(delta_time);
+
 	SDL_GL_SwapWindow(window_.get());
 }

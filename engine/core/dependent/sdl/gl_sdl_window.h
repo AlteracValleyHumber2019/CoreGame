@@ -21,15 +21,14 @@ namespace pav
 		std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
 		SDL_GLContext main_context_;
 
-		ImGuiIO* io;
-
 	public:
 		explicit GLSDLWindow();
 
 		void MakeWindow(pav::WindowInfo&& win_info) override;
 		void DestroyWindow() override;
+		
 		void SetAsContext() override;
-		void Update(const float delta_time) override;
+		void Update(const float delta_time, SceneManager* manager) override;
 
 		virtual WindowType* GetWindow() override;
 

@@ -4,6 +4,7 @@
 #include "core/i_scene.h"
 #include "core/dependent/resource/model_resource.h"
 #include "core/dependent/resource/i_shader_resource.h"
+#include "core/dependent/opengl/gl_renderable_object.h"
 
 class DebugScene : public pav::IScene
 {
@@ -13,6 +14,8 @@ private:
 	std::unique_ptr<pav::ModelResource> model_res_;
 
 	std::unique_ptr<pav::IShaderResource> shader_res_;
+
+	std::unique_ptr<pav::GLRenderableObject> object_;
 
 public:
 

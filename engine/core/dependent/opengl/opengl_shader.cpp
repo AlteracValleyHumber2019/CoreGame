@@ -59,7 +59,7 @@ void pav::OpenGLShader::CompileShaders()
 	{
 		cstr_sources.emplace_back(sources[i].c_str());
 	}
-	glShaderSource(shader_, cstr_sources.size(), &cstr_sources[0], nullptr);
+	glShaderSource(shader_, cstr_sources.size(), &cstr_sources[0], NULL);
 
 	// Compile
 	glCompileShader(shader_);

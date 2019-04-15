@@ -3,7 +3,6 @@
 
 #include <SDL/SDL.h>
 #include <glad/glad.h>
-#include "imgui_impl_opengl3.h"
 
 pav::IRenderer* pav::GLSDLRenderManager::CreateRenderer()
 {

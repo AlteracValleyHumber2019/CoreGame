@@ -34,14 +34,6 @@ pav::GLRenderableObject::GLRenderableObject(ModelResource* model, IShaderResourc
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 		glEnableVertexAttribArray(0);
 
-		// Texture cord
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texture_position));
-		glEnableVertexAttribArray(1);
-
-		// Normal
-		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
-		glEnableVertexAttribArray(2);
-
 		// Unbind
 		glBindVertexArray(NULL);
 
@@ -61,8 +53,7 @@ void pav::GLRenderableObject::Draw()
 		GLRenderData render_data = render_meshes_.at(i);
 
 		glBindVertexArray(render_data.vao);
-		glDrawElements(GL_TRIANGLES, render_data.indices_size, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, render_data.indices_size, GL_UNSIGNED_INT, (void*)0);
 		glBindVertexArray(NULL);
 	}
-	
 }
