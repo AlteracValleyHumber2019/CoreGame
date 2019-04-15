@@ -23,12 +23,16 @@ public:
 
 	createModel(char *path)
 	{
-		loadModel(path);
+		this->loadModel(path);
 	}
+
+	// Draws the model, and thus all its meshes
 	void Draw(ShaderType shader)
 	{
-		for (unsigned int i = 0; i < meshes.size(); i++)
-			meshes[i].Draw(shader);
+		for (GLuint i = 0; i < this->meshes.size(); i++)
+		{
+			this->meshes[i].Draw(shader);
+		}
 	}
 
 private:
@@ -152,7 +156,7 @@ private:
 			aiString str;
 			mat->GetTexture(type, i, &str);
 			ITexture* texture;
-			texture->id = TextureFromFile(str.C_Str(), directory);
+			texture->id = TextureFromFile(str.C_Str(), directory, false);
 			texture->type = typeName;
 			texture->path = str.data;
 			textures.push_back(*texture);
