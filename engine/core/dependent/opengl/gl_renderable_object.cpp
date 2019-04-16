@@ -47,6 +47,8 @@ void pav::GLRenderableObject::Draw()
 	// Use shader
 	shader_program_->UseShader();
 
+	shader_program_->SetShaderTransform("model", model_);
+
 	// Draw mesh
 	for (size_t i = 0; i < render_meshes_.size(); i++)
 	{

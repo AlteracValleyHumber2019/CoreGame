@@ -28,9 +28,33 @@ void DebugScene::EndScene()
 
 void DebugScene::Update(const float delta_time)
 {
+	glm::mat4 model(1.f);
+	model = glm::translate(model, pos);
+
+	object_->SetModelMatrix(model);
 	object_->Draw();
 }
 
 void DebugScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 {
+	event_attorney->on_key_hold->Connect(this, &DebugScene::OnKeyHold);
+}
+
+void DebugScene::OnKeyHold(pav::KeyCode keycode)
+{
+	switch (keycode)
+	{
+	case pav::KEY_A:
+		pos += glm::vec3(-1, 0, 0);
+		break;
+	case pav::KEY_D:
+		pos += glm::vec3(1, 0, 0);
+		break;
+	case pav::KEY_W:
+		pos += glm::vec3(0, 0, 1);
+		break;
+	case pav::KEY_S:
+		pos += glm::vec3(0, 0, -1);
+		break;
+	}
 }

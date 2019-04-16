@@ -17,6 +17,8 @@ private:
 
 	std::unique_ptr<pav::GLRenderableObject> object_;
 
+	glm::vec3 pos;
+
 public:
 
 	virtual void BeginScene(WindowType* win) override;
@@ -29,6 +31,8 @@ public:
 
 
 	virtual void SetupEngineEvents(pav::EventAttorney* event_attorney) override;
+
+	void OnKeyHold(pav::KeyCode keycode);
 
 };
 
