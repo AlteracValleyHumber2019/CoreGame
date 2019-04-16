@@ -30,6 +30,7 @@ void DebugScene::BeginScene(WindowType* win)
 
 	trans_comp = dynamic_cast<pav::TransformComponent*>(GetSECManager()->AddComponent<pav::TransformComponent>(go));
 	trans_comp->SetPosition(glm::vec3(0, 0, 0));
+	trans_comp->SetRotation(glm::vec3(0, 0, 1), 90);
 	trans_comp->SetScale(glm::vec3(1, 1, 1));
 
 	cam_comp = dynamic_cast<pav::CameraComponent*>(GetSECManager()->AddComponent<pav::CameraComponent>(go));
@@ -48,10 +49,10 @@ void DebugScene::Update(const float delta_time)
 	object_->SetModelMatrix(model);
 
 	cam_comp->UpdateCamera();
-	glm::vec3 cam_pos = glm::vec3((trans_comp->GetPosMatrix() * trans_comp->GetScaleMatrix()) * glm::vec4(0.f, 0.f, 0.f, 1.f));
+	glm::vec3 cam_pos = glm::vec3((trans_comp->GetPosMatrix() * trans_comp->GetRotMatrix() * trans_comp->GetScaleMatrix()) * glm::vec4(0.f, 0.f, 0.f, 1.f));
 	object_->SetViewMatrix(glm::lookAt(cam_pos, cam_pos + cam_comp->GetFront(), cam_comp->GetUp()));
 
-	object_->SetProjectionMatrix(glm::perspective(90.0f, 4.0f / 3.0f, 0.1f, 1000.f));
+	object_->SetProjectionMatrix(glm::perspective(95.0f, 800.f / 600.0f, 0.1f, 1000.f));
 	object_->Draw();
 }
 
@@ -65,16 +66,38 @@ void DebugScene::OnKeyHold(pav::KeyCode keycode)
 	switch (keycode)
 	{
 	case pav::KEY_A:
-		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(-1, 0, 0));
+		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_D:
-		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(1, 0, 0));
+		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_W:
-		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(0, 0, -1));
+		trans_comp->SetPosition(trans_comp->GetPosition() + cam_comp->GetFront() * 5.f);
 		break;
 	case pav::KEY_S:
-		trans_comp->SetPosition(trans_comp->GetPosition() + glm::vec3(0, 0, 1));
+		trans_comp->SetPosition(trans_comp->GetPosition() - cam_comp->GetFront() *5.f);
+		break;
+	case pav::KEY_E:
+		cam_comp->SetYaw(cam_comp->GetYaw() - 1);
+		break;
+	case pav::KEY_Q:
+		cam_comp->SetYaw(cam_comp->GetYaw() + 1);
+		break;
+	case pav::KEY_Z:
+	{
+		float new_val = cam_comp->GetPitch() + 1;
+		if (new_val > 90) new_val = 90;
+
+		cam_comp->SetPitch(new_val);
+	}
+		break;
+	case pav::KEY_X:
+	{
+		float new_val = cam_comp->GetPitch() - 1;
+		if (new_val < -90) new_val = -90;
+
+		cam_comp->SetPitch(new_val);
+	}
 		break;
 	}
 }
