@@ -306,4 +306,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="Mesh\CapsuleCharPrototype\CapsuleChar.obj" />
+    <Object Include="example\Capsule.obj" />
+  </ItemGroup>
 </Project>

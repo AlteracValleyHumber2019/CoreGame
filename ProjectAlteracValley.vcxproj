@@ -284,6 +284,14 @@
     <ClInclude Include="engine\core\graphics\shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="example\Capsule.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Object>
+    <Object Include="Mesh\CapsuleCharPrototype\CapsuleChar.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Object>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
