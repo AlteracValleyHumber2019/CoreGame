@@ -3,6 +3,7 @@
 
 #include "i_component.h"
 #include "i_game_object.h"
+#include "component/unit_component.h"
 #include "component/stat_component.h"
 #include "component/transform_component.h"
 
@@ -24,8 +25,15 @@ namespace pav
 
 		StatComponent* CharacterStats;
 		TransformComponent* Transform;
+		UnitComponent* UnitCompPtr;
 		// This still needs to be implemented
 		// CapsuleCollider* Collider;
+
+		inline unsigned int GetID() { return unitID; };
+		void Update(const float deltaTime);
+
+	private:
+		unsigned int unitID;
 	};
 }
 

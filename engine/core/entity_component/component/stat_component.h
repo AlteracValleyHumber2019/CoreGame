@@ -47,24 +47,16 @@ namespace pav
 		float critDamage;
 		int moveSpeed;
 		float attackSpeed;
+		//a map that will contain the names and values of the character's stats
+		std::unordered_map<std::string, float> stats;
 
 	public:
 		StatComponent(IGameObjectBase* owner);
-		void SetCurrentHealth(int newHealth);
-		void SetCurrentMana(int newMana);
+		//Set a stat to a new value
+		void SetStat(std::string statName, float newValue);
 
-		constexpr int GetCurrentHealth();
-		constexpr int GetCurrentMana();
-		constexpr int GetMaxHealth();
-		constexpr int GetDamage();
-		constexpr int GetArmor();
-		constexpr int GetMagicResist();
-		constexpr float GetHitRating();
-		constexpr float GetDodgeRating();
-		constexpr float GetCritRating();
-		constexpr float GetCritDamage();
-		constexpr float GetAttackSpeed();
-		constexpr int GetMoveSpeed();
+		//return a stat that's been requested
+		const float GetStat(std::string statName);
 
 		virtual void Begin() override;
 

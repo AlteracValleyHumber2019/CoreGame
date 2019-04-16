@@ -93,17 +93,9 @@ void pav::GameState::UpdateGameState(int characterID, std::string s)
 			// Set the transform->Position of this character to the new loaded position
 			characters.at(characterID)->Transform->SetPosition(position);
 		}
-
-		// Update the Health of the Character
-		if (k == "Health")
-		{
-			characters.at(characterID)->CharacterStats->SetCurrentHealth(std::stoi(v));
-		}
-
-		// Update the Mana of the Character
-		if (k == "Mana")
-		{
-			characters.at(characterID)->CharacterStats->SetCurrentMana(std::stoi(v));
+		else { 
+			//Update the character's stats using k
+			characters.at(characterID)->CharacterStats->SetStat(k, std::stoi(v));
 		}
 		
 	}
