@@ -1,11 +1,11 @@
 #ifndef CREATEMESH_H
 #define CREATEMESH_H
-
+#include "pav_pch.h"
 #include <glad/glad.h> // holds all OpenGL type declarations
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "i_shader_program.h"
+#include "AV_Shader.h"
 #include "vertex.h"
 #include "createTexture.h"
 
@@ -35,7 +35,7 @@ public:
 	}
 
 	// render the mesh
-	void Draw(ShaderType shader)
+	void Draw(AV_Shader shader)
 	{
 		// bind appropriate textures
 		unsigned int diffuseNr = 1;

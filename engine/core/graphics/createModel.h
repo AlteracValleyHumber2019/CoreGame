@@ -8,13 +8,14 @@
 
 #include "pav_pch.h"
 #include "model.h"
+#include <stb/stb_image.h>
 #include "createTexture.h"
 #include "createMesh.h"
 #include <string>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
-#include <stb\stb_image.h>
+
 
 using namespace std;
 using namespace pav;
@@ -31,7 +32,7 @@ public:
 	}
 
 	// Draws the model, and thus all its meshes
-	void Draw(ShaderType shader)
+	void Draw(AV_Shader shader)
 	{
 		for (GLuint i = 0; i < this->meshes.size(); i++)
 		{

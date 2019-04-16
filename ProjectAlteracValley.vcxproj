@@ -230,6 +230,7 @@
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\graphics\AV_Shader.h" />
     <ClInclude Include="engine\core\graphics\createMesh.h" />
     <ClInclude Include="engine\core\graphics\createModel.h" />
     <ClInclude Include="engine\core\graphics\createTexture.h" />

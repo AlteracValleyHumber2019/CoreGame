@@ -302,5 +302,8 @@
     <ClInclude Include="engine\core\graphics\createTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\graphics\AV_Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
