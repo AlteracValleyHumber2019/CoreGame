@@ -1,5 +1,6 @@
 ﻿#ifndef GL_SDL_RENDER_MANAGER_H
 #define GL_SDL_RENDER_MANAGER_H
+#include "pav_pch.h"
 #include "../../render_manager.h"
 
 namespace pav
@@ -19,6 +20,10 @@ namespace pav
 		void Initialize() override;
 		void End() override;
 		void Update(const float delta_time) override;
+
+		// timing
+		float deltaTime = 0.0f;
+		float lastFrame = 0.0f;
 	};
 }
 

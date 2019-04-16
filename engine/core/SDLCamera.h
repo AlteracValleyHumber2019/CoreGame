@@ -41,6 +41,7 @@ public:
 	glm::float32 minspeed = 2.0f;
 	glm::float32 deltaTime = 0.0f;// Time between current frame and last frame
 	glm::float32 lastFrame = 0.0f; // Time of last frame
+	glm::float32 zoom = 2.0f; // Time of last frame
 	//Direction
 
 
