@@ -9,6 +9,12 @@ createTexture::createTexture(unsigned int texture_id)
 
 }
 
+createTexture::createTexture()
+{
+
+
+}
+
 createTexture::~createTexture()
 {
 

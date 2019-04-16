@@ -7,7 +7,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "i_shader_program.h"
 #include "vertex.h"
-#include "i_texture.h"
+#include "createTexture.h"
 
 #include <string>
 #include <fstream>
@@ -22,10 +22,10 @@ class createMesh {
 public:
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
-	std::vector<ITexture> textures;
+	std::vector<createTexture> textures;
 	unsigned int VAO;
 
-	createMesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<ITexture> textures)
+	createMesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<createTexture> textures)
 	{
 		this->vertices = vertices;
 		this->indices = indices;

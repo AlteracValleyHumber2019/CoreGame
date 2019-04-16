@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\graphics\createTexture.cpp" />
+    <ClCompile Include="engine\core\graphics\i_texture.cpp" />
     <ClCompile Include="engine\core\SDLCamera.cpp" />
     <ClCompile Include="example\scene\debug_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
@@ -230,6 +232,7 @@
   <ItemGroup>
     <ClInclude Include="engine\core\graphics\createMesh.h" />
     <ClInclude Include="engine\core\graphics\createModel.h" />
+    <ClInclude Include="engine\core\graphics\createTexture.h" />
     <ClInclude Include="engine\core\SDLCamera.h" />
     <ClInclude Include="engine\external\include\glad\glad.h" />
     <ClInclude Include="engine\external\include\KHR\khrplatform.h" />

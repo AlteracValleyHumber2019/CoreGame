@@ -2,21 +2,23 @@
 #define CREATETEXTURE_H
 
 #include "pav_pch.h"
-#include "i_texture.h"
 
 namespace pav {
-	class createTexture : public ITexture
+	class createTexture
 	{
 	private:
 
 
 
 	public:
-
+		createTexture();
 		createTexture(unsigned int texture_id);
 
 		~createTexture();
 
+		unsigned int id;
+		std::string type;
+		std::string path;
 
 
 		void UseTexture()

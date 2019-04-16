@@ -138,6 +138,12 @@
     <ClCompile Include="engine\core\SDLCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\graphics\createTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\graphics\i_texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h">
@@ -291,6 +297,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\graphics\createModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\graphics\createTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

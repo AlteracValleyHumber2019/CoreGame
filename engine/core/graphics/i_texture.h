@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 
-s
+
+namespace pav{
 	class ITexture {
 
 		/**
@@ -19,6 +20,7 @@ s
 		 */
 
 	public:
+		ITexture();
 		ITexture(unsigned int texture_id);
 
 		//[BP] added Variables for textures
