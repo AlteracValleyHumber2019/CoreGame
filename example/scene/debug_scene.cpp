@@ -32,6 +32,7 @@ void DebugScene::Update(const float delta_time)
 	model = glm::translate(model, pos);
 
 	object_->SetModelMatrix(model);
+	object_->SetProjectionMatrix(glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.f));
 	object_->Draw();
 }
 

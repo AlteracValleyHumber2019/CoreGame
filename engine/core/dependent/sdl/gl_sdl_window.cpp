@@ -45,6 +45,8 @@ void pav::GLSDLWindow::SetAsContext()
 		printf("%s \n", "Failed to initialize GLAD");
 		return;
 	}
+
+	glEnable(GL_DEPTH_TEST);
 }
 
 void pav::GLSDLWindow::Update(const float delta_time, SceneManager* manager)

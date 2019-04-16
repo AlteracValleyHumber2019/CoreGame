@@ -34,6 +34,10 @@ pav::GLRenderableObject::GLRenderableObject(ModelResource* model, IShaderResourc
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 		glEnableVertexAttribArray(0);
 
+		// Normal
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+		glEnableVertexAttribArray(1);
+
 		// Unbind
 		glBindVertexArray(NULL);
 
@@ -47,6 +51,8 @@ void pav::GLRenderableObject::Draw()
 	// Use shader
 	shader_program_->UseShader();
 
+	glm::mat4 proj = glm::perspective(60.0f, 4.0f / 3.0f, 0.1f, 100.f);
+	shader_program_->SetShaderTransform("projection", projection_);
 	shader_program_->SetShaderTransform("model", model_);
 
 	// Draw mesh
