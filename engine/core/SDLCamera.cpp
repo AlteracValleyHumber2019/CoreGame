@@ -19,8 +19,6 @@ SDLCamera::SDLCamera(glm::vec3 pos_, glm::vec3 target_, glm::vec3 up_, glm::floa
 	cameraUp = glm::cross(cameraDirection, cameraRight);
 
 	view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-	CheckCameraCreation();
-	ShowPos();
 }
 
 

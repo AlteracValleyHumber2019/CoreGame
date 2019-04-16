@@ -52,7 +52,7 @@ void pav::GLSDLRenderManager::End()
 
 void pav::GLSDLRenderManager::Update(const float delta_time)
 {
-	/* Needs to be properly Implemented [BP]
+	// Needs to be properly Implemented [BP]
 		// render
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -65,5 +65,5 @@ void pav::GLSDLRenderManager::Update(const float delta_time)
 		// render the loaded model
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down*/
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
 }

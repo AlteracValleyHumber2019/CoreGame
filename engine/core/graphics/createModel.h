@@ -7,6 +7,7 @@
 */
 
 #include "pav_pch.h"
+#include <glad\glad.h>
 #include "model.h"
 #include "createTexture.h"
 #include "createMesh.h"
@@ -20,11 +21,16 @@
 using namespace std;
 using namespace pav;
 
+unsigned int TextureFromFile(const char *path, const std::string &directory, bool gamma = false);
+
 class createModel{
 public:
 	 vector<createTexture> textures_loaded;	// stores all the textures loaded so far, optimization to make sure textures aren't loaded more than once.
+	 std::vector<createMesh> meshes;
+	 string directory;
+	 bool gammaCorrection;
 
-	createModel(const char *path)
+	createModel(const char *path, bool gamma = false) : gammaCorrection(gamma)
 	{
 		this->loadModel(path);
 	}
@@ -40,47 +46,50 @@ public:
 
 private:
 
-	std::vector<createMesh> meshes;
-	string directory;
-
 	//Load model
-	void loadModel(string path)
+	void loadModel(string const &path)
 	{
-		Assimp::Importer import;
-		const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
-
-		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+		// read file via ASSIMP
+		Assimp::Importer importer;
+		const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
+		// check for errors
+		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
 		{
-			cout << "ERROR::ASSIMP::" << import.GetErrorString() << endl;
+			cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
 			return;
 		}
+		// retrieve the directory path of the filepath
 		directory = path.substr(0, path.find_last_of('/'));
 
+		// process ASSIMP's root node recursively
 		processNode(scene->mRootNode, scene);
 	}
 
-	//Process all meshes in list
+	// processes a node in a recursive fashion. Processes each individual mesh located at the node and repeats this process on its children nodes (if any).
 	void processNode(aiNode *node, const aiScene *scene)
 	{
-		// process all the node's meshes (if any)
+		// process each mesh located at the current node
 		for (unsigned int i = 0; i < node->mNumMeshes; i++)
 		{
-			aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
+			// the node object only contains indices to index the actual objects in the scene. 
+			// the scene contains all the data, node is just to keep stuff organized (like relations between nodes).
+			aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
 			meshes.push_back(processMesh(mesh, scene));
 		}
-		// then do the same for each of its children
+		// after we've processed all of the meshes (if any) we then recursively process each of the children nodes
 		for (unsigned int i = 0; i < node->mNumChildren; i++)
 		{
 			processNode(node->mChildren[i], scene);
 		}
+
 	}
 
 	createMesh processMesh(aiMesh *mesh, const aiScene *scene)
 	{
-		//Vertex, Indices and texture data
-		std::vector<Vertex> vertices;
-		std::vector<unsigned int> indices;
-		std::vector<createTexture> textures;
+		// data to fill
+		vector<Vertex> vertices;
+		vector<unsigned int> indices;
+		vector<createTexture> textures;
 
 		// Walk through each of the mesh's vertices
 		for (unsigned int i = 0; i < mesh->mNumVertices; i++)
@@ -121,7 +130,7 @@ private:
 			vertex.bitangent = vector;
 			vertices.push_back(vertex);
 		}
-		
+		// now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
 		for (unsigned int i = 0; i < mesh->mNumFaces; i++)
 		{
 			aiFace face = mesh->mFaces[i];
@@ -145,14 +154,15 @@ private:
 		std::vector<createTexture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
 		textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 
-	// return a mesh object created from the extracted mesh data
-	return createMesh(vertices, indices, textures);
+		// return a mesh object created from the extracted mesh data
+		return createMesh(vertices, indices, textures);
 	}
 
-
-	std::vector<createTexture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName)
+	// checks all material textures of a given type and loads the textures if they're not loaded yet.
+	// the required info is returned as a Texture struct.
+	vector<createTexture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
 	{
-		std::vector<createTexture> textures;
+		vector<createTexture> textures;
 		for (unsigned int i = 0; i < mat->GetTextureCount(type); i++)
 		{
 			aiString str;
@@ -171,7 +181,7 @@ private:
 			if (!skip)
 			{   // if texture hasn't been loaded already, load it
 				createTexture texture;
-				texture.id = TextureFromFile(str.C_Str(), this->directory, false);
+				texture.id = TextureFromFile(str.C_Str(), this->directory);
 				texture.type = typeName;
 				texture.path = str.C_Str();
 				textures.push_back(texture);
@@ -180,50 +190,49 @@ private:
 		}
 		return textures;
 	}
-
-
-
-	unsigned int TextureFromFile(const char *path, const std::string &directory, bool gamma)
-	{
-		std::string filename = std::string(path);
-		filename = directory + '/' + filename;
-
-		unsigned int textureID;
-		glGenTextures(1, &textureID);
-
-		int width, height, nrComponents;
-		unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
-		if (data)
-		{
-			GLenum format;
-			if (nrComponents == 1)
-				format = GL_RED;
-			else if (nrComponents == 3)
-				format = GL_RGB;
-			else if (nrComponents == 4)
-				format = GL_RGBA;
-
-			glBindTexture(GL_TEXTURE_2D, textureID);
-			glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-			glGenerateMipmap(GL_TEXTURE_2D);
-
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-			stbi_image_free(data);
-		}
-		else
-		{
-			std::cout << "Texture failed to load at path: " << path << std::endl;
-			stbi_image_free(data);
-		}
-
-		return textureID;
-	}
-
 };
 
 
+unsigned int TextureFromFile(const char *path, const string &directory, bool gamma)
+{
+	string filename = string(path);
+	filename = directory + '/' + filename;
+
+	unsigned int textureID;
+
+	int width, height, nrComponents;
+	unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
+
+	//Stupid Access error
+	glGenTextures(1, &textureID);
+
+	if (data)
+	{
+		GLenum format;
+		if (nrComponents == 1)
+			format = GL_RED;
+		else if (nrComponents == 3)
+			format = GL_RGB;
+		else if (nrComponents == 4)
+			format = GL_RGBA;
+
+		glBindTexture(GL_TEXTURE_2D, textureID);
+		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+		glGenerateMipmap(GL_TEXTURE_2D);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		stbi_image_free(data);
+	}
+	else
+	{
+		std::cout << "Texture failed to load at path: " << path << std::endl;
+		stbi_image_free(data);
+	}
+
+	return textureID;
+}
 #endif
