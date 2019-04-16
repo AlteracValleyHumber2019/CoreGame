@@ -53,6 +53,7 @@ void pav::GLRenderableObject::Draw()
 
 	glm::mat4 proj = glm::perspective(60.0f, 4.0f / 3.0f, 0.1f, 100.f);
 	shader_program_->SetShaderTransform("projection", projection_);
+	shader_program_->SetShaderTransform("view", view_);
 	shader_program_->SetShaderTransform("model", model_);
 
 	// Draw mesh

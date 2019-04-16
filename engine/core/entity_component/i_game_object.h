@@ -209,6 +209,45 @@ namespace pav
 		{
 		}
 	};
+
+	/**
+	 * \class	GameObject
+	 *
+	 * \brief	Default GameObject.
+	 *
+	 * \author	Jaymie
+	 * \date	4/15/2019
+	 */
+	class GameObject : public IGameObject<GameObject>
+	{
+	public:
+		GameObject(std::string&& name) :
+			IGameObject<GameObject>(std::move(name))
+		{
+		}
+
+		~GameObject() = default;
+
+		virtual void Begin() override
+		{
+		}
+
+
+		virtual void End() override
+		{
+		}
+
+
+		virtual void SetupEngineEvents(EventAttorney* event_attorney) override
+		{
+		}
+
+
+		virtual void Update(const float delta_time) override
+		{
+		}
+
+	};
 }
 
 #include "sec_manager.h"

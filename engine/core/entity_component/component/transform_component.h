@@ -77,6 +77,12 @@ namespace pav
 		 */
 		glm::vec3 GetScale() const;
 
+		glm::mat4 GetPosMatrix() const;
+
+		glm::mat4 GetRotMatrix() const;
+
+		glm::mat4 GetScaleMatrix() const;
+
 		/**
 		 * \fn	void TransformComponent::SetPosition(const glm::vec3& pos);
 		 *
