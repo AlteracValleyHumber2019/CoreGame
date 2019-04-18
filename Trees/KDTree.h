@@ -1,5 +1,5 @@
 #pragma once
-#include "QuadNode.h"
+#include "CoordNode.h"
 
 
 namespace pav {
@@ -10,7 +10,7 @@ namespace pav {
 		const int k = 3;
 
 		//the main node of this tree
-		QuadNode<T>* node;
+		CoordNode<T>* node;
 
 		//the depth level, used for determining the dimension
 		int depth;
@@ -20,17 +20,17 @@ namespace pav {
 		KDTree<T>* rightBranch;
 
 		//helper function for comparing if two nodes are at the same position
-		bool ComparePosition(QuadNode<T>* node_);
+		bool ComparePosition(CoordNode<T>* node_);
 
 	public:
 
-		KDTree(QuadNode<T>* node_, int depth_);
+		KDTree(CoordNode<T>* node_, int depth_);
 		~KDTree();
 
 		//fucntion to insert a node into the kdtree
-		void InsertN(QuadNode<T>* node_);
+		void InsertN(CoordNode<T>* node_);
 		//function to find out if there is a node at the same position as the node being passed in, and returns the node
-		QuadNode<T>* FindN(QuadNode<T>* node_);
+		CoordNode<T>* FindN(CoordNode<T>* node_);
 	};
 }
 
