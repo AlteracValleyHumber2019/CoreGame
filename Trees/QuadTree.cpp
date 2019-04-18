@@ -8,7 +8,7 @@ pav::QuadTree<T>::QuadTree() {
 }
 
 template <class T>
-pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_) {
+pav::QuadTree<T>::QuadTree(vector<float> topLB_, vector<float> botRB_) {
 
 	topLBound = topLB_;
 	botRBound = botRB_;
@@ -24,7 +24,7 @@ pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_)
 
 
 template<class T>
-CoordNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {
+CoordNode<T>* pav::QuadTree<T>::Find(vector<float> coord_) {
 	//check if its in the quad
 	if (!inBound(coord_)) {
 		return NULL;
@@ -71,12 +71,12 @@ CoordNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {
 }
 
 template<class T>
-std::vector<CoordNode<T>*> pav::QuadTree<T>::FindInRadius(std::vector<float> coord_, float radius) {
-	return std::vector<CoordNode<T>*>();
+vector<CoordNode<T>*> pav::QuadTree<T>::FindInRadius(vector<float> coord_, float radius) {
+	return vector<CoordNode<T>*>();
 }
 
 template<class T>
-bool pav::QuadTree<T>::inBound(std::vector<float> coord_) {
+bool pav::QuadTree<T>::inBound(vector<float> coord_) {
 	return (coord_[0] >= topLBound[0] && coord_[0] <= botRBound[0] && coord_[1] >= topLBound[1]
 		&& coord_[1] <= botRBound[1]);
 }

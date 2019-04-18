@@ -1,7 +1,5 @@
 #pragma once
-#include <vector>
 #include <iostream>
-
 
 template <class FT>
 class CoordNode;
@@ -35,13 +33,13 @@ namespace pav {
 		QuadTree();
 		QuadTree(vector<float> topLB_, vector<float> botRB_);		
 		//Method to find and return a node in the tree at the given position
-		CoordNode<T>* Find(std::vector<float> coord_);
+		CoordNode<T>* Find(vector<float> coord_);
 		//TODO implement the find In radius function in order to return a vector of all nodes within a certain search radius
-		std::vector<CoordNode<T>*> FindInRadius(std::vector<float> coord_, float radius);
+		vector<CoordNode<T>*> FindInRadius(vector<float> coord_, float radius);
 
 		//helper function to determine if a coordinate is inboundaries of this tree, may have separate applications
 		//outside of being a helper function, leaving it public for now
-		bool inBound(std::vector<float> coord_);
+		bool inBound(vector<float> coord_);
 
 		//helper function to divide a tree when it is necessary to do so, leaving it public for now
 		void Divide();
@@ -68,8 +66,8 @@ namespace pav {
 				return;
 			}
 
-			if (nodes == NULL) {
-				nodes = std::vector<CoordNode<T>*>();
+			if (nodes.empty()) {
+				nodes = vector<CoordNode<T>*>();
 				nodes.push_back(qnode_);
 				std::cout << "Node was Added";
 				return;
