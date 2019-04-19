@@ -7,6 +7,13 @@
 namespace pav {
 	struct Mesh
 	{
+		Mesh() = default;
+
+		Mesh(const Mesh& mesh)
+		{
+			vertices = mesh.vertices;
+			indices = mesh.indices;
+		}
 		/**
 		 * \class	Mesh
 		 *
@@ -20,7 +27,7 @@ namespace pav {
 
 		std::vector<Vertex> vertices;
 		std::unique_ptr<ITexture> texture;
-
+		std::vector<unsigned int> indices;
 	};
 }
 

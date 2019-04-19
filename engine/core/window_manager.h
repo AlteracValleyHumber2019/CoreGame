@@ -4,6 +4,8 @@
 #include "i_manager.h"
 #include "i_window.h"
 
+#include "core/scene_manager.h"
+
 namespace pav
 {
 	/**
@@ -19,6 +21,8 @@ namespace pav
 	private:
 		std::unique_ptr<IWindow> window_;
 
+		SceneManager* scene_manager_;
+
 	public:
 		WindowManager(std::unique_ptr<IWindow>&& window);
 
@@ -26,7 +30,11 @@ namespace pav
 		void End() override;
 		void Update(const float delta_time) override;
 
-		void CreateWindow(WindowInfo&& window_info);
+		void MakeWindow(WindowInfo&& window_info);
+
+		IWindow* GetCurrentWindow();
+
+		void SetSceneManager(SceneManager* manager);
 	};
 }
 

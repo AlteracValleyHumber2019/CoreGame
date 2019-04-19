@@ -24,10 +24,14 @@ namespace pav
 	public:
 		explicit GLSDLWindow();
 
-		void CreateWindow(pav::WindowInfo&& win_info) override;
+		void MakeWindow(pav::WindowInfo&& win_info) override;
 		void DestroyWindow() override;
+		
 		void SetAsContext() override;
-		void Update(const float delta_time) override;
+		void Update(const float delta_time, SceneManager* manager) override;
+
+		virtual WindowType* GetWindow() override;
+
 	};
 }
 

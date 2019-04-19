@@ -1,6 +1,9 @@
 ﻿#ifndef I_WINDOW_H
 #define I_WINDOW_H
 
+#include "util/wrappers/type_wrappers.h"
+#include "scene_manager.h"
+
 namespace pav
 {
 	/**
@@ -67,17 +70,20 @@ namespace pav
 	 */
 	class IWindow
 	{
+	protected:
+		WindowType* window_ptr_;
+
 	public:
 
 		/**
-		 * \fn	virtual void IWindow::CreateWindow() = 0;
+		 * \fn	virtual void IWindow::MakeWindow() = 0;
 		 *
 		 * \brief	Creates a window
 		 *
 		 * \author	Jaymie
 		 * \date	2/2/2019
 		 */
-		virtual void CreateWindow(WindowInfo&& win_info) = 0;
+		virtual void MakeWindow(WindowInfo&& win_info) = 0;
 
 		/**
 		 * \fn	virtual void IWindow::DestroyWindow() = 0;
@@ -109,7 +115,9 @@ namespace pav
 		 *
 		 * \param	delta_time	The delta time.
 		 */
-		virtual void Update(const float delta_time) = 0;
+		virtual void Update(const float delta_time, SceneManager* manager) = 0;
+
+		virtual WindowType* GetWindow() = 0;
 	};
 }
 

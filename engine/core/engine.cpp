@@ -33,10 +33,14 @@ void pav::Engine::InitEngine()
 
 	scene_manager->SetupEngineEvents(event_attorney_.get());
 
-	window_manager->CreateWindow
+	window_manager->MakeWindow
 	(
 		window_info_.Prototype()
 	);
+
+	scene_manager->SetWindowPtr(window_manager->GetCurrentWindow()->GetWindow());
+
+	window_manager->SetSceneManager(scene_manager.get());
 }
 
 void pav::Engine::StartEngine()
@@ -62,7 +66,6 @@ void pav::Engine::Update(const float delta_time)
 {
 	event_manager->Update(delta_time);
 	window_manager->Update(delta_time);
-	scene_manager->Update(delta_time);
 	render_manager->Update(delta_time);
 }
 

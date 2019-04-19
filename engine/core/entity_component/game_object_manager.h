@@ -39,7 +39,7 @@ namespace pav
 			if (game_objects_.find(name) == game_objects_.end())
 			{
 				std::string temp_name(name);
-				game_objects_.insert(std::make_pair(temp_name, std::make_unique<Type>(std::move(temp_name), 0, 0))); // #TODO: Add GameObject GUID and order
+				game_objects_.insert(std::make_pair(temp_name, std::make_unique<Type>(std::move(temp_name)))); // #TODO: Add GameObject GUID and order
 
 				// GameObject begin logic
 				auto go = game_objects_.at(std::move(name)).get();

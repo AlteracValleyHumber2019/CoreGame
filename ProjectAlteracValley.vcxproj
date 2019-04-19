@@ -155,6 +155,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\dependent\opengl\gl_renderable_object.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\gl_shader_resource.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\i_shader_resource.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\model_resource.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\camera_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\CharacterComponent.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\mesh_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\Projectile.cpp" />
+    <ClCompile Include="engine\core\entity_component\system\render_system.cpp" />
+    <ClCompile Include="engine\core\graphics\i_renderable_object.cpp" />
+    <ClCompile Include="engine\core\graphics\i_shader.cpp" />
+    <ClCompile Include="engine\core\graphics\i_shader_program.cpp" />
+    <ClCompile Include="engine\core\graphics\renderable_object_factory.cpp" />
+    <ClCompile Include="engine\core\graphics\shader_program.cpp" />
+    <ClCompile Include="engine\core\util\wrappers\type_wrappers.cpp" />
     <ClCompile Include="engine\ServerCommands\Data_Manager.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Box_Component.cpp" />
     <ClCompile Include="engine\core\entity_component\component\Capsule_Component.cpp" />
@@ -186,6 +203,7 @@
     <ClCompile Include="engine\ServerCommands\move_command.cpp" />
     <ClCompile Include="engine\Skills\ISkill.cpp" />
     <ClCompile Include="example\example_main.cpp" />
+    <ClCompile Include="example\scene\debug_scene.cpp" />
     <ClCompile Include="example\scene\example_scene.cpp" />
     <ClCompile Include="engine\pav_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -205,6 +223,25 @@
     <ClCompile Include="engine\ServerCommands\i_Server_Command.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\dependent\opengl\gl_renderable_object.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
+    <ClInclude Include="engine\core\dependent\resource\gl_shader_resource.h" />
+    <ClInclude Include="engine\core\dependent\resource\i_shader_resource.h" />
+    <ClInclude Include="engine\core\dependent\resource\model_resource.h" />
+    <ClInclude Include="engine\core\entity_component\component\camera_component.h" />
+    <ClInclude Include="engine\core\entity_component\component\CharacterComponent.h" />
+    <ClInclude Include="engine\core\entity_component\component\mesh_component.h" />
+    <ClInclude Include="engine\core\entity_component\component\Projectile.h" />
+    <ClInclude Include="engine\core\entity_component\system\render_system.h" />
+    <ClInclude Include="engine\core\graphics\i_renderable_object.h" />
+    <ClInclude Include="engine\core\graphics\i_shader.h" />
+    <ClInclude Include="engine\core\graphics\i_shader_program.h" />
+    <ClInclude Include="engine\core\graphics\material.h" />
+    <ClInclude Include="engine\core\graphics\renderable_object_factory.h" />
+    <ClInclude Include="engine\core\graphics\shader_common.h" />
+    <ClInclude Include="engine\core\graphics\shader_program.h" />
+    <ClInclude Include="engine\core\util\wrappers\type_wrappers.h" />
     <ClInclude Include="engine\ServerCommands\Data_Manager.h" />
     <ClInclude Include="engine\core\entity_component\component\Box_Component.h" />
     <ClInclude Include="engine\core\entity_component\component\Capsule_Component.h" />
@@ -242,6 +279,7 @@
     <ClInclude Include="engine\ServerCommands\invoke_skill_command.h" />
     <ClInclude Include="engine\ServerCommands\move_command.h" />
     <ClInclude Include="engine\Skills\ISkill.h" />
+    <ClInclude Include="example\scene\debug_scene.h" />
     <ClInclude Include="example\scene\example_scene.h" />
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />

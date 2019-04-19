@@ -16,10 +16,21 @@ void pav::WindowManager::End()
 
 void pav::WindowManager::Update(const float delta_time)
 {
+	window_->Update(delta_time, scene_manager_);
 }
 
-void pav::WindowManager::CreateWindow(WindowInfo&& window_info)
+void pav::WindowManager::MakeWindow(WindowInfo&& window_info)
 {
-	window_->CreateWindow(std::move(window_info));
+	window_->MakeWindow(std::move(window_info));
 	window_->SetAsContext();
+}
+
+pav::IWindow* pav::WindowManager::GetCurrentWindow()
+{
+	return window_.get();
+}
+
+void pav::WindowManager::SetSceneManager(SceneManager* manager)
+{
+	scene_manager_ = manager;
 }

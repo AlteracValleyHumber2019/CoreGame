@@ -40,7 +40,7 @@ void pav::SDLEventManager::End()
 void pav::SDLEventManager::Update(const float delta_time)
 {
 	SDL_Event event;
-	while (SDL_WaitEvent(&event) != 0)
+	while (SDL_PollEvent(&event))
 	{
 		switch (event.type)
 		{

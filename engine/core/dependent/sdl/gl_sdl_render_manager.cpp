@@ -12,22 +12,35 @@ pav::IRenderer* pav::GLSDLRenderManager::CreateRenderer()
 void pav::GLSDLRenderManager::Initialize()
 {
 	// Init SDL
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 	{
-		// TODO: Invoke assert
-		printf(SDL_GetError());
-		return;
+		PAV_ASSERT(false, SDL_GetError());
 	}
 
-	// OpenGL 4.0
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+	int res = 0;
+
+	res = SDL_GL_LoadLibrary(NULL);
+	PAV_ASSERT(res == 0, "Could not set OpenGL Libary");
+
+	// OpenGL 4.3
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, 0);
+
+	res = SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+	PAV_ASSERT(res == 0, "Error");
+
+	res = SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+	PAV_ASSERT(res == 0, "Error");
+
+	res = SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+	PAV_ASSERT(res == 0, "Error");
 
 	// Set to core profile
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	res = SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	PAV_ASSERT(res == 0, "Error");
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1); // Enable double buffer
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 32);  // Enable 32bit z buffer
+	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);  // Enable 24bit z buffer
+	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 }
 
 void pav::GLSDLRenderManager::End()
