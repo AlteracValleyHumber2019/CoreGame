@@ -11,12 +11,13 @@ class DebugScene : public pav::IScene
 {
 private:
 	WindowType* win;
-
 	std::unique_ptr<pav::ModelResource> model_res_;
+	std::unique_ptr<pav::ModelResource> model_res_projectile;
 
 	std::unique_ptr<pav::IShaderResource> shader_res_;
 
 	std::unique_ptr<pav::GLRenderableObject> object_;
+	std::unique_ptr<pav::GLRenderableObject> object_Projectile;
 
 public:
 
