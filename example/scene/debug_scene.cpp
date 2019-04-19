@@ -67,6 +67,8 @@ void DebugScene::Update(const float delta_time)
 	object_Projectile->SetModelMatrix(model);
 
 	cam_comp->UpdateCamera();
+	bool s = false;
+	if(s)
 	cam_comp2->UpdateCamera();
 
 	glm::vec3 cam_pos = glm::vec3((trans_comp->GetPosMatrix() * trans_comp->GetRotMatrix() * trans_comp->GetScaleMatrix()) * glm::vec4(0.f, 0.f, 0.f, 1.f));

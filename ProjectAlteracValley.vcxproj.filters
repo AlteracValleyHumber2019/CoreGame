@@ -153,9 +153,6 @@
     <ClCompile Include="engine\core\entity_component\component\mesh_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\entity_component\component\Projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\core\entity_component\system\render_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -330,9 +327,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\entity_component\component\mesh_component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\core\entity_component\component\Projectile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\entity_component\system\render_system.h">

@@ -164,7 +164,6 @@
     <ClCompile Include="engine\core\entity_component\component\camera_component.cpp" />
     <ClCompile Include="engine\core\entity_component\component\CharacterComponent.cpp" />
     <ClCompile Include="engine\core\entity_component\component\mesh_component.cpp" />
-    <ClCompile Include="engine\core\entity_component\component\Projectile.cpp" />
     <ClCompile Include="engine\core\entity_component\system\render_system.cpp" />
     <ClCompile Include="engine\core\graphics\i_renderable_object.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
@@ -232,7 +231,6 @@
     <ClInclude Include="engine\core\entity_component\component\camera_component.h" />
     <ClInclude Include="engine\core\entity_component\component\CharacterComponent.h" />
     <ClInclude Include="engine\core\entity_component\component\mesh_component.h" />
-    <ClInclude Include="engine\core\entity_component\component\Projectile.h" />
     <ClInclude Include="engine\core\entity_component\system\render_system.h" />
     <ClInclude Include="engine\core\graphics\i_renderable_object.h" />
     <ClInclude Include="engine\core\graphics\i_shader.h" />
