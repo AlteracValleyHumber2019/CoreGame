@@ -3,6 +3,14 @@
 
 #include "entity_component/character.h"
 #include <iostream>
+
+#include <NetworkLibrary/NetworkLib/NetworkLib/UDP_Client.h>
+#include <NetworkLibrary/NetworkLib/NetworkLib/TCP_Client.h>
+#include <NetworkLibrary/NetworkLib/NetworkLib/TCP_Server.h>
+#include <NetworkLibrary/NetworkLib/NetworkLib/UDP_Server.h>
+#include <NetworkLibrary/NetworkLib/NetworkLib/sha256.h>
+#include <NetworkLibrary/NetworkLib/NetworkLib/DatabaseConnection.h>
+
 namespace pav
 {
 	/**

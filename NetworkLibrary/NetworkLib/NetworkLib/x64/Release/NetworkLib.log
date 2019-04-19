@@ -1,0 +1,5 @@
+﻿  DatabaseFuncs.cpp
+SDL2_net.lib(SDL2_net.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2.lib(SDL2.dll); second definition ignored
+mysqlcppconn.lib(mysqlcppconn.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2.lib(SDL2.dll); second definition ignored
+libmysql.lib(libmysql.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2.lib(SDL2.dll); second definition ignored
+  NetworkLib.vcxproj -> C:\Users\Landon\Documents\GitHub\CoreGame\x64\Release\NetworkLib.lib

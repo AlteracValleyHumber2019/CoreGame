@@ -141,17 +141,19 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pav_pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)engine\;$(ProjectDir)engine\external\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)engine\;$(ProjectDir)engine\external\include\;$(SolutionDir)NetworkLib\;$(SolutionDir)SQL\MySQL Connector C++ 1.1.12\include;$(SolutionDir)SQL\MySQL Server 8.0\include;$(SolutionDir)SDK\SDL2-2.0.8\include;$(SolutionDir)SDK\SDL_Net\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)SQL\MySQL Connector C++ 1.1.12\lib\opt;$(SolutionDir)SDK\SDL2-2.0.8\lib\x64;$(SolutionDir)SDK\SDL_Net\lib\x64;$(SolutionDir)SQL\MySQL Server 8.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_net.lib;mysqlcppconn.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -228,6 +230,11 @@
     <ClInclude Include="engine\core\eea\pav_assert.h" />
     <ClInclude Include="engine\core\entity_component\component\stat_component.h" />
     <ClInclude Include="engine\core\GameState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NetworkLibrary\NetworkLib\NetworkLib\NetworkLib.vcxproj">
+      <Project>{9b0d9aaa-dc93-4e69-a3c6-01e001bea3e6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

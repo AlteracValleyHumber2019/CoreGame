@@ -1,0 +1,22 @@
+﻿  DatabaseFuncs.cpp
+  sha256.cpp
+c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\networklib\networklib\sha256.cpp(124): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  TCP_Client.cpp
+  TCP_Server.cpp
+  UDP_Client.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(301): warning C4005: 'INADDR_ANY': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(102): note: see previous definition of 'INADDR_ANY'
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(303): warning C4005: 'INADDR_BROADCAST': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(111): note: see previous definition of 'INADDR_BROADCAST'
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(304): warning C4005: 'INADDR_NONE': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(105): note: see previous definition of 'INADDR_NONE'
+c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  UDP_Server.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(301): warning C4005: 'INADDR_ANY': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(102): note: see previous definition of 'INADDR_ANY'
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(303): warning C4005: 'INADDR_BROADCAST': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(111): note: see previous definition of 'INADDR_BROADCAST'
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(304): warning C4005: 'INADDR_NONE': macro redefinition
+  c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\sdk\sdl_net\include\sdl_net.h(105): note: see previous definition of 'INADDR_NONE'
+c:\users\landon\documents\github\coregame\networklibrary\networklibimplementationex\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+LINK : fatal error LNK1181: cannot open input file 'libmysql.lib'
