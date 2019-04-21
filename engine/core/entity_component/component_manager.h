@@ -70,6 +70,9 @@ namespace pav
 			}
 		}
 
+		template <typename C>
+		inline IComponentBase* GetComponent(const size_t index = 0);
+
 		/**
 		 * \fn	void GameObjectManager::SetupEngineEvents(EventAttorney* event_attorney);
 		 *
@@ -107,6 +110,25 @@ pav::IComponentBase* pav::ComponentManager::AddComponent(IGameObjectBase* owner,
 	comp->Begin(); // Calling component begin logic
 
 	return comp;
+}
+
+template <typename C>
+pav::IComponentBase* pav::ComponentManager::GetComponent(const size_t index /*= 0*/)
+{
+	// Get id
+	unsigned int id = GUID<IComponentBase>::GetID<C>();
+
+	// If we have Component of type C
+	if (components_.find(id) != components_.end())
+	{
+		auto& std_vec = components_.at(id);
+
+		// If index is not dumb
+		if (index < std_vec.size())
+		{
+			return std_vec.at(index).get();
+		}
+	}
 }
 
 #endif // COMPONENT_MANAGER_H

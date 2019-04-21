@@ -22,13 +22,12 @@ namespace pav
 	 */
 	class SECManager
 	{
-	private:
+	public:
 		std::unique_ptr<GameObjectManager> game_object_manager_;
 		std::unique_ptr<ComponentManager> component_manager_;
 
 		EventAttorney* event_attorny_;
 
-	public:
 		SECManager();
 
 		/**

@@ -58,6 +58,8 @@ namespace pav
 		 * \param 	  	order	The order.
 		 */
 		IGameObjectBase(std::string&& name, const unsigned int guid, const unsigned int order = 0);
+
+		class SECManager* GetManager();
 		
 		/** \name Getters
 		 */
@@ -256,6 +258,25 @@ template <typename C, typename... Args>
 pav::IComponentBase* pav::IGameObjectBase::AddComponent(Args&& ...args)
 {
 	return manager_->AddComponent<C>(this, std::forward<Args>(args)...);
+}
+
+template <typename C>
+pav::IComponentBase* pav::IGameObjectBase::GetComponent(const size_t index /*= 0*/)
+{
+	// Get id
+	unsigned int id = GUID<IComponentBase>::GetID<C>();
+
+	// If we have Component of type C
+	if (components_.find(id) != components_.end())
+	{
+		auto& std_vec = components_.at(id);
+
+		// If index is not dumb
+		if (index < std_vec.size())
+		{
+			return std_vec.at(index);
+		}
+	}
 }
 
 #endif // I_GAME_OBJECT_H

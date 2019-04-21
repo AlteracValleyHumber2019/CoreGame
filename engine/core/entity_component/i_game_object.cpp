@@ -2,6 +2,7 @@
 #include "i_game_object.h"
 
 #include "i_component.h"
+#include "sec_manager.h"
 
 pav::IGameObjectBase::IGameObjectBase(std::string&& name, const unsigned int guid, const unsigned int order) :
 	name_(name),
@@ -9,6 +10,11 @@ pav::IGameObjectBase::IGameObjectBase(std::string&& name, const unsigned int gui
 	parent_(nullptr),
 	order_(order)
 {
+}
+
+class pav::SECManager* pav::IGameObjectBase::GetManager()
+{
+	return manager_;
 }
 
 void pav::IGameObjectBase::Update(const float delta_time)

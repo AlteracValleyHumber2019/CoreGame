@@ -8,12 +8,13 @@
 
 namespace pav
 {
-	class MeshComponent : IComponent<MeshComponent, 3>
+	class MeshComponent : public IComponent<MeshComponent, 3>
 	{
 	private:
 		std::unique_ptr<IRenderableObject> renderable_object_;
 
 	public:
+		MeshComponent(IGameObjectBase* owner);
 
 		virtual void Update(const float delta_time) override;
 

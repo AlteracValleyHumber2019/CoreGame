@@ -220,6 +220,7 @@
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="engine\ServerCommands\i_Server_Command.cpp" />
+    <ClCompile Include="example\scene\mvp_scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\dependent\opengl\gl_renderable_object.h" />
@@ -282,6 +283,7 @@
     <ClInclude Include="engine\core\entity_component\component\transform_component.h" />
     <ClInclude Include="engine\core\eea\pav_assert.h" />
     <ClInclude Include="engine\ServerCommands\i_Server_Command.h" />
+    <ClInclude Include="example\scene\mvp_scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
