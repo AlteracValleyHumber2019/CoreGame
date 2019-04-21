@@ -24,11 +24,11 @@ void pav::MeshComponent::Update(const float delta_time)
 	// View Matrix
 	cam->UpdateCamera();
 	TransformComponent* cam_trans = dynamic_cast<TransformComponent*>(cam->GetOwner()->GetComponent<TransformComponent>());
-	glm::vec3 cam_pos = glm::vec3((cam_trans->GetPosMatrix() * cam_trans->GetRotMatrix() * cam_trans->GetScaleMatrix()) * glm::vec4(0.f, 0.f, 0.f, 1.f));
+	glm::vec3 cam_pos = glm::vec3((cam_trans->GetPosMatrix() * cam_trans->GetRotMatrix() * cam->GetOffset() *  cam_trans->GetScaleMatrix()) * glm::vec4(0.f, 0.f, 0.f, 1.f));
 	glm::mat4 view =glm::lookAt(cam_pos, cam_pos + cam->GetFront(), cam->GetUp());
 
 	// Projection Matrix
-	glm::mat4 projection = glm::perspective(95.0f, 800.f / 600.0f, 0.1f, 1000.f);
+	glm::mat4 projection = glm::perspective(95.0f, 800.f / 600.0f, 0.1f, 10000.f);
 
 	// Set
 	renderable_object_->SetModelMatrix(model);

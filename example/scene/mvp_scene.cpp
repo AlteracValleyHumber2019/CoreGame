@@ -20,6 +20,7 @@ void MVPScene::BeginScene(WindowType* window)
 	go_d_cam_transform_->SetScale(glm::vec3(1.f, 1.f, 1.f));
 	// Camera comp
 	go_d_cam_comp_ = dynamic_cast<pav::CameraComponent*>(GetSECManager()->AddComponent<pav::CameraComponent>(go_d_cam_));
+	go_d_cam_comp_->SetOffset(glm::vec3(0.f, 105.f, 155.f));
 
 	// Plane
 	pav::ModelLoadInfo info_plane;
@@ -29,7 +30,7 @@ void MVPScene::BeginScene(WindowType* window)
 	// Player
 	pav::ModelLoadInfo info_player;
 	info_player.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
-	go_player_client_model_->Load("assets/models/fml.obj", std::move(info_player));
+	go_player_client_model_->Load("assets/models/Player.obj", std::move(info_player));
 
 	// Plane
 	go_plane_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_plane"));
@@ -46,8 +47,8 @@ void MVPScene::BeginScene(WindowType* window)
 	go_player_client_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_player_client"));
 	// Player client components
 	go_player_client_transform_ = dynamic_cast<pav::TransformComponent*>(GetSECManager()->AddComponent<pav::TransformComponent>(go_player_client_));
-	go_player_client_transform_->SetPosition(glm::vec3(0.f, 0.f, 0.f));
-	go_player_client_transform_->SetScale(glm::vec3(.5f, .5f, .5f));
+	go_player_client_transform_->SetPosition(glm::vec3(0.f, 50.f, 0.f));
+	go_player_client_transform_->SetScale(glm::vec3(.1f, .1f, .1f));
 	// Player mesh
 	go_player_client_mesh_ = dynamic_cast<pav::MeshComponent*>(GetSECManager()->AddComponent<pav::MeshComponent>(go_player_client_));
 	go_player_client_mesh_->LoadMeshData(go_player_client_model_.get(), generic_shader_.get());
@@ -61,6 +62,8 @@ void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 
 void MVPScene::Update(const float delta_time)
 {
+	go_d_cam_transform_->SetPosition(go_player_client_transform_->GetPosition());
+
 	go_plane_mesh_->Update(delta_time);
 	go_player_client_mesh_->Update(delta_time);
 }
@@ -70,16 +73,16 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 	switch (keycode)
 	{
 	case pav::KEY_A:
-		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
+		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_D:
-		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
+		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_W:
-		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + go_d_cam_comp_->GetFront() * 5.f);
+		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(0, 0, 1) * 5.f);
 		break;
 	case pav::KEY_S:
-		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() - go_d_cam_comp_->GetFront() *5.f);
+		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(0, 0, -1) *5.f);
 		break;
 	case pav::KEY_E:
 		go_d_cam_comp_->SetYaw(go_d_cam_comp_->GetYaw() - 1);

@@ -15,6 +15,18 @@ void pav::CameraComponent::UpdateCamera()
 	camera_up_ = glm::normalize(glm::cross(camera_right_, camera_front_));
 }
 
+void pav::CameraComponent::SetOffset(glm::vec3 offset)
+{
+	offset_ = offset;
+}
+
+glm::mat4 pav::CameraComponent::GetOffset() const
+{
+	glm::mat4 off(1.f);
+	off = glm::translate(off, offset_);
+	return off;
+}
+
 void pav::CameraComponent::Update(const float delta_time)
 {
 }

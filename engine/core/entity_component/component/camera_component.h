@@ -14,6 +14,8 @@ namespace pav
 
 		glm::vec3 camera_right_, camera_up_, camera_front_;
 
+		glm::vec3 offset_;
+
 	public:
 		CameraComponent(IGameObjectBase* owner) :
 			IComponent<CameraComponent, 1>(owner),
@@ -21,7 +23,8 @@ namespace pav
 			pitch_(0.f),
 			camera_right_(0.f),
 			camera_up_(0.f),
-			camera_front_(glm::vec3(0.f, 0.f, -1.f))
+			camera_front_(glm::vec3(0.f, 0.f, -1.f)),
+			offset_(0.f)
 		{
 		}
 
@@ -38,6 +41,10 @@ namespace pav
 		void SetPitch(const float value);
 
 		void UpdateCamera();
+
+		void SetOffset(glm::vec3 offset);
+
+		glm::mat4 GetOffset() const;
 	};
 }
 
