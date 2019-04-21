@@ -24,8 +24,8 @@ private:
 	pav::TransformComponent* go_plane_transform_;
 	pav::MeshComponent* go_plane_mesh_;
 	std::unique_ptr<pav::ModelResource> go_plane_model_;
-	
 
+	void OnKeyHold(pav::KeyCode keycode);
 public:
 
 	virtual void BeginScene(WindowType* window) override;

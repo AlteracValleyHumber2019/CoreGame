@@ -257,7 +257,9 @@ namespace pav
 template <typename C, typename... Args>
 pav::IComponentBase* pav::IGameObjectBase::AddComponent(Args&& ...args)
 {
-	return manager_->AddComponent<C>(this, std::forward<Args>(args)...);
+	auto comp = manager_->AddComponent<C>(this, std::forward<Args>(args)...);
+	components_.insert(std::make_pair(comp->GetGUID(), comp));
+	return comp;
 }
 
 template <typename C>

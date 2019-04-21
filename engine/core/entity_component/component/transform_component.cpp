@@ -43,6 +43,9 @@ void pav::TransformComponent::SetScale(const glm::vec3& scale)
 pav::TransformComponent::TransformComponent(IGameObjectBase* owner) :
 	IComponent<TransformComponent, 0>::IComponent(owner)
 {
+	SetPosition(glm::vec3(0.f, 0.f, 0.f));
+	SetRotation(glm::vec3(0.f, 0.f, 0.f), 0.f);
+	SetScale(glm::vec3(1.f, 1.f, 1.f));
 }
 
 void pav::TransformComponent::Begin()

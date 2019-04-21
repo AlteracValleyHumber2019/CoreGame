@@ -142,7 +142,14 @@ pav::IGameObjectBase* pav::SECManager::AddGameObject(std::string&& name, IGameOb
 template <typename C, typename ...Args>
 pav::IComponentBase* pav::SECManager::AddComponent(IGameObjectBase* owner, Args&& ...args)
 {
-	return component_manager_->AddComponent<C>(owner, std::forward<Args>(args)...);
+	auto comp = component_manager_->AddComponent<C>(owner, std::forward<Args>(args)...);
+	if (owner->components_.find(comp->GetGUID()) == owner->components_.end())
+	{
+		owner->components_.insert(std::make_pair(comp->GetGUID(), std::vector<IComponentBase*>()));
+	}
+
+	owner->components_.at(comp->GetGUID()).emplace_back(comp);
+	return comp;
 }
 
 template <typename C>

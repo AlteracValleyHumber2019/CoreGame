@@ -2,7 +2,7 @@
 
 #include "pav_pch.h"
 #include "engine/core/engine.h"
-#include "scene/debug_scene.h"
+#include "scene/mvp_scene.h"
 
 int main(int argc, char* argv[])
 {
@@ -11,8 +11,8 @@ int main(int argc, char* argv[])
 	engine->SetWindowInfo({ 800, 600, 100, 100, "Project Alterac Valley" });
 	engine->InitEngine();
 
-	engine->scene_manager->AddScene("debug_scene", std::make_unique<DebugScene>());
-	engine->scene_manager->SwitchScene("debug_scene");
+	engine->scene_manager->AddScene("mvp_scene", std::make_unique<MVPScene>());
+	engine->scene_manager->SwitchScene("mvp_scene");
 
 	engine->StartEngine();
 

@@ -15,7 +15,7 @@ void MVPScene::BeginScene(WindowType* window)
 	go_d_cam_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_camera"));
 	// Debug camera components
 	go_d_cam_transform_ = dynamic_cast<pav::TransformComponent*>(GetSECManager()->AddComponent<pav::TransformComponent>(go_d_cam_));
-	go_d_cam_transform_->SetPosition(glm::vec3(0.f, 0.f, 0.f));
+	go_d_cam_transform_->SetPosition(glm::vec3(0.f, 20.f, 0.f));
 	go_d_cam_transform_->SetScale(glm::vec3(1.f, 1.f, 1.f));
 	// Camera comp
 	go_d_cam_comp_ = dynamic_cast<pav::CameraComponent*>(GetSECManager()->AddComponent<pav::CameraComponent>(go_d_cam_));
@@ -33,15 +33,58 @@ void MVPScene::BeginScene(WindowType* window)
 	go_plane_transform_->SetScale(glm::vec3(10.f, 10.f, 10.f));
 	// Plane Mesh
 	go_plane_mesh_ = dynamic_cast<pav::MeshComponent*>(GetSECManager()->AddComponent<pav::MeshComponent>(go_plane_));
+	go_plane_mesh_->LoadMeshData(go_plane_model_.get(), generic_shader_.get());
 	// Mesh data
 	
 }
 
 void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 {
+	event_attorney->on_key_hold->Connect(this, &MVPScene::OnKeyHold);
 }
 
 void MVPScene::Update(const float delta_time)
 {
 	go_plane_mesh_->Update(delta_time);
+}
+
+void MVPScene::OnKeyHold(pav::KeyCode keycode)
+{
+	switch (keycode)
+	{
+	case pav::KEY_A:
+		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
+		break;
+	case pav::KEY_D:
+		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
+		break;
+	case pav::KEY_W:
+		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() + go_d_cam_comp_->GetFront() * 5.f);
+		break;
+	case pav::KEY_S:
+		go_d_cam_transform_->SetPosition(go_d_cam_transform_->GetPosition() - go_d_cam_comp_->GetFront() *5.f);
+		break;
+	case pav::KEY_E:
+		go_d_cam_comp_->SetYaw(go_d_cam_comp_->GetYaw() - 1);
+		break;
+	case pav::KEY_Q:
+		go_d_cam_comp_->SetYaw(go_d_cam_comp_->GetYaw() + 1);
+		break;
+	case pav::KEY_Z:
+	{
+		float new_val = go_d_cam_comp_->GetPitch() + 1;
+		if (new_val > 90) new_val = 90;
+
+		go_d_cam_comp_->SetPitch(new_val);
+	}
+	break;
+	case pav::KEY_X:
+	{
+		float new_val = go_d_cam_comp_->GetPitch() - 1;
+		if (new_val < -90) new_val = -90;
+
+		go_d_cam_comp_->SetPitch(new_val);
+	}
+	break;
+	}
 }
