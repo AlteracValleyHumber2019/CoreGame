@@ -25,6 +25,12 @@ private:
 	pav::MeshComponent* go_plane_mesh_;
 	std::unique_ptr<pav::ModelResource> go_plane_model_;
 
+	// Player client
+	pav::GameObject* go_player_client_;
+	pav::TransformComponent* go_player_client_transform_;
+	pav::MeshComponent* go_player_client_mesh_;
+	std::unique_ptr<pav::ModelResource> go_player_client_model_;
+
 	void OnKeyHold(pav::KeyCode keycode);
 public:
 

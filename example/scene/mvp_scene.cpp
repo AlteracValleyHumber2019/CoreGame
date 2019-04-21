@@ -6,6 +6,7 @@ void MVPScene::BeginScene(WindowType* window)
 {
 	// Resource loading
 	go_plane_model_ = std::make_unique<pav::ModelResource>();
+	go_player_client_model_ = std::make_unique<pav::ModelResource>();
 
 	// Generic shader
 	generic_shader_ = std::make_unique<pav::GLShaderResource>();
@@ -25,6 +26,11 @@ void MVPScene::BeginScene(WindowType* window)
 	info_plane.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
 	go_plane_model_->Load("assets/models/Terrain.obj", std::move(info_plane));
 
+	// Player
+	pav::ModelLoadInfo info_player;
+	info_player.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
+	go_player_client_model_->Load("assets/models/fml.obj", std::move(info_player));
+
 	// Plane
 	go_plane_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_plane"));
 	// Plane Components
@@ -36,6 +42,16 @@ void MVPScene::BeginScene(WindowType* window)
 	go_plane_mesh_->LoadMeshData(go_plane_model_.get(), generic_shader_.get());
 	// Mesh data
 	
+	// Player client
+	go_player_client_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_player_client"));
+	// Player client components
+	go_player_client_transform_ = dynamic_cast<pav::TransformComponent*>(GetSECManager()->AddComponent<pav::TransformComponent>(go_player_client_));
+	go_player_client_transform_->SetPosition(glm::vec3(0.f, 0.f, 0.f));
+	go_player_client_transform_->SetScale(glm::vec3(.5f, .5f, .5f));
+	// Player mesh
+	go_player_client_mesh_ = dynamic_cast<pav::MeshComponent*>(GetSECManager()->AddComponent<pav::MeshComponent>(go_player_client_));
+	go_player_client_mesh_->LoadMeshData(go_player_client_model_.get(), generic_shader_.get());
+	
 }
 
 void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
@@ -46,6 +62,7 @@ void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 void MVPScene::Update(const float delta_time)
 {
 	go_plane_mesh_->Update(delta_time);
+	go_player_client_mesh_->Update(delta_time);
 }
 
 void MVPScene::OnKeyHold(pav::KeyCode keycode)
