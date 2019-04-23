@@ -80,9 +80,7 @@ void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 
 void MVPScene::Update(const float delta_time)
 {
-	go_d_cam_transform_->SetPosition(go_player_client_transform_->GetPosition());
 	
-
 	go_plane_mesh_->Update(delta_time);
 	go_player_client_mesh_->Update(delta_time);
 	go_player_client_mesh_2->Update(delta_time);	
@@ -105,7 +103,7 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 	case pav::KEY_S:
 		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(0, 0, -1) *5.f);
 		break;
-	case pav::KEY_L:
+	case pav::KEY_J:
 		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_O:
@@ -126,14 +124,14 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 			printf("player2Tagged");
 		}
 		break;
-	case pav::KEY_J:
+	case pav::KEY_L:
 		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_K:
-		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, 1) * 5.f);
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, -1) * 5.f);
 		break;
 	case pav::KEY_I:
-		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, -1) *5.f);
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, 1) *5.f);
 		break;
 	case pav::KEY_E:
 		go_d_cam_comp_->SetYaw(go_d_cam_comp_->GetYaw() - 1);
