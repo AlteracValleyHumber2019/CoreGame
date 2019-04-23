@@ -4,7 +4,7 @@
 #include "pav_pch.h"
 
 namespace pav {
-	class createTexture
+	struct createTexture
 	{
 	private:
 

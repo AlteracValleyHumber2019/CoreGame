@@ -8,6 +8,7 @@
 
 #include "pav_pch.h"
 #include <glad\glad.h>
+#include <glfw\glfw3.h>
 #include "model.h"
 #include "createTexture.h"
 #include "createMesh.h"
@@ -30,19 +31,18 @@ public:
 	 string directory;
 	 bool gammaCorrection;
 
-	createModel(const char *path, bool gamma = false) : gammaCorrection(gamma)
-	{
-		this->loadModel(path);
-	}
+	 createModel(string const &path, bool gamma = false) : gammaCorrection(gamma)
+	 {
+		 loadModel(path);
+	 }
+
 
 	// Draws the model, and thus all its meshes
 	void Draw(AV_Shader shader)
 	{
-		for (GLuint i = 0; i < this->meshes.size(); i++)
-		{
-			this->meshes[i].Draw(shader);
-		}
-	}
+        for(unsigned int i = 0; i < meshes.size(); i++)
+            meshes[i].Draw(shader);
+    }
 
 private:
 
@@ -198,13 +198,17 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 	string filename = string(path);
 	filename = directory + '/' + filename;
 
-	unsigned int textureID;
+
 
 	int width, height, nrComponents;
 	unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
 
+	unsigned int textureID;
 	//Stupid Access error
-	glGenTextures(1, &textureID);
+ 	glGenTextures(1, &textureID);
+
+
+	
 
 	if (data)
 	{
