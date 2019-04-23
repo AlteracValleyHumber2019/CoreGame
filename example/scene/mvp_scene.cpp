@@ -109,9 +109,8 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
 		break;
 	case pav::KEY_O:
-		if (go_player_client_transform_->GetPosition().x <= go_player_client_transform_2->GetPosition().x
-			&& go_player_client_transform_->GetPosition().y <= go_player_client_transform_2->GetPosition().y
-			&& go_player_client_transform_->GetPosition().z <= go_player_client_transform_2->GetPosition().z && isP2Tagged)
+		if (go_player_client_transform_->GetPosition().x >= go_player_client_transform_2->GetPosition().x
+			&& go_player_client_transform_->GetPosition().z >= go_player_client_transform_2->GetPosition().z && isP2Tagged)
 		{
 			isP2Tagged = false;
 			isP1Tagged = true;
@@ -119,9 +118,8 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 		}
 		break;
 	case pav::KEY_F:
-		if (go_player_client_transform_2->GetPosition().x <= go_player_client_transform_->GetPosition().x
-			&& go_player_client_transform_2->GetPosition().y <= go_player_client_transform_->GetPosition().y
-			&& go_player_client_transform_2->GetPosition().z <= go_player_client_transform_->GetPosition().z && isP1Tagged)
+		if (go_player_client_transform_2->GetPosition().x >= go_player_client_transform_->GetPosition().x
+			&& go_player_client_transform_2->GetPosition().z >= go_player_client_transform_->GetPosition().z && isP1Tagged)
 		{
 			isP2Tagged = true;
 			isP1Tagged = false;
