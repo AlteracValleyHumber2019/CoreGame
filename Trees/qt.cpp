@@ -1,4 +1,5 @@
-#include "pav_pch.h"
+/*#include "pav_pch.h"
+#include "QuadTree.h"
 
 template <class T>
 pav::QuadTree<T>::QuadTree() {
@@ -185,3 +186,6 @@ void pav::QuadTree<T>::Divide() {
 	divided = true;
 	nodes.clear();
 }
+
+template class pav::QuadTree<int>;
+template class pav::QuadTree<float>;*/

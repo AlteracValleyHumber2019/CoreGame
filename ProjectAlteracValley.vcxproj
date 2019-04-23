@@ -197,9 +197,7 @@
     <ClCompile Include="engine\core\resource_system\resource.cpp" />
     <ClCompile Include="engine\core\entity_component\component\transform_component.cpp" />
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
-    <ClCompile Include="Trees\KDTree.cpp" />
     <ClCompile Include="Trees\CoordNode.cpp" />
-    <ClCompile Include="Trees\QuadTree.cpp" />
     <ClCompile Include="Trees\QuadTreePartitionStrategy.cpp" />
     <ClCompile Include="Trees\SpatialTree.cpp" />
     <ClCompile Include="Trees\TreeNode.cpp" />
@@ -248,6 +246,10 @@
     <ClInclude Include="Trees\QuadTreePartitionStrategy.h" />
     <ClInclude Include="Trees\SpatialTree.h" />
     <ClInclude Include="Trees\TreeNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trees\KDTree.cpp" />
+    <None Include="Trees\QuadTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

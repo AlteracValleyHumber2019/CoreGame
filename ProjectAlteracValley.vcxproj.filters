@@ -117,12 +117,6 @@
     <ClCompile Include="Trees\TreeNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trees\QuadTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Trees\KDTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Trees\CoordNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -257,5 +251,9 @@
     <ClInclude Include="Trees\CoordNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trees\QuadTree.cpp" />
+    <None Include="Trees\KDTree.cpp" />
   </ItemGroup>
 </Project>

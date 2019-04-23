@@ -28,9 +28,10 @@ namespace pav {
 		~KDTree();
 
 		//fucntion to insert a node into the kdtree
-		void InsertN(CoordNode<T>* node_);
+		void InsertNode(CoordNode<T>* node_);
 		//function to find out if there is a node at the same position as the node being passed in, and returns the node
 		CoordNode<T>* FindN(CoordNode<T>* node_);
 	};
+#include "KDTree.cpp"
 }
 
