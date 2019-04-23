@@ -1,6 +1,4 @@
 #include "pav_pch.h"
-#include "KDTree.h"
-
 
 template<class T>
 bool pav::KDTree<T>::ComparePosition(CoordNode<T>* node_) {
@@ -23,7 +21,7 @@ pav::KDTree<T>::KDTree(CoordNode<T>* node_, int depth_) {
 }
 
 template<class T>
-void pav::KDTree<T>::InsertN(CoordNode<T>* node_) {
+void pav::KDTree<T>::InsertNode(CoordNode<T>* node_) {
 
 	//check if a valid node is being passed
 	if (node_ == NULL) {
@@ -33,6 +31,7 @@ void pav::KDTree<T>::InsertN(CoordNode<T>* node_) {
 	//check if this is a leaf node
 	if (node == NULL) {
 		node = node_;
+		std::cout << "Node Inserted" << endl;
 		return;
 	}
 	//calculate which dimension we are checking
@@ -42,19 +41,21 @@ void pav::KDTree<T>::InsertN(CoordNode<T>* node_) {
 	if (node_->coordinate[dimension] < node->coordinate[dimension]) {
 		if (leftBranch == NULL) {
 			leftBranch = new KDTree(NULL, depth + 1);
-			leftBranch->InsertN(node_);
+			std::cout << "Left Branch Made" << endl;
+			leftBranch->InsertNode(node_);
 		}
 		else {
-			leftBranch->InsertN(node_);
+			leftBranch->InsertNode(node_);
 		}
 	}
 	else {
 		if (rightBranch == NULL) {
 			rightBranch = new KDTree(NULL, depth + 1);
-			rightBranch->InsertN(node_);
+			std::cout << "Right Branch Made" << endl;
+			rightBranch->InsertNode(node_);
 		}
 		else {
-			rightBranch->InsertN(node_);
+			rightBranch->InsertNode(node_);
 		}
 	}
 
@@ -85,4 +86,3 @@ pav::CoordNode<T>* pav::KDTree<T>::FindN(CoordNode<T>* node_) {
 	}
 
 }
-

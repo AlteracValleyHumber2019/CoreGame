@@ -1,6 +1,4 @@
 #include "pav_pch.h"
-#include "QuadTree.h"
-#include "CoordNode.h"
 
 template <class T>
 pav::QuadTree<T>::QuadTree() {
@@ -8,12 +6,11 @@ pav::QuadTree<T>::QuadTree() {
 }
 
 template <class T>
-pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_) {
+pav::QuadTree<T>::QuadTree(vector<float> topLB_, vector<float> botRB_) {
 
 	topLBound = topLB_;
 	botRBound = botRB_;
 	node = NULL;
-	nodes = NULL;
 
 	topLQuad = NULL;
 	topRQuad = NULL;
@@ -21,10 +18,47 @@ pav::QuadTree<T>::QuadTree(std::vector<float> topLB_, std::vector<float> botRB_)
 	botRQuad = NULL;
 }
 
+template<class T>
+void pav::QuadTree<T>::InsertNode(pav::CoordNode<T>* qnode_) {
+	//check if a valid node is being passed
+	if (qnode_ == NULL) {
+		return;
+	}
+
+	//check to make sure if the node is within the bounds of this quadrant
+	if (!inBound(qnode_->coordinate)) {
+		return;
+	}
+
+	if (divided) {
+		topLQuad->InsertNode(qnode_);
+		topRQuad->InsertNode(qnode_);
+		botLQuad->InsertNode(qnode_);
+		botRQuad->InsertNode(qnode_);
+		return;
+	}
+
+	if (nodes.empty()) {
+		nodes = vector<pav::CoordNode<T>*>();
+		nodes.push_back(qnode_);
+		std::cout << "Node was Added" << endl;
+		return;
+	}
+
+	if (nodes.size() < size) {
+		nodes.push_back(qnode_);
+		std::cout << "Node was Added" << endl;
+		return;
+	}
+	else {
+		Divide();
+		return;
+	}
+}
 
 
 template<class T>
-CoordNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {
+pav::CoordNode<T>* pav::QuadTree<T>::Find(vector<float> coord_) {
 	//check if its in the quad
 	if (!inBound(coord_)) {
 		return NULL;
@@ -71,12 +105,12 @@ CoordNode<T>* pav::QuadTree<T>::Find(std::vector<float> coord_) {
 }
 
 template<class T>
-std::vector<CoordNode<T>*> pav::QuadTree<T>::FindInRadius(std::vector<float> coord_, float radius) {
-	return std::vector<CoordNode<T>*>();
+vector<pav::CoordNode<T>*> pav::QuadTree<T>::FindInRadius(vector<float> coord_, float radius) {
+	return vector<pav::CoordNode<T>*>();
 }
 
 template<class T>
-bool pav::QuadTree<T>::inBound(std::vector<float> coord_) {
+bool pav::QuadTree<T>::inBound(vector<float> coord_) {
 	return (coord_[0] >= topLBound[0] && coord_[0] <= botRBound[0] && coord_[1] >= topLBound[1]
 		&& coord_[1] <= botRBound[1]);
 }
@@ -95,7 +129,7 @@ void pav::QuadTree<T>::Divide() {
 		newbound.push_back((topLBound[1] + botRBound[1]) / 2);
 
 		topLQuad = new QuadTree(topLBound, newbound);
-		std::cout << "Top L Quad Made";
+		std::cout << "Top L Quad Made" << endl;
 		for (int i = 0; i < nodes.size(); i++) {
 			topLQuad->InsertNode(nodes[i]);
 		}
@@ -112,7 +146,7 @@ void pav::QuadTree<T>::Divide() {
 		newRbound.push_back(botRBound[1]);
 
 		botLQuad = new QuadTree(newLbound, newRbound);
-		std::cout << "Bot L Quad Made";
+		std::cout << "Bot L Quad Made" << endl;
 		for (int i = 0; i < nodes.size(); i++) {
 			botLQuad->InsertNode(nodes[i]);
 		}
@@ -128,7 +162,7 @@ void pav::QuadTree<T>::Divide() {
 		newRbound.push_back((topLBound[1] + botRBound[1]) / 2);
 
 		topRQuad = new QuadTree(newLbound, newRbound);
-		std::cout << "Top R Quad Made";
+		std::cout << "Top R Quad Made" << endl;
 		for (int i = 0; i < nodes.size(); i++) {
 			topRQuad->InsertNode(nodes[i]);
 		}
@@ -141,7 +175,7 @@ void pav::QuadTree<T>::Divide() {
 		newLbound.push_back((topLBound[1] + botRBound[1]) / 2);
 
 		botRQuad = new QuadTree(newLbound, botRBound);
-		std::cout << "Bot R Quad Made";
+		std::cout << "Bot R Quad Made" << endl;
 		for (int i = 0; i < nodes.size(); i++) {
 			botRQuad->InsertNode(nodes[i]);
 		}
@@ -149,5 +183,5 @@ void pav::QuadTree<T>::Divide() {
 	}
 
 	divided = true;
-	nodes = NULL;
+	nodes.clear();
 }
