@@ -31,6 +31,15 @@ private:
 	pav::MeshComponent* go_player_client_mesh_;
 	std::unique_ptr<pav::ModelResource> go_player_client_model_;
 
+	//Second Player Client
+	pav::GameObject* go_player_client_2;
+	pav::TransformComponent* go_player_client_transform_2;
+	pav::MeshComponent* go_player_client_mesh_2;
+	std::unique_ptr<pav::ModelResource> go_player_client_model_2;
+
+	bool isP1Tagged;
+	bool isP2Tagged;
+
 	void OnKeyHold(pav::KeyCode keycode);
 public:
 

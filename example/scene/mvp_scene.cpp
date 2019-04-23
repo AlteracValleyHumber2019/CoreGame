@@ -4,9 +4,12 @@
 
 void MVPScene::BeginScene(WindowType* window)
 {
+	isP1Tagged = true;
+	isP2Tagged = false;
 	// Resource loading
 	go_plane_model_ = std::make_unique<pav::ModelResource>();
 	go_player_client_model_ = std::make_unique<pav::ModelResource>();
+	go_player_client_model_2 = std::make_unique<pav::ModelResource>();
 
 	// Generic shader
 	generic_shader_ = std::make_unique<pav::GLShaderResource>();
@@ -32,6 +35,10 @@ void MVPScene::BeginScene(WindowType* window)
 	info_player.ModelFormat = pav::ModelLoadInfo::ModelFormatType::OBJ;
 	go_player_client_model_->Load("assets/models/Player.obj", std::move(info_player));
 
+	// Player2
+	go_player_client_model_2->Load("assets/models/Player.obj", std::move(info_player));
+
+
 	// Plane
 	go_plane_ = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_plane"));
 	// Plane Components
@@ -52,6 +59,17 @@ void MVPScene::BeginScene(WindowType* window)
 	// Player mesh
 	go_player_client_mesh_ = dynamic_cast<pav::MeshComponent*>(GetSECManager()->AddComponent<pav::MeshComponent>(go_player_client_));
 	go_player_client_mesh_->LoadMeshData(go_player_client_model_.get(), generic_shader_.get());
+
+
+	// Player client
+	go_player_client_2 = dynamic_cast<pav::GameObject*>(GetSECManager()->AddGameObject<pav::GameObject>("go_player_client2"));
+	// Player client components
+	go_player_client_transform_2 = dynamic_cast<pav::TransformComponent*>(GetSECManager()->AddComponent<pav::TransformComponent>(go_player_client_2));
+	go_player_client_transform_2->SetPosition(glm::vec3(30.f, 50.f, 0.f));
+	go_player_client_transform_2->SetScale(glm::vec3(.1f, .1f, .1f));
+	// Player mesh
+	go_player_client_mesh_2 = dynamic_cast<pav::MeshComponent*>(GetSECManager()->AddComponent<pav::MeshComponent>(go_player_client_2));
+	go_player_client_mesh_2->LoadMeshData(go_player_client_model_2.get(), generic_shader_.get());
 	
 }
 
@@ -63,9 +81,12 @@ void MVPScene::SetupEngineEvents(pav::EventAttorney* event_attorney)
 void MVPScene::Update(const float delta_time)
 {
 	go_d_cam_transform_->SetPosition(go_player_client_transform_->GetPosition());
+	
 
 	go_plane_mesh_->Update(delta_time);
 	go_player_client_mesh_->Update(delta_time);
+	go_player_client_mesh_2->Update(delta_time);	
+
 }
 
 void MVPScene::OnKeyHold(pav::KeyCode keycode)
@@ -83,6 +104,38 @@ void MVPScene::OnKeyHold(pav::KeyCode keycode)
 		break;
 	case pav::KEY_S:
 		go_player_client_transform_->SetPosition(go_player_client_transform_->GetPosition() + glm::vec3(0, 0, -1) *5.f);
+		break;
+	case pav::KEY_L:
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(1, 0, 0) * 5.f);
+		break;
+	case pav::KEY_O:
+		if (go_player_client_transform_->GetPosition().x <= go_player_client_transform_2->GetPosition().x
+			&& go_player_client_transform_->GetPosition().y <= go_player_client_transform_2->GetPosition().y
+			&& go_player_client_transform_->GetPosition().z <= go_player_client_transform_2->GetPosition().z && isP2Tagged)
+		{
+			isP2Tagged = false;
+			isP1Tagged = true;
+			printf("player1tagged");
+		}
+		break;
+	case pav::KEY_F:
+		if (go_player_client_transform_2->GetPosition().x <= go_player_client_transform_->GetPosition().x
+			&& go_player_client_transform_2->GetPosition().y <= go_player_client_transform_->GetPosition().y
+			&& go_player_client_transform_2->GetPosition().z <= go_player_client_transform_->GetPosition().z && isP1Tagged)
+		{
+			isP2Tagged = true;
+			isP1Tagged = false;
+			printf("player2Tagged");
+		}
+		break;
+	case pav::KEY_J:
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(-1, 0, 0) * 5.f);
+		break;
+	case pav::KEY_K:
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, 1) * 5.f);
+		break;
+	case pav::KEY_I:
+		go_player_client_transform_2->SetPosition(go_player_client_transform_2->GetPosition() + glm::vec3(0, 0, -1) *5.f);
 		break;
 	case pav::KEY_E:
 		go_d_cam_comp_->SetYaw(go_d_cam_comp_->GetYaw() - 1);
