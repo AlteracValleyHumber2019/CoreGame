@@ -7,6 +7,14 @@
 
 namespace pav
 {
+	/**
+	 * \class	SceneManager
+	 *
+	 * \brief	Manager class for UI.
+	 *
+	 * \author	Matthew
+	 * \date	4/9/2019
+	 */
 	class UIManager : public IManager
 	{
 	private:

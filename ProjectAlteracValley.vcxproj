@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\entity_component\component\sdl_image_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\i_image_component.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_window.cpp" />
@@ -196,6 +198,8 @@
     <ClCompile Include="engine\core\ui_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\entity_component\component\sdl_image_component.h" />
+    <ClInclude Include="engine\core\entity_component\component\i_image_component.h" />
     <ClInclude Include="engine\core\entity_component\component_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_render_manager.h" />
     <ClInclude Include="engine\core\dependent\sdl\gl_sdl_window.h" />

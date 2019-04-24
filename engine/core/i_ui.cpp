@@ -17,6 +17,8 @@ void pav::IUI::Update(const float delta_time)
 	sec_manager_->Update(delta_time);
 }
 
+void pav::IUI::Render() {}
+
 void pav::IUI::SetupEngineEvents(EventAttorney* event_attorney)
 {
 	sec_manager_->SetupEngineEvents(event_attorney);

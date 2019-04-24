@@ -51,12 +51,21 @@ namespace pav {
 		/**
 		 * \fn	virtual void IUI::Update();
 		 *
-		 * \brief	Destroys UI when called
+		 * \brief	Updates UI when called
 		 *
 		 * \author	Matthew
 		 * \date	3/9/2019
 		 */
 		virtual void Update(const float delta_time);
+		/**
+		 * \fn	virtual void IUI::Render();
+		 *
+		 * \brief	Renders UI when called
+		 *
+		 * \author	Matthew
+		 * \date	3/9/2019
+		 */
+		virtual void Render();
 		/**
 		 * \fn	virtual void IUI::SetupEngineEvents(EventAttorney* event_attorney);
 		 *
