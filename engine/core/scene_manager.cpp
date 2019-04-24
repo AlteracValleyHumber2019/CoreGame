@@ -1,5 +1,6 @@
 ﻿#include "pav_pch.h"
 #include "scene_manager.h"
+#include <iostream>
 
 void pav::SceneManager::Initialize()
 {

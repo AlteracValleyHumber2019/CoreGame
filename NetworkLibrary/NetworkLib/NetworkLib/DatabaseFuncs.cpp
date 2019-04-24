@@ -4,6 +4,10 @@
 using namespace std;
 
 
+DataBaseConnection::DataBaseConnection()
+{
+}
+
 DataBaseConnection::DataBaseConnection(bool _success)
 {
 	/*conn = mysql_init(0);

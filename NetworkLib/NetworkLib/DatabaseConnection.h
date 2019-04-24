@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <conio.h>
 #include <mysql.h>
 #include <iostream>
@@ -30,3 +30,4 @@ private:
 	MYSQL_RES *res;
 };
 
+*/

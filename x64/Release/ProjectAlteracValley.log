@@ -1,22 +1,8 @@
 ﻿  GameState.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(301): warning C4005: 'INADDR_ANY': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(102): note: see previous definition of 'INADDR_ANY'
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(303): warning C4005: 'INADDR_BROADCAST': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(111): note: see previous definition of 'INADDR_BROADCAST'
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(304): warning C4005: 'INADDR_NONE': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(105): note: see previous definition of 'INADDR_NONE'
-c:\users\landon\documents\github\coregame\networklibrary\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  example_main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(301): warning C4005: 'INADDR_ANY': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(102): note: see previous definition of 'INADDR_ANY'
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(303): warning C4005: 'INADDR_BROADCAST': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(111): note: see previous definition of 'INADDR_BROADCAST'
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock.h(304): warning C4005: 'INADDR_NONE': macro redefinition
-  c:\users\landon\documents\github\coregame\sdk\sdl_net\include\sdl_net.h(105): note: see previous definition of 'INADDR_NONE'
-c:\users\landon\documents\github\coregame\networklib\networklib\udp_controller.h(177): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  engine.cpp
   Generating code
-  2 of 2329 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  12 of 2489 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    65 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   ProjectAlteracValley.vcxproj -> C:\Users\Landon\Documents\GitHub\CoreGame\x64\Release\ProjectAlteracValley.exe

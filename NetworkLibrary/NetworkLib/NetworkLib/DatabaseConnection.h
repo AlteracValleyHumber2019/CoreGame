@@ -13,6 +13,7 @@ public:
 
 	MYSQL* conn;
 
+	DataBaseConnection();
 	DataBaseConnection(bool _success);
 	DataBaseConnection(string _hostname, string _loginname, string _loginpassword, string _databasename, int _port, bool _success);
 	DataBaseConnection(char* _hostname, char* _loginname, char* _loginpassword, char* _databasename, int _port, bool _success);

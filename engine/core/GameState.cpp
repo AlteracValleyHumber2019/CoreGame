@@ -4,6 +4,7 @@
 
 pav::GameState::GameState()
 {
+	ConnectToDB();
 }
 
 
@@ -11,11 +12,41 @@ pav::GameState::~GameState()
 {
 }
 
+void pav::GameState::ConnectToDB()
+{
+	dbcon = new DataBaseConnection("remotemysql.com", "xLrH61KxG0", "Ps26I2WARu", "xLrH61KxG0", 3306, true);
+}
+
 void pav::GameState::UpdateGameState(int characterID, std::string s)
 {
 	// Break the string into substrings and place inside of an array
 	//std::istringstream iss(s);
 	//std::vector<std::string> results ((std::istream_iterator<std::string>(iss)))
+
+	// Create a query
+	string query1 = "SELECT * FROM players WHERE(id ='" + std::to_string(characterID) + "');";
+	string resultString;
+	// Call the query
+	MYSQL_RES* res = dbcon.fetchInformation(query1);
+	int unsigned columns = mysql_num_fields(res);
+	MYSQL_ROW row;
+
+	if (row = mysql_fetch_row(res))
+	{
+		cout << "Query Success!";
+	}
+	// Confirm Success of Query
+	else
+		cout << "Invalid Query";
+
+	// Store everything in a string
+	for (size_t i = 0; i < columns; i++)
+	{
+		resultString += (row[i]);
+		resultString += "|";
+	}
+
+	// In theory, we now have the row which will be broken up into substrings past this point.
 
 	// At "|" this is a new entry with key and value
 	// At ":" we seperate the value
@@ -31,9 +62,9 @@ void pav::GameState::UpdateGameState(int characterID, std::string s)
 	std::cout << "Character " << characterID << "     <--The Character we are retrieving" << std::endl << std::endl;
 	std::cout << s << "     <--The String retrieved" << std::endl << std::endl;
 
-	while ((pos = s.find(splitDelimiter)) != std::string::npos)
+	while ((pos = resultString.find(splitDelimiter)) != std::string::npos)
 	{
-		token = s.substr(0, pos);
+		token = resultString.substr(0, pos);
 
 		// Write to console
 		std::cout << token << "     <--The Chunk" << std::endl << std::endl;

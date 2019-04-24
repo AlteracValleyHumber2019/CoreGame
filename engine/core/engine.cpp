@@ -47,6 +47,7 @@ void pav::Engine::StartEngine()
 		Update(1.f); // #TODO: replace with actual delta time
 	}
 
+
 	EndEngine();
 }
 

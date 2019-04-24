@@ -2,6 +2,8 @@
 #define EXAMPLE_SCENE_H
 
 #include "core/i_scene.h"
+#include "core/GameState.h"
+
 //! [ExampleScene custom scene]
 class ExampleScene : public pav::IScene
 {
@@ -19,6 +21,8 @@ public:
 	virtual void SetupEngineEvents(pav::EventAttorney* event_attorney) override;
 	// Inherited functions
 
+
+	pav::GameState* gameState;
 
 	// Custom function used for a keydown event handle
 	void OnKeydown(pav::KeyCode keycode);

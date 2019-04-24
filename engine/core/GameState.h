@@ -4,11 +4,6 @@
 #include "entity_component/character.h"
 #include <iostream>
 
-#include <NetworkLibrary/NetworkLib/NetworkLib/UDP_Client.h>
-#include <NetworkLibrary/NetworkLib/NetworkLib/TCP_Client.h>
-#include <NetworkLibrary/NetworkLib/NetworkLib/TCP_Server.h>
-#include <NetworkLibrary/NetworkLib/NetworkLib/UDP_Server.h>
-#include <NetworkLibrary/NetworkLib/NetworkLib/sha256.h>
 #include <NetworkLibrary/NetworkLib/NetworkLib/DatabaseConnection.h>
 
 namespace pav
@@ -37,9 +32,13 @@ namespace pav
 		// std::vector<graveyard> graveyards;	// Stores all graveyards in game
 		// std::vector<unit> units;				// Stores all NPC and Enemy units/bosses in game (or maybe in section)
 
+		DataBaseConnection dbcon;
+
 	public:
 		GameState();
 		~GameState();
+
+		void ConnectToDB();
 
 		void UpdateGameState(int characterID, std::string s); // This method will take in the JSON or String and will break the string into substrings based on delimiter and store into an array.
 		
