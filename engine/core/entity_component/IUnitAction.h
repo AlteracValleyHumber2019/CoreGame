@@ -13,6 +13,7 @@ namespace pav
 	* uses facade unitgamebject class, not fully implemented as this does not contain the real class
 	*/
 	public:
+		UnitGameObject* GameObjectPtr;
 		IUnitAction(UnitGameObject* UnitGameObjectPtr);
 		~IUnitAction();
 		virtual void Execute() =0;

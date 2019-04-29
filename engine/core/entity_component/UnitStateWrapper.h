@@ -8,11 +8,6 @@ namespace pav
 {
 class UnitStateWrapper : public IUnitState/*, public IUnitStateCondition, public IUnitAction*/
 {
-	/**
-	* author	Ethan
-	* date	4/2/2019
-	* i understand what this is intended to do... but how it works and interacts with the interfaces i do not
-	*/
 public:
 	UnitStateWrapper();
 	~UnitStateWrapper();

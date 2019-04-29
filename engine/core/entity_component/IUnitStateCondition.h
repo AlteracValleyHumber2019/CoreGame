@@ -2,9 +2,10 @@
 #define IUNITSTATECONDITION_H
 
 #include "IUnitState.h"
+#include <string>;
 namespace pav
 {
-	class IUnitStateCondition
+class IUnitStateCondition
 	{
 	public:
 		/**
@@ -12,7 +13,8 @@ namespace pav
 * date	4/2/2019
 * swaps between truestate and falsestate based on conditions met
 */
-	virtual	bool Condition() = 0;
+	bool Condition(IUnitState stateCheck);
+	std::string check;
 	private:
 		IUnitState TrueState;
 		IUnitState FailState;

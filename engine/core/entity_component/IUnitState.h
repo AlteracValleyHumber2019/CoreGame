@@ -3,6 +3,7 @@
 
 #include "IUnitAction.h"
 #include "UnitGameObject.h"
+#include <string>;
 namespace pav {
 	class IUnitState
 		/**
@@ -12,6 +13,7 @@ namespace pav {
 		*/
 	{
 	public:
+		std::string Statename;
 		IUnitState(UnitGameObject* UnitGameObjectPtr);
 		~IUnitState();
 		void Update();
