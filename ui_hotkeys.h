@@ -13,6 +13,8 @@ using namespace pav {
 	class ui_hotkeys
 	{
 	public:
+		Vec3 transform;
+
 		pav::ui_hotkeys::ui_hotkeys() : sec_manager_(std::make_unique<SECManager>()) {}
 
 		//initialize hotkeys using event_util enum keys
@@ -35,6 +37,12 @@ using namespace pav {
 
 		//key that is pressed, locations of mouse when key is pressed
 		void keyPressed(unsigned char key, int x, int y);
+
+		//key up removes ui from screen
+		void keyUp(unsigned char key, int x, int y);
+
+		// Create an array of boolean values of length 256 (0-255)
+		bool* keyStates = new bool[256]; 
 	};
 }
 
