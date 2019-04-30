@@ -2,6 +2,7 @@
 #define I_WINDOW_H
 
 #include "util/wrappers/type_wrappers.h"
+#include "scene_manager.h"
 
 namespace pav
 {
@@ -114,7 +115,7 @@ namespace pav
 		 *
 		 * \param	delta_time	The delta time.
 		 */
-		virtual void Update(const float delta_time) = 0;
+		virtual void Update(const float delta_time, SceneManager* manager) = 0;
 
 		virtual WindowType* GetWindow() = 0;
 	};

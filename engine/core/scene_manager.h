@@ -87,6 +87,8 @@ namespace pav
 		void SetupEngineEvents(EventAttorney* event_attorney);
 
 		void SetWindowPtr(WindowType* win);
+
+		IScene* GetCurrentScene();
 	};
 }
 

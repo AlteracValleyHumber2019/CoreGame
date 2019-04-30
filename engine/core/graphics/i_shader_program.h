@@ -13,7 +13,7 @@ namespace pav
 	 */
 	class IShaderProgram
 	{
-	private:
+	protected:
 		std::array<std::unique_ptr<IShader>, SHADER_TYPE_COUNT> member_shaders_;
 
 	public:
@@ -40,7 +40,7 @@ namespace pav
 		 * \author	Jaymie
 		 * \date	3/17/2019
 		 */
-		virtual void CompileShader() = 0;
+		virtual void LinkShaders() = 0;
 
 		/**
 		 * \fn	virtual void IShaderProgram::UseShader() = 0;
@@ -51,6 +51,45 @@ namespace pav
 		 * \date	3/17/2019
 		 */
 		virtual void UseShader() = 0;
+
+		/**
+		 * \fn	virtual void IShader::SetShaderInt(std::string&& name, const int value) = 0;
+		 *
+		 * \brief	Sets shader int
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \param [in]	name 	The name.
+		 * \param 	  	value	The value.
+		 */
+		virtual void SetShaderInt(std::string&& name, const int value) = 0;
+
+		/**
+		 * \fn	virtual void IShader::SetShaderFloat(std::string&& name, const float value) = 0;
+		 *
+		 * \brief	Sets shader float
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \param [in]	name 	The name.
+		 * \param 	  	value	The value.
+		 */
+		virtual void SetShaderFloat(std::string&& name, const float value) = 0;
+
+		/**
+		 * \fn	virtual void IShader::SetShaderTransform(std::string&& name, const glm::mat4 value) = 0;
+		 *
+		 * \brief	Sets shader transform
+		 *
+		 * \author	Jaymie
+		 * \date	3/17/2019
+		 *
+		 * \param [in]	name 	The name.
+		 * \param 	  	value	The value.
+		 */
+		virtual void SetShaderTransform(std::string&& name, const glm::mat4 value) = 0;
 
 	};
 

@@ -4,4 +4,5 @@
 
 void pav::IShaderProgram::AddShader(std::unique_ptr<IShader>&& shader)
 {
+	member_shaders_[(size_t)shader->GetShaderType()] = std::move(shader);
 }

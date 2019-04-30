@@ -1,6 +1,8 @@
 #ifndef RESOURCE_H
 #define RESOURCE_H
 
+#include "../util/guid.h"
+
 namespace pav
 {
 	/**
@@ -18,6 +20,8 @@ namespace pav
 
 	public:
 		IResourceBase(const unsigned int guid);
+
+		virtual ~IResourceBase() = default;
 
 		/**
 		 * \fn	unsigned int GetGUID() const;
@@ -48,7 +52,10 @@ namespace pav
 	struct Resource : public IResourceBase
 	{
 	public:
-		Resource();
+		Resource() :
+			IResourceBase(pav::GUID<IResourceBase>::GetID<CRTP>())
+		{
+		}
 
 		/**
 		 * \fn	virtual Data GetData() = 0;

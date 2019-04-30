@@ -3,8 +3,10 @@
 
 #include "core/graphics/i_renderable_object.h"
 #include "core/util/wrappers/type_wrappers.h"
+#include "opengl_shader_program.h"
 
-namespace pav {
+namespace pav
+{
 	/**
 	 * \class	GLRenderableObject
 	 *
@@ -18,6 +20,7 @@ namespace pav {
 	{
 		//Data variables to be used to create the elements used based on the type GLUINT
 		GAPIUInt vao;
+		GAPIUInt vbo;
 		GAPIUInt texture_vbo;
 		GAPIUInt instance_vbo = 0;
 		GAPIUInt ebo;
@@ -28,10 +31,21 @@ namespace pav {
 
 	class GLRenderableObject : public IRenderableObject
 	{
-	protected:
-		GLRenderData gl_renderable_data_;
+		private:
+		// The actual model to render
+		Model model_mesh_;
 
-		//TODO : Finish implementation of the class with all the other components like shader, material, texture, etc.
+		// Shader program
+		OpenGLShaderProgram* shader_program_;
+
+		// Render data vao, vbo, ebo
+		std::vector<GLRenderData> render_meshes_;
+
+	public:
+		GLRenderableObject(ModelResource* model, IShaderResource* shader);
+
+		virtual void Draw() override;
+
 	};
 }
 #endif // !GL_RENDERABLE_OBJECT

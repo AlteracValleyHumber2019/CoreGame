@@ -96,7 +96,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(ProjectDir)engine\external\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;assimp-vc140-mt.lib;IrrXML.lib;zlibstatic.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;assimp-vc140-mt.lib;IrrXML.lib;zlibstatic.lib;zlibstaticd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -155,6 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\entity_component\component\camera_component.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\gl_renderable_object.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader.cpp" />
+    <ClCompile Include="engine\core\dependent\opengl\opengl_shader_program.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\gl_shader_resource.cpp" />
     <ClCompile Include="example\scene\debug_scene.cpp" />
     <ClCompile Include="engine\core\entity_component\component_manager.cpp" />
     <ClCompile Include="engine\core\dependent\sdl\gl_sdl_render_manager.cpp" />
@@ -179,30 +184,6 @@
     <ClCompile Include="engine\core\entity_component\i_game_object.cpp" />
     <ClCompile Include="engine\core\entity_component\i_component.cpp" />
     <ClCompile Include="engine\core\entity_component\game_object_manager.cpp" />
-    <ClCompile Include="engine\external\include\imgui\imgui.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="engine\external\include\imgui\imgui_demo.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="engine\external\include\imgui\imgui_draw.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="engine\external\include\imgui\imgui_impl_opengl3.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="engine\external\include\imgui\imgui_impl_sdl.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="engine\external\include\imgui\imgui_widgets.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="engine\external\src\glad.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -226,8 +207,18 @@
     <ClCompile Include="engine\core\eea\pav_assert.cpp" />
     <ClCompile Include="engine\core\graphics\i_shader.cpp" />
     <ClCompile Include="engine\core\graphics\shader_program.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\model_resource.cpp" />
+    <ClCompile Include="engine\core\dependent\resource\i_shader_resource.cpp" />
+    <ClCompile Include="engine\core\graphics\renderable_object_factory.cpp" />
+    <ClCompile Include="engine\core\entity_component\component\mesh_component.cpp" />
+    <ClCompile Include="engine\core\entity_component\system\render_system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\entity_component\component\camera_component.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader.h" />
+    <ClInclude Include="engine\core\dependent\opengl\opengl_shader_program.h" />
+    <ClInclude Include="engine\core\dependent\resource\gl_shader_resource.h" />
+    <ClInclude Include="engine\core\graphics\material.h" />
     <ClInclude Include="engine\external\include\glad\glad.h" />
     <ClInclude Include="engine\external\include\KHR\khrplatform.h" />
     <ClInclude Include="example\scene\debug_scene.h" />
@@ -253,11 +244,6 @@
     <ClInclude Include="engine\core\entity_component\i_game_object.h" />
     <ClInclude Include="engine\core\entity_component\i_component.h" />
     <ClInclude Include="engine\core\util\wrappers\type_wrappers.h" />
-    <ClInclude Include="engine\external\include\imgui\imconfig.h" />
-    <ClInclude Include="engine\external\include\imgui\imgui.h" />
-    <ClInclude Include="engine\external\include\imgui\imgui_impl_opengl3.h" />
-    <ClInclude Include="engine\external\include\imgui\imgui_impl_sdl.h" />
-    <ClInclude Include="engine\external\include\imgui\imgui_internal.h" />
     <ClInclude Include="engine\pav_pcs.h" />
     <ClInclude Include="engine\core\render_manager.h" />
     <ClInclude Include="engine\core\i_scene.h" />
@@ -276,6 +262,11 @@
     <ClInclude Include="engine\core\graphics\i_shader.h" />
     <ClInclude Include="engine\core\graphics\shader_program.h" />
     <ClInclude Include="engine\core\graphics\shader_common.h" />
+    <ClInclude Include="engine\core\dependent\resource\model_resource.h" />
+    <ClInclude Include="engine\core\dependent\resource\i_shader_resource.h" />
+    <ClInclude Include="engine\core\graphics\renderable_object_factory.h" />
+    <ClInclude Include="engine\core\entity_component\component\mesh_component.h" />
+    <ClInclude Include="engine\core\entity_component\system\render_system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

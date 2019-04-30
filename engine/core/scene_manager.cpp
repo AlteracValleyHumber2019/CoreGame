@@ -69,3 +69,8 @@ void pav::SceneManager::SetWindowPtr(WindowType* win)
 {
 	current_window_ptr_ = win;
 }
+
+pav::IScene* pav::SceneManager::GetCurrentScene()
+{
+	return current_scene_;
+}

@@ -60,3 +60,18 @@ void pav::TransformComponent::Update(const float delta_time)
 void pav::TransformComponent::SetupEngineEvents(EventAttorney* event_attorney)
 {
 }
+
+glm::mat4 pav::TransformComponent::GetPosMatrix() const
+{
+	return position_mat4_;
+}
+
+glm::mat4 pav::TransformComponent::GetRotMatrix() const
+{
+	return rotation_mat4_;
+}
+
+glm::mat4 pav::TransformComponent::GetScaleMatrix() const
+{
+	return scale_mat4_;
+}

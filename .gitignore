@@ -31,3 +31,5 @@
 
 # Visual studio generated folders
 Debug/
+.vs/ProjectAlteracValley/v15/Browse.VC.opendb
+.vs/ProjectAlteracValley/v15/Browse.VC.db

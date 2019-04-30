@@ -29,8 +29,7 @@
 // 3rd Party
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
-
-#include <imgui.h>
+#include <glm/gtc/type_ptr.hpp>
 
 // PAV
 #include "pav_pcs.h"
