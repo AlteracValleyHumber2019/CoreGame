@@ -19,8 +19,8 @@ class Config:
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT') # Investigate logger
 
     # SQL ALCHEMY
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql+pymysql://xLrH61KxG0:Ps26I2WARu@remotemysql.com:3306/xLrH61KxG0'
+        # 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 ######################
